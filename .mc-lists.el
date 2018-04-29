@@ -3,10 +3,9 @@
 
 (setq mc/cmds-to-run-for-all
       '(
-	electric-newline-and-maybe-indent
-	wdired-finish-edit
 	))
 
 (setq mc/cmds-to-run-once
       '(
+	smex
 	))

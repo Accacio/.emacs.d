@@ -2,57 +2,76 @@
 
 ;; ----- ido-last-directory-list -----
 (
+ ("/home/" . "accacio/")
  ("/mnt/Files/accacio/Git/matcg/" . "include/")
- ("/home/accacio/" . "Desktop/")
- ("/mnt/Files/accacio/Git/" . "matcg/")
+ ("/mnt/Files/accacio/Git/" . "controlaide1/")
  ("/mnt/Files/accacio/" . "Git/")
  ("/mnt/Files/" . "accacio/")
  ("/mnt/" . "Files/")
+ ("/media/" . "accacio/")
  ("/" . "mnt/")
- ("/home/" . "accacio/")
+ ("/home/accacio/" . ".emacs.d/")
 )
 
 ;; ----- ido-work-directory-list -----
 (
+ "/mnt/Files/accacio/Git/controlaide1/"
+ "/home/accacio/.emacs.d/"
+ "/home/accacio/.emacs.d.cedet1/"
  "/home/accacio/"
  "/mnt/Files/accacio/Git/matcg/include/"
  "/mnt/Files/accacio/Git/matcg/"
+ "/mnt/Files/accacio/Git/matcg/src/"
+ "/mnt/Files/accacio/Git/controlaide/"
 )
 
 ;; ----- ido-work-file-list -----
 (
- ".emacs"
+ "controlaide1.cpp"
+ "init.el"
+ "package-list-packages"
+ ".clang_complete"
+ "monster.h"
  "card.h"
  "matcg.cpp"
+ "card.cpp"
+ ".clang.complete"
+ "controlaide.cpp"
 )
 
 ;; ----- ido-dir-file-cache -----
 (
- ("/home/accacio/" (23269 53369 194803 540000) ".steam/" ".emacs~" ".guake-indicator/" ".dmrc" ".emacs.d.irony/" "Dropbox/" ".matlab/" "./" ".xournal/" ".gnupg/" ".opera/" ".ssh/" "../" ".emacs.d.old/" "examples.desktop" ".ICEauthority" ".kde/" ".thunderbird/" ".texmf-var/" ".xsession-errors" ".config/" ".apport-ignore.xml" ".gem/" ".java/" ".mono/" ".gvfs/" ".bash_history" ".gnome2_private/" ".dia/" ".pki/" "Pictures/" ".steampath" "help" "Qt/" ".bash_logout" ".pulse-cookie" ".gimp-2.8/" ".BOINC/" "Videos/" ".local/" ".cache/" ".gconf/" ".dropbox-dist/" ".profile" ".xsession-errors.old" ".BOINC Manager" "demos/" ".emacs.d/" ".gnome2/" ".bashrc~" "bin/" ".opera-next/" ".subversion/" ".swt/" ".bashrc" ".Xauthority" ".steampid" "opt/" ".dropbox/" ".emacs" ".sudo_as_admin_successful" ".profile~" ".codeblocks/" ".compiz/" ".eclipse/" "Music/" ".gitconfig" ".mozilla/" ".dbus/" "Documents/" "Desktop/" "Steam/" ".nano/" "Public/" ".bundle/" ".thumbnails/" ".wget-hsts" "Downloads/" "Templates/")
+ ("/mnt/Files/accacio/Git/controlaide1/" (23270 17641 592151 108000) "./" "controlaide1.cpp~" "Makefile" "headers/" ".clang_complete~" ".clang_complete" "controlaide1.cpp" "controlaide.proj~" "controlaide.proj" "../" ".settings/" ".cproject" ".project")
 
- ("/mnt/Files/accacio/Git/matcg/include/" (23269 36 961994 226000) "card.h" "./" "monster.h" "../" "player.h" "#card.h#" "game.h" "cemetery.h" "deck.h")
+ ("/home/accacio/.emacs.d/" (23270 19966 388256 207000) "./" "../" "ido.last~" "auto-save-list/" "smex-items" ".mc-lists.el" "snippets/" "init.el" "irony/" "init.el~" ".git/" "elpa/" ".gitignore" "ido.last")
+
+ ("/home/accacio/.emacs.d.cedet1/" (23270 20000 476257 748000) "ac-comphist.dat" "./" "../" "ido.last~" "auto-save-list/" "ede-projects.el" "smex-items" ".mc-lists.el" "snippets/" "init.el" "init.el~" ".git/" "elpa/" "semanticdb/" "ido.last" "url/")
 
  ("/mnt/Files/accacio/Git/matcg/" (23269 36 961994 226000) "metas.txt" "./" "README.md" ".gitignore" "docs/" ".clang_complete" "matcg.layout" ".git/" "#matcg.cpp#" "../" "matcg.cbp" "include/" "matcg.cpp" "src/")
 
- ("/mnt/Files/accacio/accacio/" (23230 13967 379233 198000) "./" "index.html" "about.md" "assets/" "_posts/" ".gitignore" "index.html~" "404.html" ".sass-cache/" "_site/" "dist/" "_config.yml~" "Gemfile.lock" "Gemfile" "../" "_config.yml" "Site.mm" "404.html~" "Imagens/")
+ ("/mnt/Files/accacio/Git/" (23269 60185 471111 688000) "./" "rte-docs/" "controlaide1/" ".metadata/" "accacio.github.io/" "matcg/" "../" "controlaide/")
 
- ("/home/accacio/Desktop/" (23230 23667 86372 850000) "./" "../" "SpaceChem.desktop")
+ ("/mnt/Files/accacio/" (23269 60233 223113 846000) "./" ".profile" ".bash_logout" ".bashrc" "../" "Git/" "controlaide.cpp" "my-awesome-site/" "examples.desktop" "accacio/")
 
- ("/home/accacio/Dropbox/" (23226 26794 718078 766000) "./" "../" "wallpapers/" "Livro/" "produtividade/" "profiles/" "Linux/" "Evelise e Rafael/" "Documents-EI_RTE/" "TCC/" "Intercambio/" "Portables/" "Resto/" "AccDoc/" "zimprimir/" "AccLib/" ".dropbox.cache/" "Instalarprogramas/" ".dropbox" "Commande Avancee/" "Cacilda/")
+ ("/home/accacio/" (23270 913 143394 854000) ".steam/" ".emacs~" ".guake-indicator/" ".dmrc" "Dropbox/" ".matlab/" "./" ".xournal/" ".gnupg/" ".opera/" ".ssh/" "../" ".emacs.d.old/" "examples.desktop" ".ICEauthority" ".emacs.d.cedet1/" ".kde/" ".thunderbird/" ".texmf-var/" ".xsession-errors" ".config/" ".apport-ignore.xml" ".gem/" ".java/" ".mono/" ".gvfs/" ".bash_history" ".gnome2_private/" ".dia/" ".pki/" "Pictures/" ".steampath" "help" "Qt/" ".bash_logout" ".pulse-cookie" ".gimp-2.8/" ".BOINC/" "Videos/" ".local/" ".cache/" ".gconf/" ".dropbox-dist/" ".profile" ".xsession-errors.old" ".BOINC Manager" "demos/" ".emacs.d/" ".gnome2/" ".bashrc~" "bin/" ".opera-next/" ".subversion/" ".swt/" ".emacs.d.cedet/" ".bashrc" ".Xauthority" ".steampid" "opt/" ".dropbox/" ".sudo_as_admin_successful" ".profile~" ".codeblocks/" ".compiz/" ".eclipse/" "Music/" ".gitconfig" ".mozilla/" ".dbus/" "Documents/" "Desktop/" "Steam/" ".nano/" "Public/" ".bundle/" ".thumbnails/" ".wget-hsts" "Downloads/" "Templates/")
 
- ("/mnt/Files/accacio/Git/" (23268 24323 980319 77000) "./" "rte-docs/" "build-controlaide-Desktop_Qt_5_10_1_GCC_64bit-Debug/" "controlaide1/" ".metadata/" "accacio.github.io/" "matcg/" "../" "controlaide/")
+ ("/mnt/Files/accacio/Git/matcg/include/" (23268 27914 628464 896000) "card.h" "./" "monster.h" "../" "player.h" "#card.h#" "game.h" "cemetery.h" "deck.h")
 
- ("/mnt/Files/accacio/" (23223 32998 839874 970000) "./" ".profile" ".bash_logout" ".bashrc" "../" "Git/" "my-awesome-site/" "examples.desktop" "accacio/")
+ ("/mnt/Files/accacio/Git/matcg/src/" (23268 24329 276319 292000) "./" "card.cpp" "game.cpp" "cemetery.cpp" "../" "player.cpp" "deck.cpp" "monster.cpp")
+
+ ("/mnt/Files/accacio/Git/controlaide/" (23268 20063 312146 49000) "controlaide.ui" "./" ".gitignore" "controlaide.pro.user" ".git/" "controlaide.pro" "../" ".cproject" "main.cpp" "controlaide.cpp" ".project" "Debug/" "controlaide.h" "src/")
 
  ("/mnt/Files/" (23209 22725 906319 680000) "./" "../" "lost+found/" "accacio/")
 
  ("/mnt/" (23265 35968 840014 45000) "./" "../" "Files/")
 
- ("/home/accacio/./" (23268 47833 717273 824000) ".steam/" ".emacs~" ".guake-indicator/" ".dmrc" ".emacs.d.irony/" "Dropbox/" ".matlab/" "./" ".xournal/" ".gnupg/" ".opera/" ".ssh/" "../" ".emacs.d.old/" "examples.desktop" ".ICEauthority" ".kde/" ".thunderbird/" ".texmf-var/" ".xsession-errors" ".config/" ".apport-ignore.xml" ".gem/" ".java/" ".mono/" ".gvfs/" ".bash_history" ".gnome2_private/" ".dia/" ".pki/" "Pictures/" ".steampath" "help" "Qt/" ".bash_logout" ".pulse-cookie" ".gimp-2.8/" ".BOINC/" "Videos/" ".local/" ".cache/" ".gconf/" ".dropbox-dist/" ".profile" ".xsession-errors.old" ".BOINC Manager" "demos/" ".emacs.d/" ".gnome2/" ".bashrc~" "bin/" ".opera-next/" ".subversion/" ".swt/" ".bashrc" ".Xauthority" ".steampid" "opt/" ".dropbox/" ".emacs" ".sudo_as_admin_successful" ".profile~" ".codeblocks/" ".compiz/" ".eclipse/" "Music/" ".gitconfig" ".mozilla/" ".dbus/" "Documents/" "Desktop/" "Steam/" ".nano/" "Public/" ".bundle/" ".thumbnails/" ".wget-hsts" "Downloads/" "Templates/")
+ ("/media/accacio/" (23265 35967 344013 984000) "./" "../")
+
+ ("/media/" (23210 12380 770586 914000) "./" "../" "accacio/")
 
  ("/home/" (23209 23835 446462 10000) "./" "../" "accacio/")
 
- ("/home/accacio/.xournal/" (23211 35697 116218 697000) "./" "../" "recent-files" "config")
+ ("/home/accacio/Documents/" (23263 15253 811827 238000) "./" "../" "MATLAB/" "stateFlow_ug.pdf" "test_udp.slx")
 )
 
 ;; ----- ido-unc-hosts-cache -----

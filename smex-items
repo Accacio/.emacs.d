@@ -1,38 +1,32 @@
 
 ;; ----- smex-history -----
 (
- spook
- align-regexp
+ uncomment-region
+ company-yasnippet
  dired
  eval-region
- find-alternate-file
- package-install
- linum-mode
+ package-list-packages
+ mc/mark-next-lines
+ global-company-mode
 )
 
 ;; ----- smex-data -----
 (
- (eval-buffer . 5)
- (package-list-packages . 2)
- (package-autoremove . 1)
- (eval-region . 20)
- (rainbow-mode . 2)
- (customize . 6)
- (linum-mode . 8)
- (auto-complete-mode . 1)
- (transpose-sentences . 2)
- (transpose-sexps . 1)
- (package-install . 4)
- (avy-goto-char . 5)
- (neotree-enter-ace-window . 2)
- (avy-goto-word-or-subword-1 . 2)
- (ace-window . 3)
- (avy-goto-word-0 . 6)
- (avy-goto-char-timer . 3)
- (avy-goto-line . 2)
- (dired . 4)
- (dired-find-file-other-window . 1)
- (find-alternate-file . 1)
- (align-regexp . 2)
- (spook . 2)
+ (irony-install-server . 3)
+ (irony-cdb-menu . 10)
+ (irony-cdb-autosetup-compile-options . 1)
+ (rename-file . 1)
+ (irony-cdb-json-select . 1)
+ (dired . 3)
+ (package-list-packages . 11)
+ (company-mode . 2)
+ (yas-expand . 4)
+ (customize-group . 1)
+ (package-install . 1)
+ (company-yasnippet . 7)
+ (global-company-mode . 2)
+ (eval-region . 7)
+ (mc/mark-next-lines . 5)
+ (undo-tree-visualize . 1)
+ (uncomment-region . 3)
 )
