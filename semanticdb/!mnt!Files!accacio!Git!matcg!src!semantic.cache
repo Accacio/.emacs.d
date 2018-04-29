@@ -1,0 +1,164 @@
+;; Object semanticdb-project-database-file
+;; SEMANTICDB Tags save file
+(semanticdb-project-database-file "semanticdb-project-database-file"
+  :tables
+  (list
+    (semanticdb-table "semanticdb-table"
+      :major-mode c++-mode
+      :tags 
+        '( ("deck.h" include nil nil [1 18])
+            ("Deck" function
+               (:constructor-flag t
+                :parent "Deck"
+                :type ("Deck" type (:type "class") nil nil))
+                nil [20 48])
+            ("Deck" function
+               (:destructor-flag t
+                :parent "Deck"
+                :type "void")
+                nil [50 79])
+            ("addtodeck" function
+               (:parent "Deck"
+                :arguments 
+                  ( ("card" variable
+                       (:pointer 1
+                        :type ("Card" type (:type "class") nil nil))
+                        (reparse-symbol arg-sub-list) [102 113]))                  
+                :type "void")
+                nil [81 300])
+            ("removefromdeck" function
+               (:parent "Deck"
+                :type "void")
+                nil [302 431])
+            ("shuffledeck" function
+               (:parent "Deck"
+                :type "void")
+                nil [433 663])
+            ("showdeck" function
+               (:parent "Deck"
+                :type "void")
+                nil [665 964]))          
+      :file "deck.cpp"
+      :pointmax 965
+      :fsize 964
+      :lastmodtime '(23268 43483 577097 161000)
+      :unmatched-syntax nil)
+    (semanticdb-table "semanticdb-table"
+      :major-mode c++-mode
+      :tags 
+        '( ("monster.h" include nil nil [1 21])
+            ("Monster" function
+               (:constructor-flag t
+                :parent "Monster"
+                :arguments 
+                  ( ("n" variable (:type ("string" type (:type "class") nil nil)) (reparse-symbol arg-sub-list) [40 49])
+                    ("a" variable (:type "int") (reparse-symbol arg-sub-list) [50 56])
+                    ("l" variable (:type "int") (reparse-symbol arg-sub-list) [57 63])
+                    ("al" variable (:type "bool") (reparse-symbol arg-sub-list) [64 72]))                  
+                :type ("Monster" type (:type "class") nil nil))
+                nil [23 182])
+            ("Monster" function
+               (:destructor-flag t
+                :parent "Monster"
+                :type "void")
+                nil [184 219])
+            ("restore_init_vals" function
+               (:parent "Monster"
+                :type "void")
+                nil [221 336]))          
+      :file "monster.cpp"
+      :pointmax 337
+      :fsize 336
+      :lastmodtime '(23268 43612 405102 393000)
+      :unmatched-syntax nil)
+    (semanticdb-table "semanticdb-table"
+      :major-mode c++-mode
+      :tags 
+        '( ("cemetery.h" include nil nil [1 22])
+            ("Cemetery" function
+               (:constructor-flag t
+                :parent "Cemetery"
+                :type ("Cemetery" type (:type "class") nil nil))
+                nil [24 60])
+            ("Cemetery" function
+               (:destructor-flag t
+                :parent "Cemetery"
+                :type "void")
+                nil [62 99])
+            ("showcemetery" function
+               (:parent "Cemetery"
+                :type "void")
+                nil [101 427])
+            ("sendtocemetery" function
+               (:parent "Cemetery"
+                :arguments 
+                  ( ("card" variable (:type ("Card" type (:type "class") nil nil)) (reparse-symbol arg-sub-list) [459 469]))                  
+                :type "void")
+                nil [429 510]))          
+      :file "cemetery.cpp"
+      :pointmax 511
+      :fsize 510
+      :lastmodtime '(23268 43362 421092 241000)
+      :unmatched-syntax nil)
+    (semanticdb-table "semanticdb-table"
+      :major-mode c++-mode
+      :tags 
+        '( ("card.h" include nil nil [1 18])
+            ("Card" function
+               (:constructor-flag t
+                :parent "Card"
+                :type ("Card" type (:type "class") nil nil))
+                nil [20 36])
+            ("Card" function
+               (:destructor-flag t
+                :parent "Card"
+                :type "void")
+                nil [38 67]))          
+      :file "card.cpp"
+      :pointmax 69
+      :fsize 68
+      :lastmodtime '(23268 43256 361087 934000)
+      :unmatched-syntax nil)
+    (semanticdb-table "semanticdb-table"
+      :major-mode c++-mode
+      :tags 
+        '( ("player.h" include nil nil [1 20])
+            ("Player" function
+               (:constructor-flag t
+                :parent "Player"
+                :arguments 
+                  ( ("n" variable (:type ("string" type (:type "class") nil nil)) (reparse-symbol arg-sub-list) [37 46]))                  
+                :type ("Player" type (:type "class") nil nil))
+                nil [22 81])
+            ("Player" function
+               (:destructor-flag t
+                :parent "Player"
+                :type "void")
+                nil [83 116]))          
+      :file "player.cpp"
+      :pointmax 117
+      :fsize 116
+      :lastmodtime '(23268 43631 9103 149000)
+      :unmatched-syntax nil)
+    (semanticdb-table "semanticdb-table"
+      :major-mode c++-mode
+      :tags 
+        '( ("game.h" include nil nil [1 18])
+            ("Game" function
+               (:constructor-flag t
+                :parent "Game"
+                :type ("Game" type (:type "class") nil nil))
+                nil [20 46])
+            ("Game" function
+               (:destructor-flag t
+                :parent "Game"
+                :type "void")
+                nil [48 77]))          
+      :file "game.cpp"
+      :pointmax 78
+      :fsize 77
+      :lastmodtime '(23268 43529 249099 16000)
+      :unmatched-syntax nil))
+  :file "!mnt!Files!accacio!Git!matcg!src!semantic.cache"
+  :semantic-tag-version "2.0"
+  :semanticdb-version "2.2")

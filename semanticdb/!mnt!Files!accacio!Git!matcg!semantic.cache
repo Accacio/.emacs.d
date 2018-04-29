@@ -1,0 +1,26 @@
+;; Object semanticdb-project-database-file
+;; SEMANTICDB Tags save file
+(semanticdb-project-database-file "semanticdb-project-database-file"
+  :tables
+  (list
+    (semanticdb-table "semanticdb-table"
+      :major-mode c++-mode
+      :tags 
+        '( ("game.h" include (:system-flag t) nil [2 19])
+            ("cemetery.h" include (:system-flag t) nil [20 40])
+            ("card.h" include (:system-flag t) nil [41 57])
+            ("monster.h" include (:system-flag t) nil [58 77])
+            ("player.h" include (:system-flag t) nil [78 96])
+            ("deck.h" include (:system-flag t) nil [97 113])
+            ("conio.h" include (:system-flag t) nil [115 132])
+            ("vector" include (:system-flag t) nil [133 149])
+            ("iostream" include (:system-flag t) nil [150 168])
+            ("main" function (:type "int") nil [170 1171]))          
+      :file "matcg.cpp"
+      :pointmax 1172
+      :fsize 1171
+      :lastmodtime '(23268 59578 105750 771000)
+      :unmatched-syntax nil))
+  :file "!mnt!Files!accacio!Git!matcg!semantic.cache"
+  :semantic-tag-version "2.0"
+  :semanticdb-version "2.2")

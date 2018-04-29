@@ -1,0 +1,59 @@
+;;; -*- coding: utf-8 -*-
+
+;; ----- ido-last-directory-list -----
+(
+ ("/mnt/Files/accacio/Git/matcg/" . "include/")
+ ("/home/accacio/" . "Desktop/")
+ ("/mnt/Files/accacio/Git/" . "matcg/")
+ ("/mnt/Files/accacio/" . "Git/")
+ ("/mnt/Files/" . "accacio/")
+ ("/mnt/" . "Files/")
+ ("/" . "mnt/")
+ ("/home/" . "accacio/")
+)
+
+;; ----- ido-work-directory-list -----
+(
+ "/home/accacio/"
+ "/mnt/Files/accacio/Git/matcg/include/"
+ "/mnt/Files/accacio/Git/matcg/"
+)
+
+;; ----- ido-work-file-list -----
+(
+ ".emacs"
+ "card.h"
+ "matcg.cpp"
+)
+
+;; ----- ido-dir-file-cache -----
+(
+ ("/home/accacio/" (23269 53369 194803 540000) ".steam/" ".emacs~" ".guake-indicator/" ".dmrc" ".emacs.d.irony/" "Dropbox/" ".matlab/" "./" ".xournal/" ".gnupg/" ".opera/" ".ssh/" "../" ".emacs.d.old/" "examples.desktop" ".ICEauthority" ".kde/" ".thunderbird/" ".texmf-var/" ".xsession-errors" ".config/" ".apport-ignore.xml" ".gem/" ".java/" ".mono/" ".gvfs/" ".bash_history" ".gnome2_private/" ".dia/" ".pki/" "Pictures/" ".steampath" "help" "Qt/" ".bash_logout" ".pulse-cookie" ".gimp-2.8/" ".BOINC/" "Videos/" ".local/" ".cache/" ".gconf/" ".dropbox-dist/" ".profile" ".xsession-errors.old" ".BOINC Manager" "demos/" ".emacs.d/" ".gnome2/" ".bashrc~" "bin/" ".opera-next/" ".subversion/" ".swt/" ".bashrc" ".Xauthority" ".steampid" "opt/" ".dropbox/" ".emacs" ".sudo_as_admin_successful" ".profile~" ".codeblocks/" ".compiz/" ".eclipse/" "Music/" ".gitconfig" ".mozilla/" ".dbus/" "Documents/" "Desktop/" "Steam/" ".nano/" "Public/" ".bundle/" ".thumbnails/" ".wget-hsts" "Downloads/" "Templates/")
+
+ ("/mnt/Files/accacio/Git/matcg/include/" (23269 36 961994 226000) "card.h" "./" "monster.h" "../" "player.h" "#card.h#" "game.h" "cemetery.h" "deck.h")
+
+ ("/mnt/Files/accacio/Git/matcg/" (23269 36 961994 226000) "metas.txt" "./" "README.md" ".gitignore" "docs/" ".clang_complete" "matcg.layout" ".git/" "#matcg.cpp#" "../" "matcg.cbp" "include/" "matcg.cpp" "src/")
+
+ ("/mnt/Files/accacio/accacio/" (23230 13967 379233 198000) "./" "index.html" "about.md" "assets/" "_posts/" ".gitignore" "index.html~" "404.html" ".sass-cache/" "_site/" "dist/" "_config.yml~" "Gemfile.lock" "Gemfile" "../" "_config.yml" "Site.mm" "404.html~" "Imagens/")
+
+ ("/home/accacio/Desktop/" (23230 23667 86372 850000) "./" "../" "SpaceChem.desktop")
+
+ ("/home/accacio/Dropbox/" (23226 26794 718078 766000) "./" "../" "wallpapers/" "Livro/" "produtividade/" "profiles/" "Linux/" "Evelise e Rafael/" "Documents-EI_RTE/" "TCC/" "Intercambio/" "Portables/" "Resto/" "AccDoc/" "zimprimir/" "AccLib/" ".dropbox.cache/" "Instalarprogramas/" ".dropbox" "Commande Avancee/" "Cacilda/")
+
+ ("/mnt/Files/accacio/Git/" (23268 24323 980319 77000) "./" "rte-docs/" "build-controlaide-Desktop_Qt_5_10_1_GCC_64bit-Debug/" "controlaide1/" ".metadata/" "accacio.github.io/" "matcg/" "../" "controlaide/")
+
+ ("/mnt/Files/accacio/" (23223 32998 839874 970000) "./" ".profile" ".bash_logout" ".bashrc" "../" "Git/" "my-awesome-site/" "examples.desktop" "accacio/")
+
+ ("/mnt/Files/" (23209 22725 906319 680000) "./" "../" "lost+found/" "accacio/")
+
+ ("/mnt/" (23265 35968 840014 45000) "./" "../" "Files/")
+
+ ("/home/accacio/./" (23268 47833 717273 824000) ".steam/" ".emacs~" ".guake-indicator/" ".dmrc" ".emacs.d.irony/" "Dropbox/" ".matlab/" "./" ".xournal/" ".gnupg/" ".opera/" ".ssh/" "../" ".emacs.d.old/" "examples.desktop" ".ICEauthority" ".kde/" ".thunderbird/" ".texmf-var/" ".xsession-errors" ".config/" ".apport-ignore.xml" ".gem/" ".java/" ".mono/" ".gvfs/" ".bash_history" ".gnome2_private/" ".dia/" ".pki/" "Pictures/" ".steampath" "help" "Qt/" ".bash_logout" ".pulse-cookie" ".gimp-2.8/" ".BOINC/" "Videos/" ".local/" ".cache/" ".gconf/" ".dropbox-dist/" ".profile" ".xsession-errors.old" ".BOINC Manager" "demos/" ".emacs.d/" ".gnome2/" ".bashrc~" "bin/" ".opera-next/" ".subversion/" ".swt/" ".bashrc" ".Xauthority" ".steampid" "opt/" ".dropbox/" ".emacs" ".sudo_as_admin_successful" ".profile~" ".codeblocks/" ".compiz/" ".eclipse/" "Music/" ".gitconfig" ".mozilla/" ".dbus/" "Documents/" "Desktop/" "Steam/" ".nano/" "Public/" ".bundle/" ".thumbnails/" ".wget-hsts" "Downloads/" "Templates/")
+
+ ("/home/" (23209 23835 446462 10000) "./" "../" "accacio/")
+
+ ("/home/accacio/.xournal/" (23211 35697 116218 697000) "./" "../" "recent-files" "config")
+)
+
+;; ----- ido-unc-hosts-cache -----
+t
