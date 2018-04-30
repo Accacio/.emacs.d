@@ -1,6 +1,7 @@
 
 ;; ----- smex-history -----
 (
+
  comment-region
  uncomment-region
  cmake-ide-compile
@@ -8,6 +9,7 @@
  find-file-at-point
  cmake-ide-run-cmake
  dired
+
 )
 
 ;; ----- smex-data -----
@@ -28,15 +30,4 @@
  (eval-region . 7)
  (mc/mark-next-lines . 5)
  (undo-tree-visualize . 1)
- (uncomment-region . 4)
- (find-file-at-point . 6)
- (c-mode . 1)
- (c++-mode . 2)
- (c-c++-menu . 3)
- (ff-find-other-file . 1)
- (make-directory . 2)
- (compile . 23)
- (cmake-ide-compile . 16)
- (cmake-ide-run-cmake . 1)
- (comment-region . 2)
 )
