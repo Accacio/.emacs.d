@@ -1,13 +1,13 @@
 
 ;; ----- smex-history -----
 (
+ comment-region
  uncomment-region
- company-yasnippet
+ cmake-ide-compile
+ compile
+ find-file-at-point
+ cmake-ide-run-cmake
  dired
- eval-region
- package-list-packages
- mc/mark-next-lines
- global-company-mode
 )
 
 ;; ----- smex-data -----
@@ -17,16 +17,26 @@
  (irony-cdb-autosetup-compile-options . 1)
  (rename-file . 1)
  (irony-cdb-json-select . 1)
- (dired . 3)
+ (dired . 5)
  (package-list-packages . 11)
  (company-mode . 2)
  (yas-expand . 4)
  (customize-group . 1)
- (package-install . 1)
+ (package-install . 2)
  (company-yasnippet . 7)
  (global-company-mode . 2)
  (eval-region . 7)
  (mc/mark-next-lines . 5)
  (undo-tree-visualize . 1)
- (uncomment-region . 3)
+ (uncomment-region . 4)
+ (find-file-at-point . 6)
+ (c-mode . 1)
+ (c++-mode . 2)
+ (c-c++-menu . 3)
+ (ff-find-other-file . 1)
+ (make-directory . 2)
+ (compile . 23)
+ (cmake-ide-compile . 16)
+ (cmake-ide-run-cmake . 1)
+ (comment-region . 2)
 )

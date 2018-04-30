@@ -33,6 +33,10 @@
       ido-default-file-method 'selected-window
       ido-auto-merge-work-directories-length -1)
 
+;; (require 'rtags)
+;; (require 'subr-x)
+;; (cmake-ide-setup)
+
 (ido-mode +1)
 (flx-ido-mode 1)
 
@@ -255,18 +259,18 @@
  '(global-subword-mode t)
  '(inhibit-startup-screen t)
  '(initial-buffer-choice "~/")
+ '(initial-frame-alist (quote ((fullscreen . maximized))))
  '(initial-scratch-message
    ";; This buffer is for text that is not saved, and for Lisp evaluation.
 ;; To create a file, visit it with \\[find-file] and enter text in its buffer.
 ;; \\[eval-print-last-sexp] to evaluate
 
 ")
- '(initial-frame-alist (quote ((fullscreen . maximized))))
  '(menu-bar-mode t)
  '(package-enable-at-startup nil)
  '(package-selected-packages
    (quote
-    (fuzzy multiple-cursors ace-window avy expand-region flymake-cursor flymake-google-cpplint flymake-go iedit company-quickhelp markdown-toc markdown-preview-mode markdown-preview-eww markdown-mode ahk-mode guru-mode neotree impatient-mode company-irony company-irony-c-headers flycheck-irony irony irony-eldoc rainbow-mode nyan-mode flycheck magit ido-ubiquitous flx-ido smartparens smex undo-tree volatile-highlights yasnippet)))
+    (cmake-ide fuzzy multiple-cursors ace-window avy expand-region flymake-cursor flymake-google-cpplint flymake-go iedit company-quickhelp markdown-toc markdown-preview-mode markdown-preview-eww markdown-mode ahk-mode guru-mode neotree impatient-mode company-irony company-irony-c-headers flycheck-irony irony irony-eldoc rainbow-mode nyan-mode flycheck magit ido-ubiquitous flx-ido smartparens smex undo-tree volatile-highlights yasnippet)))
  '(show-smartparens-global-mode t)
  '(tool-bar-mode nil))
 (custom-set-faces
