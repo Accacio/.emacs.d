@@ -92,7 +92,15 @@
 (defun my:flymake-google-init ()
   (require 'flymake-google-cpplint)
   (custom-set-variables
-   '(flymake-google-cpplint-command "/usr/local/bin/cpplint"))
+   '(flymake-google-cpplint-command
+     (if (string=  window-system "w32")
+	 '"d:/Users/Accacio/AppData/Local/Programs/Python/Python36-32/Scripts/cpplint.exe"
+       '"/usr/local/bin/cpplint"
+       )
+     )
+   )
+
+  
   (flymake-google-cpplint-load)
   (flymake-cursor-mode 1)
   )
@@ -250,7 +258,6 @@
  '(doc-view-continuous t)
  '(doc-view-ghostscript-program "mgs" t)
  '(fancy-splash-image nil)
- '(flymake-google-cpplint-command "/usr/local/bin/cpplint")
  '(global-linum-mode t)
  '(global-subword-mode t)
  '(inhibit-startup-screen t)

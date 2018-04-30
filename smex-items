@@ -1,13 +1,13 @@
 
 ;; ----- smex-history -----
 (
+ customize
+ dired
  uncomment-region
  company-yasnippet
- dired
  eval-region
  package-list-packages
  mc/mark-next-lines
- global-company-mode
 )
 
 ;; ----- smex-data -----
@@ -17,7 +17,7 @@
  (irony-cdb-autosetup-compile-options . 1)
  (rename-file . 1)
  (irony-cdb-json-select . 1)
- (dired . 3)
+ (dired . 4)
  (package-list-packages . 11)
  (company-mode . 2)
  (yas-expand . 4)
@@ -29,4 +29,5 @@
  (mc/mark-next-lines . 5)
  (undo-tree-visualize . 1)
  (uncomment-region . 3)
+ (customize . 1)
 )
