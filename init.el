@@ -244,6 +244,9 @@
 (global-set-key (kbd "C-x <down>") 'mc/mark-next-like-this)
 (global-set-key (kbd "C-x <up>") 'mc/mark-previous-like-this)
 
+;;; Soft Wrap
+(global-visual-line-mode 1)
+
 
 (custom-set-variables
  ;; custom-set-variables was added by Custom.
@@ -306,3 +309,5 @@
      (term "/bin/bash"))))
 (server-start)
 (put 'dired-find-alternate-file 'disabled nil)
+(put 'upcase-region 'disabled nil)
+(put 'downcase-region 'disabled nil)
