@@ -1,4 +1,4 @@
- ;; Added by Package.el.  This must come before configurations of
+;; Added by Package.el.  This must come before configurations of
 ;; installed packages.  Don't delete this line.  If you don't want it,
 ;; just comment it out by adding a semicolon to the start of the line.
 ;; You may delete these explanatory comments.
@@ -71,10 +71,10 @@
 (add-hook 'magit-mode-hook 'magit-load-config-extensions)
 
 ;; full screen magit-status
-(defadvice magit-status (around magit-fullscreen activate)
-  (window-configuration-to-register :magit-fullscreen)
-  ad-do-it
-  (delete-other-windows))
+;(defadvice magit-status (around magit-fullscreen activate)
+;  (window-configuration-to-register :magit-fullscreen)
+;  ad-do-it
+;  (delete-other-windows))
 
 (global-unset-key (kbd "C-x g"))
 (global-set-key (kbd "C-x g h") 'magit-log)
@@ -247,6 +247,8 @@
 ;;; Soft Wrap
 (global-visual-line-mode 1)
 
+;;; Show Column
+(setq column-number-mode t)
 
 (custom-set-variables
  ;; custom-set-variables was added by Custom.
@@ -265,10 +267,14 @@
  '(doc-view-continuous t)
  '(doc-view-ghostscript-program "mgs" t)
  '(fancy-splash-image nil)
+ '(flymake-google-cpplint-command
+   (if
+       (string= window-system "w32")
+       (quote "d:/Users/Accacio/AppData/Local/Programs/Python/Python36-32/Scripts/cpplint.exe")
+     (quote "/usr/local/bin/cpplint")))
  '(global-linum-mode t)
  '(global-subword-mode t)
  '(inhibit-startup-screen t)
- '(initial-buffer-choice "~/")
  '(initial-frame-alist (quote ((fullscreen . maximized))))
  '(initial-scratch-message
    ";; This buffer is for text that is not saved, and for Lisp evaluation.
@@ -280,7 +286,7 @@
  '(package-enable-at-startup nil)
  '(package-selected-packages
    (quote
-    (cmake-ide fuzzy multiple-cursors ace-window avy expand-region flymake-cursor flymake-google-cpplint flymake-go iedit company-quickhelp markdown-toc markdown-preview-mode markdown-preview-eww markdown-mode ahk-mode guru-mode neotree impatient-mode company-irony company-irony-c-headers flycheck-irony irony irony-eldoc rainbow-mode nyan-mode flycheck magit ido-ubiquitous flx-ido smartparens smex undo-tree volatile-highlights yasnippet)))
+    (which-key tabbar try cmake-ide fuzzy multiple-cursors ace-window avy expand-region flymake-cursor flymake-google-cpplint flymake-go iedit company-quickhelp markdown-toc markdown-preview-mode markdown-preview-eww markdown-mode ahk-mode guru-mode neotree impatient-mode company-irony company-irony-c-headers flycheck-irony irony irony-eldoc rainbow-mode nyan-mode flycheck magit ido-ubiquitous flx-ido smartparens smex undo-tree volatile-highlights yasnippet)))
  '(show-smartparens-global-mode t)
  '(tool-bar-mode nil))
 (custom-set-faces
@@ -306,8 +312,14 @@
        (rename-uniquely))
    (if (string=  window-system "w32")
        (eshell)
-     (term "/bin/bash"))))
+     (term "/bin/bash")
+     )))
 (server-start)
 (put 'dired-find-alternate-file 'disabled nil)
 (put 'upcase-region 'disabled nil)
 (put 'downcase-region 'disabled nil)
+
+
+(desktop-save-mode)
+(tabbar-mode)
+(which-key-mode)
