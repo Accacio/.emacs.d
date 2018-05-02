@@ -1,0 +1,148 @@
+;; Object semanticdb-project-database-file
+;; SEMANTICDB Tags save file
+(semanticdb-project-database-file "semanticdb-project-database-file"
+  :tables
+  (list
+    (semanticdb-table "semanticdb-table"
+      :major-mode c++-mode
+      :tags 
+        '( ("BOOST_REGEX_OBJECT_CACHE_HPP" variable (:constant-flag t) nil [503 531])
+            ("map" include (:system-flag t) nil [533 547])
+            ("list" include (:system-flag t) nil [548 563])
+            ("stdexcept" include (:system-flag t) nil [564 584])
+            ("string" include (:system-flag t) nil [585 602])
+            ("boost/config.hpp" include (:system-flag t) nil [603 630])
+            ("boost/shared_ptr.hpp" include (:system-flag t) nil [631 662])
+            ("boost" type
+               (:members 
+                  ( ("object_cache" type
+                       (:template 
+                          ( ("Key" type (:type "class") nil nil)
+                            ("Object" type (:type "class") nil nil))                          
+                        :type "class"
+                        :members 
+                          ( ("public" label nil (reparse-symbol classsubparts) [818 825])
+                            ("value_type" variable (:type "int") (reparse-symbol classsubparts) [895 906])
+                            ("list_type" type
+                               (:typedef ("std::list" type
+                                     (:template-specifier 
+                                        ( ("value_type" type nil nil nil))                                        
+                                      :type "class")
+                                      nil nil)
+                                :type "typedef")
+                                (reparse-symbol classsubparts) [910 950])
+                            ("list_iterator" type
+                               (:typedef ("list_type::iterator" type (:type "class") nil nil)
+                                :type "typedef")
+                                (reparse-symbol classsubparts) [954 1005])
+                            ("map_type" type
+                               (:typedef ("std::map" type
+                                     (:template-specifier 
+                                        ( ("Key" type nil nil nil)
+                                          ("list_iterator" type nil nil nil))                                        
+                                      :type "class")
+                                      nil nil)
+                                :type "typedef")
+                                (reparse-symbol classsubparts) [1009 1055])
+                            ("map_iterator" type
+                               (:typedef ("map_type::iterator" type (:type "class") nil nil)
+                                :type "typedef")
+                                (reparse-symbol classsubparts) [1059 1108])
+                            ("size_type" type
+                               (:typedef ("list_type::size_type" type (:type "class") nil nil)
+                                :type "typedef")
+                                (reparse-symbol classsubparts) [1112 1160])
+                            ("get" function
+                               (:prototype-flag t
+                                :typemodifiers ("static")
+                                :arguments 
+                                  ( ("k" variable
+                                       (:reference 1
+                                        :constant-flag t
+                                        :type ("Key" type (:type "class") nil nil))
+                                        (reparse-symbol arg-sub-list) [1207 1220])
+                                    ("l_max_cache_size" variable (:type ("size_type" type (:type "class") nil nil)) (reparse-symbol arg-sub-list) [1221 1248]))                                  
+                                :type ("boost::shared_ptr" type
+                                     (:template-specifier 
+                                        ( ("Object" type (:constant-flag t) nil nil))                                        
+                                      :type "class")
+                                      nil nil))
+                                (reparse-symbol classsubparts) [1164 1249])
+                            ("private" label nil (reparse-symbol classsubparts) [1251 1259])
+                            ("do_get" function
+                               (:prototype-flag t
+                                :typemodifiers ("static")
+                                :arguments 
+                                  ( ("k" variable
+                                       (:reference 1
+                                        :constant-flag t
+                                        :type ("Key" type (:type "class") nil nil))
+                                        (reparse-symbol arg-sub-list) [1309 1322])
+                                    ("l_max_cache_size" variable (:type ("size_type" type (:type "class") nil nil)) (reparse-symbol arg-sub-list) [1323 1350]))                                  
+                                :type ("boost::shared_ptr" type
+                                     (:template-specifier 
+                                        ( ("Object" type (:constant-flag t) nil nil))                                        
+                                      :type "class")
+                                      nil nil))
+                                (reparse-symbol classsubparts) [1263 1351])
+                            ("data" type
+                               (:members 
+                                  ( ("cont" variable (:type ("list_type" type (:type "class") nil nil)) (reparse-symbol classsubparts) [1379 1396])
+                                    ("index" variable (:type ("map_type" type (:type "class") nil nil)) (reparse-symbol classsubparts) [1403 1421]))                                  
+                                :type "struct")
+                                (reparse-symbol classsubparts) [1356 1427])
+                            ("data" type
+                               (:prototype t
+                                :type "struct")
+                                (reparse-symbol classsubparts) [1596 1608]))                          )
+                        (reparse-symbol namespacesubparts) [762 1611])
+                    ("get" function
+                       (:template 
+                          ( ("Key" type (:type "class") nil nil)
+                            ("Object" type (:type "class") nil nil))                          
+                        :type ("boost::shared_ptr" type
+                             (:template-specifier 
+                                ( ("Object" type (:constant-flag t) nil nil))                                
+                              :type "class")
+                              nil nil)
+                        :arguments 
+                          ( ("k" variable
+                               (:reference 1
+                                :constant-flag t
+                                :type ("Key" type (:type "class") nil nil))
+                                (reparse-symbol arg-sub-list) [1711 1724])
+                            ("l_max_cache_size" variable (:type ("size_type" type (:type "class") nil nil)) (reparse-symbol arg-sub-list) [1725 1752]))                          
+                        :parent "object_cache")
+                        (reparse-symbol namespacesubparts) [1613 2351])
+                    ("do_get" function
+                       (:template 
+                          ( ("Key" type (:type "class") nil nil)
+                            ("Object" type (:type "class") nil nil))                          
+                        :type ("boost::shared_ptr" type
+                             (:template-specifier 
+                                ( ("Object" type (:constant-flag t) nil nil))                                
+                              :type "class")
+                              nil nil)
+                        :arguments 
+                          ( ("k" variable
+                               (:reference 1
+                                :constant-flag t
+                                :type ("Key" type (:type "class") nil nil))
+                                (reparse-symbol arg-sub-list) [2454 2467])
+                            ("l_max_cache_size" variable (:type ("size_type" type (:type "class") nil nil)) (reparse-symbol arg-sub-list) [2468 2495]))                          
+                        :parent "object_cache")
+                        (reparse-symbol namespacesubparts) [2353 5241]))                  
+                :type "namespace")
+                nil [744 5244]))          
+      :file "object_cache.hpp"
+      :pointmax 5253
+      :fsize 5252
+      :lastmodtime '(21413 1116 0 0)
+      :unmatched-syntax '((FRIEND 1589 . 1595) (punctuation 893 . 894) (punctuation 892 . 893) (CONST 887 . 892) (symbol 883 . 886) (punctuation 881 . 882) (punctuation 880 . 881) (CONST 875 . 880) (symbol 868 . 874) (punctuation 867 . 868) (symbol 857 . 867) (punctuation 856 . 857) (punctuation 855 . 856) (symbol 850 . 855) (punctuation 849 . 850) (punctuation 848 . 849) (punctuation 846 . 847) (symbol 842 . 846) (punctuation 841 . 842) (punctuation 840 . 841) (symbol 837 . 840) (TYPEDEF 829 . 836))
+      :lexical-table 
+        '(("BOOST_REGEX_OBJECT_CACHE_HPP")
+          )
+))
+  :file "!usr!include!boost!regex!pending!semantic.cache"
+  :semantic-tag-version "2.0"
+  :semanticdb-version "2.2")

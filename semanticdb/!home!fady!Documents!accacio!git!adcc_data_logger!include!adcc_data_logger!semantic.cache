@@ -1,0 +1,72 @@
+;; Object semanticdb-project-database-file
+;; SEMANTICDB Tags save file
+(semanticdb-project-database-file "semanticdb-project-database-file"
+  :tables
+  (list
+    (semanticdb-table "semanticdb-table"
+      :major-mode c++-mode
+      :tags 
+        '( ("ROSBAG_RECORDER_H" variable (:constant-flag t) nil [35 52])
+            ("termios.h" include (:system-flag t) nil [77 97])
+            ("unistd.h" include (:system-flag t) nil [98 117])
+            ("queue" include (:system-flag t) nil [126 142])
+            ("string" include (:system-flag t) nil [143 160])
+            ("vector" include (:system-flag t) nil [161 178])
+            ("list" include (:system-flag t) nil [179 194])
+            ("boost/thread/condition.hpp" include (:system-flag t) nil [196 233])
+            ("boost/thread/mutex.hpp" include (:system-flag t) nil [234 267])
+            ("boost/regex.hpp" include (:system-flag t) nil [268 294])
+            ("boost/thread.hpp" include (:system-flag t) nil [295 322])
+            ("ros/ros.h" include (:system-flag t) nil [324 344])
+            ("ros/time.h" include (:system-flag t) nil [345 366])
+            ("std_msgs/Empty.h" include (:system-flag t) nil [368 395])
+            ("topic_tools/shape_shifter.h" include (:system-flag t) nil [396 434])
+            ("rosbag/bag.h" include nil nil [436 459])
+            ("rosbag/stream.h" include nil nil [460 486])
+            ("rosbag/macros.h" include nil nil [487 513])
+            ("diagnostic_msgs/DiagnosticStatus.h" include nil nil [515 560])
+            ("adcc_data_logger/dir_manager.hpp" include nil nil [562 605])
+            ("rosbag" type
+               (:members 
+                  ( ("OutgoingMessage" variable (:type ("ROSBAG_DECL" type
+                         (:prototype t
+                          :type "class")
+                          nil nil)) (reparse-symbol namespacesubparts) [648 1052])
+                    ("OutgoingQueue" variable (:type ("ROSBAG_DECL" type
+                         (:prototype t
+                          :type "class")
+                          nil nil)) (reparse-symbol namespacesubparts) [1054 1324])
+                    ("RecorderOptions" variable (:type ("ROSBAG_DECL" type
+                         (:prototype t
+                          :type "struct")
+                          nil nil)) (reparse-symbol namespacesubparts) [1326 2194])
+                    ("BagState" variable (:type ("ROSBAG_DECL" type
+                         (:prototype t
+                          :type "struct")
+                          nil nil)) (reparse-symbol namespacesubparts) [2196 2298])
+                    ("Options" variable (:type ("ROSBAG_DECL" type
+                         (:prototype t
+                          :type "class")
+                          nil nil)) (reparse-symbol namespacesubparts) [2300 2956])
+                    ("Recorder" variable (:type ("ROSBAG_DECL" type
+                         (:prototype t
+                          :type "class")
+                          nil nil)) (reparse-symbol namespacesubparts) [2958 6910]))                  
+                :type "namespace")
+                nil [628 6913]))          
+      :file "recorder.hpp"
+      :pointmax 6942
+      :fsize 6941
+      :lastmodtime '(23273 27542 665538 497000)
+      :unmatched-syntax nil
+      :lexical-table 
+        '(("ROSBAG_RECORDER_H")
+          )
+)
+    (semanticdb-table "semanticdb-table"
+      :file "dir_manager.hpp"
+      :fsize 2616
+      :lastmodtime '(23265 59557 131773 278000)))
+  :file "!home!fady!Documents!accacio!git!adcc_data_logger!include!adcc_data_logger!semantic.cache"
+  :semantic-tag-version "2.0"
+  :semanticdb-version "2.2")

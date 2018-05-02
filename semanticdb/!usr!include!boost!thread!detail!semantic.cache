@@ -1,0 +1,934 @@
+;; Object semanticdb-project-database-file
+;; SEMANTICDB Tags save file
+(semanticdb-project-database-file "semanticdb-project-database-file"
+  :tables
+  (list
+    (semanticdb-table "semanticdb-table"
+      :major-mode c++-mode
+      :tags 
+        '( ("BOOST_THREAD_CONFIG_WEK01032003_HPP" variable (:constant-flag t) nil [311 346])
+            ("boost/config.hpp" include (:system-flag t) nil [348 375])
+            ("boost/detail/workaround.hpp" include (:system-flag t) nil [376 414])
+            ("boost/thread/detail/platform.hpp" include (:system-flag t) nil [415 458])
+            ("BOOST_THREAD_DETAIL_USE_ATTRIBUTE_MAY_ALIAS" variable (:constant-flag t) nil [791 834])
+            ("BOOST_THREAD_ATTRIBUTE_MAY_ALIAS" variable (:constant-flag t) nil [845 877])
+            ("BOOST_THREAD_ASSERT_PRECONDITION" variable (:constant-flag t) nil [1339 1371])
+            ("BOOST_THREAD_VERIFY_PRECONDITION" variable (:constant-flag t) nil [1390 1422])
+            ("BOOST_THREAD_THROW_ELSE_RETURN" variable (:constant-flag t) nil [1464 1494])
+            ("BOOST_THREAD_PROVIDES_BASIC_THREAD_ID" variable (:constant-flag t) nil [3141 3178])
+            ("BOOST_THREAD_RVALUE_REFERENCES_DONT_MATCH_FUNTION_PTR" variable (:constant-flag t) nil [3309 3362])
+            ("BOOST_THREAD_VERSION" variable (:constant-flag t) nil [3434 3454])
+            ("BOOST_THREAD_USES_CHRONO" variable (:constant-flag t) nil [3809 3833])
+            ("BOOST_THREAD_USES_ATOMIC" variable (:constant-flag t) nil [3935 3959])
+            ("BOOST_THREAD_ONCE_ATOMIC" variable (:constant-flag t) nil [4071 4095])
+            ("BOOST_THREAD_PROVIDES_PROMISE_LAZY" variable (:constant-flag t) nil [4522 4556])
+            ("BOOST_THREAD_PROVIDES_THREAD_EQ" variable (:constant-flag t) nil [4693 4724])
+            ("BOOST_THREAD_PROVIDES_NESTED_LOCKS" variable (:constant-flag t) nil [7056 7090])
+            ("BOOST_THREAD_PROVIDES_CONDITION" variable (:constant-flag t) nil [7218 7249])
+            ("BOOST_THREAD_USES_DATETIME" variable (:constant-flag t) nil [7370 7396])
+            ("BOOST_THREAD_PROVIDES_INTERRUPTIONS" variable (:constant-flag t) nil [9436 9471])
+            ("BOOST_THREAD_EXPLICIT_LOCK_CONVERSION" variable (:constant-flag t) nil [9654 9691])
+            ("boost/thread/detail/platform.hpp" include (:system-flag t) nil [11270 11313])
+            ("BOOST_THREAD_USE_LIB" variable (:constant-flag t) nil [12675 12695])
+            ("BOOST_THREAD_DECL" variable (:constant-flag t) nil [13192 13209])
+            ("BOOST_LIB_NAME" variable (:constant-flag t) nil [13895 13909])
+            ("boost/config/auto_link.hpp" include (:system-flag t) nil [14058 14095]))          
+      :file "config.hpp"
+      :pointmax 14380
+      :fsize 14379
+      :lastmodtime '(21413 1117 0 0)
+      :unmatched-syntax '((symbol 9388 . 9427) (symbol 9380 . 9387) (punctuation 9378 . 9379) (punctuation 9376 . 9377) (punctuation 9375 . 9376) (symbol 7335 . 7361) (symbol 7327 . 7334) (punctuation 7325 . 7326) (punctuation 7323 . 7324) (punctuation 7322 . 7323) (symbol 7174 . 7209) (symbol 7166 . 7173) (punctuation 7164 . 7165) (punctuation 7162 . 7163) (punctuation 7161 . 7162) (symbol 7009 . 7047) (symbol 7001 . 7008) (punctuation 6999 . 7000) (punctuation 6997 . 6998) (punctuation 6996 . 6997) (symbol 4653 . 4684) (symbol 4645 . 4652) (punctuation 4643 . 4644) (punctuation 4641 . 4642) (punctuation 4640 . 4641) (symbol 4479 . 4513) (symbol 4471 . 4478) (punctuation 4469 . 4470) (punctuation 4467 . 4468) (punctuation 4466 . 4467) (symbol 3902 . 3926) (symbol 3894 . 3901) (punctuation 3892 . 3893) (punctuation 3890 . 3891) (punctuation 3889 . 3890) (symbol 3776 . 3800) (symbol 3768 . 3775) (punctuation 3766 . 3767) (punctuation 3764 . 3765) (punctuation 3763 . 3764) (symbol 3095 . 3132) (symbol 3087 . 3094) (punctuation 3085 . 3086) (punctuation 3083 . 3084) (punctuation 3082 . 3083) (semantic-list 616 . 634) (symbol 609 . 616) (punctuation 608 . 609) (punctuation 606 . 607) (punctuation 605 . 606))
+      :lexical-table 
+        '(("BOOST_THREAD_ATTRIBUTE_MAY_ALIAS" . ((symbol "__attribute__" 878 . 891) (semantic-list "((__may_alias__))" 891 . 908)))
+          ("BOOST_THREAD_PROVIDES_INTERRUPTIONS")
+          ("BOOST_THREAD_THROW_ELSE_RETURN" (spp-arg-list ("EX" "RET") 1494 . 1503) . ((RETURN "return" 1514 . 1520) (semantic-list "(RET)" 1521 . 1526)))
+          ("BOOST_THREAD_RVALUE_REFERENCES_DONT_MATCH_FUNTION_PTR")
+          ("BOOST_THREAD_ONCE_ATOMIC")
+          ("BOOST_THREAD_USE_LIB")
+          ("BOOST_LIB_NAME" . ((symbol "boost_thread" 13910 . 13922)))
+          ("BOOST_THREAD_ASSERT_PRECONDITION" (spp-arg-list ("EXPR" "EX") 1371 . 1381))
+          ("BOOST_THREAD_USES_DATETIME")
+          ("BOOST_THREAD_EXPLICIT_LOCK_CONVERSION")
+          ("BOOST_THREAD_DECL" . ((symbol "BOOST_SYMBOL_VISIBLE" 13210 . 13230)))
+          ("BOOST_THREAD_CONFIG_WEK01032003_HPP")
+          ("BOOST_THREAD_PROVIDES_PROMISE_LAZY")
+          ("BOOST_THREAD_PROVIDES_NESTED_LOCKS")
+          ("BOOST_THREAD_DETAIL_USE_ATTRIBUTE_MAY_ALIAS")
+          ("BOOST_THREAD_USES_ATOMIC")
+          ("BOOST_THREAD_VERIFY_PRECONDITION" (spp-arg-list ("EXPR" "EX") 1422 . 1432) . ((semantic-list "(void)" 1443 . 1449) (semantic-list "(EXPR)" 1449 . 1455)))
+          ("BOOST_THREAD_PROVIDES_CONDITION")
+          ("BOOST_THREAD_PROVIDES_BASIC_THREAD_ID")
+          ("BOOST_THREAD_VERSION" . ((number "2" 3455 . 3456)))
+          ("BOOST_THREAD_USES_CHRONO")
+          ("BOOST_THREAD_PROVIDES_THREAD_EQ")
+          )
+)
+    (semanticdb-table "semanticdb-table"
+      :major-mode c++-mode
+      :tags 
+        '( ("BOOST_THREAD_DETAIL_THREAD_GROUP_HPP" variable (:constant-flag t) nil [54 90])
+            ("list" include (:system-flag t) nil [289 304])
+            ("boost/thread/shared_mutex.hpp" include (:system-flag t) nil [305 345])
+            ("boost/thread/mutex.hpp" include (:system-flag t) nil [346 379])
+            ("boost/thread/lock_guard.hpp" include (:system-flag t) nil [380 418])
+            ("boost/config/abi_prefix.hpp" include (:system-flag t) nil [420 458])
+            ("boost" type
+               (:members 
+                  ( ("thread_group" type
+                       (:members 
+                          ( ("private" label nil (reparse-symbol classsubparts) [589 597])
+                            ("thread_group" function
+                               (:prototype-flag t
+                                :constructor-flag t
+                                :arguments 
+                                  ( ("" variable
+                                       (:reference 1
+                                        :constant-flag t
+                                        :type ("thread_group" type (:type "class") nil nil))
+                                        (reparse-symbol arg-sub-list) [619 639]))                                  
+                                :type ("thread_group" type (:type "class") nil nil))
+                                (reparse-symbol classsubparts) [606 640])
+                            ("=" function
+                               (:prototype-flag t
+                                :operator-flag t
+                                :arguments 
+                                  ( ("" variable
+                                       (:reference 1
+                                        :constant-flag t
+                                        :type ("thread_group" type (:type "class") nil nil))
+                                        (reparse-symbol arg-sub-list) [673 693]))                                  
+                                :type ("thread_group" type (:type "class") nil nil))
+                                (reparse-symbol classsubparts) [649 694])
+                            ("public" label nil (reparse-symbol classsubparts) [699 706])
+                            ("thread_group" function
+                               (:constructor-flag t
+                                :type ("thread_group" type (:type "class") nil nil))
+                                (reparse-symbol classsubparts) [715 732])
+                            ("thread_group" function
+                               (:destructor-flag t
+                                :type "void")
+                                (reparse-symbol classsubparts) [741 962])
+                            ("is_this_thread_in" function (:type "bool") (reparse-symbol classsubparts) [972 1376])
+                            ("is_thread_in" function
+                               (:arguments 
+                                  ( ("thrd" variable
+                                       (:pointer 1
+                                        :type ("thread" type (:type "class") nil nil))
+                                        (reparse-symbol arg-sub-list) [1404 1417]))                                  
+                                :type "bool")
+                                (reparse-symbol classsubparts) [1386 1898])
+                            ("create_thread" function
+                               (:template 
+                                  ( ("F" type (:type "class") nil nil))                                  
+                                :type ("thread" type (:type "class") nil nil)
+                                :arguments 
+                                  ( ("threadfunc" variable (:type ("F" type (:type "class") nil nil)) (reparse-symbol arg-sub-list) [1959 1972]))                                  
+                                :pointer 1)
+                                (reparse-symbol classsubparts) [1908 2206])
+                            ("add_thread" function
+                               (:arguments 
+                                  ( ("thrd" variable
+                                       (:pointer 1
+                                        :type ("thread" type (:type "class") nil nil))
+                                        (reparse-symbol arg-sub-list) [2232 2245]))                                  
+                                :type "void")
+                                (reparse-symbol classsubparts) [2216 2651])
+                            ("remove_thread" function
+                               (:arguments 
+                                  ( ("thrd" variable
+                                       (:pointer 1
+                                        :type ("thread" type (:type "class") nil nil))
+                                        (reparse-symbol arg-sub-list) [2680 2693]))                                  
+                                :type "void")
+                                (reparse-symbol classsubparts) [2661 2961])
+                            ("join_all" function (:type "void") (reparse-symbol classsubparts) [2971 3502])
+                            ("size" function
+                               (:methodconst-flag t
+                                :type ("size_t" type (:type "class") nil nil))
+                                (reparse-symbol classsubparts) [3867 3996])
+                            ("private" label nil (reparse-symbol classsubparts) [4002 4010])
+                            ("threads" variable (:type ("std::list" type
+                                 (:template-specifier 
+                                    ( ("thread" type (:pointer 1) nil nil))                                    
+                                  :type "class")
+                                  nil nil)) (reparse-symbol classsubparts) [4019 4046])
+                            ("m" variable
+                               (:typemodifiers ("mutable")
+                                :type ("shared_mutex" type (:type "class") nil nil))
+                                (reparse-symbol classsubparts) [4055 4078]))                          
+                        :type "class")
+                        (reparse-symbol namespacesubparts) [560 4085]))                  
+                :type "namespace")
+                nil [538 4087])
+            ("boost/config/abi_suffix.hpp" include (:system-flag t) nil [4136 4174]))          
+      :file "thread_group.hpp"
+      :pointmax 4183
+      :fsize 4182
+      :lastmodtime '(21413 1117 0 0)
+      :unmatched-syntax nil
+      :lexical-table 
+        '(("BOOST_THREAD_DETAIL_THREAD_GROUP_HPP")
+          )
+)
+    (semanticdb-table "semanticdb-table"
+      :major-mode c++-mode
+      :tags 
+        '( ("BOOST_THREAD_RS06040501_HPP" variable (:constant-flag t) nil [364 391])
+            ("boost/config.hpp" include (:system-flag t) nil [438 465])
+            ("boost/config/requires_threads.hpp" include (:system-flag t) nil [515 559])
+            ("BOOST_THREAD_LINUX" variable (:constant-flag t) nil [651 669]))          
+      :file "platform.hpp"
+      :pointmax 2821
+      :fsize 2820
+      :lastmodtime '(21413 1117 0 0)
+      :unmatched-syntax '((string 2707 . 2765) (symbol 2701 . 2706) (punctuation 2693 . 2694))
+      :lexical-table 
+        '(("BOOST_THREAD_LINUX")
+          ("BOOST_THREAD_RS06040501_HPP")
+          )
+)
+    (semanticdb-table "semanticdb-table"
+      :major-mode c++-mode
+      :tags 
+        '( ("BOOST_THREAD_THREAD_HEAP_ALLOC_HPP" variable (:constant-flag t) nil [52 86])
+            ("boost/thread/detail/platform.hpp" include (:system-flag t) nil [321 364]))          
+      :file "thread_heap_alloc.hpp"
+      :pointmax 632
+      :fsize 631
+      :lastmodtime '(21413 1117 0 0)
+      :unmatched-syntax '((string 571 . 615) (symbol 565 . 570) (punctuation 564 . 565))
+      :lexical-table 
+        '(("BOOST_THREAD_THREAD_HEAP_ALLOC_HPP")
+          )
+)
+    (semanticdb-table "semanticdb-table"
+      :major-mode c++-mode
+      :tags 
+        '( ("BOOST_THREAD_DETAIL_DELETE_HPP" variable (:constant-flag t) nil [254 284])
+            ("boost/config.hpp" include (:system-flag t) nil [286 313])
+            ("BOOST_THREAD_DELETE_COPY_CTOR" variable (:constant-flag t) nil [608 637])
+            ("BOOST_THREAD_DELETE_COPY_ASSIGN" variable (:constant-flag t) nil [694 725])
+            ("BOOST_THREAD_NO_COPYABLE" variable (:constant-flag t) nil [1498 1522]))          
+      :file "delete.hpp"
+      :pointmax 1660
+      :fsize 1659
+      :lastmodtime '(21413 1117 0 0)
+      :unmatched-syntax nil
+      :lexical-table 
+        '(("BOOST_THREAD_NO_COPYABLE" (spp-arg-list ("CLASS") 1522 . 1529) . 
+              ((symbol "BOOST_THREAD_DELETE_COPY_CTOR" 1536 . 1565) (semantic-list "(CLASS)" 1565 . 1572) (symbol "BOOST_THREAD_DELETE_COPY_ASSIGN" 1579 . 1610) (semantic-list "(CLASS)" 1610 . 1617)))
+          ("BOOST_THREAD_DELETE_COPY_ASSIGN" (spp-arg-list ("CLASS") 725 . 732) . 
+              ((symbol "CLASS" 741 . 746) (punctuation "&" 746 . 747) (OPERATOR "operator" 748 . 756) (punctuation "=" 756 . 757) (semantic-list "(CLASS const&)" 757 . 771) (punctuation "=" 772 . 773) (DELETE "delete" 774 . 780) (punctuation ";" 780 . 781)))
+          ("BOOST_THREAD_DELETE_COPY_CTOR" (spp-arg-list ("CLASS") 637 . 644) . 
+              ((symbol "CLASS" 653 . 658) (semantic-list "(CLASS const&)" 658 . 672) (punctuation "=" 673 . 674) (DELETE "delete" 675 . 681) (punctuation ";" 681 . 682)))
+          ("BOOST_THREAD_DETAIL_DELETE_HPP")
+          )
+)
+    (semanticdb-table "semanticdb-table"
+      :major-mode c++-mode
+      :tags 
+        '( ("BOOST_THREAD_MOVE_HPP" variable (:constant-flag t) nil [289 310])
+            ("boost/thread/detail/config.hpp" include (:system-flag t) nil [312 353])
+            ("boost/utility/enable_if.hpp" include (:system-flag t) nil [378 416])
+            ("boost/type_traits/is_convertible.hpp" include (:system-flag t) nil [417 464])
+            ("boost/type_traits/remove_reference.hpp" include (:system-flag t) nil [465 514])
+            ("boost/type_traits/remove_cv.hpp" include (:system-flag t) nil [515 557])
+            ("boost/type_traits/decay.hpp" include (:system-flag t) nil [558 596])
+            ("boost/thread/detail/delete.hpp" include (:system-flag t) nil [605 646])
+            ("boost/move/utility.hpp" include (:system-flag t) nil [647 680])
+            ("boost/move/traits.hpp" include (:system-flag t) nil [681 713])
+            ("boost/config/abi_prefix.hpp" include (:system-flag t) nil [714 752])
+            ("boost" type
+               (:members 
+                  ( ("detail" type
+                       (:members 
+                          ( ("enable_move_utility_emulation_dummy_specialization" type
+                               (:template 
+                                  ( ("T" type (:type "class") nil nil))                                  
+                                :type "struct"
+                                :prototype t)
+                                (reparse-symbol namespacesubparts) [806 892])
+                            ("thread_move_t" type
+                               (:template 
+                                  ( ("T" type (:type "class") nil nil))                                  
+                                :type "struct"
+                                :members 
+                                  ( ("t" variable (:type ("T" type (:type "class") nil nil)) (reparse-symbol classsubparts) [973 978])
+                                    ("thread_move_t" function
+                                       (:constructor-flag t
+                                        :arguments 
+                                          ( ("t_" variable
+                                               (:reference 1
+                                                :type ("T" type (:type "class") nil nil))
+                                                (reparse-symbol arg-sub-list) [1014 1020]))                                          
+                                        :type ("thread_move_t" type (:type "struct") nil nil))
+                                        (reparse-symbol classsubparts) [1000 1058])
+                                    ("" function
+                                       (:methodconst-flag t
+                                        :operator-flag t
+                                        :function-pointer t
+                                        :type ("T" type (:type "class") nil nil))
+                                        (reparse-symbol classsubparts) [1072 1146])
+                                    ("->" function
+                                       (:methodconst-flag t
+                                        :operator-flag t
+                                        :pointer 1
+                                        :type ("T" type (:type "class") nil nil))
+                                        (reparse-symbol classsubparts) [1160 1236])
+                                    ("private" label nil (reparse-symbol classsubparts) [1245 1253])
+                                    ("=" function
+                                       (:prototype-flag t
+                                        :operator-flag t
+                                        :arguments 
+                                          ( ("" variable
+                                               (:reference 1
+                                                :type ("thread_move_t" type (:type "class") nil nil))
+                                                (reparse-symbol arg-sub-list) [1281 1296]))                                          
+                                        :type "void")
+                                        (reparse-symbol classsubparts) [1266 1297]))                                  )
+                                (reparse-symbol namespacesubparts) [901 1308]))                          
+                        :type "namespace")
+                        (reparse-symbol namespacesubparts) [777 1314])
+                    ("move" function
+                       (:arguments 
+                          ( ("t" variable
+                               (:reference 1
+                                :type ("T" type (:type "class") nil nil))
+                                (reparse-symbol arg-sub-list) [1530 1535]))                          
+                        :type ("type" type (:type "class") nil nil))
+                        (reparse-symbol namespacesubparts) [1520 1598])
+                    ("move" function
+                       (:template 
+                          ( ("T" type (:type "class") nil nil))                          
+                        :type ("boost::detail::thread_move_t" type
+                             (:template-specifier 
+                                ( ("T" type nil nil nil))                                
+                              :type "class")
+                              nil nil)
+                        :arguments 
+                          ( ("t" variable (:type ("boost::detail::thread_move_t" type
+                                 (:template-specifier 
+                                    ( ("T" type nil nil nil))                                    
+                                  :type "class")
+                                  nil nil)) (reparse-symbol arg-sub-list) [1673 1707]))                          )
+                        (reparse-symbol namespacesubparts) [1611 1737]))                  
+                :type "namespace")
+                nil [754 1787])
+            ("BOOST_THREAD_RV_REF" variable (:constant-flag t) nil [1846 1865])
+            ("BOOST_THREAD_RV_REF_2_TEMPL_ARGS" variable (:constant-flag t) nil [1899 1931])
+            ("BOOST_THREAD_RV_REF_BEG" variable (:constant-flag t) nil [1978 2001])
+            ("BOOST_THREAD_RV_REF_END" variable (:constant-flag t) nil [2027 2050])
+            ("BOOST_THREAD_RV" variable (:constant-flag t) nil [2076 2091])
+            ("BOOST_THREAD_MAKE_RV_REF" variable (:constant-flag t) nil [2105 2129])
+            ("BOOST_THREAD_FWD_REF" variable (:constant-flag t) nil [2153 2173])
+            ("BOOST_THREAD_DCL_MOVABLE" variable (:constant-flag t) nil [2208 2232])
+            ("BOOST_THREAD_DCL_MOVABLE_BEG" variable (:constant-flag t) nil [2247 2275])
+            ("BOOST_THREAD_DCL_MOVABLE_END" variable (:constant-flag t) nil [2404 2432])
+            ("BOOST_THREAD_RV_REF" variable (:constant-flag t) nil [3898 3917])
+            ("BOOST_THREAD_RV_REF_BEG" variable (:constant-flag t) nil [3969 3992])
+            ("BOOST_THREAD_RV_REF_END" variable (:constant-flag t) nil [4031 4054])
+            ("BOOST_THREAD_RV" variable (:constant-flag t) nil [4065 4080])
+            ("BOOST_THREAD_FWD_REF" variable (:constant-flag t) nil [4097 4117])
+            ("BOOST_THREAD_DCL_MOVABLE" variable (:constant-flag t) nil [4153 4177])
+            ("BOOST_THREAD_DCL_MOVABLE_BEG" variable (:constant-flag t) nil [4301 4329])
+            ("BOOST_THREAD_DCL_MOVABLE_END" variable (:constant-flag t) nil [4406 4434])
+            ("boost" type
+               (:members 
+                  ( ("detail" type (:type "namespace") (reparse-symbol namespacesubparts) [4511 5432]))                  
+                :type "namespace")
+                nil [4493 5434])
+            ("BOOST_THREAD_MAKE_RV_REF" variable (:constant-flag t) nil [5444 5468])
+            ("BOOST_THREAD_MOVABLE" variable (:constant-flag t) nil [5635 5655])
+            ("BOOST_THREAD_MOVABLE_ONLY" variable (:constant-flag t) nil [6570 6595])
+            ("BOOST_THREAD_COPYABLE_AND_MOVABLE" variable (:constant-flag t) nil [6679 6712])
+            ("boost" type
+               (:members 
+                  ( ("thread_detail" type
+                       (:members 
+                          ( ("decay_copy" function
+                               (:arguments 
+                                  ( ("" variable
+                                       (:reference 1
+                                        :type ("T" type (:type "class") nil nil))
+                                        (reparse-symbol arg-sub-list) [6915 6918])
+                                    ("" variable (:type ("t" type (:type "class") nil nil)) (reparse-symbol arg-sub-list) [6919 6921]))                                  
+                                :type ("type" type (:type "class") nil nil))
+                                (reparse-symbol namespacesubparts) [6893 6976]))                          
+                        :type "namespace")
+                        (reparse-symbol namespacesubparts) [6774 7123]))                  
+                :type "namespace")
+                nil [6755 7125])
+            ("boost/config/abi_suffix.hpp" include (:system-flag t) nil [7127 7165]))          
+      :file "move.hpp"
+      :pointmax 7174
+      :fsize 7173
+      :lastmodtime '(21413 1117 0 0)
+      :unmatched-syntax '((punctuation 6917 . 6918) (punctuation 6892 . 6893) (punctuation 6891 . 6892) (punctuation 6890 . 6891) (symbol 6889 . 6890) (punctuation 6888 . 6889) (symbol 6883 . 6888) (TYPENAME 6874 . 6882) (punctuation 6866 . 6867) (symbol 6865 . 6866) (CLASS 6859 . 6864) (punctuation 6858 . 6859) (TEMPLATE 6849 . 6857) (semantic-list 4693 . 4815) (symbol 4676 . 4690) (semantic-list 4669 . 4674) (symbol 4658 . 4669) (punctuation ">" 4556 . 4655) (TYPENAME "typename" 4556 . 4655) (punctuation "<" 4556 . 4655) (symbol "thread_move_t" 4556 . 4655) (punctuation ":" 4556 . 4655) (punctuation ":" 4556 . 4655) (symbol "detail" 4556 . 4655) (punctuation ":" 4556 . 4655) (punctuation ":" 4556 . 4655) (symbol "boost" 4556 . 4655) (punctuation 4552 . 4553) (symbol 4551 . 4552) (TYPENAME 4542 . 4550) (punctuation 4541 . 4542) (TEMPLATE 4532 . 4540) (punctuation 1519 . 1520) (punctuation 1518 . 1519) (punctuation 1517 . 1518) (punctuation 1515 . 1516) (symbol 1514 . 1515) (punctuation 1513 . 1514) (symbol 1500 . 1513) (punctuation 1499 . 1500) (punctuation 1498 . 1499) (symbol 1492 . 1498) (punctuation 1491 . 1492) (punctuation 1490 . 1491) (symbol 1485 . 1490) (punctuation 1483 . 1484) (punctuation 1482 . 1483) (punctuation 1480 . 1481) (symbol 1479 . 1480) (punctuation 1478 . 1479) (symbol 1465 . 1478) (punctuation 1464 . 1465) (punctuation 1463 . 1464) (symbol 1457 . 1463) (punctuation 1456 . 1457) (punctuation 1455 . 1456) (symbol 1450 . 1455) (punctuation 1449 . 1450) (punctuation 1448 . 1449) (symbol 1447 . 1448) (punctuation 1446 . 1447) (symbol 1432 . 1446) (punctuation 1431 . 1432) (punctuation 1430 . 1431) (symbol 1425 . 1430) (punctuation 1424 . 1425) (symbol 1415 . 1424) (TYPENAME 1406 . 1414) (punctuation 1400 . 1401) (symbol 1399 . 1400) (TYPENAME 1390 . 1398) (punctuation 1389 . 1390) (TEMPLATE 1381 . 1389) (EXPLICIT 991 . 999))
+      :lexical-table 
+        '(("BOOST_THREAD_DCL_MOVABLE" (spp-arg-list ("TYPE") 4177 . 4183) . 
+              ((TEMPLATE "template" 4186 . 4194) (punctuation "<" 4195 . 4196) (punctuation ">" 4196 . 4197) (STRUCT "struct" 4200 . 4206) (symbol "enable_move_utility_emulation" 4207 . 4236) (punctuation "<" 4236 . 4237) (symbol "TYPE" 4238 . 4242) (punctuation ">" 4243 . 4244) (semantic-list "{ \\
+   static const bool value = false; \\
+}" 4247 . 4290) (punctuation ";" 4290 . 4291)))
+          ("BOOST_THREAD_DCL_MOVABLE_END" . 
+              ((punctuation ">" 4435 . 4436) (semantic-list "{ \\
+   static const bool value = false; \\
+}" 4439 . 4482) (punctuation ";" 4482 . 4483)))
+          ("BOOST_THREAD_FWD_REF" (spp-arg-list ("TYPE") 4117 . 4123) . ((symbol "BOOST_FWD_REF" 4124 . 4137) (semantic-list "(TYPE)" 4137 . 4143)))
+          ("BOOST_THREAD_DCL_MOVABLE_BEG" (spp-arg-list ("T") 4329 . 4332) . 
+              ((TEMPLATE "template" 4335 . 4343) (punctuation "<" 4344 . 4345) (TYPENAME "typename" 4345 . 4353) (symbol "T" 4354 . 4355) (punctuation ">" 4355 . 4356) (STRUCT "struct" 4359 . 4365) (symbol "enable_move_utility_emulation" 4366 . 4395) (punctuation "<" 4395 . 4396)))
+          ("BOOST_THREAD_RV_REF" (spp-arg-list ("TYPE") 3917 . 3923) . 
+              ((symbol "boost" 3924 . 3929) (punctuation ":" 3929 . 3930) (punctuation ":" 3930 . 3931) (symbol "detail" 3931 . 3937) (punctuation ":" 3937 . 3938) (punctuation ":" 3938 . 3939) (symbol "thread_move_t" 3939 . 3952) (punctuation "<" 3952 . 3953) (symbol "TYPE" 3954 . 3958) (punctuation ">" 3959 . 3960)))
+          ("BOOST_THREAD_MOVABLE_ONLY" (spp-arg-list ("TYPE") 6595 . 6601) . 
+              ((symbol "BOOST_THREAD_NO_COPYABLE" 6606 . 6630) (semantic-list "(TYPE)" 6630 . 6636) (symbol "BOOST_THREAD_MOVABLE" 6641 . 6661) (semantic-list "(TYPE)" 6661 . 6667)))
+          ("BOOST_THREAD_MOVABLE" (spp-arg-list ("TYPE") 5655 . 5661))
+          ("BOOST_THREAD_RV" (spp-arg-list ("V") 4080 . 4083) . ((semantic-list "(*V)" 4084 . 4088)))
+          ("BOOST_THREAD_MAKE_RV_REF" (spp-arg-list ("RVALUE") 5468 . 5476) . 
+              ((symbol "RVALUE" 5477 . 5483) (punctuation "." 5483 . 5484) (symbol "move" 5484 . 5488) (semantic-list "()" 5488 . 5490)))
+          ("BOOST_THREAD_RV_REF_2_TEMPL_ARGS" (spp-arg-list ("TYPE") 1931 . 1937) . ((symbol "BOOST_RV_REF_2_TEMPL_ARGS" 1938 . 1963) (semantic-list "(TYPE)" 1963 . 1969)))
+          ("BOOST_THREAD_RV_REF_END" . ((punctuation ">" 4055 . 4056)))
+          ("BOOST_THREAD_MOVE_HPP")
+          ("BOOST_THREAD_RV_REF_BEG" . 
+              ((symbol "boost" 3993 . 3998) (punctuation ":" 3998 . 3999) (punctuation ":" 3999 . 4000) (symbol "detail" 4000 . 4006) (punctuation ":" 4006 . 4007) (punctuation ":" 4007 . 4008) (symbol "thread_move_t" 4008 . 4021) (punctuation "<" 4021 . 4022)))
+          ("BOOST_THREAD_COPYABLE_AND_MOVABLE" (spp-arg-list ("TYPE") 6712 . 6718) . ((symbol "BOOST_THREAD_MOVABLE" 6723 . 6743) (semantic-list "(TYPE)" 6743 . 6749)))
+          )
+)
+    (semanticdb-table "semanticdb-table"
+      :major-mode c++-mode
+      :tags 
+        '( ("BOOST_THREAD_DETAIL_ASYNC_FUNCT_HPP" variable (:constant-flag t) nil [956 991])
+            ("boost/config.hpp" include (:system-flag t) nil [993 1020])
+            ("boost/utility/result_of.hpp" include (:system-flag t) nil [1022 1060])
+            ("boost/thread/detail/move.hpp" include (:system-flag t) nil [1061 1100])
+            ("boost/thread/detail/invoke.hpp" include (:system-flag t) nil [1101 1142])
+            ("boost/thread/detail/make_tuple_indices.hpp" include (:system-flag t) nil [1143 1196])
+            ("tuple" include (:system-flag t) nil [1292 1308])
+            ("boost" type
+               (:members 
+                  ( ("detail" type
+                       (:members 
+                          ( ("async_func" type
+                               (:members 
+                                  ( ("f_" variable (:type "int") (reparse-symbol classsubparts) [1590 1593])
+                                    ("public" label nil (reparse-symbol classsubparts) [1599 1606])
+                                    ("result_type" variable (:type ("type" type (:type "class") nil nil)) (reparse-symbol classsubparts) [1759 1776])
+                                    ("async_func" function
+                                       (:constructor-flag t
+                                        :arguments 
+                                          ( ("" variable (:type ("BOOST_THREAD_RV_REF" type (:type "class") nil nil)) (reparse-symbol arg-sub-list) [1831 1854])
+                                            ("" variable (:type ("f" type (:type "class") nil nil)) (reparse-symbol arg-sub-list) [1855 1857])
+                                            ("" variable (:type ("BOOST_THREAD_RV_REF" type (:type "class") nil nil)) (reparse-symbol arg-sub-list) [1858 1883])
+                                            ("" variable (:type ("args" type (:type "class") nil nil)) (reparse-symbol arg-sub-list) [1887 1892]))                                          
+                                        :type ("async_func" type (:type "class") nil nil))
+                                        (reparse-symbol classsubparts) [1820 1950])
+                                    ("async_func" function
+                                       (:constructor-flag t
+                                        :arguments 
+                                          ( ("" variable (:type ("BOOST_THREAD_RV_REF" type (:type "class") nil nil)) (reparse-symbol arg-sub-list) [1996 2027])
+                                            ("" variable (:type ("f" type (:type "class") nil nil)) (reparse-symbol arg-sub-list) [2028 2030]))                                          
+                                        :type ("BOOST_SYMBOL_VISIBLE" type (:type "class") nil nil))
+                                        (reparse-symbol classsubparts) [1958 2063])
+                                    ("()" function
+                                       (:operator-flag t
+                                        :type ("result_type" type (:type "class") nil nil))
+                                        (reparse-symbol classsubparts) [2071 2223])
+                                    ("private" label nil (reparse-symbol classsubparts) [2228 2236])
+                                    ("execute" function
+                                       (:arguments 
+                                          ( ("" variable (:type ("tuple_indices" type (:type "class") nil nil)) (reparse-symbol arg-sub-list) [2304 2318])
+                                            ("" variable (:type ("Indices" type (:type "class") nil nil)) (reparse-symbol arg-sub-list) [2318 2326]))                                          
+                                        :type ("result_type" type (:type "class") nil nil))
+                                        (reparse-symbol classsubparts) [2278 2438]))                                  
+                                :type "class")
+                                (reparse-symbol namespacesubparts) [1537 2445]))                          
+                        :type "namespace")
+                        (reparse-symbol namespacesubparts) [1376 15580]))                  
+                :type "namespace")
+                nil [1356 15582]))          
+      :file "async_func.hpp"
+      :pointmax 15601
+      :fsize 15600
+      :lastmodtime '(21413 1117 0 0)
+      :unmatched-syntax '((punctuation 2328 . 2329) (punctuation 2327 . 2328) (punctuation 2326 . 2327) (punctuation 2325 . 2326) (punctuation 2317 . 2318) (punctuation 2270 . 2271) (symbol 2263 . 2270) (punctuation 2262 . 2263) (punctuation 2261 . 2262) (punctuation 2260 . 2261) (symbol 2253 . 2259) (punctuation 2252 . 2253) (TEMPLATE 2243 . 2251) (semantic-list 2015 . 2027) (punctuation 1885 . 1886) (punctuation 1884 . 1885) (punctuation 1883 . 1884) (semantic-list 1877 . 1883) (semantic-list 1850 . 1854) (EXPLICIT 1811 . 1819) (symbol 1784 . 1804) (punctuation 1758 . 1759) (punctuation 1757 . 1758) (punctuation 1756 . 1757) (semantic-list 1747 . 1756) (symbol 1745 . 1747) (punctuation 1744 . 1745) (symbol 1735 . 1744) (TYPENAME 1726 . 1734) (TYPEDEF 1718 . 1725) (semantic-list 1638 . 1651) (symbol 1613 . 1638) (punctuation 1588 . 1589) (punctuation 1587 . 1588) (punctuation 1586 . 1587) (punctuation 1585 . 1586) (symbol 1581 . 1585) (punctuation 1579 . 1580) (symbol 1577 . 1579) (punctuation 1576 . 1577) (symbol 1571 . 1576) (punctuation 1570 . 1571) (punctuation 1569 . 1570) (symbol 1566 . 1569) (punctuation 1531 . 1532) (symbol 1527 . 1531) (punctuation 1525 . 1526) (punctuation 1524 . 1525) (punctuation 1523 . 1524) (CLASS 1517 . 1522) (punctuation 1515 . 1516) (symbol 1513 . 1515) (CLASS 1507 . 1512) (punctuation 1506 . 1507) (TEMPLATE 1497 . 1505) (semantic-list 1465 . 1491) (symbol 1458 . 1465) (punctuation 1456 . 1457) (semantic-list 1265 . 1291) (symbol 1258 . 1265) (punctuation 1256 . 1257))
+      :lexical-table 
+        '(("BOOST_THREAD_DETAIL_ASYNC_FUNCT_HPP")
+          )
+)
+    (semanticdb-table "semanticdb-table"
+      :major-mode c++-mode
+      :tags 
+        '( ("BOOST_THREAD_DETAIL_IS_CONVERTIBLE_HPP" variable (:constant-flag t) nil [460 498])
+            ("boost/type_traits/is_convertible.hpp" include (:system-flag t) nil [500 547])
+            ("boost/thread/detail/move.hpp" include (:system-flag t) nil [548 587])
+            ("boost" type
+               (:members 
+                  ( ("thread_detail" type
+                       (:members 
+                          ( ("is_convertible" type
+                               (:template 
+                                  ( ("T1" type (:type "class") nil nil)
+                                    ("T2" type (:type "class") nil nil))                                  
+                                :type "struct"
+                                :superclasses 
+                                  ( ("boost::is_convertible" type
+                                       (:protection "unspecified"
+                                        :type "class")
+                                        nil nil))                                  )
+                                (reparse-symbol namespacesubparts) [641 737]))                          
+                        :type "namespace")
+                        (reparse-symbol namespacesubparts) [609 1246]))                  
+                :type "namespace")
+                nil [589 1249]))          
+      :file "is_convertible.hpp"
+      :pointmax 1313
+      :fsize 1312
+      :lastmodtime '(21413 1117 0 0)
+      :unmatched-syntax nil
+      :lexical-table 
+        '(("BOOST_THREAD_DETAIL_IS_CONVERTIBLE_HPP")
+          )
+)
+    (semanticdb-table "semanticdb-table"
+      :major-mode c++-mode
+      :tags 
+        '( ("BOOST_THREAD_THREAD_COMMON_HPP" variable (:constant-flag t) nil [48 78])
+            ("boost/thread/detail/config.hpp" include (:system-flag t) nil [333 374])
+            ("boost/thread/exceptions.hpp" include (:system-flag t) nil [376 414])
+            ("ostream" include (:system-flag t) nil [441 459])
+            ("boost/thread/detail/move.hpp" include (:system-flag t) nil [467 506])
+            ("boost/thread/mutex.hpp" include (:system-flag t) nil [507 540])
+            ("boost/thread/detail/thread_heap_alloc.hpp" include (:system-flag t) nil [621 673])
+            ("boost/thread/detail/make_tuple_indices.hpp" include (:system-flag t) nil [674 727])
+            ("boost/thread/detail/invoke.hpp" include (:system-flag t) nil [728 769])
+            ("boost/thread/detail/is_convertible.hpp" include (:system-flag t) nil [770 819])
+            ("boost/assert.hpp" include (:system-flag t) nil [820 847])
+            ("list" include (:system-flag t) nil [848 863])
+            ("algorithm" include (:system-flag t) nil [864 884])
+            ("boost/ref.hpp" include (:system-flag t) nil [885 909])
+            ("boost/cstdint.hpp" include (:system-flag t) nil [910 938])
+            ("boost/bind.hpp" include (:system-flag t) nil [939 964])
+            ("stdlib.h" include (:system-flag t) nil [965 984])
+            ("memory" include (:system-flag t) nil [985 1002])
+            ("boost/utility/enable_if.hpp" include (:system-flag t) nil [1003 1041])
+            ("boost/type_traits/remove_reference.hpp" include (:system-flag t) nil [1042 1091])
+            ("boost/io/ios_state.hpp" include (:system-flag t) nil [1092 1125])
+            ("boost/type_traits/is_same.hpp" include (:system-flag t) nil [1126 1166])
+            ("boost/type_traits/decay.hpp" include (:system-flag t) nil [1167 1205])
+            ("boost/functional/hash.hpp" include (:system-flag t) nil [1206 1242])
+            ("boost/config/abi_prefix.hpp" include (:system-flag t) nil [1433 1471])
+            ("boost" type
+               (:members 
+                  ( ("detail" type
+                       (:members 
+                          ( ("thread_data" type
+                               (:template 
+                                  ( ("F" type (:type "class") nil nil))                                  
+                                :type "class"
+                                :members 
+                                  ( ("public" label nil (reparse-symbol classsubparts) [2756 2763])
+                                    ("thread_data" function
+                                       (:constructor-flag t
+                                        :arguments 
+                                          ( ("" variable (:type ("BOOST_THREAD_RV_REF" type (:type "class") nil nil)) (reparse-symbol arg-sub-list) [2881 2903])
+                                            ("" variable (:type ("f_" type (:type "class") nil nil)) (reparse-symbol arg-sub-list) [2904 2907]))                                          
+                                        :type ("thread_data" type (:type "class") nil nil))
+                                        (reparse-symbol classsubparts) [2869 2966])
+                                    ("run" function (:type "void") (reparse-symbol classsubparts) [3337 3396])
+                                    ("private" label nil (reparse-symbol classsubparts) [3406 3414])
+                                    ("f" variable (:type ("F" type (:type "class") nil nil)) (reparse-symbol classsubparts) [3427 3431]))                                  
+                                :superclasses 
+                                  ( ("detail::thread_data_base" type
+                                       (:protection "public"
+                                        :type "class")
+                                        nil nil))                                  )
+                                (reparse-symbol namespacesubparts) [2646 3442])
+                            ("thread_data" type
+                               (:template 
+                                  ( ("F" type (:type "class") nil nil))                                  
+                                :type "class"
+                                :members 
+                                  ( ("private" label nil (reparse-symbol classsubparts) [3592 3600])
+                                    ("f" variable (:type ("F" type (:type "class") nil nil)) (reparse-symbol classsubparts) [3613 3618])
+                                    ("public" label nil (reparse-symbol classsubparts) [3627 3634])
+                                    ("thread_data" function
+                                       (:constructor-flag t
+                                        :arguments 
+                                          ( ("f_" variable (:type ("boost::reference_wrapper" type
+                                                 (:template-specifier 
+                                                    ( ("F" type nil nil nil))                                                    
+                                                  :type "class")
+                                                  nil nil)) (reparse-symbol arg-sub-list) [3709 3740]))                                          
+                                        :type ("thread_data" type (:type "class") nil nil))
+                                        (reparse-symbol classsubparts) [3697 3778])
+                                    ("run" function (:type "void") (reparse-symbol classsubparts) [3791 3850]))                                  
+                                :superclasses 
+                                  ( ("detail::thread_data_base" type
+                                       (:protection "public"
+                                        :type "class")
+                                        nil nil))                                  
+                                :template-specifier 
+                                  ( ("boost::reference_wrapper" type (:template-specifier 
+                                      ( ("F" type nil nil nil))                                      ) nil nil))                                  )
+                                (reparse-symbol namespacesubparts) [3452 3861])
+                            ("thread_data" type
+                               (:template 
+                                  ( ("F" type (:type "class") nil nil))                                  
+                                :type "class"
+                                :members 
+                                  ( ("private" label nil (reparse-symbol classsubparts) [4017 4025])
+                                    ("f" variable (:type ("F" type (:type "class") nil nil)) (reparse-symbol classsubparts) [4038 4043])
+                                    ("public" label nil (reparse-symbol classsubparts) [4052 4059])
+                                    ("thread_data" function
+                                       (:constructor-flag t
+                                        :arguments 
+                                          ( ("f_" variable
+                                               (:constant-flag t
+                                                :type ("boost::reference_wrapper" type
+                                                     (:template-specifier 
+                                                        ( ("F" type nil nil nil))                                                        
+                                                      :type "class")
+                                                      nil nil))
+                                                (reparse-symbol arg-sub-list) [4134 4171]))                                          
+                                        :type ("thread_data" type (:type "class") nil nil))
+                                        (reparse-symbol classsubparts) [4122 4209])
+                                    ("run" function (:type "void") (reparse-symbol classsubparts) [4222 4281]))                                  
+                                :superclasses 
+                                  ( ("detail::thread_data_base" type
+                                       (:protection "public"
+                                        :type "class")
+                                        nil nil))                                  
+                                :template-specifier 
+                                  ( ("boost::reference_wrapper" type
+                                       (:constant-flag t
+                                        :template-specifier 
+                                          ( ("F" type nil nil nil))                                          )
+                                        nil nil))                                  )
+                                (reparse-symbol namespacesubparts) [3871 4292]))                          
+                        :type "namespace")
+                        (reparse-symbol namespacesubparts) [1574 4305])
+                    ("thread" variable (:type ("BOOST_THREAD_DECL" type
+                         (:prototype t
+                          :type "class")
+                          nil nil)) (reparse-symbol namespacesubparts) [4311 18262])
+                    ("this_thread" type
+                       (:members 
+                          ( ("BOOST_NOEXCEPT" variable (:type "int") (reparse-symbol namespacesubparts) [18731 18746]))                          
+                        :type "namespace")
+                        (reparse-symbol namespacesubparts) [18563 19189])
+                    ("thread::id" variable (:type ("BOOST_SYMBOL_VISIBLE" type
+                         (:prototype t
+                          :type "class")
+                          nil nil)) (reparse-symbol namespacesubparts) [19195 21975])
+                    ("join" function
+                       (:parent "thread"
+                        :type "void")
+                        (reparse-symbol namespacesubparts) [22788 23177])
+                    ("do_try_join_until" function
+                       (:parent "thread"
+                        :arguments 
+                          ( ("timeout" variable (:type ("uintmax_t" type (:type "class") nil nil)) (reparse-symbol arg-sub-list) [23324 23342]))                          
+                        :type "bool")
+                        (reparse-symbol namespacesubparts) [23293 23875])
+                    ("detail" type
+                       (:members 
+                          ( ("thread_exit_function_base" type
+                               (:members 
+                                  ( ("thread_exit_function_base" function
+                                       (:destructor-flag t
+                                        :typemodifiers ("virtual")
+                                        :type "void")
+                                        (reparse-symbol classsubparts) [24554 24605])
+                                    ("()" function
+                                       (:pure-virtual-flag t
+                                        :prototype-flag t
+                                        :operator-flag t
+                                        :typemodifiers ("virtual")
+                                        :type "void")
+                                        (reparse-symbol classsubparts) [24618 24646]))                                  
+                                :type "struct")
+                                (reparse-symbol namespacesubparts) [24499 24657])
+                            ("thread_exit_function" type
+                               (:template 
+                                  ( ("F" type (:type "class") nil nil))                                  
+                                :type "struct"
+                                :members 
+                                  ( ("f" variable (:type ("F" type (:type "class") nil nil)) (reparse-symbol classsubparts) [24785 24789])
+                                    ("thread_exit_function" function
+                                       (:constructor-flag t
+                                        :arguments 
+                                          ( ("f_" variable (:type ("F" type (:type "class") nil nil)) (reparse-symbol arg-sub-list) [24824 24829]))                                          
+                                        :type ("thread_exit_function" type (:type "struct") nil nil))
+                                        (reparse-symbol classsubparts) [24803 24867])
+                                    ("()" function
+                                       (:operator-flag t
+                                        :type "void")
+                                        (reparse-symbol classsubparts) [24881 24947]))                                  
+                                :superclasses 
+                                  ( ("thread_exit_function_base" type
+                                       (:protection "unspecified"
+                                        :type "class")
+                                        nil nil))                                  )
+                                (reparse-symbol namespacesubparts) [24667 24958])
+                            ("add_thread_exit_function" function
+                               (:prototype-flag t
+                                :arguments 
+                                  ( ("" variable
+                                       (:pointer 1
+                                        :type ("thread_exit_function_base" type (:type "class") nil nil))
+                                        (reparse-symbol arg-sub-list) [25016 25043]))                                  
+                                :type ("BOOST_THREAD_DECL" type (:type "class") nil nil))
+                                (reparse-symbol namespacesubparts) [24973 25044]))                          
+                        :type "namespace")
+                        (reparse-symbol namespacesubparts) [24468 25050])
+                    ("this_thread" type
+                       (:members 
+                          ( ("at_thread_exit" function
+                               (:template 
+                                  ( ("F" type (:type "class") nil nil))                                  
+                                :type "void"
+                                :arguments 
+                                  ( ("f" variable (:type ("F" type (:type "class") nil nil)) (reparse-symbol arg-sub-list) [25141 25145]))                                  )
+                                (reparse-symbol namespacesubparts) [25092 25354]))                          
+                        :type "namespace")
+                        (reparse-symbol namespacesubparts) [25056 25360]))                  
+                :type "namespace")
+                nil [1551 25362])
+            ("boost/config/abi_suffix.hpp" include (:system-flag t) nil [25411 25449]))          
+      :file "thread.hpp"
+      :pointmax 25458
+      :fsize 25457
+      :lastmodtime '(21413 1117 0 0)
+      :unmatched-syntax '((VOID 24968 . 24972) (semantic-list 18728 . 18730) (symbol 18722 . 18728) (symbol 18704 . 18721) (symbol 18701 . 18703) (punctuation 18700 . 18701) (punctuation 18699 . 18700) (symbol 18693 . 18699) (semantic-list 18549 . 18557) (symbol 18525 . 18549) (semantic-list 18464 . 18512) (symbol 18445 . 18459) (semantic-list 18433 . 18444) (symbol 18429 . 18433) (punctuation 18427 . 18428) (punctuation 18426 . 18427) (symbol 18420 . 18426) (INLINE 18413 . 18419) (semantic-list 18329 . 18366) (symbol 18310 . 18324) (semantic-list 18284 . 18309) (symbol 18280 . 18284) (VOID 18275 . 18279) (INLINE 18268 . 18274) (semantic-list 4096 . 4109) (symbol 4072 . 4096) (semantic-list 3671 . 3684) (symbol 3647 . 3671) (semantic-list 2900 . 2903) (semantic-list 2800 . 2813) (symbol 2776 . 2800))
+      :lexical-table 
+        '(("BOOST_THREAD_THREAD_COMMON_HPP")
+          )
+)
+    (semanticdb-table "semanticdb-table"
+      :major-mode c++-mode
+      :tags 
+        '( ("BOOST_THREAD_DETAIL_LOCKABLE_WRAPPER_HPP" variable (:constant-flag t) nil [262 302])
+            ("boost/thread/detail/config.hpp" include (:system-flag t) nil [304 345])
+            ("initializer_list" include (:system-flag t) nil [404 431])
+            ("boost/config/abi_prefix.hpp" include (:system-flag t) nil [439 477])
+            ("boost" type
+               (:members 
+                  ( ("thread_detail" type
+                       (:members 
+                          ( ("lockable_wrapper" type
+                               (:template 
+                                  ( ("Mutex" type (:type "class") nil nil))                                  
+                                :type "struct"
+                                :members 
+                                  ( ("m" variable
+                                       (:pointer 1
+                                        :type ("Mutex" type (:type "class") nil nil))
+                                        (reparse-symbol classsubparts) [655 664])
+                                    ("lockable_wrapper" function
+                                       (:constructor-flag t
+                                        :arguments 
+                                          ( ("m_" variable
+                                               (:reference 1
+                                                :type ("Mutex" type (:type "class") nil nil))
+                                                (reparse-symbol arg-sub-list) [697 707]))                                          
+                                        :type ("lockable_wrapper" type (:type "struct") nil nil))
+                                        (reparse-symbol classsubparts) [680 733]))                                  )
+                                (reparse-symbol namespacesubparts) [589 740])
+                            ("lockable_adopt_wrapper" type
+                               (:template 
+                                  ( ("Mutex" type (:type "class") nil nil))                                  
+                                :type "struct"
+                                :members 
+                                  ( ("m" variable
+                                       (:pointer 1
+                                        :type ("Mutex" type (:type "class") nil nil))
+                                        (reparse-symbol classsubparts) [817 826])
+                                    ("lockable_adopt_wrapper" function
+                                       (:constructor-flag t
+                                        :arguments 
+                                          ( ("m_" variable
+                                               (:reference 1
+                                                :type ("Mutex" type (:type "class") nil nil))
+                                                (reparse-symbol arg-sub-list) [865 875]))                                          
+                                        :type ("lockable_adopt_wrapper" type (:type "struct") nil nil))
+                                        (reparse-symbol classsubparts) [842 901]))                                  )
+                                (reparse-symbol namespacesubparts) [745 908]))                          
+                        :type "namespace")
+                        (reparse-symbol namespacesubparts) [557 912]))                  
+                :type "namespace")
+                nil [479 922])
+            ("boost/config/abi_suffix.hpp" include (:system-flag t) nil [924 962]))          
+      :file "lockable_wrapper.hpp"
+      :pointmax 981
+      :fsize 980
+      :lastmodtime '(21413 1117 0 0)
+      :unmatched-syntax '((EXPLICIT 833 . 841) (EXPLICIT 671 . 679))
+      :lexical-table 
+        '(("BOOST_THREAD_DETAIL_LOCKABLE_WRAPPER_HPP")
+          )
+)
+    (semanticdb-table "semanticdb-table"
+      :major-mode c++-mode
+      :tags 
+        '( ("BOOST_THREAD_DETAIL_INVOKE_HPP" variable (:constant-flag t) nil [1103 1133])
+            ("boost/config.hpp" include (:system-flag t) nil [1135 1162])
+            ("boost/static_assert.hpp" include (:system-flag t) nil [1163 1197])
+            ("boost/thread/detail/move.hpp" include (:system-flag t) nil [1198 1237])
+            ("boost/type_traits/is_base_of.hpp" include (:system-flag t) nil [1238 1281])
+            ("boost/type_traits/remove_reference.hpp" include (:system-flag t) nil [1282 1331])
+            ("functional" include (:system-flag t) nil [1370 1391])
+            ("boost" type
+               (:members 
+                  ( ("detail" type
+                       (:members 
+                          ( ("BOOST_THREAD_PROVIDES_INVOKE" variable (:constant-flag t) (reparse-symbol namespacesubparts) [1676 1704])
+                            ("decltype" function (:type "int") (reparse-symbol namespacesubparts) [1956 2111])
+                            ("decltype" function (:type "int") (reparse-symbol namespacesubparts) [2290 2451])
+                            ("decltype" function
+                               (:arguments 
+                                  ( ("" variable (:type ("boost::forward" type
+                                         (:template-specifier 
+                                            ( ("A0" type nil nil nil))                                            
+                                          :type "class")
+                                          nil nil)) (reparse-symbol arg-sub-list) [2613 2635])
+                                    ("" variable (:type ("f" type (:type "class") nil nil)) (reparse-symbol arg-sub-list) [2637 2639]))                                  
+                                :type "int")
+                                (reparse-symbol namespacesubparts) [2604 2693])
+                            ("decltype" function
+                               (:arguments 
+                                  ( ("" variable (:type ("f" type (:type "class") nil nil)) (reparse-symbol arg-sub-list) [2858 2860]))                                  
+                                :type "int")
+                                (reparse-symbol namespacesubparts) [2822 2917])
+                            ("decltype" function
+                               (:arguments 
+                                  ( ("f" variable
+                                       (:pointer 
+                                          ( ("" variable (:type ("boost::forward" type
+                                                 (:template-specifier 
+                                                    ( ("Args" type nil nil nil))                                                    
+                                                  :type "class")
+                                                  nil nil)) (reparse-symbol arg-sub-list) [3098 3124])
+                                            ("..." variable (:type "vararg") (reparse-symbol arg-sub-list) [3124 3128]))                                          
+                                        :type ("boost::forward" type
+                                             (:template-specifier 
+                                                ( ("Fp" type nil nil nil))                                                
+                                              :type "class")
+                                              nil nil))
+                                        (reparse-symbol arg-sub-list) [3076 3129]))                                  
+                                :type "int")
+                                (reparse-symbol namespacesubparts) [3067 3208])
+                            ("BOOST_THREAD_PROVIDES_INVOKE_RET" variable (:constant-flag t) (reparse-symbol namespacesubparts) [8082 8114])
+                            ("invoke" function
+                               (:arguments ((nil variable (:pointer (("" variable (:type ("Args" type (:type "class") nil nil)) (reparse-symbol arg-sub-list) [8607 8612]) ("..." variable (:type "vararg") (reparse-symbol arg-sub-list) [8611 8615])) :type ("Ret" type (:type "class") nil nil)) (reparse-symbol arg-sub-list) [8595 8616]) ("" variable (:type ("BOOST_THREAD_RV_REF" type (:type "class") nil nil)) (reparse-symbol arg-sub-list) [8617 8640]) ("" variable (:type ("a0" type (:type "class") nil nil)) (reparse-symbol arg-sub-list) [8641 8644]) ("" variable (:type ("BOOST_THREAD_RV_REF" type (:type "class") nil nil)) (reparse-symbol arg-sub-list) [8645 8670]) ("" variable (:type ("args" type (:type "class") nil nil)) (reparse-symbol arg-sub-list) [8674 8679]))
+                                :type ("type" type (:type "class") nil nil))
+                                (reparse-symbol namespacesubparts) [8579 8766])
+                            ("invoke" function
+                               (:arguments ((nil variable (:pointer (("" variable (:type ("Args" type (:type "class") nil nil)) (reparse-symbol arg-sub-list) [8983 8988]) ("..." variable (:type "vararg") (reparse-symbol arg-sub-list) [8987 8991])) :type ("Ret" type (:type "class") nil nil)) (reparse-symbol arg-sub-list) [8971 8997]) ("" variable (:type ("BOOST_THREAD_RV_REF" type (:type "class") nil nil)) (reparse-symbol arg-sub-list) [8999 9022]) ("" variable (:type ("a0" type (:type "class") nil nil)) (reparse-symbol arg-sub-list) [9023 9026]) ("" variable (:type ("BOOST_THREAD_RV_REF" type (:type "class") nil nil)) (reparse-symbol arg-sub-list) [9027 9052]) ("" variable (:type ("args" type (:type "class") nil nil)) (reparse-symbol arg-sub-list) [9056 9061]))
+                                :type ("type" type (:type "class") nil nil))
+                                (reparse-symbol namespacesubparts) [8955 9148])
+                            ("invoke" function
+                               (:arguments ((nil variable (:pointer (("" variable (:type ("Args" type (:type "class") nil nil)) (reparse-symbol arg-sub-list) [9365 9370]) ("..." variable (:type "vararg") (reparse-symbol arg-sub-list) [9369 9373])) :type ("Ret" type (:type "class") nil nil)) (reparse-symbol arg-sub-list) [9353 9382]) ("" variable (:type ("BOOST_THREAD_RV_REF" type (:type "class") nil nil)) (reparse-symbol arg-sub-list) [9384 9407]) ("" variable (:type ("a0" type (:type "class") nil nil)) (reparse-symbol arg-sub-list) [9408 9411]) ("" variable (:type ("BOOST_THREAD_RV_REF" type (:type "class") nil nil)) (reparse-symbol arg-sub-list) [9412 9437]) ("" variable (:type ("args" type (:type "class") nil nil)) (reparse-symbol arg-sub-list) [9441 9446]))
+                                :type ("type" type (:type "class") nil nil))
+                                (reparse-symbol namespacesubparts) [9337 9533])
+                            ("invoke" function
+                               (:arguments ((nil variable (:pointer (("" variable (:type ("Args" type (:type "class") nil nil)) (reparse-symbol arg-sub-list) [9750 9755]) ("..." variable (:type "vararg") (reparse-symbol arg-sub-list) [9754 9758])) :type ("Ret" type (:type "class") nil nil)) (reparse-symbol arg-sub-list) [9738 9764]) ("" variable (:type ("BOOST_THREAD_RV_REF" type (:type "class") nil nil)) (reparse-symbol arg-sub-list) [9775 9798]) ("" variable (:type ("a0" type (:type "class") nil nil)) (reparse-symbol arg-sub-list) [9799 9802]) ("" variable (:type ("BOOST_THREAD_RV_REF" type (:type "class") nil nil)) (reparse-symbol arg-sub-list) [9803 9828]) ("" variable (:type ("args" type (:type "class") nil nil)) (reparse-symbol arg-sub-list) [9832 9837]))
+                                :type ("type" type (:type "class") nil nil))
+                                (reparse-symbol namespacesubparts) [9722 9924])
+                            ("invoke" function
+                               (:arguments ((nil variable (:pointer (("" variable (:type ("Args" type (:type "class") nil nil)) (reparse-symbol arg-sub-list) [10314 10319]) ("..." variable (:type "vararg") (reparse-symbol arg-sub-list) [10318 10322])) :type ("Ret" type (:type "class") nil nil)) (reparse-symbol arg-sub-list) [10302 10323]) ("" variable (:type ("BOOST_THREAD_RV_REF" type (:type "class") nil nil)) (reparse-symbol arg-sub-list) [10324 10347]) ("" variable (:type ("a0" type (:type "class") nil nil)) (reparse-symbol arg-sub-list) [10348 10351]) ("" variable (:type ("BOOST_THREAD_RV_REF" type (:type "class") nil nil)) (reparse-symbol arg-sub-list) [10352 10377]) ("" variable (:type ("args" type (:type "class") nil nil)) (reparse-symbol arg-sub-list) [10381 10386]))
+                                :type ("type" type (:type "class") nil nil))
+                                (reparse-symbol namespacesubparts) [10286 10474])
+                            ("invoke" function
+                               (:arguments ((nil variable (:pointer (("" variable (:type ("Args" type (:type "class") nil nil)) (reparse-symbol arg-sub-list) [10693 10698]) ("..." variable (:type "vararg") (reparse-symbol arg-sub-list) [10697 10701])) :type ("Ret" type (:type "class") nil nil)) (reparse-symbol arg-sub-list) [10681 10707]) ("" variable (:type ("BOOST_THREAD_RV_REF" type (:type "class") nil nil)) (reparse-symbol arg-sub-list) [10709 10732]) ("" variable (:type ("a0" type (:type "class") nil nil)) (reparse-symbol arg-sub-list) [10733 10736]) ("" variable (:type ("BOOST_THREAD_RV_REF" type (:type "class") nil nil)) (reparse-symbol arg-sub-list) [10737 10762]) ("" variable (:type ("args" type (:type "class") nil nil)) (reparse-symbol arg-sub-list) [10766 10771]))
+                                :type ("type" type (:type "class") nil nil))
+                                (reparse-symbol namespacesubparts) [10665 10859])
+                            ("invoke" function
+                               (:arguments ((nil variable (:pointer (("" variable (:type ("Args" type (:type "class") nil nil)) (reparse-symbol arg-sub-list) [11078 11083]) ("..." variable (:type "vararg") (reparse-symbol arg-sub-list) [11082 11086])) :type ("Ret" type (:type "class") nil nil)) (reparse-symbol arg-sub-list) [11066 11095]) ("" variable (:type ("BOOST_THREAD_RV_REF" type (:type "class") nil nil)) (reparse-symbol arg-sub-list) [11097 11120]) ("" variable (:type ("a0" type (:type "class") nil nil)) (reparse-symbol arg-sub-list) [11121 11124]) ("" variable (:type ("BOOST_THREAD_RV_REF" type (:type "class") nil nil)) (reparse-symbol arg-sub-list) [11125 11150]) ("" variable (:type ("args" type (:type "class") nil nil)) (reparse-symbol arg-sub-list) [11154 11159]))
+                                :type ("type" type (:type "class") nil nil))
+                                (reparse-symbol namespacesubparts) [11050 11247])
+                            ("invoke" function
+                               (:arguments ((nil variable (:pointer (("" variable (:type ("Args" type (:type "class") nil nil)) (reparse-symbol arg-sub-list) [11466 11471]) ("..." variable (:type "vararg") (reparse-symbol arg-sub-list) [11470 11474])) :type ("Ret" type (:type "class") nil nil)) (reparse-symbol arg-sub-list) [11454 11480]) ("" variable (:type ("BOOST_THREAD_RV_REF" type (:type "class") nil nil)) (reparse-symbol arg-sub-list) [11491 11514]) ("" variable (:type ("a0" type (:type "class") nil nil)) (reparse-symbol arg-sub-list) [11515 11518]) ("" variable (:type ("BOOST_THREAD_RV_REF" type (:type "class") nil nil)) (reparse-symbol arg-sub-list) [11519 11544]) ("" variable (:type ("args" type (:type "class") nil nil)) (reparse-symbol arg-sub-list) [11548 11553]))
+                                :type ("type" type (:type "class") nil nil))
+                                (reparse-symbol namespacesubparts) [11438 11641])
+                            ("invoke" function
+                               (:arguments 
+                                  ( ("" variable (:type ("BOOST_THREAD_RV_REF" type (:type "class") nil nil)) (reparse-symbol arg-sub-list) [13640 13663])
+                                    ("" variable (:type ("f" type (:type "class") nil nil)) (reparse-symbol arg-sub-list) [13664 13666])
+                                    ("" variable (:type ("BOOST_THREAD_RV_REF" type (:type "class") nil nil)) (reparse-symbol arg-sub-list) [13667 13692])
+                                    ("" variable (:type ("args" type (:type "class") nil nil)) (reparse-symbol arg-sub-list) [13696 13701]))                                  
+                                :type ("type" type (:type "class") nil nil))
+                                (reparse-symbol namespacesubparts) [13624 13780])
+                            ("invoke" function
+                               (:typemodifiers ("inline")
+                                :arguments 
+                                  ( ("f" function
+                                       (:function-pointer t
+                                        :arguments 
+                                          ( ("" variable (:type ("Args" type (:type "class") nil nil)) (reparse-symbol arg-sub-list) [13855 13860])
+                                            ("..." variable (:type "vararg") (reparse-symbol arg-sub-list) [13859 13864]))                                          
+                                        :type ("Ret" type (:type "class") nil nil))
+                                        nil nil)
+                                    ("" variable (:type ("BOOST_THREAD_RV_REF" type (:type "class") nil nil)) (reparse-symbol arg-sub-list) [13866 13891])
+                                    ("" variable (:type ("args" type (:type "class") nil nil)) (reparse-symbol arg-sub-list) [13895 13900]))                                  
+                                :type ("Ret" type (:type "class") nil nil))
+                                (reparse-symbol namespacesubparts) [13825 13959]))                          
+                        :type "namespace")
+                        (reparse-symbol namespacesubparts) [1420 42001]))                  
+                :type "namespace")
+                nil [1400 42007]))          
+      :file "invoke.hpp"
+      :pointmax 42026
+      :fsize 42025
+      :lastmodtime '(21413 1117 0 0)
+      :unmatched-syntax '((punctuation 13894 . 13895) (punctuation 13893 . 13894) (punctuation 13892 . 13893) (semantic-list 13885 . 13891) (punctuation 13819 . 13820) (symbol 13815 . 13819) (punctuation 13814 . 13815) (punctuation 13813 . 13814) (punctuation 13812 . 13813) (CLASS 13806 . 13811) (punctuation 13804 . 13805) (symbol 13801 . 13804) (CLASS 13795 . 13800) (punctuation 13794 . 13795) (TEMPLATE 13785 . 13793) (punctuation 13695 . 13696) (punctuation 13694 . 13695) (punctuation 13693 . 13694) (semantic-list 13686 . 13692) (semantic-list 13659 . 13663) (punctuation 13623 . 13624) (punctuation 13622 . 13623) (punctuation 13621 . 13622) (symbol 13613 . 13616) (punctuation 13603 . 13604) (symbol 13598 . 13603) (punctuation 13597 . 13598) (punctuation 13596 . 13597) (punctuation 13595 . 13596) (symbol 13593 . 13595) (punctuation 13592 . 13593) (symbol 13566 . 13592) (punctuation 13564 . 13565) (punctuation 13554 . 13555) (symbol 13538 . 13549) (TYPENAME 13529 . 13537) (INLINE 13518 . 13524) (punctuation 13512 . 13513) (symbol 13508 . 13512) (punctuation 13507 . 13508) (punctuation 13506 . 13507) (punctuation 13505 . 13506) (CLASS 13499 . 13504) (punctuation 13497 . 13498) (symbol 13495 . 13497) (CLASS 13489 . 13494) (punctuation 13487 . 13488) (symbol 13484 . 13487) (CLASS 13478 . 13483) (punctuation 13477 . 13478) (TEMPLATE 13468 . 13476) (punctuation 11547 . 11548) (punctuation 11546 . 11547) (punctuation 11545 . 11546) (semantic-list 11538 . 11544) (semantic-list 11510 . 11514) (VOLATILE 11481 . 11489) (CONST 11475 . 11480) (punctuation 11437 . 11438) (punctuation 11436 . 11437) (punctuation 11435 . 11436) (symbol 11427 . 11430) (punctuation 11417 . 11418) (symbol 11412 . 11417) (punctuation 11411 . 11412) (punctuation 11410 . 11411) (punctuation 11409 . 11410) (symbol 11405 . 11409) (punctuation 11404 . 11405) (punctuation 11403 . 11404) (punctuation 11402 . 11403) (symbol 11400 . 11402) (punctuation 11399 . 11400) (symbol 11383 . 11399) (TYPENAME 11374 . 11382) (punctuation 11372 . 11373) (symbol 11371 . 11372) (punctuation 11370 . 11371) (symbol 11360 . 11370) (punctuation 11358 . 11359) (punctuation 11348 . 11349) (symbol 11332 . 11343) (TYPENAME 11323 . 11331) (INLINE 11312 . 11318) (punctuation 11306 . 11307) (symbol 11302 . 11306) (punctuation 11301 . 11302) (punctuation 11300 . 11301) (punctuation 11299 . 11300) (CLASS 11293 . 11298) (punctuation 11291 . 11292) (symbol 11289 . 11291) (CLASS 11283 . 11288) (punctuation 11281 . 11282) (symbol 11280 . 11281) (CLASS 11274 . 11279) (punctuation 11272 . 11273) (symbol 11269 . 11272) (CLASS 11263 . 11268) (punctuation 11262 . 11263) (TEMPLATE 11253 . 11261) (punctuation 11153 . 11154) (punctuation 11152 . 11153) (punctuation 11151 . 11152) (semantic-list 11144 . 11150) (semantic-list 11116 . 11120) (VOLATILE 11087 . 11095) (punctuation 11049 . 11050) (punctuation 11048 . 11049) (punctuation 11047 . 11048) (symbol 11039 . 11042) (punctuation 11029 . 11030) (symbol 11024 . 11029) (punctuation 11023 . 11024) (punctuation 11022 . 11023) (punctuation 11021 . 11022) (symbol 11017 . 11021) (punctuation 11016 . 11017) (punctuation 11015 . 11016) (punctuation 11014 . 11015) (symbol 11012 . 11014) (punctuation 11011 . 11012) (symbol 10995 . 11011) (TYPENAME 10986 . 10994) (punctuation 10984 . 10985) (symbol 10983 . 10984) (punctuation 10982 . 10983) (symbol 10972 . 10982) (punctuation 10970 . 10971) (punctuation 10960 . 10961) (symbol 10944 . 10955) (TYPENAME 10935 . 10943) (INLINE 10924 . 10930) (punctuation 10918 . 10919) (symbol 10914 . 10918) (punctuation 10913 . 10914) (punctuation 10912 . 10913) (punctuation 10911 . 10912) (CLASS 10905 . 10910) (punctuation 10903 . 10904) (symbol 10901 . 10903) (CLASS 10895 . 10900) (punctuation 10893 . 10894) (symbol 10892 . 10893) (CLASS 10886 . 10891) (punctuation 10884 . 10885) (symbol 10881 . 10884) (CLASS 10875 . 10880) (punctuation 10874 . 10875) (TEMPLATE 10865 . 10873) (punctuation 10765 . 10766) (punctuation 10764 . 10765) (punctuation 10763 . 10764) (semantic-list 10756 . 10762) (semantic-list 10728 . 10732) (CONST 10702 . 10707) (punctuation 10664 . 10665) (punctuation 10663 . 10664) (punctuation 10662 . 10663) (symbol 10654 . 10657) (punctuation 10644 . 10645) (symbol 10639 . 10644) (punctuation 10638 . 10639) (punctuation 10637 . 10638) (punctuation 10636 . 10637) (symbol 10632 . 10636) (punctuation 10631 . 10632) (punctuation 10630 . 10631) (punctuation 10629 . 10630) (symbol 10627 . 10629) (punctuation 10626 . 10627) (symbol 10610 . 10626) (TYPENAME 10601 . 10609) (punctuation 10599 . 10600) (symbol 10598 . 10599) (punctuation 10597 . 10598) (symbol 10587 . 10597) (punctuation 10585 . 10586) (punctuation 10575 . 10576) (symbol 10559 . 10570) (TYPENAME 10550 . 10558) (INLINE 10539 . 10545) (punctuation 10533 . 10534) (symbol 10529 . 10533) (punctuation 10528 . 10529) (punctuation 10527 . 10528) (punctuation 10526 . 10527) (CLASS 10520 . 10525) (punctuation 10518 . 10519) (symbol 10516 . 10518) (CLASS 10510 . 10515) (punctuation 10508 . 10509) (symbol 10507 . 10508) (CLASS 10501 . 10506) (punctuation 10499 . 10500) (symbol 10496 . 10499) (CLASS 10490 . 10495) (punctuation 10489 . 10490) (TEMPLATE 10480 . 10488) (punctuation 10380 . 10381) (punctuation 10379 . 10380) (punctuation 10378 . 10379) (semantic-list 10371 . 10377) (semantic-list 10343 . 10347) (punctuation 10285 . 10286) (punctuation 10284 . 10285) (punctuation 10283 . 10284) (symbol 10275 . 10278) (punctuation 10265 . 10266) (symbol 10260 . 10265) (punctuation 10259 . 10260) (punctuation 10258 . 10259) (punctuation 10257 . 10258) (symbol 10253 . 10257) (punctuation 10252 . 10253) (punctuation 10251 . 10252) (punctuation 10250 . 10251) (symbol 10248 . 10250) (punctuation 10247 . 10248) (symbol 10231 . 10247) (TYPENAME 10222 . 10230) (punctuation 10220 . 10221) (symbol 10219 . 10220) (punctuation 10218 . 10219) (symbol 10208 . 10218) (punctuation 10206 . 10207) (punctuation 10196 . 10197) (symbol 10180 . 10191) (TYPENAME 10171 . 10179) (INLINE 10160 . 10166) (punctuation 10154 . 10155) (symbol 10150 . 10154) (punctuation 10149 . 10150) (punctuation 10148 . 10149) (punctuation 10147 . 10148) (CLASS 10141 . 10146) (punctuation 10139 . 10140) (symbol 10137 . 10139) (CLASS 10131 . 10136) (punctuation 10129 . 10130) (symbol 10128 . 10129) (CLASS 10122 . 10127) (punctuation 10120 . 10121) (symbol 10117 . 10120) (CLASS 10111 . 10116) (punctuation 10110 . 10111) (TEMPLATE 10101 . 10109) (punctuation 9831 . 9832) (punctuation 9830 . 9831) (punctuation 9829 . 9830) (semantic-list 9822 . 9828) (semantic-list 9794 . 9798) (VOLATILE 9765 . 9773) (CONST 9759 . 9764) (punctuation 9721 . 9722) (punctuation 9720 . 9721) (punctuation 9719 . 9720) (symbol 9711 . 9714) (punctuation 9701 . 9702) (symbol 9696 . 9701) (punctuation 9695 . 9696) (punctuation 9694 . 9695) (punctuation 9693 . 9694) (symbol 9689 . 9693) (punctuation 9688 . 9689) (punctuation 9687 . 9688) (punctuation 9686 . 9687) (symbol 9684 . 9686) (punctuation 9683 . 9684) (symbol 9667 . 9683) (TYPENAME 9658 . 9666) (punctuation 9656 . 9657) (symbol 9655 . 9656) (punctuation 9654 . 9655) (symbol 9644 . 9654) (punctuation 9634 . 9635) (symbol 9618 . 9629) (TYPENAME 9609 . 9617) (INLINE 9598 . 9604) (punctuation 9592 . 9593) (symbol 9588 . 9592) (punctuation 9587 . 9588) (punctuation 9586 . 9587) (punctuation 9585 . 9586) (CLASS 9579 . 9584) (punctuation 9577 . 9578) (symbol 9575 . 9577) (CLASS 9569 . 9574) (punctuation 9567 . 9568) (symbol 9566 . 9567) (CLASS 9560 . 9565) (punctuation 9558 . 9559) (symbol 9555 . 9558) (CLASS 9549 . 9554) (punctuation 9548 . 9549) (TEMPLATE 9539 . 9547) (punctuation 9440 . 9441) (punctuation 9439 . 9440) (punctuation 9438 . 9439) (semantic-list 9431 . 9437) (semantic-list 9403 . 9407) (VOLATILE 9374 . 9382) (punctuation 9336 . 9337) (punctuation 9335 . 9336) (punctuation 9334 . 9335) (symbol 9326 . 9329) (punctuation 9316 . 9317) (symbol 9311 . 9316) (punctuation 9310 . 9311) (punctuation 9309 . 9310) (punctuation 9308 . 9309) (symbol 9304 . 9308) (punctuation 9303 . 9304) (punctuation 9302 . 9303) (punctuation 9301 . 9302) (symbol 9299 . 9301) (punctuation 9298 . 9299) (symbol 9282 . 9298) (TYPENAME 9273 . 9281) (punctuation 9271 . 9272) (symbol 9270 . 9271) (punctuation 9269 . 9270) (symbol 9259 . 9269) (punctuation 9249 . 9250) (symbol 9233 . 9244) (TYPENAME 9224 . 9232) (INLINE 9213 . 9219) (punctuation 9207 . 9208) (symbol 9203 . 9207) (punctuation 9202 . 9203) (punctuation 9201 . 9202) (punctuation 9200 . 9201) (CLASS 9194 . 9199) (punctuation 9192 . 9193) (symbol 9190 . 9192) (CLASS 9184 . 9189) (punctuation 9182 . 9183) (symbol 9181 . 9182) (CLASS 9175 . 9180) (punctuation 9173 . 9174) (symbol 9170 . 9173) (CLASS 9164 . 9169) (punctuation 9163 . 9164) (TEMPLATE 9154 . 9162) (punctuation 9055 . 9056) (punctuation 9054 . 9055) (punctuation 9053 . 9054) (semantic-list 9046 . 9052) (semantic-list 9018 . 9022) (CONST 8992 . 8997) (punctuation 8954 . 8955) (punctuation 8953 . 8954) (punctuation 8952 . 8953) (symbol 8944 . 8947) (punctuation 8934 . 8935) (symbol 8929 . 8934) (punctuation 8928 . 8929) (punctuation 8927 . 8928) (punctuation 8926 . 8927) (symbol 8922 . 8926) (punctuation 8921 . 8922) (punctuation 8920 . 8921) (punctuation 8919 . 8920) (symbol 8917 . 8919) (punctuation 8916 . 8917) (symbol 8900 . 8916) (TYPENAME 8891 . 8899) (punctuation 8889 . 8890) (symbol 8888 . 8889) (punctuation 8887 . 8888) (symbol 8877 . 8887) (punctuation 8867 . 8868) (symbol 8851 . 8862) (TYPENAME 8842 . 8850) (INLINE 8831 . 8837) (punctuation 8825 . 8826) (symbol 8821 . 8825) (punctuation 8820 . 8821) (punctuation 8819 . 8820) (punctuation 8818 . 8819) (CLASS 8812 . 8817) (punctuation 8810 . 8811) (symbol 8808 . 8810) (CLASS 8802 . 8807) (punctuation 8800 . 8801) (symbol 8799 . 8800) (CLASS 8793 . 8798) (punctuation 8791 . 8792) (symbol 8788 . 8791) (CLASS 8782 . 8787) (punctuation 8781 . 8782) (TEMPLATE 8772 . 8780) (punctuation 8673 . 8674) (punctuation 8672 . 8673) (punctuation 8671 . 8672) (semantic-list 8664 . 8670) (semantic-list 8636 . 8640) (punctuation 8578 . 8579) (punctuation 8577 . 8578) (punctuation 8576 . 8577) (symbol 8568 . 8571) (punctuation 8558 . 8559) (symbol 8553 . 8558) (punctuation 8552 . 8553) (punctuation 8551 . 8552) (punctuation 8550 . 8551) (symbol 8546 . 8550) (punctuation 8545 . 8546) (punctuation 8544 . 8545) (punctuation 8543 . 8544) (symbol 8541 . 8543) (punctuation 8540 . 8541) (symbol 8524 . 8540) (TYPENAME 8515 . 8523) (punctuation 8513 . 8514) (symbol 8512 . 8513) (punctuation 8511 . 8512) (symbol 8501 . 8511) (punctuation 8491 . 8492) (symbol 8475 . 8486) (TYPENAME 8466 . 8474) (INLINE 8455 . 8461) (punctuation 8449 . 8450) (symbol 8445 . 8449) (punctuation 8444 . 8445) (punctuation 8443 . 8444) (punctuation 8442 . 8443) (CLASS 8436 . 8441) (punctuation 8434 . 8435) (symbol 8432 . 8434) (CLASS 8426 . 8431) (punctuation 8424 . 8425) (symbol 8423 . 8424) (CLASS 8417 . 8422) (punctuation 8415 . 8416) (symbol 8412 . 8415) (CLASS 8406 . 8411) (punctuation 8405 . 8406) (TEMPLATE 8396 . 8404) (semantic-list 3118 . 3124) (punctuation 3065 . 3066) (punctuation 3064 . 3065) (semantic-list 2997 . 3059) (symbol 2991 . 2997) (punctuation 3053 . 3054) (punctuation 3052 . 3053) (punctuation 3051 . 3052) (semantic-list 3044 . 3050) (semantic-list 3017 . 3021) (symbol 2986 . 2990) (punctuation 3053 . 3054) (punctuation 3052 . 3053) (punctuation 3051 . 3052) (semantic-list 3044 . 3050) (semantic-list 3017 . 3021) (INLINE 2979 . 2985) (punctuation 3053 . 3054) (punctuation 3052 . 3053) (punctuation 3051 . 3052) (semantic-list 3044 . 3050) (semantic-list 3017 . 3021) (punctuation 2973 . 2974) (symbol 2969 . 2973) (punctuation 2968 . 2969) (punctuation 2967 . 2968) (punctuation 2966 . 2967) (CLASS 2960 . 2965) (punctuation 2958 . 2959) (symbol 2956 . 2958) (CLASS 2950 . 2955) (punctuation 2949 . 2950) (TEMPLATE 2940 . 2948) (punctuation 2857 . 2858) (punctuation 2856 . 2857) (semantic-list 2831 . 2856) (punctuation 2820 . 2821) (punctuation 2819 . 2820) (semantic-list 2755 . 2810) (symbol 2749 . 2755) (semantic-list 2802 . 2806) (semantic-list 2775 . 2779) (symbol 2740 . 2744) (semantic-list 2802 . 2806) (semantic-list 2775 . 2779) (INLINE 2733 . 2739) (semantic-list 2802 . 2806) (semantic-list 2775 . 2779) (punctuation 2727 . 2728) (symbol 2725 . 2727) (CLASS 2719 . 2724) (punctuation 2717 . 2718) (symbol 2715 . 2717) (CLASS 2709 . 2714) (punctuation 2708 . 2709) (TEMPLATE 2699 . 2707) (semantic-list 2802 . 2806) (semantic-list 2775 . 2779) (punctuation 2636 . 2637) (punctuation 2635 . 2636) (semantic-list 2631 . 2635) (punctuation 2602 . 2603) (punctuation 2601 . 2602) (semantic-list 2537 . 2592) (symbol 2531 . 2537) (semantic-list 2584 . 2588) (semantic-list 2557 . 2561) (symbol 2522 . 2526) (semantic-list 2584 . 2588) (semantic-list 2557 . 2561) (INLINE 2515 . 2521) (semantic-list 2584 . 2588) (semantic-list 2557 . 2561) (punctuation 2509 . 2510) (symbol 2507 . 2509) (CLASS 2501 . 2506) (punctuation 2499 . 2500) (symbol 2497 . 2499) (CLASS 2491 . 2496) (punctuation 2490 . 2491) (TEMPLATE 2481 . 2489) (semantic-list 2584 . 2588) (semantic-list 2557 . 2561) (semantic-list 2329 . 2360) (semantic-list 2299 . 2329) (punctuation 2288 . 2289) (punctuation 2287 . 2288) (semantic-list 2188 . 2278) (symbol 2182 . 2188) (punctuation 2272 . 2273) (punctuation 2271 . 2272) (punctuation 2270 . 2271) (semantic-list 2263 . 2269) (semantic-list 2235 . 2239) (semantic-list 2208 . 2212) (symbol 2173 . 2177) (punctuation 2272 . 2273) (punctuation 2271 . 2272) (punctuation 2270 . 2271) (semantic-list 2263 . 2269) (semantic-list 2235 . 2239) (semantic-list 2208 . 2212) (INLINE 2166 . 2172) (punctuation 2272 . 2273) (punctuation 2271 . 2272) (punctuation 2270 . 2271) (semantic-list 2263 . 2269) (semantic-list 2235 . 2239) (semantic-list 2208 . 2212) (punctuation 2160 . 2161) (symbol 2156 . 2160) (punctuation 2155 . 2156) (punctuation 2154 . 2155) (punctuation 2153 . 2154) (CLASS 2147 . 2152) (punctuation 2145 . 2146) (symbol 2143 . 2145) (CLASS 2137 . 2142) (punctuation 2135 . 2136) (symbol 2133 . 2135) (CLASS 2127 . 2132) (punctuation 2126 . 2127) (TEMPLATE 2117 . 2125) (semantic-list 1992 . 2023) (semantic-list 1965 . 1992) (punctuation 1954 . 1955) (punctuation 1953 . 1954) (semantic-list 1854 . 1944) (symbol 1848 . 1854) (punctuation 1938 . 1939) (punctuation 1937 . 1938) (punctuation 1936 . 1937) (semantic-list 1929 . 1935) (semantic-list 1901 . 1905) (semantic-list 1874 . 1878) (symbol 1839 . 1843) (punctuation 1938 . 1939) (punctuation 1937 . 1938) (punctuation 1936 . 1937) (semantic-list 1929 . 1935) (semantic-list 1901 . 1905) (semantic-list 1874 . 1878) (INLINE 1832 . 1838) (punctuation 1938 . 1939) (punctuation 1937 . 1938) (punctuation 1936 . 1937) (semantic-list 1929 . 1935) (semantic-list 1901 . 1905) (semantic-list 1874 . 1878) (punctuation 1826 . 1827) (symbol 1822 . 1826) (punctuation 1821 . 1822) (punctuation 1820 . 1821) (punctuation 1819 . 1820) (CLASS 1813 . 1818) (punctuation 1811 . 1812) (symbol 1809 . 1811) (CLASS 1803 . 1808) (punctuation 1801 . 1802) (symbol 1799 . 1801) (CLASS 1793 . 1798) (punctuation 1792 . 1793) (TEMPLATE 1783 . 1791) (semantic-list 1645 . 1666) (symbol 1638 . 1645) (punctuation 1636 . 1637) (punctuation 1628 . 1629) (punctuation 1627 . 1628) (semantic-list 1595 . 1626) (symbol 1588 . 1595) (punctuation 1586 . 1587) (punctuation 1578 . 1579) (punctuation 1577 . 1578) (semantic-list 1551 . 1576) (symbol 1544 . 1551) (punctuation 1542 . 1543) (punctuation 1534 . 1535) (punctuation 1533 . 1534) (semantic-list 1510 . 1532) (symbol 1503 . 1510) (punctuation 1501 . 1502))
+      :lexical-table 
+        '(("BOOST_THREAD_PROVIDES_INVOKE_RET")
+          ("BOOST_THREAD_PROVIDES_INVOKE")
+          ("BOOST_THREAD_DETAIL_INVOKE_HPP")
+          )
+)
+    (semanticdb-table "semanticdb-table"
+      :major-mode c++-mode
+      :tags 
+        '( ("BOOST_THREAD_DETAIL_MAKE_TUPLE_INDICES_HPP" variable (:constant-flag t) nil [912 954])
+            ("boost/config.hpp" include (:system-flag t) nil [956 983])
+            ("boost/static_assert.hpp" include (:system-flag t) nil [984 1018])
+            ("boost" type
+               (:members 
+                  ( ("detail" type
+                       (:members 
+                          ( ("tuple_indices" type (:type "struct") (reparse-symbol namespacesubparts) [1168 1196])
+                            ("make_indices_imp" type
+                               (:template 
+                                  ( ("std::size_t" type (:typevar "Sp") nil nil)
+                                    ("IntTuple" type (:type "class") nil nil)
+                                    ("std::size_t" type (:typevar "Ep") nil nil))                                  
+                                :type "struct"
+                                :prototype t)
+                                (reparse-symbol namespacesubparts) [1202 1288])
+                            ("make_tuple_indices" type
+                               (:members 
+                                  ( ("BOOST_STATIC_ASSERT_MSG" function
+                                       (:prototype-flag t
+                                        :arguments 
+                                          ( ("" variable (:type ("Sp" type (:type "class") nil nil)) (reparse-symbol arg-sub-list) [1823 1827])
+                                            ("" variable (:type ("Ep" type (:type "class") nil nil)) (reparse-symbol arg-sub-list) [1829 1832]))                                          
+                                        :type "int")
+                                        (reparse-symbol classsubparts) [1799 1867])
+                                    ("type" variable (:type ("type" type (:type "class") nil nil)) (reparse-symbol classsubparts) [1934 1944]))                                  
+                                :type "struct")
+                                (reparse-symbol namespacesubparts) [1761 1951]))                          
+                        :type "namespace")
+                        (reparse-symbol namespacesubparts) [1040 8984]))                  
+                :type "namespace")
+                nil [1020 8986]))          
+      :file "make_tuple_indices.hpp"
+      :pointmax 9005
+      :fsize 9004
+      :lastmodtime '(21413 1117 0 0)
+      :unmatched-syntax '((punctuation 1933 . 1934) (punctuation 1932 . 1933) (punctuation 1931 . 1932) (symbol 1929 . 1931) (punctuation 1927 . 1928) (punctuation 1926 . 1927) (punctuation 1925 . 1926) (symbol 1912 . 1925) (punctuation 1910 . 1911) (symbol 1908 . 1910) (punctuation 1907 . 1908) (symbol 1891 . 1907) (TYPENAME 1882 . 1890) (TYPEDEF 1874 . 1881) (string 1833 . 1865) (punctuation 1827 . 1828) (punctuation 1826 . 1827) (punctuation 1755 . 1756) (number 1754 . 1755) (punctuation 1752 . 1753) (symbol 1749 . 1751) (symbol 1742 . 1748) (punctuation 1741 . 1742) (punctuation 1740 . 1741) (symbol 1737 . 1740) (punctuation 1735 . 1736) (symbol 1733 . 1735) (symbol 1726 . 1732) (punctuation 1725 . 1726) (punctuation 1724 . 1725) (symbol 1721 . 1724) (punctuation 1720 . 1721) (TEMPLATE 1711 . 1719) (punctuation 1704 . 1705) (semantic-list 1651 . 1704) (punctuation 1645 . 1646) (symbol 1643 . 1645) (punctuation 1641 . 1642) (punctuation 1640 . 1641) (punctuation 1639 . 1640) (punctuation 1638 . 1639) (punctuation 1637 . 1638) (symbol 1630 . 1637) (punctuation 1629 . 1630) (symbol 1616 . 1629) (punctuation 1614 . 1615) (symbol 1612 . 1614) (punctuation 1611 . 1612) (symbol 1595 . 1611) (STRUCT 1588 . 1594) (punctuation 1582 . 1583) (symbol 1575 . 1582) (punctuation 1574 . 1575) (punctuation 1573 . 1574) (punctuation 1572 . 1573) (symbol 1565 . 1571) (punctuation 1564 . 1565) (punctuation 1563 . 1564) (symbol 1560 . 1563) (punctuation 1558 . 1559) (symbol 1556 . 1558) (symbol 1549 . 1555) (punctuation 1548 . 1549) (punctuation 1547 . 1548) (symbol 1544 . 1547) (punctuation 1543 . 1544) (TEMPLATE 1534 . 1542) (punctuation 1527 . 1528) (semantic-list 1427 . 1527) (punctuation 1421 . 1422) (symbol 1419 . 1421) (punctuation 1417 . 1418) (punctuation 1416 . 1417) (punctuation 1415 . 1416) (punctuation 1414 . 1415) (punctuation 1413 . 1414) (symbol 1406 . 1413) (punctuation 1405 . 1406) (symbol 1392 . 1405) (punctuation 1390 . 1391) (symbol 1388 . 1390) (punctuation 1387 . 1388) (symbol 1371 . 1387) (STRUCT 1364 . 1370) (punctuation 1358 . 1359) (symbol 1356 . 1358) (symbol 1349 . 1355) (punctuation 1348 . 1349) (punctuation 1347 . 1348) (symbol 1344 . 1347) (punctuation 1342 . 1343) (symbol 1335 . 1342) (punctuation 1334 . 1335) (punctuation 1333 . 1334) (punctuation 1332 . 1333) (symbol 1325 . 1331) (punctuation 1324 . 1325) (punctuation 1323 . 1324) (symbol 1320 . 1323) (punctuation 1318 . 1319) (symbol 1316 . 1318) (symbol 1309 . 1315) (punctuation 1308 . 1309) (punctuation 1307 . 1308) (symbol 1304 . 1307) (punctuation 1303 . 1304) (TEMPLATE 1294 . 1302) (punctuation 1166 . 1167) (punctuation 1165 . 1166) (punctuation 1164 . 1165) (punctuation 1163 . 1164) (symbol 1157 . 1163) (punctuation 1156 . 1157) (punctuation 1155 . 1156) (symbol 1152 . 1155) (punctuation 1151 . 1152) (TEMPLATE 1142 . 1150))
+      :lexical-table 
+        '(("BOOST_THREAD_DETAIL_MAKE_TUPLE_INDICES_HPP")
+          )
+))
+  :file "!usr!include!boost!thread!detail!semantic.cache"
+  :semantic-tag-version "2.0"
+  :semanticdb-version "2.2")

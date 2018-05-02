@@ -1,0 +1,226 @@
+;; Object semanticdb-project-database-file
+;; SEMANTICDB Tags save file
+(semanticdb-project-database-file "semanticdb-project-database-file"
+  :tables
+  (list
+    (semanticdb-table "semanticdb-table"
+      :major-mode c++-mode
+      :tags 
+        '( ("BOOST_MOVE_MOVE_UTILITY_HPP" variable (:constant-flag t) nil [479 506])
+            ("boost/move/detail/config_begin.hpp" include (:system-flag t) nil [508 553])
+            ("boost/move/core.hpp" include (:system-flag t) nil [554 584])
+            ("boost/move/detail/meta_utils.hpp" include (:system-flag t) nil [585 628])
+            ("boost/type_traits/remove_reference.hpp" include (:system-flag t) nil [2959 3014])
+            ("boost" type
+               (:members 
+                  ( ("enable_move_utility_emulation" type
+                       (:template 
+                          ( ("T" type (:type "class") nil nil))                          
+                        :type "struct"
+                        :members 
+                          ( ("value" variable
+                               (:typemodifiers ("static")
+                                :constant-flag t
+                                :default-value "false"
+                                :type "bool")
+                                (reparse-symbol classsubparts) [3572 3604]))                          )
+                        (reparse-symbol namespacesubparts) [3494 3613])
+                    ("move" function
+                       (:arguments 
+                          ( ("" variable
+                               (:reference 1
+                                :type ("T" type (:type "class") nil nil))
+                                (reparse-symbol arg-sub-list) [4622 4625])
+                            ("" variable (:type ("t" type (:type "class") nil nil)) (reparse-symbol arg-sub-list) [4626 4628]))                          
+                        :type "int")
+                        (reparse-symbol namespacesubparts) [4617 4703])
+                    ("forward" function
+                       (:arguments 
+                          ( ("" variable
+                               (:reference 1
+                                :type ("U" type (:type "class") nil nil))
+                                (reparse-symbol arg-sub-list) [6118 6121])
+                            ("" variable (:type ("t" type (:type "class") nil nil)) (reparse-symbol arg-sub-list) [6122 6138])
+                            ("" variable (:type ("boost::move_detail::enable_if_c" type (:type "class") nil nil)) (reparse-symbol arg-sub-list) [6150 6182])
+                            ("" variable (:type ("move_detail::is_lvalue_reference::value" type (:type "class") nil nil)) (reparse-symbol arg-sub-list) [6198 6242])
+                            ("" variable (:type ("move_detail::is_lvalue_reference::value" type (:type "class") nil nil)) (reparse-symbol arg-sub-list) [6243 6287])
+                            ("" variable (:type ("true" type (:type "class") nil nil)) (reparse-symbol arg-sub-list) [6288 6293])
+                            ("" variable
+                               (:pointer 1
+                                :type ("type" type (:type "class") nil nil))
+                                (reparse-symbol arg-sub-list) [6295 6305]))                          
+                        :type "int")
+                        (reparse-symbol namespacesubparts) [6110 6568]))                  
+                :type "namespace")
+                nil [3022 6622])
+            ("boost/move/detail/config_end.hpp" include (:system-flag t) nil [6755 6798]))          
+      :file "utility.hpp"
+      :pointmax 6845
+      :fsize 6844
+      :lastmodtime '(21413 1115 0 0)
+      :unmatched-syntax '((punctuation 6294 . 6295) (punctuation 6293 . 6294) (punctuation 6292 . 6293) (punctuation 6286 . 6287) (punctuation 6241 . 6242) (punctuation 6181 . 6182) (punctuation 6149 . 6150) (punctuation 6148 . 6149) (TYPENAME 6139 . 6147) (punctuation 6120 . 6121) (punctuation 6108 . 6109) (punctuation 6107 . 6108) (symbol 6106 . 6107) (INLINE 6099 . 6105) (punctuation 6088 . 6089) (symbol 6087 . 6088) (CLASS 6081 . 6086) (punctuation 6079 . 6080) (symbol 6078 . 6079) (CLASS 6072 . 6077) (punctuation 6071 . 6072) (TEMPLATE 6062 . 6070) (punctuation 4624 . 4625) (punctuation 4615 . 4616) (punctuation 4614 . 4615) (symbol 4609 . 4613) (punctuation 4608 . 4609) (punctuation 4607 . 4608) (punctuation 4606 . 4607) (symbol 4605 . 4606) (punctuation 4604 . 4605) (symbol 4588 . 4604) (TYPENAME 4579 . 4587) (INLINE 4572 . 4578) (punctuation 4561 . 4562) (symbol 4560 . 4561) (CLASS 4554 . 4559) (punctuation 4553 . 4554) (TEMPLATE 4544 . 4552))
+      :lexical-table 
+        '(("BOOST_MOVE_MOVE_UTILITY_HPP")
+          )
+)
+    (semanticdb-table "semanticdb-table"
+      :major-mode c++-mode
+      :tags 
+        '( ("BOOST_MOVE_MOVE_TRAITS_HPP" variable (:constant-flag t) nil [478 504])
+            ("boost/move/detail/config_begin.hpp" include (:system-flag t) nil [506 551])
+            ("boost/type_traits/has_trivial_destructor.hpp" include (:system-flag t) nil [552 607])
+            ("boost/move/detail/meta_utils.hpp" include (:system-flag t) nil [608 651])
+            ("boost/move/core.hpp" include (:system-flag t) nil [694 724])
+            ("boost" type
+               (:members 
+                  ( ("" type
+                       (:template 
+                          ( ("T" type (:type "class") nil nil))                          
+                        :type "struct"
+                        :superclasses 
+                          ( ("boost::has_trivial_destructor" type
+                               (:protection "unspecified"
+                                :type "class")
+                                nil nil))                          
+                        :parent "has_trivial_destructor_after_move")
+                        (reparse-symbol namespacesubparts) [1240 1343])
+                    ("public" label nil (reparse-symbol namespacesubparts) [1564 1572])
+                    ("boost::move_detail::integral_constant" variable (:type "int") (reparse-symbol namespacesubparts) [1573 1627])
+                    ("move_detail" type
+                       (:members 
+                          ( ("forward_type" type
+                               (:template 
+                                  ( ("T" type (:type "class") nil nil))                                  
+                                :type "struct"
+                                :members 
+                                  ( ("type" type
+                                       (:typedef ("T" type (:type "class") nil nil)
+                                        :type "typedef")
+                                        (reparse-symbol classsubparts) [1787 1802]))                                  )
+                                (reparse-symbol namespacesubparts) [1746 1805])
+                            ("" type
+                               (:template 
+                                  ( ("T" type (:type "class") nil nil))                                  
+                                :type "struct"
+                                :superclasses 
+                                  ( ("boost::move_detail::integral_constant" type
+                                       (:protection "unspecified"
+                                        :type "class")
+                                        nil nil))                                  
+                                :parent "is_rvalue_reference")
+                                (reparse-symbol namespacesubparts) [2070 2176])
+                            ("boost::move_detail::integral_constant" variable (:type "int") (reparse-symbol namespacesubparts) [2279 2333])
+                            ("add_rvalue_reference" type
+                               (:template 
+                                  ( ("T" type (:type "class") nil nil))                                  
+                                :type "struct"
+                                :members 
+                                  ( ("type" variable (:type ("T" type (:type "class") nil nil)) (reparse-symbol classsubparts) [2814 2823]))                                  )
+                                (reparse-symbol namespacesubparts) [2756 2826])
+                            ("remove_rvalue_reference" type
+                               (:template 
+                                  ( ("T" type (:type "class") nil nil))                                  
+                                :type "struct"
+                                :members 
+                                  ( ("type" type
+                                       (:typedef ("T" type (:type "class") nil nil)
+                                        :type "typedef")
+                                        (reparse-symbol classsubparts) [3779 3794]))                                  )
+                                (reparse-symbol namespacesubparts) [3726 3797])
+                            ("declval" function
+                               (:template 
+                                  ( ("T" type (:type "class") nil nil))                                  
+                                :type ("boost::move_detail::add_rvalue_reference::type" type (:type "class") nil nil)
+                                :typemodifiers ("typename")
+                                :prototype-flag t)
+                                (reparse-symbol namespacesubparts) [4833 4924]))                          
+                        :type "namespace")
+                        (reparse-symbol namespacesubparts) [1629 4927]))                  
+                :type "namespace")
+                nil [733 5606])
+            ("boost/move/detail/config_end.hpp" include (:system-flag t) nil [5629 5672]))          
+      :file "traits.hpp"
+      :pointmax 5718
+      :fsize 5717
+      :lastmodtime '(21413 1115 0 0)
+      :unmatched-syntax '((punctuation 3937 . 3938) (semantic-list 3918 . 3937) (punctuation 3899 . 3900) (punctuation 3897 . 3898) (punctuation 3896 . 3897) (symbol 3895 . 3896) (punctuation 3893 . 3894) (symbol 3870 . 3893) (STRUCT 3863 . 3869) (punctuation 3861 . 3862) (symbol 3859 . 3860) (CLASS 3853 . 3858) (punctuation 3851 . 3852) (TEMPLATE 3843 . 3851) (TYPEDEF 2806 . 2813) (punctuation 2278 . 2279) (punctuation 2277 . 2278) (punctuation 2275 . 2276) (punctuation 2273 . 2274) (punctuation 2271 . 2272) (punctuation 2270 . 2271) (symbol 2269 . 2270) (punctuation 2267 . 2268) (symbol 2248 . 2267) (STRUCT 2241 . 2247) (punctuation 2239 . 2240) (symbol 2237 . 2238) (CLASS 2231 . 2236) (punctuation 2229 . 2230) (TEMPLATE 2221 . 2229) (punctuation 1572 . 1573) (punctuation 1562 . 1563) (symbol 1542 . 1558) (STRUCT 1535 . 1541) (punctuation 1533 . 1534) (symbol 1532 . 1533) (CLASS 1526 . 1531) (punctuation 1525 . 1526) (TEMPLATE 1516 . 1524))
+      :lexical-table 
+        '(("BOOST_MOVE_MOVE_TRAITS_HPP")
+          )
+)
+    (semanticdb-table "semanticdb-table"
+      :major-mode c++-mode
+      :tags 
+        '( ("BOOST_MOVE_CORE_HPP" variable (:constant-flag t) nil [569 588])
+            ("boost/move/detail/config_begin.hpp" include (:system-flag t) nil [590 635])
+            ("BOOST_MOVE_IMPL_NO_COPY_CTOR_OR_ASSIGN" variable (:constant-flag t) nil [827 865])
+            ("BOOST_MOVABLE_BUT_NOT_COPYABLE" variable (:constant-flag t) nil [6893 6923])
+            ("BOOST_COPYABLE_AND_MOVABLE" variable (:constant-flag t) nil [7288 7314])
+            ("BOOST_COPYABLE_AND_MOVABLE_ALT" variable (:constant-flag t) nil [7384 7414])
+            ("boost" type
+               (:members 
+                  ( ("has_move_emulation_enabled" type
+                       (:template 
+                          ( ("T" type (:type "class") nil nil))                          
+                        :type "struct"
+                        :members 
+                          ( ("value" variable
+                               (:typemodifiers ("static")
+                                :constant-flag t
+                                :default-value "false"
+                                :type "bool")
+                                (reparse-symbol classsubparts) [7796 7828]))                          )
+                        (reparse-symbol namespacesubparts) [7730 7834]))                  
+                :type "namespace")
+                nil [7487 7840])
+            ("BOOST_RV_REF" variable (:constant-flag t) nil [8057 8069])
+            ("BOOST_RV_REF_BEG" variable (:constant-flag t) nil [8482 8498])
+            ("BOOST_RV_REF_END" variable (:constant-flag t) nil [8900 8916])
+            ("BOOST_COPY_ASSIGN_REF" variable (:constant-flag t) nil [9068 9089])
+            ("BOOST_FWD_REF" variable (:constant-flag t) nil [9245 9258])
+            ("BOOST_RV_REF_2_TEMPL_ARGS" variable (:constant-flag t) nil [9358 9383])
+            ("BOOST_RV_REF_3_TEMPL_ARGS" variable (:constant-flag t) nil [9449 9474])
+            ("BOOST_COPY_ASSIGN_REF_BEG" variable (:constant-flag t) nil [9552 9577])
+            ("BOOST_COPY_ASSIGN_REF_END" variable (:constant-flag t) nil [9612 9637])
+            ("BOOST_COPY_ASSIGN_REF_2_TEMPL_ARGS" variable (:constant-flag t) nil [9668 9702])
+            ("BOOST_COPY_ASSIGN_REF_3_TEMPL_ARGS" variable (:constant-flag t) nil [9773 9807])
+            ("BOOST_CATCH_CONST_RLVALUE" variable (:constant-flag t) nil [9889 9914])
+            ("boost/move/detail/config_end.hpp" include (:system-flag t) nil [10068 10111]))          
+      :file "core.hpp"
+      :pointmax 10150
+      :fsize 10149
+      :lastmodtime '(21413 1115 0 0)
+      :unmatched-syntax nil
+      :lexical-table 
+        '(("BOOST_COPY_ASSIGN_REF_3_TEMPL_ARGS" (spp-arg-list ("TYPE" "ARG1" "ARG2" "ARG3") 9807 . 9831) . 
+              ((CONST "const" 9839 . 9844) (symbol "TYPE" 9845 . 9849) (punctuation "<" 9849 . 9850) (symbol "ARG1" 9850 . 9854) (punctuation "," 9854 . 9855) (symbol "ARG2" 9856 . 9860) (punctuation "," 9860 . 9861) (symbol "ARG3" 9862 . 9866) (punctuation ">" 9866 . 9867) (punctuation "&" 9867 . 9868)))
+          ("BOOST_COPYABLE_AND_MOVABLE_ALT" (spp-arg-list ("TYPE") 7414 . 7420))
+          ("BOOST_COPY_ASSIGN_REF" (spp-arg-list ("TYPE") 9089 . 9095) . 
+              ((CONST "const" 9103 . 9108) (symbol "TYPE" 9109 . 9113) (punctuation "&" 9114 . 9115)))
+          ("BOOST_MOVE_IMPL_NO_COPY_CTOR_OR_ASSIGN" (spp-arg-list ("TYPE") 865 . 871) . 
+              ((PUBLIC "public" 880 . 886) (punctuation ":" 886 . 887) (symbol "TYPE" 895 . 899) (semantic-list "(TYPE const &)" 899 . 913) (punctuation "=" 914 . 915) (DELETE "delete" 916 . 922) (punctuation ";" 922 . 923) (symbol "TYPE" 931 . 935) (punctuation "&" 935 . 936) (OPERATOR "operator" 937 . 945) (punctuation "=" 945 . 946) (semantic-list "(TYPE const &)" 946 . 960) (punctuation "=" 961 . 962) (DELETE "delete" 963 . 969) (punctuation ";" 969 . 970) (PRIVATE "private" 978 . 985) (punctuation ":" 985 . 986)))
+          ("BOOST_MOVABLE_BUT_NOT_COPYABLE" (spp-arg-list ("TYPE") 6923 . 6929) . 
+              ((symbol "BOOST_MOVE_IMPL_NO_COPY_CTOR_OR_ASSIGN" 6937 . 6975) (semantic-list "(TYPE)" 6975 . 6981) (PUBLIC "public" 6989 . 6995) (punctuation ":" 6995 . 6996) (TYPEDEF "typedef" 7004 . 7011) (INT "int" 7012 . 7015) (symbol "boost_move_emulation_t" 7016 . 7038) (punctuation ";" 7038 . 7039)))
+          ("BOOST_RV_REF" (spp-arg-list ("TYPE") 8069 . 8075) . 
+              ((symbol "TYPE" 8083 . 8087) (punctuation "&" 8088 . 8089) (punctuation "&" 8089 . 8090)))
+          ("BOOST_RV_REF_END" . ((punctuation "&" 8924 . 8925) (punctuation "&" 8925 . 8926)))
+          ("BOOST_FWD_REF" (spp-arg-list ("TYPE") 9258 . 9264) . 
+              ((symbol "TYPE" 9272 . 9276) (punctuation "&" 9277 . 9278) (punctuation "&" 9278 . 9279)))
+          ("BOOST_MOVE_CORE_HPP")
+          ("BOOST_RV_REF_BEG")
+          ("BOOST_COPYABLE_AND_MOVABLE" (spp-arg-list ("TYPE") 7314 . 7320))
+          ("BOOST_RV_REF_3_TEMPL_ARGS" (spp-arg-list ("TYPE" "ARG1" "ARG2" "ARG3") 9474 . 9498) . 
+              ((symbol "TYPE" 9506 . 9510) (punctuation "<" 9510 . 9511) (symbol "ARG1" 9511 . 9515) (punctuation "," 9515 . 9516) (symbol "ARG2" 9517 . 9521) (punctuation "," 9521 . 9522) (symbol "ARG3" 9523 . 9527) (punctuation ">" 9527 . 9528) (punctuation "&" 9529 . 9530) (punctuation "&" 9530 . 9531)))
+          ("BOOST_COPY_ASSIGN_REF_2_TEMPL_ARGS" (spp-arg-list ("TYPE" "ARG1" "ARG2") 9702 . 9720) . 
+              ((CONST "const" 9728 . 9733) (symbol "TYPE" 9734 . 9738) (punctuation "<" 9738 . 9739) (symbol "ARG1" 9739 . 9743) (punctuation "," 9743 . 9744) (symbol "ARG2" 9745 . 9749) (punctuation ">" 9749 . 9750) (punctuation "&" 9751 . 9752)))
+          ("BOOST_COPY_ASSIGN_REF_END" . ((punctuation "&" 9646 . 9647)))
+          ("BOOST_COPY_ASSIGN_REF_BEG" . ((CONST "const" 9586 . 9591)))
+          ("BOOST_RV_REF_2_TEMPL_ARGS" (spp-arg-list ("TYPE" "ARG1" "ARG2") 9383 . 9401) . 
+              ((symbol "TYPE" 9409 . 9413) (punctuation "<" 9413 . 9414) (symbol "ARG1" 9414 . 9418) (punctuation "," 9418 . 9419) (symbol "ARG2" 9420 . 9424) (punctuation ">" 9424 . 9425) (punctuation "&" 9426 . 9427) (punctuation "&" 9427 . 9428)))
+          ("BOOST_CATCH_CONST_RLVALUE" (spp-arg-list ("TYPE") 9914 . 9920) . 
+              ((CONST "const" 9928 . 9933) (symbol "TYPE" 9934 . 9938) (punctuation "&" 9939 . 9940)))
+          )
+))
+  :file "!usr!include!boost!move!semantic.cache"
+  :semantic-tag-version "2.0"
+  :semanticdb-version "2.2")

@@ -16,8 +16,6 @@
 (add-to-list 'package-archives '("melpa" . "http://melpa.milkbox.net/packages/"))
 (package-initialize)
 
-(package-initialize)
-
 (setq frame-title-format "%b")
 
 ;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
@@ -248,8 +246,32 @@
 (global-visual-line-mode 1)
 
 ;;; Show Column
+
 (setq column-number-mode t)
 
+;;; IVY SWIPE and counsel
+
+(ivy-mode 1)
+(setq ivy-use-virtual-buffers t)
+(setq enable-recursive-minibuffers t)
+(global-set-key "\C-s" 'swiper)
+(global-set-key (kbd "C-c C-r") 'ivy-resume)
+(global-set-key (kbd "<f6>") 'ivy-resume)
+(global-set-key (kbd "M-x") 'counsel-M-x)
+(global-set-key (kbd "C-x C-f") 'counsel-find-file)
+(global-set-key (kbd "<f1> f") 'counsel-describe-function)
+(global-set-key (kbd "<f1> v") 'counsel-describe-variable)
+(global-set-key (kbd "<f1> l") 'counsel-find-library)
+(global-set-key (kbd "<f2> i") 'counsel-info-lookup-symbol)
+(global-set-key (kbd "<f2> u") 'counsel-unicode-char)
+(global-set-key (kbd "C-c g") 'counsel-git)
+(global-set-key (kbd "C-c j") 'counsel-git-grep)
+(global-set-key (kbd "C-c k") 'counsel-ag)
+(global-set-key (kbd "C-x l") 'counsel-locate)
+(global-set-key (kbd "C-S-o") 'counsel-rhythmbox)
+(define-key minibuffer-local-map (kbd "C-r") 'counsel-minibuffer-history)
+
+ 
 (custom-set-variables
  ;; custom-set-variables was added by Custom.
  ;; If you edit it by hand, you could mess it up, so be careful.
@@ -286,7 +308,7 @@
  '(package-enable-at-startup nil)
  '(package-selected-packages
    (quote
-    (which-key tabbar try cmake-ide fuzzy multiple-cursors ace-window avy expand-region flymake-cursor flymake-google-cpplint flymake-go iedit company-quickhelp markdown-toc markdown-preview-mode markdown-preview-eww markdown-mode ahk-mode guru-mode neotree impatient-mode company-irony company-irony-c-headers flycheck-irony irony irony-eldoc rainbow-mode nyan-mode flycheck magit ido-ubiquitous flx-ido smartparens smex undo-tree volatile-highlights yasnippet)))
+    (swiper counsel diff-hl which-key tabbar try cmake-ide fuzzy multiple-cursors ace-window avy expand-region flymake-cursor flymake-google-cpplint flymake-go iedit company-quickhelp markdown-toc markdown-preview-mode markdown-preview-eww markdown-mode ahk-mode guru-mode neotree impatient-mode company-irony company-irony-c-headers flycheck-irony irony irony-eldoc rainbow-mode nyan-mode flycheck magit ido-ubiquitous flx-ido smartparens smex undo-tree volatile-highlights yasnippet)))
  '(show-smartparens-global-mode t)
  '(tool-bar-mode nil))
 (custom-set-faces

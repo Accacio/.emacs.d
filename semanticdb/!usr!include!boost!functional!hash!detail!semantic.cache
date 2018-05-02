@@ -1,0 +1,497 @@
+;; Object semanticdb-project-database-file
+;; SEMANTICDB Tags save file
+(semanticdb-project-database-file "semanticdb-project-database-file"
+  :tables
+  (list
+    (semanticdb-table "semanticdb-table"
+      :major-mode c++-mode
+      :tags 
+        '( ("BOOST_FUNCTIONAL_HASH_DETAIL_HASH_FLOAT_HEADER" variable (:constant-flag t) nil [262 308])
+            ("boost/config.hpp" include (:system-flag t) nil [376 403])
+            ("boost/functional/hash/detail/float_functions.hpp" include (:system-flag t) nil [404 463])
+            ("boost/functional/hash/detail/limits.hpp" include (:system-flag t) nil [464 514])
+            ("boost/utility/enable_if.hpp" include (:system-flag t) nil [515 553])
+            ("boost/integer/static_log2.hpp" include (:system-flag t) nil [554 594])
+            ("boost/cstdint.hpp" include (:system-flag t) nil [595 623])
+            ("boost/assert.hpp" include (:system-flag t) nil [624 651])
+            ("boost/limits.hpp" include (:system-flag t) nil [652 679])
+            ("cstring" include (:system-flag t) nil [680 698])
+            ("BOOST_HASH_USE_FPCLASSIFY" variable (:constant-flag t) nil [1294 1319])
+            ("boost" type
+               (:members 
+                  ( ("hash_detail" type
+                       (:members 
+                          ( ("hash_float_combine" function
+                               (:typemodifiers ("inline")
+                                :arguments 
+                                  ( ("seed" variable
+                                       (:reference 1
+                                        :type ("std::size_t" type (:type "class") nil nil))
+                                        (reparse-symbol arg-sub-list) [1540 1558])
+                                    ("value" variable (:type ("std::size_t" type (:type "class") nil nil)) (reparse-symbol arg-sub-list) [1559 1577]))                                  
+                                :type "void")
+                                (reparse-symbol namespacesubparts) [1509 1648])
+                            ("hash_binary" function
+                               (:typemodifiers ("inline")
+                                :arguments 
+                                  ( ("ptr" variable
+                                       (:pointer 1
+                                        :type "char")
+                                        (reparse-symbol arg-sub-list) [1920 1930])
+                                    ("length" variable (:type ("std::size_t" type (:type "class") nil nil)) (reparse-symbol arg-sub-list) [1931 1950]))                                  
+                                :type ("std::size_t" type (:type "class") nil nil))
+                                (reparse-symbol namespacesubparts) [1889 2754])
+                            ("float_hash_impl" function
+                               (:template 
+                                  ( ("Float" type (:type "class") nil nil))                                  
+                                :type ("std::size_t" type (:type "class") nil nil)
+                                :arguments 
+                                  ( ("v" variable (:type ("Float" type (:type "class") nil nil)) (reparse-symbol arg-sub-list) [2833 2841])
+                                    ("boost::enable_if_c" variable (:type ("BOOST_DEDUCED_TYPENAME" type (:type "class") nil nil)) (reparse-symbol arg-sub-list) [2854 2896])
+                                    ("" variable
+                                       (:reference 1
+                                        :type ("std::numeric_limits::is_iec559" type (:type "class") nil nil))
+                                        (reparse-symbol arg-sub-list) [2913 2953])
+                                    ("" variable (:type ("std::numeric_limits::digits" type (:type "class") nil nil)) (reparse-symbol arg-sub-list) [2970 3006])
+                                    ("" variable (:type ("std::numeric_limits::radix" type (:type "class") nil nil)) (reparse-symbol arg-sub-list) [3030 3065])
+                                    ("" variable (:type ("std::numeric_limits::max_exponent" type (:type "class") nil nil)) (reparse-symbol arg-sub-list) [3088 3130])
+                                    ("" variable (:type "int") (reparse-symbol arg-sub-list) [3153 3157])
+                                    ("" variable (:type ("type" type (:type "class") nil nil)) (reparse-symbol arg-sub-list) [3159 3177]))                                  
+                                :typemodifiers ("inline"))
+                                (reparse-symbol namespacesubparts) [2764 3244])
+                            ("float_hash_impl" function
+                               (:template 
+                                  ( ("Float" type (:type "class") nil nil))                                  
+                                :type ("std::size_t" type (:type "class") nil nil)
+                                :arguments 
+                                  ( ("v" variable (:type ("Float" type (:type "class") nil nil)) (reparse-symbol arg-sub-list) [3324 3332])
+                                    ("boost::enable_if_c" variable (:type ("BOOST_DEDUCED_TYPENAME" type (:type "class") nil nil)) (reparse-symbol arg-sub-list) [3345 3387])
+                                    ("" variable
+                                       (:reference 1
+                                        :type ("std::numeric_limits::is_iec559" type (:type "class") nil nil))
+                                        (reparse-symbol arg-sub-list) [3404 3444])
+                                    ("" variable (:type ("std::numeric_limits::digits" type (:type "class") nil nil)) (reparse-symbol arg-sub-list) [3461 3497])
+                                    ("" variable (:type ("std::numeric_limits::radix" type (:type "class") nil nil)) (reparse-symbol arg-sub-list) [3521 3556])
+                                    ("" variable (:type ("std::numeric_limits::max_exponent" type (:type "class") nil nil)) (reparse-symbol arg-sub-list) [3579 3621])
+                                    ("" variable (:type "int") (reparse-symbol arg-sub-list) [3645 3649])
+                                    ("" variable (:type ("type" type (:type "class") nil nil)) (reparse-symbol arg-sub-list) [3651 3669]))                                  
+                                :typemodifiers ("inline"))
+                                (reparse-symbol namespacesubparts) [3255 3736])
+                            ("float_hash_impl" function
+                               (:template 
+                                  ( ("Float" type (:type "class") nil nil))                                  
+                                :type ("std::size_t" type (:type "class") nil nil)
+                                :arguments 
+                                  ( ("v" variable (:type ("Float" type (:type "class") nil nil)) (reparse-symbol arg-sub-list) [3815 3823])
+                                    ("boost::enable_if_c" variable (:type ("BOOST_DEDUCED_TYPENAME" type (:type "class") nil nil)) (reparse-symbol arg-sub-list) [3836 3878])
+                                    ("" variable
+                                       (:reference 1
+                                        :type ("std::numeric_limits::is_iec559" type (:type "class") nil nil))
+                                        (reparse-symbol arg-sub-list) [3895 3935])
+                                    ("" variable (:type ("std::numeric_limits::digits" type (:type "class") nil nil)) (reparse-symbol arg-sub-list) [3952 3988])
+                                    ("" variable (:type ("std::numeric_limits::radix" type (:type "class") nil nil)) (reparse-symbol arg-sub-list) [4012 4047])
+                                    ("" variable (:type ("std::numeric_limits::max_exponent" type (:type "class") nil nil)) (reparse-symbol arg-sub-list) [4070 4112])
+                                    ("" variable (:type "int") (reparse-symbol arg-sub-list) [4137 4141])
+                                    ("" variable (:type ("type" type (:type "class") nil nil)) (reparse-symbol arg-sub-list) [4143 4161]))                                  
+                                :typemodifiers ("inline"))
+                                (reparse-symbol namespacesubparts) [3746 4229])
+                            ("float_hash_impl" function
+                               (:template 
+                                  ( ("Float" type (:type "class") nil nil))                                  
+                                :type ("std::size_t" type (:type "class") nil nil)
+                                :arguments 
+                                  ( ("v" variable (:type ("Float" type (:type "class") nil nil)) (reparse-symbol arg-sub-list) [4308 4316])
+                                    ("boost::enable_if_c" variable (:type ("BOOST_DEDUCED_TYPENAME" type (:type "class") nil nil)) (reparse-symbol arg-sub-list) [4329 4371])
+                                    ("" variable
+                                       (:reference 1
+                                        :type ("std::numeric_limits::is_iec559" type (:type "class") nil nil))
+                                        (reparse-symbol arg-sub-list) [4388 4428])
+                                    ("" variable (:type ("std::numeric_limits::digits" type (:type "class") nil nil)) (reparse-symbol arg-sub-list) [4445 4481])
+                                    ("" variable (:type ("std::numeric_limits::radix" type (:type "class") nil nil)) (reparse-symbol arg-sub-list) [4506 4541])
+                                    ("" variable (:type ("std::numeric_limits::max_exponent" type (:type "class") nil nil)) (reparse-symbol arg-sub-list) [4564 4606])
+                                    ("" variable (:type "int") (reparse-symbol arg-sub-list) [4631 4635])
+                                    ("" variable (:type ("type" type (:type "class") nil nil)) (reparse-symbol arg-sub-list) [4637 4655]))                                  
+                                :typemodifiers ("inline"))
+                                (reparse-symbol namespacesubparts) [4239 4723])
+                            ("float_hash_impl2" function
+                               (:template 
+                                  ( ("T" type (:type "class") nil nil))                                  
+                                :type ("std::size_t" type (:type "class") nil nil)
+                                :arguments 
+                                  ( ("v" variable (:type ("T" type (:type "class") nil nil)) (reparse-symbol arg-sub-list) [5000 5004]))                                  
+                                :typemodifiers ("inline"))
+                                (reparse-symbol namespacesubparts) [4937 6321])
+                            ("float_hash_impl" function
+                               (:template 
+                                  ( ("T" type (:type "class") nil nil))                                  
+                                :type ("std::size_t" type (:type "class") nil nil)
+                                :arguments 
+                                  ( ("v" variable (:type ("T" type (:type "class") nil nil)) (reparse-symbol arg-sub-list) [6446 6450])
+                                    ("..." variable (:type "vararg") (reparse-symbol arg-sub-list) [6451 6455]))                                  
+                                :typemodifiers ("inline"))
+                                (reparse-symbol namespacesubparts) [6384 6609]))                          
+                        :type "namespace")
+                        (reparse-symbol namespacesubparts) [1473 6622]))                  
+                :type "namespace")
+                nil [1451 6624])
+            ("boost/config/no_tr1/cmath.hpp" include (:system-flag t) nil [6657 6697])
+            ("boost" type
+               (:members 
+                  ( ("hash_detail" type
+                       (:members 
+                          ( ("float_hash_value" function
+                               (:template 
+                                  ( ("T" type (:type "class") nil nil))                                  
+                                :type ("std::size_t" type (:type "class") nil nil)
+                                :arguments 
+                                  ( ("v" variable (:type ("T" type (:type "class") nil nil)) (reparse-symbol arg-sub-list) [6820 6824]))                                  
+                                :typemodifiers ("inline"))
+                                (reparse-symbol namespacesubparts) [6757 7476]))                          
+                        :type "namespace")
+                        (reparse-symbol namespacesubparts) [6721 7482]))                  
+                :type "namespace")
+                nil [6699 7484]))          
+      :file "hash_float.hpp"
+      :pointmax 8340
+      :fsize 8339
+      :lastmodtime '(21413 1119 0 0)
+      :unmatched-syntax '((punctuation 4636 . 4637) (punctuation 4635 . 4636) (punctuation 4634 . 4635) (number 4608 . 4613) (punctuation 4606 . 4607) (punctuation 4605 . 4606) (punctuation 4546 . 4547) (punctuation 4545 . 4546) (number 4543 . 4544) (punctuation 4541 . 4542) (punctuation 4540 . 4541) (punctuation 4488 . 4489) (punctuation 4487 . 4488) (number 4483 . 4486) (punctuation 4481 . 4482) (punctuation 4480 . 4481) (punctuation 4427 . 4428) (punctuation 4370 . 4371) (punctuation 4142 . 4143) (punctuation 4141 . 4142) (punctuation 4140 . 4141) (number 4114 . 4119) (punctuation 4112 . 4113) (punctuation 4111 . 4112) (punctuation 4052 . 4053) (punctuation 4051 . 4052) (number 4049 . 4050) (punctuation 4047 . 4048) (punctuation 4046 . 4047) (punctuation 3994 . 3995) (punctuation 3993 . 3994) (number 3990 . 3992) (punctuation 3988 . 3989) (punctuation 3987 . 3988) (punctuation 3934 . 3935) (punctuation 3877 . 3878) (punctuation 3650 . 3651) (punctuation 3649 . 3650) (punctuation 3648 . 3649) (number 3623 . 3627) (punctuation 3621 . 3622) (punctuation 3620 . 3621) (punctuation 3561 . 3562) (punctuation 3560 . 3561) (number 3558 . 3559) (punctuation 3556 . 3557) (punctuation 3555 . 3556) (punctuation 3503 . 3504) (punctuation 3502 . 3503) (number 3499 . 3501) (punctuation 3497 . 3498) (punctuation 3496 . 3497) (punctuation 3443 . 3444) (punctuation 3386 . 3387) (punctuation 3158 . 3159) (punctuation 3157 . 3158) (punctuation 3156 . 3157) (number 3132 . 3135) (punctuation 3130 . 3131) (punctuation 3129 . 3130) (punctuation 3070 . 3071) (punctuation 3069 . 3070) (number 3067 . 3068) (punctuation 3065 . 3066) (punctuation 3064 . 3065) (punctuation 3012 . 3013) (punctuation 3011 . 3012) (number 3008 . 3010) (punctuation 3006 . 3007) (punctuation 3005 . 3006) (punctuation 2952 . 2953) (punctuation 2895 . 2896) (semantic-list 1214 . 1281) (punctuation 1213 . 1214))
+      :lexical-table 
+        '(("BOOST_FUNCTIONAL_HASH_DETAIL_HASH_FLOAT_HEADER")
+          )
+)
+    (semanticdb-table "semanticdb-table"
+      :major-mode c++-mode
+      :tags 
+        '( ("BOOST_FUNCTIONAL_HASH_DETAIL_FLOAT_FUNCTIONS_HPP" variable (:constant-flag t) nil [264 312])
+            ("boost/config.hpp" include (:system-flag t) nil [314 341])
+            ("boost/config/no_tr1/cmath.hpp" include (:system-flag t) nil [342 382])
+            ("BOOST_HASH_CONFORMANT_FLOATS" variable (:constant-flag t) nil [1432 1460])
+            ("BOOST_HASH_CONFORMANT_FLOATS" variable (:constant-flag t) nil [2352 2380])
+            ("boost" type
+               (:members 
+                  ( ("hash_detail" type
+                       (:members 
+                          ( ("not_found" type (:type "struct") (reparse-symbol namespacesubparts) [3673 3974])
+                            ("is" type
+                               (:template 
+                                  ( ("T" type (:type "class") nil nil))                                  
+                                :type "struct"
+                                :prototype t)
+                                (reparse-symbol namespacesubparts) [4057 4089])
+                            ("is" type
+                               (:type "struct"
+                                :members 
+                                  ( ("x" variable
+                                       (:dereference 1
+                                        :type "char")
+                                        (reparse-symbol classsubparts) [4129 4140]))                                  
+                                :template-specifier 
+                                  ( ("float" type nil nil nil))                                  )
+                                (reparse-symbol namespacesubparts) [4098 4143])
+                            ("is" type
+                               (:type "struct"
+                                :members 
+                                  ( ("x" variable
+                                       (:dereference 1
+                                        :type "char")
+                                        (reparse-symbol classsubparts) [4184 4195]))                                  
+                                :template-specifier 
+                                  ( ("double" type nil nil nil))                                  )
+                                (reparse-symbol namespacesubparts) [4152 4198])
+                            ("is" type
+                               (:type "struct"
+                                :members 
+                                  ( ("x" variable
+                                       (:dereference 1
+                                        :type "char")
+                                        (reparse-symbol classsubparts) [4244 4255]))                                  
+                                :template-specifier 
+                                  ( ("long double" type nil nil nil))                                  )
+                                (reparse-symbol namespacesubparts) [4207 4258])
+                            ("is" type
+                               (:type "struct"
+                                :members 
+                                  ( ("x" variable
+                                       (:dereference 1
+                                        :type "char")
+                                        (reparse-symbol classsubparts) [4322 4333]))                                  
+                                :template-specifier 
+                                  ( ("boost::hash_detail::not_found" type nil nil nil))                                  )
+                                (reparse-symbol namespacesubparts) [4267 4336])
+                            ("float_type" function
+                               (:template 
+                                  ( ("T" type (:type "class") nil nil))                                  
+                                :type ("is" type
+                                     (:template-specifier 
+                                        ( ("T" type nil nil nil))                                        
+                                      :type "class")
+                                      nil nil)
+                                :arguments 
+                                  ( ("" variable (:type ("T" type (:type "class") nil nil)) (reparse-symbol arg-sub-list) [4477 4479]))                                  
+                                :prototype-flag t)
+                                (reparse-symbol namespacesubparts) [4438 4480])
+                            ("call_ldexp" type
+                               (:template 
+                                  ( ("Float" type (:type "class") nil nil))                                  
+                                :type "struct"
+                                :members 
+                                  ( ("float_type" type
+                                       (:typedef ("double")
+                                        :type "typedef")
+                                        (reparse-symbol classsubparts) [4661 4687])
+                                    ("()" function
+                                       (:methodconst-flag t
+                                        :operator-flag t
+                                        :typemodifiers ("inline")
+                                        :arguments 
+                                          ( ("a" variable (:type "double") (reparse-symbol arg-sub-list) [4738 4747])
+                                            ("b" variable (:type "int") (reparse-symbol arg-sub-list) [4748 4754]))                                          
+                                        :type "double")
+                                        (reparse-symbol classsubparts) [4713 4861]))                                  )
+                                (reparse-symbol namespacesubparts) [4595 4872])
+                            ("call_frexp" type
+                               (:template 
+                                  ( ("Float" type (:type "class") nil nil))                                  
+                                :type "struct"
+                                :members 
+                                  ( ("float_type" type
+                                       (:typedef ("double")
+                                        :type "typedef")
+                                        (reparse-symbol classsubparts) [5045 5071])
+                                    ("()" function
+                                       (:methodconst-flag t
+                                        :operator-flag t
+                                        :typemodifiers ("inline")
+                                        :arguments 
+                                          ( ("a" variable (:type "double") (reparse-symbol arg-sub-list) [5122 5131])
+                                            ("b" variable
+                                               (:pointer 1
+                                                :type "int")
+                                                (reparse-symbol arg-sub-list) [5132 5139]))                                          
+                                        :type "double")
+                                        (reparse-symbol classsubparts) [5097 5246]))                                  )
+                                (reparse-symbol namespacesubparts) [4979 5257]))                          
+                        :type "namespace")
+                        (reparse-symbol namespacesubparts) [3573 5263]))                  
+                :type "namespace")
+                nil [3551 5265])
+            ("boost_hash_detect_float_functions" type
+               (:members 
+                  ( ("ldexp" function
+                       (:template 
+                          ( ("Float" type (:type "class") nil nil))                          
+                        :type ("boost::hash_detail::not_found" type (:type "class") nil nil)
+                        :arguments 
+                          ( ("" variable (:type ("Float" type (:type "class") nil nil)) (reparse-symbol arg-sub-list) [5761 5767])
+                            ("" variable (:type "int") (reparse-symbol arg-sub-list) [5768 5772]))                          
+                        :prototype-flag t)
+                        (reparse-symbol namespacesubparts) [5702 5773])
+                    ("frexp" function
+                       (:template 
+                          ( ("Float" type (:type "class") nil nil))                          
+                        :type ("boost::hash_detail::not_found" type (:type "class") nil nil)
+                        :arguments 
+                          ( ("" variable (:type ("Float" type (:type "class") nil nil)) (reparse-symbol arg-sub-list) [5837 5843])
+                            ("" variable
+                               (:pointer 1
+                                :type "int")
+                                (reparse-symbol arg-sub-list) [5844 5849]))                          
+                        :prototype-flag t)
+                        (reparse-symbol namespacesubparts) [5778 5850]))                  
+                :type "namespace")
+                nil [5652 5856])
+            ("BOOST_HASH_CALL_FLOAT_FUNC" variable (:constant-flag t) nil [6446 6472])
+            ("BOOST_HASH_CALL_FLOAT_MACRO" variable (:constant-flag t) nil [11185 11212])
+            ("boost_hash_detect_float_functions" type
+               (:members 
+                  ( ("ldexpf" function
+                       (:template 
+                          ( ("Float" type (:type "class") nil nil))                          
+                        :type ("boost::hash_detail::not_found" type (:type "class") nil nil)
+                        :arguments 
+                          ( ("" variable (:type ("Float" type (:type "class") nil nil)) (reparse-symbol arg-sub-list) nil)
+                            ("" variable (:type "int") (reparse-symbol arg-sub-list) nil))                          
+                        :prototype-flag t)
+                        (reparse-symbol namespacesubparts) nil))                  
+                :type "namespace")
+                nil [12149 12202])
+            ("boost" type
+               (:members 
+                  ( ("hash_detail" type
+                       (:members 
+                          ( ("ldexp" variable (:type "int") (reparse-symbol namespacesubparts) nil)
+                            ("ldexpf" variable (:type "int") (reparse-symbol namespacesubparts) nil)
+                            ("ldexpf" variable (:type "int") (reparse-symbol namespacesubparts) nil))                          
+                        :type "namespace")
+                        (reparse-symbol namespacesubparts) nil))                  
+                :type "namespace")
+                nil [12149 12202])
+            ("boost_hash_detect_float_functions" type
+               (:members 
+                  ( ("ldexpl" function
+                       (:template 
+                          ( ("Float" type (:type "class") nil nil))                          
+                        :type ("boost::hash_detail::not_found" type (:type "class") nil nil)
+                        :arguments 
+                          ( ("" variable (:type ("Float" type (:type "class") nil nil)) (reparse-symbol arg-sub-list) nil)
+                            ("" variable (:type "double") (reparse-symbol arg-sub-list) nil))                          
+                        :prototype-flag t)
+                        (reparse-symbol namespacesubparts) nil))                  
+                :type "namespace")
+                nil [12298 12357])
+            ("boost" type
+               (:members 
+                  ( ("hash_detail" type
+                       (:members 
+                          ( ("ldexp" variable (:type "int") (reparse-symbol namespacesubparts) nil)
+                            ("ldexpl" variable (:type "int") (reparse-symbol namespacesubparts) nil)
+                            ("ldexpl" variable (:type "int") (reparse-symbol namespacesubparts) nil))                          
+                        :type "namespace")
+                        (reparse-symbol namespacesubparts) nil))                  
+                :type "namespace")
+                nil [12298 12357])
+            ("boost_hash_detect_float_functions" type
+               (:members 
+                  ( ("frexpf" function
+                       (:template 
+                          ( ("Float" type (:type "class") nil nil))                          
+                        :type ("boost::hash_detail::not_found" type (:type "class") nil nil)
+                        :arguments 
+                          ( ("" variable (:type ("Float" type (:type "class") nil nil)) (reparse-symbol arg-sub-list) nil)
+                            ("" variable (:type "int") (reparse-symbol arg-sub-list) nil))                          
+                        :prototype-flag t)
+                        (reparse-symbol namespacesubparts) nil))                  
+                :type "namespace")
+                nil [12448 12502])
+            ("boost" type
+               (:members 
+                  ( ("hash_detail" type
+                       (:members 
+                          ( ("frexp" variable (:type "int") (reparse-symbol namespacesubparts) nil)
+                            ("frexpf" variable (:type "int") (reparse-symbol namespacesubparts) nil)
+                            ("frexpf" variable (:type "int") (reparse-symbol namespacesubparts) nil))                          
+                        :type "namespace")
+                        (reparse-symbol namespacesubparts) nil))                  
+                :type "namespace")
+                nil [12448 12502])
+            ("boost_hash_detect_float_functions" type
+               (:members 
+                  ( ("frexpl" function
+                       (:template 
+                          ( ("Float" type (:type "class") nil nil))                          
+                        :type ("boost::hash_detail::not_found" type (:type "class") nil nil)
+                        :arguments 
+                          ( ("" variable (:type ("Float" type (:type "class") nil nil)) (reparse-symbol arg-sub-list) nil)
+                            ("" variable (:type "double") (reparse-symbol arg-sub-list) nil))                          
+                        :prototype-flag t)
+                        (reparse-symbol namespacesubparts) nil))                  
+                :type "namespace")
+                nil [12599 12659])
+            ("boost" type
+               (:members 
+                  ( ("hash_detail" type
+                       (:members 
+                          ( ("frexp" variable (:type "int") (reparse-symbol namespacesubparts) nil)
+                            ("frexpl" variable (:type "int") (reparse-symbol namespacesubparts) nil)
+                            ("frexpl" variable (:type "int") (reparse-symbol namespacesubparts) nil))                          
+                        :type "namespace")
+                        (reparse-symbol namespacesubparts) nil))                  
+                :type "namespace")
+                nil [12599 12659])
+            ("boost" type
+               (:members 
+                  ( ("hash_detail" type
+                       (:members 
+                          ( ("select_hash_type_impl" type
+                               (:template 
+                                  ( ("Float1" type (:type "class") nil nil)
+                                    ("Float2" type (:type "class") nil nil))                                  
+                                :type "struct"
+                                :members 
+                                  ( ("type" type
+                                       (:typedef ("double")
+                                        :type "typedef")
+                                        (reparse-symbol classsubparts) [12892 12912]))                                  )
+                                (reparse-symbol namespacesubparts) [12797 12923])
+                            ("select_hash_type_impl" type
+                               (:type "struct"
+                                :members 
+                                  ( ("type" type
+                                       (:typedef ("float")
+                                        :type "typedef")
+                                        (reparse-symbol classsubparts) [13010 13029]))                                  
+                                :template-specifier 
+                                  ( ("float" type nil nil nil)
+                                    ("float" type nil nil nil))                                  )
+                                (reparse-symbol namespacesubparts) [12933 13040])
+                            ("select_hash_type_impl" type
+                               (:type "struct"
+                                :members 
+                                  ( ("type" type
+                                       (:typedef ("long double")
+                                        :type "typedef")
+                                        (reparse-symbol classsubparts) [13139 13164]))                                  
+                                :template-specifier 
+                                  ( ("long double" type nil nil nil)
+                                    ("long double" type nil nil nil))                                  )
+                                (reparse-symbol namespacesubparts) [13050 13175])
+                            ("select_hash_type" type
+                               (:template 
+                                  ( ("Float" type (:type "class") nil nil))                                  
+                                :type "struct"
+                                :superclasses 
+                                  ( ("select_hash_type_impl" type
+                                       (:protection "unspecified"
+                                        :type "class")
+                                        nil nil))                                  )
+                                (reparse-symbol namespacesubparts) [13386 13625]))                          
+                        :type "namespace")
+                        (reparse-symbol namespacesubparts) [12761 13643]))                  
+                :type "namespace")
+                nil [12739 13645]))          
+      :file "float_functions.hpp"
+      :pointmax 13694
+      :fsize 13693
+      :lastmodtime '(21413 1119 0 0)
+      :unmatched-syntax '((semantic-list 3950 . 3963) (CONST 3944 . 3949) (semantic-list 3941 . 3943) (DOUBLE 3935 . 3941) (LONG 3930 . 3934) (OPERATOR 3921 . 3929) (INLINE 3914 . 3920) (semantic-list 3888 . 3901) (CONST 3882 . 3887) (semantic-list 3879 . 3881) (FLOAT 3874 . 3879) (OPERATOR 3865 . 3873) (INLINE 3858 . 3864))
+      :lexical-table 
+        '(("BOOST_FUNCTIONAL_HASH_DETAIL_FLOAT_FUNCTIONS_HPP")
+          ("BOOST_HASH_CONFORMANT_FLOATS" . ((number "0" 2381 . 2382)))
+          )
+)
+    (semanticdb-table "semanticdb-table"
+      :major-mode c++-mode
+      :tags 
+        '( ("BOOST_FUNCTIONAL_HASH_DETAIL_LIMITS_HEADER" variable (:constant-flag t) nil [369 411])
+            ("boost/limits.hpp" include (:system-flag t) nil [479 506])
+            ("boost" type
+               (:members 
+                  ( ("hash_detail" type
+                       (:members 
+                          ( ("limits" type
+                               (:template 
+                                  ( ("T" type (:type "class") nil nil))                                  
+                                :type "struct"
+                                :superclasses 
+                                  ( ("std::numeric_limits" type
+                                       (:protection "unspecified"
+                                        :type "class")
+                                        nil nil))                                  )
+                                (reparse-symbol namespacesubparts) [808 877]))                          
+                        :type "namespace")
+                        (reparse-symbol namespacesubparts) [772 1663]))                  
+                :type "namespace")
+                nil [750 1665]))          
+      :file "limits.hpp"
+      :pointmax 1674
+      :fsize 1673
+      :lastmodtime '(21413 1119 0 0)
+      :unmatched-syntax nil
+      :lexical-table 
+        '(("BOOST_FUNCTIONAL_HASH_DETAIL_LIMITS_HEADER")
+          )
+))
+  :file "!usr!include!boost!functional!hash!detail!semantic.cache"
+  :semantic-tag-version "2.0"
+  :semanticdb-version "2.2")

@@ -1,0 +1,591 @@
+;; Object semanticdb-project-database-file
+;; SEMANTICDB Tags save file
+(semanticdb-project-database-file "semanticdb-project-database-file"
+  :tables
+  (list
+    (semanticdb-table "semanticdb-table"
+      :major-mode c++-mode
+      :tags 
+        '( ("BOOST_CMDLINE_VP_2003_05_19" variable (:constant-flag t) nil [241 268])
+            ("boost/program_options/config.hpp" include (:system-flag t) nil [270 313])
+            ("boost/program_options/errors.hpp" include (:system-flag t) nil [314 357])
+            ("boost/program_options/cmdline.hpp" include (:system-flag t) nil [358 402])
+            ("boost/program_options/option.hpp" include (:system-flag t) nil [403 446])
+            ("boost/program_options/options_description.hpp" include (:system-flag t) nil [447 503])
+            ("boost/program_options/positional_options.hpp" include (:system-flag t) nil [504 559])
+            ("boost/detail/workaround.hpp" include (:system-flag t) nil [562 600])
+            ("boost/function.hpp" include (:system-flag t) nil [602 631])
+            ("string" include (:system-flag t) nil [633 650])
+            ("vector" include (:system-flag t) nil [651 668])
+            ("boost" type
+               (:members 
+                  ( ("program_options" type
+                       (:members 
+                          ( ("detail" type
+                               (:members 
+                                  ( ("cmdline" variable (:type ("BOOST_PROGRAM_OPTIONS_DECL" type
+                                         (:prototype t
+                                          :type "class")
+                                          nil nil)) (reparse-symbol namespacesubparts) [2067 5608])
+                                    ("test_cmdline_detail" function
+                                       (:prototype-flag t
+                                        :type "void")
+                                        (reparse-symbol namespacesubparts) [5618 5645]))                                  
+                                :type "namespace")
+                                (reparse-symbol namespacesubparts) [952 5652]))                          
+                        :type "namespace")
+                        (reparse-symbol namespacesubparts) [924 5653]))                  
+                :type "namespace")
+                nil [906 5654]))          
+      :file "cmdline.hpp"
+      :pointmax 5721
+      :fsize 5720
+      :lastmodtime '(21413 1117 0 0)
+      :unmatched-syntax nil
+      :lexical-table 
+        '(("BOOST_CMDLINE_VP_2003_05_19")
+          )
+)
+    (semanticdb-table "semanticdb-table"
+      :major-mode c++-mode
+      :tags 
+        '( ("BOOST_PARSERS_HPP_VP_2004_05_06" variable (:constant-flag t) nil [239 270])
+            ("boost/program_options/detail/convert.hpp" include (:system-flag t) nil [272 323])
+            ("iterator" include (:system-flag t) nil [325 344])
+            ("boost" type
+               (:members 
+                  ( ("program_options" type
+                       (:members 
+                          ( ("detail" type
+                               (:members 
+                                  ( ("make_vector" function
+                                       (:template 
+                                          ( ("charT" type (:type "class") nil nil)
+                                            ("Iterator" type (:type "class") nil nil))                                          
+                                        :type ("std::vector" type
+                                             (:template-specifier 
+                                                ( ("std::basic_string" type (:template-specifier 
+                                                    ( ("charT" type nil nil nil))                                                    ) nil nil))                                                
+                                              :type "class")
+                                              nil nil)
+                                        :arguments 
+                                          ( ("i" variable (:type ("Iterator" type (:type "class") nil nil)) (reparse-symbol arg-sub-list) [530 541])
+                                            ("e" variable (:type ("Iterator" type (:type "class") nil nil)) (reparse-symbol arg-sub-list) [542 553]))                                          )
+                                        (reparse-symbol namespacesubparts) [424 888]))                                  
+                                :type "namespace")
+                                (reparse-symbol namespacesubparts) [397 894])
+                            ("basic_command_line_parser" function
+                               (:template 
+                                  ( ("charT" type (:type "class") nil nil))                                  
+                                :type ("basic_command_line_parser" type (:type "class") nil nil)
+                                :arguments 
+                                  ( ("xargs" variable
+                                       (:reference 1
+                                        :constant-flag t
+                                        :type ("std::vector" type
+                                             (:template-specifier 
+                                                ( ("std::basic_string" type (:template-specifier 
+                                                    ( ("charT" type nil nil nil))                                                    ) nil nil))                                                
+                                              :type "class")
+                                              nil nil))
+                                        (reparse-symbol arg-sub-list) [991 1074]))                                  
+                                :parent "basic_command_line_parser"
+                                :constructor-flag t)
+                                (reparse-symbol namespacesubparts) [900 1126])
+                            ("basic_command_line_parser" function
+                               (:template 
+                                  ( ("charT" type (:type "class") nil nil))                                  
+                                :type ("basic_command_line_parser" type (:type "class") nil nil)
+                                :arguments 
+                                  ( ("argc" variable (:type "int") (reparse-symbol arg-sub-list) [1224 1233])
+                                    ("argv" variable
+                                       (:pointer 1
+                                        :dereference 1
+                                        :constant-flag t
+                                        :type ("charT" type (:type "class") nil nil))
+                                        (reparse-symbol arg-sub-list) [1234 1260]))                                  
+                                :parent "basic_command_line_parser"
+                                :constructor-flag t)
+                                (reparse-symbol namespacesubparts) [1133 1523])
+                            ("options" function
+                               (:template 
+                                  ( ("charT" type (:type "class") nil nil))                                  
+                                :type ("basic_command_line_parser" type
+                                     (:template-specifier 
+                                        ( ("charT" type nil nil nil))                                        
+                                      :type "class")
+                                      nil nil)
+                                :arguments 
+                                  ( ("desc" variable
+                                       (:reference 1
+                                        :constant-flag t
+                                        :type ("options_description" type (:type "class") nil nil))
+                                        (reparse-symbol arg-sub-list) [1641 1673]))                                  
+                                :parent "basic_command_line_parser")
+                                (reparse-symbol namespacesubparts) [1534 1786])
+                            ("positional" function
+                               (:template 
+                                  ( ("charT" type (:type "class") nil nil))                                  
+                                :type ("basic_command_line_parser" type
+                                     (:template-specifier 
+                                        ( ("charT" type nil nil nil))                                        
+                                      :type "class")
+                                      nil nil)
+                                :arguments 
+                                  ( ("desc" variable
+                                       (:reference 1
+                                        :constant-flag t
+                                        :type ("positional_options_description" type (:type "class") nil nil))
+                                        (reparse-symbol arg-sub-list) [1911 1954]))                                  
+                                :parent "basic_command_line_parser")
+                                (reparse-symbol namespacesubparts) [1792 2043])
+                            ("style" function
+                               (:template 
+                                  ( ("charT" type (:type "class") nil nil))                                  
+                                :type ("basic_command_line_parser" type
+                                     (:template-specifier 
+                                        ( ("charT" type nil nil nil))                                        
+                                      :type "class")
+                                      nil nil)
+                                :arguments 
+                                  ( ("xstyle" variable (:type "int") (reparse-symbol arg-sub-list) [2154 2165]))                                  
+                                :parent "basic_command_line_parser")
+                                (reparse-symbol namespacesubparts) [2049 2239])
+                            ("extra_parser" function
+                               (:template 
+                                  ( ("charT" type (:type "class") nil nil))                                  
+                                :type ("basic_command_line_parser" type
+                                     (:template-specifier 
+                                        ( ("charT" type nil nil nil))                                        
+                                      :type "class")
+                                      nil nil)
+                                :arguments 
+                                  ( ("ext" variable (:type ("ext_parser" type (:type "class") nil nil)) (reparse-symbol arg-sub-list) [2357 2372]))                                  
+                                :parent "basic_command_line_parser")
+                                (reparse-symbol namespacesubparts) [2245 2459])
+                            ("allow_unregistered" function
+                               (:template 
+                                  ( ("charT" type (:type "class") nil nil))                                  
+                                :type ("basic_command_line_parser" type
+                                     (:template-specifier 
+                                        ( ("charT" type nil nil nil))                                        
+                                      :type "class")
+                                      nil nil)
+                                :parent "basic_command_line_parser")
+                                (reparse-symbol namespacesubparts) [2465 2665])
+                            ("extra_style_parser" function
+                               (:template 
+                                  ( ("charT" type (:type "class") nil nil))                                  
+                                :type ("basic_command_line_parser" type
+                                     (:template-specifier 
+                                        ( ("charT" type nil nil nil))                                        
+                                      :type "class")
+                                      nil nil)
+                                :arguments 
+                                  ( ("s" variable (:type ("style_parser" type (:type "class") nil nil)) (reparse-symbol arg-sub-list) [2789 2804]))                                  
+                                :parent "basic_command_line_parser")
+                                (reparse-symbol namespacesubparts) [2671 2886])
+                            ("run" function
+                               (:template 
+                                  ( ("charT" type (:type "class") nil nil))                                  
+                                :type ("basic_parsed_options" type
+                                     (:template-specifier 
+                                        ( ("charT" type nil nil nil))                                        
+                                      :type "class")
+                                      nil nil)
+                                :parent "basic_command_line_parser")
+                                (reparse-symbol namespacesubparts) [2894 3559])
+                            ("parse_command_line" function
+                               (:template 
+                                  ( ("charT" type (:type "class") nil nil))                                  
+                                :type ("basic_parsed_options" type
+                                     (:template-specifier 
+                                        ( ("charT" type nil nil nil))                                        
+                                      :type "class")
+                                      nil nil)
+                                :arguments 
+                                  ( ("argc" variable (:type "int") (reparse-symbol arg-sub-list) [3643 3652])
+                                    ("argv" variable
+                                       (:pointer 1
+                                        :dereference 1
+                                        :constant-flag t
+                                        :type ("charT" type (:type "class") nil nil))
+                                        (reparse-symbol arg-sub-list) [3653 3679])
+                                    ("desc" variable
+                                       (:reference 1
+                                        :constant-flag t
+                                        :type ("options_description" type (:type "class") nil nil))
+                                        (reparse-symbol arg-sub-list) [3703 3735])
+                                    ("style" variable (:type "int") (reparse-symbol arg-sub-list) [3759 3769])
+                                    ("ext" variable (:type ("function1" type
+                                         (:template-specifier 
+                                            ( ("std::pair" type (:template-specifier 
+                                                ( ("std::string" type nil nil nil)
+                                                  ("std::string" type nil nil nil))                                                ) nil nil)
+                                              ("std::string" type
+                                                 (:reference 1
+                                                  :constant-flag t)
+                                                  nil nil))                                            
+                                          :type "class")
+                                          nil nil)) (reparse-symbol arg-sub-list) [3793 3898]))                                  )
+                                (reparse-symbol namespacesubparts) [3566 4035])
+                            ("collect_unrecognized" function
+                               (:template 
+                                  ( ("charT" type (:type "class") nil nil))                                  
+                                :type ("std::vector" type
+                                     (:template-specifier 
+                                        ( ("std::basic_string" type (:template-specifier 
+                                            ( ("charT" type nil nil nil))                                            ) nil nil))                                        
+                                      :type "class")
+                                      nil nil)
+                                :arguments 
+                                  ( ("options" variable
+                                       (:reference 1
+                                        :constant-flag t
+                                        :type ("std::vector" type
+                                             (:template-specifier 
+                                                ( ("basic_option" type (:template-specifier 
+                                                    ( ("charT" type nil nil nil))                                                    ) nil nil))                                                
+                                              :type "class")
+                                              nil nil))
+                                        (reparse-symbol arg-sub-list) [4133 4183])
+                                    ("mode" variable (:type ("collect_unrecognized_mode" type (:type "enum") nil nil)) (reparse-symbol arg-sub-list) [4209 4245]))                                  )
+                                (reparse-symbol namespacesubparts) [4041 4717]))                          
+                        :type "namespace")
+                        (reparse-symbol namespacesubparts) [364 4721]))                  
+                :type "namespace")
+                nil [346 4722]))          
+      :file "parsers.hpp"
+      :pointmax 4731
+      :fsize 4730
+      :lastmodtime '(21413 1117 0 0)
+      :unmatched-syntax nil
+      :lexical-table 
+        '(("BOOST_PARSERS_HPP_VP_2004_05_06")
+          )
+)
+    (semanticdb-table "semanticdb-table"
+      :major-mode c++-mode
+      :tags 
+        '( ("boost/throw_exception.hpp" include (:system-flag t) nil [279 315])
+            ("boost" type
+               (:members 
+                  ( ("program_options" type
+                       (:members 
+                          ( ("arg" variable (:type ("std::string" type (:type "class") nil nil)) (reparse-symbol namespacesubparts) [403 419])
+                            ("name" function
+                               (:template 
+                                  ( ("T" type (:type "class") nil nil)
+                                    ("charT" type (:type "class") nil nil))                                  
+                                :type ("std::string" type (:type "class") nil nil)
+                                :parent "typed_value"
+                                :methodconst-flag t)
+                                (reparse-symbol namespacesubparts) [429 1136])
+                            ("notify" function
+                               (:template 
+                                  ( ("T" type (:type "class") nil nil)
+                                    ("charT" type (:type "class") nil nil))                                  
+                                :type "void"
+                                :arguments 
+                                  ( ("value_store" variable
+                                       (:reference 1
+                                        :constant-flag t
+                                        :type ("boost::any" type (:type "class") nil nil))
+                                        (reparse-symbol arg-sub-list) [1217 1247]))                                  
+                                :parent "typed_value"
+                                :methodconst-flag t)
+                                (reparse-symbol namespacesubparts) [1142 1462])
+                            ("validators" type
+                               (:members 
+                                  ( ("get_single_string" function
+                                       (:template 
+                                          ( ("charT" type (:type "class") nil nil))                                          
+                                        :type ("std::basic_string" type
+                                             (:template-specifier 
+                                                ( ("charT" type nil nil nil))                                                
+                                              :type "class")
+                                              nil nil)
+                                        :arguments 
+                                          ( ("v" variable
+                                               (:reference 1
+                                                :constant-flag t
+                                                :type ("std::vector" type
+                                                     (:template-specifier 
+                                                        ( ("std::basic_string" type (:template-specifier 
+                                                            ( ("charT" type nil nil nil))                                                            ) nil nil))                                                        
+                                                      :type "class")
+                                                      nil nil))
+                                                (reparse-symbol arg-sub-list) [1853 1901])
+                                            ("allow_empty" variable
+                                               (:default-value "false"
+                                                :type "bool")
+                                                (reparse-symbol arg-sub-list) [1915 1939]))                                          
+                                        :constant-flag t)
+                                        (reparse-symbol namespacesubparts) [1760 2382])
+                                    ("check_first_occurrence" function
+                                       (:prototype-flag t
+                                        :arguments 
+                                          ( ("value" variable
+                                               (:reference 1
+                                                :constant-flag t
+                                                :type ("boost::any" type (:type "class") nil nil))
+                                                (reparse-symbol arg-sub-list) [2523 2547]))                                          
+                                        :type "void")
+                                        (reparse-symbol namespacesubparts) [2486 2548]))                                  
+                                :type "namespace")
+                                (reparse-symbol namespacesubparts) [1468 2554])
+                            ("validators" using (:type ("validators" type
+                                 (:prototype t
+                                  :type "namespace")
+                                  nil nil)) (reparse-symbol namespacesubparts) [2560 2587])
+                            ("validate" function
+                               (:template 
+                                  ( ("T" type (:type "class") nil nil)
+                                    ("charT" type (:type "class") nil nil))                                  
+                                :type "void"
+                                :arguments 
+                                  ( ("v" variable
+                                       (:reference 1
+                                        :type ("boost::any" type (:type "class") nil nil))
+                                        (reparse-symbol arg-sub-list) [3026 3040])
+                                    ("xs" variable
+                                       (:reference 1
+                                        :constant-flag t
+                                        :type ("std::vector" type
+                                             (:template-specifier 
+                                                ( ("std::basic_string" type (:template-specifier 
+                                                    ( ("charT" type nil nil nil))                                                    ) nil nil))                                                
+                                              :type "class")
+                                              nil nil))
+                                        (reparse-symbol arg-sub-list) [3060 3110])
+                                    ("" variable
+                                       (:pointer 1
+                                        :type ("T" type (:type "class") nil nil))
+                                        (reparse-symbol arg-sub-list) [3130 3133])
+                                    ("" variable (:type "long") (reparse-symbol arg-sub-list) [3134 3139]))                                  )
+                                (reparse-symbol namespacesubparts) [2977 3446])
+                            ("validate" function
+                               (:prototype-flag t
+                                :arguments 
+                                  ( ("v" variable
+                                       (:reference 1
+                                        :type ("boost::any" type (:type "class") nil nil))
+                                        (reparse-symbol arg-sub-list) [3493 3507])
+                                    ("xs" variable
+                                       (:reference 1
+                                        :constant-flag t
+                                        :type ("std::vector" type
+                                             (:template-specifier 
+                                                ( ("std::string" type nil nil nil))                                                
+                                              :type "class")
+                                              nil nil))
+                                        (reparse-symbol arg-sub-list) [3532 3567])
+                                    ("" variable
+                                       (:pointer 1
+                                        :type "bool")
+                                        (reparse-symbol arg-sub-list) [3592 3598])
+                                    ("" variable (:type "int") (reparse-symbol arg-sub-list) [3622 3626]))                                  
+                                :type "void")
+                                (reparse-symbol namespacesubparts) [3479 3627])
+                            ("validate" function
+                               (:prototype-flag t
+                                :arguments 
+                                  ( ("v" variable
+                                       (:reference 1
+                                        :type ("boost::any" type (:type "class") nil nil))
+                                        (reparse-symbol arg-sub-list) [3709 3723])
+                                    ("xs" variable
+                                       (:reference 1
+                                        :constant-flag t
+                                        :type ("std::vector" type
+                                             (:template-specifier 
+                                                ( ("std::wstring" type nil nil nil))                                                
+                                              :type "class")
+                                              nil nil))
+                                        (reparse-symbol arg-sub-list) [3748 3784])
+                                    ("" variable
+                                       (:pointer 1
+                                        :type "bool")
+                                        (reparse-symbol arg-sub-list) [3809 3815])
+                                    ("" variable (:type "int") (reparse-symbol arg-sub-list) [3839 3843]))                                  
+                                :type "void")
+                                (reparse-symbol namespacesubparts) [3695 3844])
+                            ("v" variable
+                               (:default-value "boost::any(std::vector<T>())"
+                                :type "int")
+                                (reparse-symbol namespacesubparts) [4960 4993])
+                            ("i" variable
+                               (:default-value "0"
+                                :type "unsigned int")
+                                (reparse-symbol namespacesubparts) [5113 5128])
+                            ("size" function
+                               (:prototype-flag t
+                                :type "int")
+                                (reparse-symbol namespacesubparts) [5135 5142])
+                            ("value_store" variable
+                               (:default-value "m_implicit_value"
+                                :type "int")
+                                (reparse-symbol namespacesubparts) [6209 6240])
+                            ("r" variable (:type "int") (reparse-symbol namespacesubparts) [6621 6623])
+                            ("r" variable (:type "int") (reparse-symbol namespacesubparts) [6904 6906]))                          
+                        :type "namespace")
+                        (reparse-symbol namespacesubparts) [335 6925]))                  
+                :type "namespace")
+                nil [317 6926]))          
+      :file "value_semantic.hpp"
+      :pointmax 6927
+      :fsize 6926
+      :lastmodtime '(21413 1117 0 0)
+      :unmatched-syntax '((RETURN 6897 . 6903) (punctuation 6886 . 6887) (close-paren 6885 . 6886) (symbol 6884 . 6885) (open-paren 6883 . 6884) (punctuation 6882 . 6883) (WCHAR 6875 . 6882) (punctuation 6873 . 6874) (symbol 6872 . 6873) (punctuation 6871 . 6872) (symbol 6860 . 6871) (NEW 6856 . 6859) (punctuation 6854 . 6855) (symbol 6852 . 6853) (punctuation 6850 . 6851) (punctuation 6849 . 6850) (WCHAR 6842 . 6849) (punctuation 6840 . 6841) (symbol 6839 . 6840) (punctuation 6838 . 6839) (symbol 6827 . 6838) (close-paren 6811 . 6812) (symbol 6810 . 6811) (punctuation 6808 . 6809) (symbol 6807 . 6808) (open-paren 6806 . 6807) (symbol 6800 . 6806) (punctuation 6794 . 6795) (punctuation 6793 . 6794) (WCHAR 6786 . 6793) (punctuation 6784 . 6785) (symbol 6783 . 6784) (punctuation 6782 . 6783) (symbol 6771 . 6782) (punctuation 6765 . 6766) (symbol 6764 . 6765) (CLASS 6758 . 6763) (punctuation 6757 . 6758) (TEMPLATE 6749 . 6757) (punctuation 6736 . 6737) (close-paren 6735 . 6736) (number 6734 . 6735) (open-paren 6733 . 6734) (punctuation 6732 . 6733) (symbol 6731 . 6732) (punctuation 6730 . 6731) (symbol 6724 . 6730) (RETURN 6717 . 6723) (close-paren 6701 . 6702) (open-paren 6700 . 6701) (symbol 6694 . 6700) (punctuation 6688 . 6689) (punctuation 6687 . 6688) (WCHAR 6680 . 6687) (punctuation 6678 . 6679) (symbol 6677 . 6678) (punctuation 6676 . 6677) (symbol 6665 . 6676) (punctuation 6659 . 6660) (symbol 6658 . 6659) (CLASS 6652 . 6657) (punctuation 6651 . 6652) (TEMPLATE 6643 . 6651) (RETURN 6614 . 6620) (punctuation 6603 . 6604) (close-paren 6602 . 6603) (symbol 6601 . 6602) (open-paren 6600 . 6601) (punctuation 6599 . 6600) (symbol 6598 . 6599) (punctuation 6597 . 6598) (symbol 6586 . 6597) (NEW 6582 . 6585) (punctuation 6580 . 6581) (symbol 6578 . 6579) (punctuation 6576 . 6577) (punctuation 6575 . 6576) (symbol 6574 . 6575) (punctuation 6573 . 6574) (symbol 6562 . 6573) (close-paren 6546 . 6547) (symbol 6545 . 6546) (punctuation 6543 . 6544) (symbol 6542 . 6543) (open-paren 6541 . 6542) (symbol 6536 . 6541) (punctuation 6530 . 6531) (punctuation 6529 . 6530) (symbol 6528 . 6529) (punctuation 6527 . 6528) (symbol 6516 . 6527) (punctuation 6510 . 6511) (symbol 6509 . 6510) (CLASS 6503 . 6508) (punctuation 6502 . 6503) (TEMPLATE 6494 . 6502) (punctuation 6481 . 6482) (close-paren 6480 . 6481) (number 6479 . 6480) (open-paren 6478 . 6479) (punctuation 6477 . 6478) (symbol 6476 . 6477) (punctuation 6475 . 6476) (symbol 6470 . 6475) (punctuation 6469 . 6470) (punctuation 6468 . 6469) (symbol 6453 . 6468) (punctuation 6452 . 6453) (punctuation 6451 . 6452) (symbol 6446 . 6451) (RETURN 6439 . 6445) (close-paren 6370 . 6371) (open-paren 6369 . 6370) (symbol 6364 . 6369) (punctuation 6358 . 6359) (punctuation 6357 . 6358) (symbol 6356 . 6357) (punctuation 6355 . 6356) (symbol 6344 . 6355) (punctuation 6338 . 6339) (symbol 6337 . 6338) (CLASS 6331 . 6336) (punctuation 6330 . 6331) (TEMPLATE 6322 . 6330) (punctuation 6309 . 6310) (close-paren 6308 . 6309) (number 6307 . 6308) (punctuation 6305 . 6306) (number 6304 . 6305) (semantic-list 6300 . 6304) (punctuation 6298 . 6299) (symbol 6288 . 6298) (punctuation 6286 . 6287) (symbol 6275 . 6286) (open-paren 6274 . 6275) (symbol 6266 . 6274) (ELSE 6249 . 6253) (close-paren 6195 . 6196) (semantic-list 6193 . 6195) (symbol 6188 . 6193) (punctuation 6187 . 6188) (symbol 6171 . 6187) (punctuation 6170 . 6171) (punctuation 6168 . 6169) (punctuation 6167 . 6168) (semantic-list 6164 . 6166) (symbol 6159 . 6164) (punctuation 6158 . 6159) (symbol 6148 . 6158) (open-paren 6147 . 6148) (IF 6144 . 6146) (CONST 5924 . 5929) (close-paren 5922 . 5923) (symbol 5912 . 5922) (punctuation 5910 . 5911) (punctuation 5909 . 5910) (punctuation 5907 . 5908) (symbol 5902 . 5907) (punctuation 5901 . 5902) (symbol 5889 . 5901) (punctuation 5888 . 5889) (punctuation 5887 . 5888) (symbol 5884 . 5887) (punctuation 5883 . 5884) (symbol 5877 . 5883) (punctuation 5876 . 5877) (punctuation 5875 . 5876) (symbol 5872 . 5875) (CONST 5866 . 5871) (punctuation 5852 . 5853) (symbol 5841 . 5852) (punctuation 5839 . 5840) (symbol 5836 . 5839) (punctuation 5835 . 5836) (punctuation 5834 . 5835) (symbol 5829 . 5834) (open-paren 5828 . 5829) (symbol 5822 . 5828) (punctuation 5816 . 5817) (punctuation 5815 . 5816) (punctuation 5814 . 5815) (symbol 5809 . 5814) (punctuation 5807 . 5808) (symbol 5806 . 5807) (punctuation 5805 . 5806) (symbol 5794 . 5805) (VOID 5784 . 5788) (punctuation 5778 . 5779) (symbol 5773 . 5778) (CLASS 5767 . 5772) (punctuation 5765 . 5766) (symbol 5764 . 5765) (CLASS 5758 . 5763) (punctuation 5757 . 5758) (TEMPLATE 5749 . 5757) (semantic-list 5644 . 5727) (semantic-list 5612 . 5643) (CATCH 5607 . 5612) (semantic-list 5174 . 5594) (TRY 5170 . 5173) (close-paren 5146 . 5147) (symbol 5145 . 5146) (punctuation 5144 . 5145) (punctuation 5143 . 5144) (punctuation 5134 . 5135) (symbol 5133 . 5134) (punctuation 5131 . 5132) (symbol 5129 . 5130) (open-paren 5112 . 5113) (FOR 5108 . 5111) (punctuation 5098 . 5099) (close-paren 5097 . 5098) (symbol 5095 . 5097) (punctuation 5093 . 5094) (punctuation 5092 . 5093) (symbol 5087 . 5091) (open-paren 5086 . 5087) (symbol 5080 . 5086) (punctuation 5070 . 5071) (close-paren 5069 . 5070) (symbol 5068 . 5069) (punctuation 5067 . 5068) (open-paren 5066 . 5067) (punctuation 5065 . 5066) (punctuation 5063 . 5064) (symbol 5062 . 5063) (punctuation 5061 . 5062) (symbol 5055 . 5061) (punctuation 5054 . 5055) (punctuation 5053 . 5054) (symbol 5050 . 5053) (punctuation 5048 . 5049) (symbol 5040 . 5048) (punctuation 5039 . 5040) (punctuation 5038 . 5039) (symbol 5033 . 5038) (punctuation 5031 . 5032) (symbol 5028 . 5030) (punctuation 5026 . 5027) (punctuation 5025 . 5026) (symbol 5024 . 5025) (punctuation 5023 . 5024) (symbol 5017 . 5023) (punctuation 5016 . 5017) (punctuation 5015 . 5016) (symbol 5012 . 5015) (close-paren 4944 . 4945) (semantic-list 4942 . 4944) (symbol 4937 . 4942) (punctuation 4936 . 4937) (symbol 4935 . 4936) (open-paren 4934 . 4935) (IF 4931 . 4933) (close-paren 4915 . 4916) (INT 4912 . 4915) (punctuation 4892 . 4893) (punctuation 4891 . 4892) (punctuation 4890 . 4891) (symbol 4889 . 4890) (punctuation 4888 . 4889) (symbol 4882 . 4888) (punctuation 4881 . 4882) (punctuation 4880 . 4881) (symbol 4877 . 4880) (punctuation 4856 . 4857) (symbol 4855 . 4856) (punctuation 4853 . 4854) (punctuation 4852 . 4853) (punctuation 4850 . 4851) (symbol 4845 . 4850) (punctuation 4844 . 4845) (symbol 4832 . 4844) (punctuation 4831 . 4832) (punctuation 4830 . 4831) (symbol 4827 . 4830) (punctuation 4826 . 4827) (symbol 4820 . 4826) (punctuation 4819 . 4820) (punctuation 4818 . 4819) (symbol 4815 . 4818) (CONST 4809 . 4814) (punctuation 4788 . 4789) (symbol 4787 . 4788) (punctuation 4785 . 4786) (symbol 4782 . 4785) (punctuation 4781 . 4782) (punctuation 4780 . 4781) (symbol 4775 . 4780) (open-paren 4774 . 4775) (symbol 4766 . 4774) (VOID 4761 . 4765) (punctuation 4755 . 4756) (symbol 4750 . 4755) (CLASS 4744 . 4749) (punctuation 4742 . 4743) (symbol 4741 . 4742) (CLASS 4735 . 4740) (punctuation 4734 . 4735) (TEMPLATE 4726 . 4734) (punctuation 4595 . 4596) (close-paren 4594 . 4595) (INT 4591 . 4594) (punctuation 4566 . 4567) (punctuation 4565 . 4566) (symbol 4559 . 4565) (punctuation 4558 . 4559) (punctuation 4557 . 4558) (symbol 4554 . 4557) (punctuation 4529 . 4530) (symbol 4527 . 4529) (punctuation 4525 . 4526) (punctuation 4524 . 4525) (symbol 4517 . 4524) (punctuation 4516 . 4517) (punctuation 4515 . 4516) (symbol 4512 . 4515) (punctuation 4511 . 4512) (symbol 4505 . 4511) (punctuation 4504 . 4505) (punctuation 4503 . 4504) (symbol 4500 . 4503) (CONST 4494 . 4499) (punctuation 4468 . 4469) (symbol 4467 . 4468) (punctuation 4465 . 4466) (symbol 4462 . 4465) (punctuation 4461 . 4462) (punctuation 4460 . 4461) (symbol 4455 . 4460) (open-paren 4454 . 4455) (symbol 4446 . 4454) (VOID 4441 . 4445) (symbol 4414 . 4440) (punctuation 4372 . 4373) (close-paren 4371 . 4372) (INT 4368 . 4371) (punctuation 4343 . 4344) (punctuation 4342 . 4343) (symbol 4336 . 4342) (punctuation 4335 . 4336) (punctuation 4334 . 4335) (symbol 4331 . 4334) (punctuation 4306 . 4307) (symbol 4304 . 4306) (punctuation 4302 . 4303) (punctuation 4301 . 4302) (symbol 4295 . 4301) (punctuation 4294 . 4295) (punctuation 4293 . 4294) (symbol 4290 . 4293) (punctuation 4289 . 4290) (symbol 4283 . 4289) (punctuation 4282 . 4283) (punctuation 4281 . 4282) (symbol 4278 . 4281) (CONST 4272 . 4277) (punctuation 4246 . 4247) (symbol 4245 . 4246) (punctuation 4243 . 4244) (symbol 4240 . 4243) (punctuation 4239 . 4240) (punctuation 4238 . 4239) (symbol 4233 . 4238) (open-paren 4232 . 4233) (symbol 4224 . 4232) (VOID 4219 . 4223) (symbol 4192 . 4218) (close-paren 4185 . 4186) (close-paren 4175 . 4176) (semantic-list 4153 . 4174) (symbol 4137 . 4153) (number 4169 . 4173) (punctuation 4167 . 4168) (punctuation 4166 . 4167) (open-paren 4135 . 4136) (punctuation 4123 . 4124) (punctuation 4122 . 4123) (close-paren 4120 . 4121) (semantic-list 4098 . 4119) (symbol 4082 . 4098) (number 4117 . 4118) (punctuation 4115 . 4116) (symbol 3668 . 3694) (symbol 3452 . 3478) (symbol 2459 . 2485) (symbol 376 . 402) (EXTERN 369 . 375)))
+    (semanticdb-table "semanticdb-table"
+      :major-mode c++-mode
+      :tags 
+        '( ("BOOST_CONVERT_HPP_VP_2004_04_28" variable (:constant-flag t) nil [239 270])
+            ("boost/program_options/config.hpp" include (:system-flag t) nil [272 315])
+            ("boost/detail/workaround.hpp" include (:system-flag t) nil [353 391])
+            ("string" include (:system-flag t) nil [393 410])
+            ("vector" include (:system-flag t) nil [411 428])
+            ("locale" include (:system-flag t) nil [429 446])
+            ("cwchar" include (:system-flag t) nil [464 481])
+            ("stdexcept" include (:system-flag t) nil [482 502])
+            ("boost" type
+               (:members 
+                  ( ("from_8_bit" function
+                       (:prototype-flag t
+                        :arguments 
+                          ( ("s" variable
+                               (:reference 1
+                                :constant-flag t
+                                :type ("std::string" type (:type "class") nil nil))
+                                (reparse-symbol arg-sub-list) [800 821])
+                            ("cvt" variable
+                               (:reference 1
+                                :constant-flag t
+                                :type ("std::codecvt" type
+                                     (:template-specifier 
+                                        ( ("wchar_t" type nil nil nil)
+                                          ("char" type nil nil nil)
+                                          ("std::mbstate_t" type nil nil nil))                                        
+                                      :type "class")
+                                      nil nil))
+                                (reparse-symbol arg-sub-list) [838 893]))                          
+                        :type ("std::wstring" type (:type "class") nil nil))
+                        (reparse-symbol namespacesubparts) [771 894])
+                    ("to_8_bit" function
+                       (:prototype-flag t
+                        :arguments 
+                          ( ("s" variable
+                               (:reference 1
+                                :constant-flag t
+                                :type ("std::wstring" type (:type "class") nil nil))
+                                (reparse-symbol arg-sub-list) [1066 1088])
+                            ("cvt" variable
+                               (:reference 1
+                                :constant-flag t
+                                :type ("std::codecvt" type
+                                     (:template-specifier 
+                                        ( ("wchar_t" type nil nil nil)
+                                          ("char" type nil nil nil)
+                                          ("std::mbstate_t" type nil nil nil))                                        
+                                      :type "class")
+                                      nil nil))
+                                (reparse-symbol arg-sub-list) [1103 1158]))                          
+                        :type ("std::string" type (:type "class") nil nil))
+                        (reparse-symbol namespacesubparts) [1040 1159])
+                    ("from_utf8" function
+                       (:prototype-flag t
+                        :arguments 
+                          ( ("s" variable
+                               (:reference 1
+                                :constant-flag t
+                                :type ("std::string" type (:type "class") nil nil))
+                                (reparse-symbol arg-sub-list) [1312 1333]))                          
+                        :type ("std::wstring" type (:type "class") nil nil))
+                        (reparse-symbol namespacesubparts) [1285 1334])
+                    ("to_utf8" function
+                       (:prototype-flag t
+                        :arguments 
+                          ( ("s" variable
+                               (:reference 1
+                                :constant-flag t
+                                :type ("std::wstring" type (:type "class") nil nil))
+                                (reparse-symbol arg-sub-list) [1461 1483]))                          
+                        :type ("std::string" type (:type "class") nil nil))
+                        (reparse-symbol namespacesubparts) [1437 1484])
+                    ("to_local_8_bit" function
+                       (:prototype-flag t
+                        :arguments 
+                          ( ("s" variable
+                               (:reference 1
+                                :constant-flag t
+                                :type ("std::wstring" type (:type "class") nil nil))
+                                (reparse-symbol arg-sub-list) [1652 1674]))                          
+                        :type ("std::string" type (:type "class") nil nil))
+                        (reparse-symbol namespacesubparts) [1621 1675])
+                    ("from_local_8_bit" function
+                       (:prototype-flag t
+                        :arguments 
+                          ( ("s" variable
+                               (:reference 1
+                                :constant-flag t
+                                :type ("std::string" type (:type "class") nil nil))
+                                (reparse-symbol arg-sub-list) [1841 1862]))                          
+                        :type ("std::wstring" type (:type "class") nil nil))
+                        (reparse-symbol namespacesubparts) [1807 1863])
+                    ("program_options" type
+                       (:members 
+                          ( ("to_internal" function
+                               (:prototype-flag t
+                                :arguments 
+                                  ( ("" variable
+                                       (:reference 1
+                                        :constant-flag t
+                                        :type ("std::string" type (:type "class") nil nil))
+                                        (reparse-symbol arg-sub-list) [2178 2197]))                                  
+                                :type ("std::string" type (:type "class") nil nil))
+                                (reparse-symbol namespacesubparts) [2154 2198])
+                            ("to_internal" function
+                               (:prototype-flag t
+                                :arguments 
+                                  ( ("" variable
+                                       (:reference 1
+                                        :constant-flag t
+                                        :type ("std::wstring" type (:type "class") nil nil))
+                                        (reparse-symbol arg-sub-list) [2283 2303]))                                  
+                                :type ("std::string" type (:type "class") nil nil))
+                                (reparse-symbol namespacesubparts) [2259 2304])
+                            ("to_internal" function
+                               (:template 
+                                  ( ("T" type (:type "class") nil nil))                                  
+                                :type ("std::vector" type
+                                     (:template-specifier 
+                                        ( ("std::string" type nil nil nil))                                        
+                                      :type "class")
+                                      nil nil)
+                                :arguments 
+                                  ( ("s" variable
+                                       (:reference 1
+                                        :constant-flag t
+                                        :type ("std::vector" type
+                                             (:template-specifier 
+                                                ( ("T" type nil nil nil))                                                
+                                              :type "class")
+                                              nil nil))
+                                        (reparse-symbol arg-sub-list) [2377 2401]))                                  )
+                                (reparse-symbol namespacesubparts) [2314 2610]))                          
+                        :type "namespace")
+                        (reparse-symbol namespacesubparts) [1869 2617]))                  
+                :type "namespace")
+                nil [613 2624]))          
+      :file "convert.hpp"
+      :pointmax 3122
+      :fsize 3121
+      :lastmodtime '(21413 1117 0 0)
+      :unmatched-syntax '((symbol 2232 . 2258) (symbol 2127 . 2153) (symbol 1780 . 1806) (symbol 1594 . 1620) (symbol 1410 . 1436) (symbol 1258 . 1284) (symbol 1013 . 1039) (symbol 744 . 770))
+      :lexical-table 
+        '(("BOOST_CONVERT_HPP_VP_2004_04_28")
+          )
+))
+  :file "!usr!include!boost!program_options!detail!semantic.cache"
+  :semantic-tag-version "2.0"
+  :semanticdb-version "2.2")

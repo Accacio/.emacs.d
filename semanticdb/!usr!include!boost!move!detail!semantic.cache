@@ -1,0 +1,314 @@
+;; Object semanticdb-project-database-file
+;; SEMANTICDB Tags save file
+(semanticdb-project-database-file "semanticdb-project-database-file"
+  :tables
+  (list
+    (semanticdb-table "semanticdb-table"
+      :major-mode c++-mode
+      :tags 
+        '( ("boost/config.hpp" include (:system-flag t) nil [420 447]))          
+      :file "config_begin.hpp"
+      :pointmax 842
+      :fsize 841
+      :lastmodtime '(21413 1117 0 0)
+      :unmatched-syntax nil)
+    (semanticdb-table "semanticdb-table"
+      :major-mode c++-mode
+      :tags 
+        '( ("BOOST_MOVE_DETAIL_META_UTILS_HPP" variable (:constant-flag t) nil [484 516])
+            ("boost/move/detail/config_begin.hpp" include (:system-flag t) nil [518 563])
+            ("boost" type
+               (:members 
+                  ( ("move_detail" type
+                       (:members 
+                          ( ("if_c" type
+                               (:template 
+                                  ( ("bool" type (:typevar "C") nil nil)
+                                    ("T1" type (:type "class") nil nil)
+                                    ("T2" type (:type "class") nil nil))                                  
+                                :type "struct"
+                                :members 
+                                  ( ("type" type
+                                       (:typedef ("T1" type (:type "class") nil nil)
+                                        :type "typedef")
+                                        (reparse-symbol classsubparts) [715 731]))                                  )
+                                (reparse-symbol namespacesubparts) [655 734])
+                            ("if_c" type
+                               (:template 
+                                  ( ("T1" type (:type "class") nil nil)
+                                    ("T2" type (:type "class") nil nil))                                  
+                                :type "struct"
+                                :members 
+                                  ( ("type" type
+                                       (:typedef ("T2" type (:type "class") nil nil)
+                                        :type "typedef")
+                                        (reparse-symbol classsubparts) [801 817]))                                  
+                                :template-specifier 
+                                  ( ("false" type nil nil nil)
+                                    ("T1" type nil nil nil)
+                                    ("T2" type nil nil nil))                                  )
+                                (reparse-symbol namespacesubparts) [736 820])
+                            ("if_" type
+                               (:template 
+                                  ( ("T1" type (:type "class") nil nil)
+                                    ("T2" type (:type "class") nil nil)
+                                    ("T3" type (:type "class") nil nil))                                  
+                                :type "struct"
+                                :members 
+                                  ( ("type" variable (:type ("type" type (:type "class") nil nil)) (reparse-symbol classsubparts) [933 943]))                                  )
+                                (reparse-symbol namespacesubparts) [822 946])
+                            ("enable_if_c" type
+                               (:members 
+                                  ( ("type" type
+                                       (:typedef ("T" type (:type "class") nil nil)
+                                        :type "typedef")
+                                        (reparse-symbol classsubparts) [1019 1034]))                                  
+                                :type "struct")
+                                (reparse-symbol namespacesubparts) [995 1037])
+                            ("enable_if_c" type
+                               (:template 
+                                  ( ("T" type (:type "class") nil nil))                                  
+                                :type "struct"
+                                :template-specifier 
+                                  ( ("false" type nil nil nil)
+                                    ("T" type nil nil nil))                                  )
+                                (reparse-symbol namespacesubparts) [1039 1090])
+                            ("enable_if" type
+                               (:superclasses 
+                                  ( ("enable_if_c" type
+                                       (:protection "public"
+                                        :type "class")
+                                        nil nil))                                  
+                                :type "struct")
+                                (reparse-symbol namespacesubparts) [1130 1187])
+                            ("integral_constant" type
+                               (:template 
+                                  ( ("T" type (:type "class") nil nil)
+                                    ("T" type (:typevar "v") nil nil))                                  
+                                :type "struct"
+                                :members 
+                                  ( ("value" variable
+                                       (:typemodifiers ("static")
+                                        :constant-flag t
+                                        :default-value "v"
+                                        :type ("T" type (:type "class") nil nil))
+                                        (reparse-symbol classsubparts) [1361 1386])
+                                    ("value_type" type
+                                       (:typedef ("T" type (:type "class") nil nil)
+                                        :type "typedef")
+                                        (reparse-symbol classsubparts) [1390 1411])
+                                    ("type" type
+                                       (:typedef ("integral_constant" type
+                                             (:template-specifier 
+                                                ( ("T" type nil nil nil)
+                                                  ("v" type nil nil nil))                                                
+                                              :type "class")
+                                              nil nil)
+                                        :type "typedef")
+                                        (reparse-symbol classsubparts) [1415 1452]))                                  )
+                                (reparse-symbol namespacesubparts) [1308 1455])
+                            ("identity" type
+                               (:template 
+                                  ( ("T" type (:type "class") nil nil))                                  
+                                :type "struct"
+                                :members 
+                                  ( ("type" type
+                                       (:typedef ("T" type (:type "class") nil nil)
+                                        :type "typedef")
+                                        (reparse-symbol classsubparts) [1508 1523]))                                  )
+                                (reparse-symbol namespacesubparts) [1468 1526])
+                            ("is_convertible" type
+                               (:template 
+                                  ( ("T" type (:type "class") nil nil)
+                                    ("U" type (:type "class") nil nil))                                  
+                                :type "class"
+                                :members 
+                                  ( ("true_t" type
+                                       (:typedef ("char")
+                                        :type "typedef")
+                                        (reparse-symbol classsubparts) [1599 1619])
+                                    ("false_t" type
+                                       (:members 
+                                          ( ("dummy" variable
+                                               (:dereference 1
+                                                :type "char")
+                                                (reparse-symbol classsubparts) [1639 1653]))                                          
+                                        :type "class")
+                                        (reparse-symbol classsubparts) [1623 1656])
+                                    ("dispatch" function
+                                       (:prototype-flag t
+                                        :typemodifiers ("static")
+                                        :arguments 
+                                          ( ("" variable (:type ("U" type (:type "class") nil nil)) (reparse-symbol arg-sub-list) [1683 1685]))                                          
+                                        :type ("true_t" type (:type "class") nil nil))
+                                        (reparse-symbol classsubparts) [1660 1686])
+                                    ("dispatch" function
+                                       (:prototype-flag t
+                                        :typemodifiers ("static")
+                                        :arguments 
+                                          ( ("..." variable (:type "vararg") (reparse-symbol arg-sub-list) [1714 1718]))                                          
+                                        :type ("false_t" type (:type "class") nil nil))
+                                        (reparse-symbol classsubparts) [1690 1719])
+                                    ("trigger" function
+                                       (:prototype-flag t
+                                        :typemodifiers ("static")
+                                        :type ("T" type (:type "class") nil nil))
+                                        (reparse-symbol classsubparts) [1723 1743])
+                                    ("public" label nil (reparse-symbol classsubparts) [1747 1754])
+                                    ("" type
+                                       (:members 
+                                          ( ("value" variable
+                                               (:constant-flag t
+                                                :type "int")
+                                                (reparse-symbol enumsubparts) [1765 1772]))                                          
+                                        :type "enum")
+                                        (reparse-symbol classsubparts) [1758 1821]))                                  )
+                                (reparse-symbol namespacesubparts) [1545 1824])
+                            ("is_lvalue_reference" type
+                               (:template 
+                                  ( ("T" type (:type "class") nil nil))                                  
+                                :type "struct"
+                                :superclasses 
+                                  ( ("integral_constant" type
+                                       (:protection "public"
+                                        :type "class")
+                                        nil nil))                                  )
+                                (reparse-symbol namespacesubparts) [2178 2269])
+                            ("is_lvalue_reference" type
+                               (:template 
+                                  ( ("T" type (:type "class") nil nil))                                  
+                                :type "struct"
+                                :superclasses 
+                                  ( ("integral_constant" type
+                                       (:protection "public"
+                                        :type "class")
+                                        nil nil))                                  
+                                :template-specifier 
+                                  ( ("T" type (:reference 1) nil nil))                                  )
+                                (reparse-symbol namespacesubparts) [2271 2365])
+                            ("is_class_or_union" type
+                               (:template 
+                                  ( ("T" type (:type "class") nil nil))                                  
+                                :type "struct"
+                                :members 
+                                  ( ("twochar" type
+                                       (:members 
+                                          ( ("_" variable
+                                               (:dereference 1
+                                                :type "char")
+                                                (reparse-symbol classsubparts) [2432 2442]))                                          
+                                        :type "struct")
+                                        (reparse-symbol classsubparts) [2415 2445])
+                                    ("is_class_or_union_tester" function
+                                       (:template 
+                                          ( ("U" type (:type "class") nil nil))                                          
+                                        :type "char"
+                                        :arguments ((nil variable (:pointer (("" variable (:type "void") (reparse-symbol arg-sub-list) [2519 2524])) :type "void") (reparse-symbol arg-sub-list) [2508 2525]))
+                                        :typemodifiers ("static")
+                                        :prototype-flag t)
+                                        (reparse-symbol classsubparts) [2449 2526])
+                                    ("is_class_or_union_tester" function
+                                       (:template 
+                                          ( ("U" type (:type "class") nil nil))                                          
+                                        :type ("twochar" type (:type "class") nil nil)
+                                        :arguments 
+                                          ( ("..." variable (:type "vararg") (reparse-symbol arg-sub-list) [2592 2596]))                                          
+                                        :typemodifiers ("static")
+                                        :prototype-flag t)
+                                        (reparse-symbol classsubparts) [2530 2597]))                                  )
+                                (reparse-symbol namespacesubparts) [2367 2685])
+                            ("empty" type (:type "struct") (reparse-symbol namespacesubparts) [2687 2702])
+                            ("addr_impl_ref" type
+                               (:template 
+                                  ( ("T" type (:type "class") nil nil))                                  
+                                :type "struct"
+                                :members 
+                                  ( ("v_" variable (:type ("T" type (:type "class") nil nil)) (reparse-symbol classsubparts) [2760 2767])
+                                    ("addr_impl_ref" function
+                                       (:constructor-flag t
+                                        :typemodifiers ("inline")
+                                        :arguments 
+                                          ( ("v" variable
+                                               (:reference 1
+                                                :type ("T" type (:type "class") nil nil))
+                                                (reparse-symbol arg-sub-list) [2793 2800]))                                          
+                                        :type ("addr_impl_ref" type (:type "struct") nil nil))
+                                        (reparse-symbol classsubparts) [2771 2812])
+                                    ("private" label nil (reparse-symbol classsubparts) [2863 2871])
+                                    ("=" function
+                                       (:prototype-flag t
+                                        :operator-flag t
+                                        :arguments 
+                                          ( ("" variable
+                                               (:reference 1
+                                                :constant-flag t
+                                                :type ("addr_impl_ref" type (:type "class") nil nil))
+                                                (reparse-symbol arg-sub-list) [2901 2923]))                                          
+                                        :type ("addr_impl_ref" type (:type "class") nil nil))
+                                        (reparse-symbol classsubparts) [2875 2924]))                                  )
+                                (reparse-symbol namespacesubparts) [2716 2927])
+                            ("addressof_impl" type
+                               (:template 
+                                  ( ("T" type (:type "class") nil nil))                                  
+                                :type "struct"
+                                :members 
+                                  ( ("f" function
+                                       (:pointer 1
+                                        :typemodifiers ("static" "inline")
+                                        :arguments 
+                                          ( ("v" variable
+                                               (:reference 1
+                                                :type ("T" type (:type "class") nil nil))
+                                                (reparse-symbol arg-sub-list) [2995 3001])
+                                            ("" variable (:type "long") (reparse-symbol arg-sub-list) [3002 3008]))                                          
+                                        :type ("T" type (:type "class") nil nil))
+                                        (reparse-symbol classsubparts) [2974 3127])
+                                    ("f" function
+                                       (:pointer 1
+                                        :typemodifiers ("static" "inline")
+                                        :arguments 
+                                          ( ("v" variable
+                                               (:pointer 1
+                                                :type ("T" type (:type "class") nil nil))
+                                                (reparse-symbol arg-sub-list) [3153 3159])
+                                            ("" variable (:type "int") (reparse-symbol arg-sub-list) [3160 3165]))                                          
+                                        :type ("T" type (:type "class") nil nil))
+                                        (reparse-symbol classsubparts) [3132 3184]))                                  )
+                                (reparse-symbol namespacesubparts) [2929 3187])
+                            ("addressof" function
+                               (:template 
+                                  ( ("T" type (:type "class") nil nil))                                  
+                                :type ("T" type (:type "class") nil nil)
+                                :arguments 
+                                  ( ("v" variable
+                                       (:reference 1
+                                        :type ("T" type (:type "class") nil nil))
+                                        (reparse-symbol arg-sub-list) [3229 3236]))                                  
+                                :typemodifiers ("inline")
+                                :pointer 1)
+                                (reparse-symbol namespacesubparts) [3189 3351]))                          
+                        :type "namespace")
+                        (reparse-symbol namespacesubparts) [624 3354]))                  
+                :type "namespace")
+                nil [606 3383])
+            ("boost/move/detail/config_end.hpp" include (:system-flag t) nil [3406 3449]))          
+      :file "meta_utils.hpp"
+      :pointmax 3501
+      :fsize 3500
+      :lastmodtime '(21413 1117 0 0)
+      :unmatched-syntax '((semantic-list 2844 . 2858) (CONST 2838 . 2843) (semantic-list 2835 . 2837) (punctuation 2833 . 2834) (symbol 2832 . 2833) (OPERATOR 2823 . 2831) (INLINE 2816 . 2822) (punctuation 2681 . 2682) (semantic-list 2675 . 2681) (SIZEOF 2669 . 2675) (punctuation 2667 . 2668) (punctuation 2666 . 2667) (semantic-list 2633 . 2665) (SIZEOF 2627 . 2633) (punctuation 2625 . 2626) (symbol 2619 . 2624) (BOOL 2614 . 2618) (CONST 2608 . 2613) (STATIC 2601 . 2607) (punctuation 2153 . 2154) (semantic-list 2151 . 2153) (punctuation 2149 . 2150) (symbol 2144 . 2149) (punctuation 2143 . 2144) (punctuation 2142 . 2143) (symbol 2135 . 2142) (punctuation 2134 . 2135) (punctuation 2132 . 2133) (BOOL 2128 . 2132) (punctuation 2127 . 2128) (symbol 2110 . 2127) (PUBLIC 2103 . 2109) (punctuation 2101 . 2102) (symbol 2093 . 2097) (STRUCT 2086 . 2092) (punctuation 2084 . 2085) (symbol 2077 . 2084) (TYPENAME 2068 . 2076) (punctuation 2067 . 2068) (TEMPLATE 2058 . 2066) (punctuation 2055 . 2056) (semantic-list 2053 . 2055) (punctuation 2051 . 2052) (symbol 2046 . 2051) (punctuation 2045 . 2046) (punctuation 2044 . 2045) (symbol 2034 . 2044) (punctuation 2032 . 2033) (punctuation 2031 . 2032) (symbol 2025 . 2030) (punctuation 2024 . 2025) (punctuation 2023 . 2024) (symbol 2013 . 2023) (punctuation 2011 . 2012) (punctuation 2010 . 2011) (symbol 2004 . 2009) (punctuation 2003 . 2004) (punctuation 2002 . 2003) (symbol 1992 . 2002) (punctuation 1990 . 1991) (BOOL 1986 . 1990) (punctuation 1985 . 1986) (symbol 1968 . 1985) (PUBLIC 1961 . 1967) (punctuation 1959 . 1960) (symbol 1951 . 1955) (STRUCT 1944 . 1950) (punctuation 1942 . 1943) (punctuation 1940 . 1941) (symbol 1936 . 1940) (punctuation 1934 . 1935) (BOOL 1930 . 1934) (punctuation 1929 . 1930) (symbol 1912 . 1929) (punctuation 1910 . 1911) (symbol 1899 . 1909) (TYPENAME 1890 . 1898) (punctuation 1888 . 1889) (symbol 1878 . 1888) (TYPENAME 1869 . 1877) (punctuation 1867 . 1868) (symbol 1857 . 1867) (TYPENAME 1848 . 1856) (punctuation 1847 . 1848) (TEMPLATE 1838 . 1846) (semantic-list 1810 . 1818) (SIZEOF 1804 . 1810) (punctuation 1802 . 1803) (punctuation 1801 . 1802) (semantic-list 1779 . 1800) (SIZEOF 1773 . 1779) (punctuation 1771 . 1772) (semantic-list 1810 . 1818) (SIZEOF 1804 . 1810) (punctuation 1802 . 1803) (punctuation 1801 . 1802) (semantic-list 1779 . 1800) (SIZEOF 1773 . 1779) (punctuation 1771 . 1772) (punctuation 1285 . 1286) (semantic-list 1283 . 1285) (punctuation 1281 . 1282) (symbol 1280 . 1281) (punctuation 1278 . 1279) (symbol 1273 . 1278) (punctuation 1272 . 1273) (punctuation 1271 . 1272) (symbol 1267 . 1271) (punctuation 1266 . 1267) (punctuation 1265 . 1266) (symbol 1254 . 1265) (PUBLIC 1247 . 1253) (punctuation 1245 . 1246) (symbol 1234 . 1244) (STRUCT 1227 . 1233) (punctuation 1225 . 1226) (VOID 1221 . 1225) (punctuation 1219 . 1220) (symbol 1217 . 1218) (CLASS 1211 . 1216) (punctuation 1209 . 1210) (symbol 1205 . 1209) (CLASS 1199 . 1204) (punctuation 1198 . 1199) (TEMPLATE 1189 . 1197) (punctuation 1128 . 1129) (VOID 1124 . 1128) (punctuation 1122 . 1123) (symbol 1120 . 1121) (CLASS 1114 . 1119) (punctuation 1112 . 1113) (symbol 1108 . 1112) (CLASS 1102 . 1107) (punctuation 1101 . 1102) (TEMPLATE 1092 . 1100) (punctuation 993 . 994) (VOID 989 . 993) (punctuation 987 . 988) (symbol 985 . 986) (CLASS 979 . 984) (punctuation 977 . 978) (symbol 976 . 977) (BOOL 971 . 975) (punctuation 970 . 971) (TEMPLATE 961 . 969) (punctuation 932 . 933) (punctuation 931 . 932) (punctuation 930 . 931) (symbol 928 . 930) (punctuation 926 . 927) (symbol 924 . 926) (punctuation 922 . 923) (symbol 917 . 922) (punctuation 916 . 917) (punctuation 915 . 916) (symbol 913 . 915) (punctuation 911 . 912) (punctuation 910 . 911) (number 908 . 909) (punctuation 907 . 908) (symbol 903 . 907) (TYPENAME 894 . 902) (TYPEDEF 886 . 893))
+      :lexical-table 
+        '(("BOOST_MOVE_DETAIL_META_UTILS_HPP")
+          )
+)
+    (semanticdb-table "semanticdb-table"
+      :major-mode c++-mode
+      :tags nil
+      :file "config_end.hpp"
+      :pointmax 775
+      :fsize 774
+      :lastmodtime '(21413 1117 0 0)
+      :unmatched-syntax nil))
+  :file "!usr!include!boost!move!detail!semantic.cache"
+  :semantic-tag-version "2.0"
+  :semanticdb-version "2.2")

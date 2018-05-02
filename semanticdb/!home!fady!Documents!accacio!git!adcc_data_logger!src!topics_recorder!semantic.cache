@@ -1,0 +1,513 @@
+;; Object semanticdb-project-database-file
+;; SEMANTICDB Tags save file
+(semanticdb-project-database-file "semanticdb-project-database-file"
+  :tables
+  (list
+    (semanticdb-table "semanticdb-table"
+      :major-mode c++-mode
+      :tags 
+        '( ("adcc_data_logger/recorder.hpp" include nil nil [1 41])
+            ("time.h" include (:system-flag t) nil [111 128])
+            ("queue" include (:system-flag t) nil [130 146])
+            ("set" include (:system-flag t) nil [147 161])
+            ("sstream" include (:system-flag t) nil [162 180])
+            ("string" include (:system-flag t) nil [181 198])
+            ("iostream" include (:system-flag t) nil [200 219])
+            ("boost/foreach.hpp" include (:system-flag t) nil [221 249])
+            ("boost/lexical_cast.hpp" include (:system-flag t) nil [250 283])
+            ("boost/regex.hpp" include (:system-flag t) nil [284 310])
+            ("boost/thread.hpp" include (:system-flag t) nil [311 338])
+            ("boost/filesystem.hpp" include (:system-flag t) nil [339 370])
+            ("boost/thread/xtime.hpp" include (:system-flag t) nil [371 404])
+            ("boost/program_options.hpp" include nil nil [405 441])
+            ("boost/date_time/local_time/local_time.hpp" include (:system-flag t) nil [442 494])
+            ("ros/ros.h" include (:system-flag t) nil [524 544])
+            ("topic_tools/shape_shifter.h" include (:system-flag t) nil [545 583])
+            ("ros/network.h" include nil nil [585 609])
+            ("ros/xmlrpc_manager.h" include nil nil [610 641])
+            ("XmlRpc.h" include nil nil [642 661])
+            ("foreach" variable (:constant-flag t) nil [673 680])
+            ("std::cout" using (:type ("std::cout" type
+                 (:prototype t
+                  :type "class")
+                  nil nil)) nil [696 712])
+            ("std::endl" using (:type ("std::endl" type
+                 (:prototype t
+                  :type "class")
+                  nil nil)) nil [713 729])
+            ("std::set" using (:type ("std::set" type
+                 (:prototype t
+                  :type "class")
+                  nil nil)) nil [730 745])
+            ("std::string" using (:type ("std::string" type
+                 (:prototype t
+                  :type "class")
+                  nil nil)) nil [746 764])
+            ("std::vector" using (:type ("std::vector" type
+                 (:prototype t
+                  :type "class")
+                  nil nil)) nil [765 783])
+            ("boost::shared_ptr" using (:type ("boost::shared_ptr" type
+                 (:prototype t
+                  :type "class")
+                  nil nil)) nil [784 808])
+            ("ros::Time" using (:type ("ros::Time" type
+                 (:prototype t
+                  :type "class")
+                  nil nil)) nil [809 825])
+            ("po" type
+               (:kind alias
+                :members 
+                  ( ("boost::program_options" type (:type "namespace") nil nil))                  
+                :type "namespace")
+                nil [826 864])
+            ("rosbag" type
+               (:members 
+                  ( ("OutgoingMessage" function
+                       (:constructor-flag t
+                        :parent "OutgoingMessage"
+                        :arguments 
+                          ( ("_topic" variable
+                               (:reference 1
+                                :constant-flag t
+                                :type ("string" type (:type "class") nil nil))
+                                (reparse-symbol arg-sub-list) [939 960])
+                            ("_msg" variable (:type ("topic_tools::ShapeShifter::ConstPtr" type (:type "class") nil nil)) (reparse-symbol arg-sub-list) [994 1035])
+                            ("_connection_header" variable (:type ("boost::shared_ptr" type
+                                 (:template-specifier 
+                                    ( ("ros::M_string" type nil nil nil))                                    
+                                  :type "class")
+                                  nil nil)) (reparse-symbol arg-sub-list) [1065 1116])
+                            ("_time" variable (:type ("Time" type (:type "class") nil nil)) (reparse-symbol arg-sub-list) [1150 1161]))                          
+                        :type ("OutgoingMessage" type (:type "class") nil nil))
+                        (reparse-symbol namespacesubparts) [906 1277])
+                    ("OutgoingQueue" function
+                       (:constructor-flag t
+                        :parent "OutgoingQueue"
+                        :arguments 
+                          ( ("_filename" variable
+                               (:reference 1
+                                :constant-flag t
+                                :type ("string" type (:type "class") nil nil))
+                                (reparse-symbol arg-sub-list) [1326 1350])
+                            ("_queue" variable
+                               (:pointer 1
+                                :type ("std::queue" type
+                                     (:template-specifier 
+                                        ( ("OutgoingMessage" type nil nil nil))                                        
+                                      :type "class")
+                                      nil nil))
+                                (reparse-symbol arg-sub-list) [1380 1416])
+                            ("_time" variable (:type ("Time" type (:type "class") nil nil)) (reparse-symbol arg-sub-list) [1446 1457]))                          
+                        :type ("OutgoingQueue" type (:type "class") nil nil))
+                        (reparse-symbol namespacesubparts) [1297 1523])
+                    ("RecorderOptions" function
+                       (:constructor-flag t
+                        :parent "RecorderOptions"
+                        :type ("RecorderOptions" type (:type "class") nil nil))
+                        (reparse-symbol namespacesubparts) [1545 2191])
+                    ("Recorder" function
+                       (:constructor-flag t
+                        :parent "Recorder"
+                        :arguments 
+                          ( ("options" variable
+                               (:reference 1
+                                :constant-flag t
+                                :type ("RecorderOptions" type (:type "class") nil nil))
+                                (reparse-symbol arg-sub-list) [2225 2256])
+                            ("dir_manager" variable
+                               (:pointer 1
+                                :type ("dirManager" type (:type "class") nil nil))
+                                (reparse-symbol arg-sub-list) [2257 2281]))                          
+                        :type ("Recorder" type (:type "class") nil nil))
+                        (reparse-symbol namespacesubparts) [2206 2781])
+                    ("Recorder" function
+                       (:destructor-flag t
+                        :parent "Recorder"
+                        :type "void")
+                        (reparse-symbol namespacesubparts) [2783 2808])
+                    ("readConfigFile" function
+                       (:parent "Options"
+                        :arguments 
+                          ( ("path" variable
+                               (:reference 1
+                                :constant-flag t
+                                :type ("std::string" type (:type "class") nil nil))
+                                (reparse-symbol arg-sub-list) [2884 2908]))                          
+                        :type ("std::map" type
+                             (:template-specifier 
+                                ( ("std::string" type nil nil nil)
+                                  ("std::vector" type (:template-specifier 
+                                    ( ("std::string" type nil nil nil))                                    ) nil nil))                                
+                              :type "class")
+                              nil nil))
+                        (reparse-symbol namespacesubparts) [2810 3947])
+                    ("excludeTopics" function
+                       (:parent "Options"
+                        :arguments 
+                          ( ("filePath" variable
+                               (:constant-flag t
+                                :type ("std::string" type (:type "class") nil nil))
+                                (reparse-symbol arg-sub-list) [3977 4004]))                          
+                        :type "void")
+                        (reparse-symbol namespacesubparts) [3949 4287])
+                    ("parseOptions" function
+                       (:parent "Options"
+                        :arguments 
+                          ( ("nb_option_for_recorder" variable (:type "int") (reparse-symbol arg-sub-list) [4335 4362])
+                            ("option_for_recorder" variable
+                               (:pointer 2
+                                :type "char")
+                                (reparse-symbol arg-sub-list) [4363 4390])
+                            ("nb_max" variable
+                               (:reference 1
+                                :constant-flag t
+                                :type "int")
+                                (reparse-symbol arg-sub-list) [4391 4409]))                          
+                        :type ("rosbag::RecorderOptions" type (:type "class") nil nil))
+                        (reparse-symbol namespacesubparts) [4289 12712])
+                    ("recorderOptionsFromCommandLine" function
+                       (:parent "Options"
+                        :arguments 
+                          ( ("options" variable
+                               (:reference 1
+                                :constant-flag t
+                                :type ("std::stringstream" type (:type "class") nil nil))
+                                (reparse-symbol arg-sub-list) [12869 12902])
+                            ("nb_max" variable
+                               (:reference 1
+                                :constant-flag t
+                                :type "int")
+                                (reparse-symbol arg-sub-list) [12903 12921]))                          
+                        :type ("rosbag::RecorderOptions" type (:type "class") nil nil))
+                        (reparse-symbol namespacesubparts) [12805 13846])
+                    ("createRecorderOptions" function
+                       (:parent "Options"
+                        :arguments 
+                          ( ("bagsAndTopicsNames" variable
+                               (:pointer 1
+                                :type ("std::map" type
+                                     (:template-specifier 
+                                        ( ("std::string" type nil nil nil)
+                                          ("std::vector" type (:template-specifier 
+                                            ( ("std::string" type nil nil nil))                                            ) nil nil))                                        
+                                      :type "class")
+                                      nil nil))
+                                (reparse-symbol arg-sub-list) [13916 13985])
+                            ("time" variable
+                               (:reference 1
+                                :constant-flag t
+                                :type ("std::string" type (:type "class") nil nil))
+                                (reparse-symbol arg-sub-list) [13986 14010])
+                            ("nb_max" variable
+                               (:reference 1
+                                :constant-flag t
+                                :type "int")
+                                (reparse-symbol arg-sub-list) [14011 14029]))                          
+                        :type ("std::vector" type
+                             (:template-specifier 
+                                ( ("rosbag::RecorderOptions" type nil nil nil))                                
+                              :type "class")
+                              nil nil))
+                        (reparse-symbol namespacesubparts) [13848 14989])
+                    ("run" function
+                       (:parent "Recorder"
+                        :type "int")
+                        (reparse-symbol namespacesubparts) [14991 18333])
+                    ("subscribe" function
+                       (:parent "Recorder"
+                        :arguments 
+                          ( ("topic" variable
+                               (:reference 1
+                                :constant-flag t
+                                :type ("string" type (:type "class") nil nil))
+                                (reparse-symbol arg-sub-list) [18383 18403]))                          
+                        :type ("shared_ptr" type
+                             (:template-specifier 
+                                ( ("ros::Subscriber" type nil nil nil))                                
+                              :type "class")
+                              nil nil))
+                        (reparse-symbol namespacesubparts) [18335 19196])
+                    ("isSubscribed" function
+                       (:methodconst-flag t
+                        :parent "Recorder"
+                        :arguments 
+                          ( ("topic" variable
+                               (:reference 1
+                                :constant-flag t
+                                :type ("string" type (:type "class") nil nil))
+                                (reparse-symbol arg-sub-list) [19226 19246]))                          
+                        :type "bool")
+                        (reparse-symbol namespacesubparts) [19198 19332])
+                    ("bagIsFinished" function
+                       (:parent "Recorder"
+                        :type "void")
+                        (reparse-symbol namespacesubparts) [19334 19908])
+                    ("getCurrentCompleteBagName" function
+                       (:parent "Recorder"
+                        :type ("std::string" type (:type "class") nil nil))
+                        (reparse-symbol namespacesubparts) [19910 19995])
+                    ("getCurrentBagInfo" function
+                       (:parent "Recorder"
+                        :type ("rosbag::BagState" type (:type "class") nil nil))
+                        (reparse-symbol namespacesubparts) [19997 20071])
+                    ("getCurrentBagDate" function
+                       (:parent "Recorder"
+                        :type ("std::string" type (:type "class") nil nil))
+                        (reparse-symbol namespacesubparts) [20073 20150])
+                    ("getCurrentBagId" function
+                       (:parent "Recorder"
+                        :type ("uint64_t" type (:type "class") nil nil))
+                        (reparse-symbol namespacesubparts) [20152 20222])
+                    ("getLastFinishedBagId" function
+                       (:parent "Recorder"
+                        :type ("uint64_t" type (:type "class") nil nil))
+                        (reparse-symbol namespacesubparts) [20224 20367])
+                    ("getLastFinishedBagDate" function
+                       (:parent "Recorder"
+                        :type ("std::string" type (:type "class") nil nil))
+                        (reparse-symbol namespacesubparts) [20369 20460])
+                    ("getOldestBagInfo" function
+                       (:parent "Recorder"
+                        :type ("rosbag::BagState" type (:type "class") nil nil))
+                        (reparse-symbol namespacesubparts) [20462 20543])
+                    ("shouldSubscribeToTopic" function
+                       (:parent "Recorder"
+                        :arguments 
+                          ( ("topic" variable
+                               (:reference 1
+                                :constant-flag t
+                                :type ("std::string" type (:type "class") nil nil))
+                                (reparse-symbol arg-sub-list) [20583 20608])
+                            ("from_node" variable (:type "bool") (reparse-symbol arg-sub-list) [20609 20624]))                          
+                        :type "bool")
+                        (reparse-symbol namespacesubparts) [20545 22724])
+                    ("timeToStr" function
+                       (:template 
+                          ( ("T" type (:type "class") nil nil))                          
+                        :type ("std::string" type (:type "class") nil nil)
+                        :arguments 
+                          ( ("ros_t" variable (:type ("T" type (:type "class") nil nil)) (reparse-symbol arg-sub-list) [22776 22784]))                          
+                        :parent "Recorder")
+                        (reparse-symbol namespacesubparts) [22726 23127])
+                    ("doQueue" function
+                       (:parent "Recorder"
+                        :arguments 
+                          ( ("msg_event" variable
+                               (:reference 1
+                                :constant-flag t
+                                :type ("ros::MessageEvent" type
+                                     (:template-specifier 
+                                        ( ("topic_tools::ShapeShifter" type (:constant-flag t) nil nil))                                        
+                                      :type "class")
+                                      nil nil))
+                                (reparse-symbol arg-sub-list) [23209 23277])
+                            ("topic" variable
+                               (:reference 1
+                                :constant-flag t
+                                :type ("string" type (:type "class") nil nil))
+                                (reparse-symbol arg-sub-list) [23278 23298])
+                            ("subscriber" variable (:type ("shared_ptr" type
+                                 (:template-specifier 
+                                    ( ("ros::Subscriber" type nil nil nil))                                    
+                                  :type "class")
+                                  nil nil)) (reparse-symbol arg-sub-list) [23299 23338])
+                            ("count" variable (:type ("shared_ptr" type
+                                 (:template-specifier 
+                                    ( ("int" type nil nil nil))                                    
+                                  :type "class")
+                                  nil nil)) (reparse-symbol arg-sub-list) [23339 23361]))                          
+                        :type "void")
+                        (reparse-symbol namespacesubparts) [23186 25049])
+                    ("updateFilenames" function
+                       (:parent "Recorder"
+                        :type "void")
+                        (reparse-symbol namespacesubparts) [25051 26317])
+                    ("snapshotTrigger" function
+                       (:parent "Recorder"
+                        :arguments 
+                          ( ("trigger" variable (:type ("std_msgs::Empty::ConstPtr" type (:type "class") nil nil)) (reparse-symbol arg-sub-list) [26406 26440]))                          
+                        :type "void")
+                        (reparse-symbol namespacesubparts) [26375 26837])
+                    ("startWriting" function
+                       (:parent "Recorder"
+                        :type "void")
+                        (reparse-symbol namespacesubparts) [26839 27716])
+                    ("stopWriting" function
+                       (:parent "Recorder"
+                        :type "void")
+                        (reparse-symbol namespacesubparts) [27718 28467])
+                    ("checkNumSplits" function
+                       (:parent "Recorder"
+                        :type "void")
+                        (reparse-symbol namespacesubparts) [28469 28930])
+                    ("checkSize" function
+                       (:parent "Recorder"
+                        :type "bool")
+                        (reparse-symbol namespacesubparts) [28932 29448])
+                    ("checkDuration" function
+                       (:parent "Recorder"
+                        :arguments 
+                          ( ("t" variable
+                               (:reference 1
+                                :constant-flag t
+                                :type ("ros::Time" type (:type "class") nil nil))
+                                (reparse-symbol arg-sub-list) [29479 29498]))                          
+                        :type "bool")
+                        (reparse-symbol namespacesubparts) [29450 30174])
+                    ("doRecord" function
+                       (:parent "Recorder"
+                        :type "void")
+                        (reparse-symbol namespacesubparts) [30224 31929])
+                    ("doRecordSnapshotter" function
+                       (:parent "Recorder"
+                        :type "void")
+                        (reparse-symbol namespacesubparts) [31931 32986])
+                    ("doCheckMaster" function
+                       (:parent "Recorder"
+                        :arguments 
+                          ( ("e" variable
+                               (:reference 1
+                                :constant-flag t
+                                :type ("ros::TimerEvent" type (:type "class") nil nil))
+                                (reparse-symbol arg-sub-list) [33017 33042])
+                            ("node_handle" variable
+                               (:reference 1
+                                :type ("ros::NodeHandle" type (:type "class") nil nil))
+                                (reparse-symbol arg-sub-list) [33043 33072]))                          
+                        :type "void")
+                        (reparse-symbol namespacesubparts) [32988 34814])
+                    ("doTrigger" function
+                       (:parent "Recorder"
+                        :type "void")
+                        (reparse-symbol namespacesubparts) [34816 35111])
+                    ("scheduledCheckDisk" function
+                       (:parent "Recorder"
+                        :type "bool")
+                        (reparse-symbol namespacesubparts) [35113 35362])
+                    ("checkDisk" function
+                       (:parent "Recorder"
+                        :type "bool")
+                        (reparse-symbol namespacesubparts) [35364 39767])
+                    ("checkLogging" function
+                       (:parent "Recorder"
+                        :type "bool")
+                        (reparse-symbol namespacesubparts) [39769 40572])
+                    ("dataloggerShutdown" function
+                       (:parent "Recorder"
+                        :type "void")
+                        (reparse-symbol namespacesubparts) [40574 40888]))                  
+                :type "namespace")
+                nil [866 40891]))          
+      :file "recorder.cpp"
+      :pointmax 40913
+      :fsize 40895
+      :lastmodtime '(23273 49223 479060 494000)
+      :unmatched-syntax '((number 662 . 664) (number 198 . 199) (number 662 . 664) (number 198 . 199) (number 662 . 664) (number 198 . 199) (number 662 . 664) (number 198 . 199))
+      :lexical-table 
+        '(("foreach" . ((symbol "BOOST_FOREACH" 681 . 694)))
+          )
+)
+    (semanticdb-table "semanticdb-table"
+      :major-mode c++-mode
+      :tags 
+        '( ("adcc_data_logger/recorder.hpp" include nil nil [1 41])
+            ("adcc_data_logger/can_manager.hpp" include nil nil [42 85])
+            ("adcc_data_logger/dir_manager.hpp" include nil nil [86 129])
+            ("pthread.h" include (:system-flag t) nil [130 150])
+            ("signal.h" include (:system-flag t) nil [151 170])
+            ("iostream" include (:system-flag t) nil [171 190])
+            ("fstream" include (:system-flag t) nil [191 209])
+            ("QString" include (:system-flag t) nil [210 228])
+            ("QDateTime" include (:system-flag t) nil [229 249])
+            ("adcc_libs/can/can_frame.h" include (:system-flag t) nil [250 286])
+            ("adcc_msgs/CanFrame.h" include (:system-flag t) nil [287 318])
+            ("std_msgs/String.h" include (:system-flag t) nil [319 347])
+            ("sys/stat.h" include (:system-flag t) nil [348 369])
+            ("boost/thread.hpp" include (:system-flag t) nil [370 397])
+            ("fs" type
+               (:kind alias
+                :members 
+                  ( ("boost::filesystem" type (:type "namespace") nil nil))                  
+                :type "namespace")
+                nil [399 432])
+            ("std" using (:type ("std" type
+                 (:prototype t
+                  :type "namespace")
+                  nil nil)) nil [433 453])
+            ("BAG_RECORDER_NODE_NAME" variable
+               (:pointer 1
+                :typemodifiers ("static")
+                :constant-flag t
+                :default-value "\"bag_recorder_node\""
+                :type "char")
+                nil [570 634])
+            ("manageFailure" variable
+               (:default-value "0"
+                :type "bool")
+                nil [636 659])
+            ("v_Recorder" variable (:type ("vector" type
+                 (:template-specifier 
+                    ( ("rosbag::Recorder" type (:pointer 1) nil nil))                    
+                  :type "class")
+                  nil nil)) nil [661 698])
+            ("it_v_Recorder" variable (:type ("iterator" type (:type "class") nil nil)) nil [726 749])
+            ("ASCFilesNames" variable (:type ("vector" type
+                 (:template-specifier 
+                    ( ("std::string" type nil nil nil))                    
+                  :type "class")
+                  nil nil)) nil [750 784])
+            ("lastBagInfos" variable (:type ("rosbag::BagState" type (:type "class") nil nil)) nil [785 815])
+            ("stop_datalogger" variable
+               (:typemodifiers ("volatile")
+                :default-value "0"
+                :type ("sig_atomic_t" type (:type "class") nil nil))
+                nil [817 859])
+            ("stopLogging" function
+               (:arguments 
+                  ( ("sig" variable (:type "int") (reparse-symbol arg-sub-list) [878 886]))                  
+                :type "void")
+                nil [861 1198])
+            ("run_recorder_func" function
+               (:arguments 
+                  ( ("p_recorder" variable
+                       (:pointer 1
+                        :type ("rosbag::Recorder" type (:type "class") nil nil))
+                        (reparse-symbol arg-sub-list) [1223 1252]))                  
+                :type "void")
+                nil [1200 1281])
+            ("sigFailCallback" function
+               (:arguments 
+                  ( ("sigFail" variable
+                       (:reference 1
+                        :constant-flag t
+                        :type ("std_msgs::Empty::ConstPtr" type (:type "class") nil nil))
+                        (reparse-symbol arg-sub-list) [1418 1459]))                  
+                :type "void")
+                nil [1397 1509])
+            ("ASCFilesNamesCallback" function
+               (:arguments 
+                  ( ("FileName" variable
+                       (:reference 1
+                        :constant-flag t
+                        :type ("std_msgs::String::ConstPtr" type (:type "class") nil nil))
+                        (reparse-symbol arg-sub-list) [1538 1581]))                  
+                :type "void")
+                nil [1511 2002])
+            ("main" function
+               (:arguments 
+                  ( ("argc" variable (:type "int") (reparse-symbol arg-sub-list) [2127 2136])
+                    ("argv" variable
+                       (:pointer 2
+                        :type "char")
+                        (reparse-symbol arg-sub-list) [2137 2149]))                  
+                :type "int")
+                nil [2118 9887]))          
+      :file "topics_recorder_node.cpp"
+      :pointmax 9888
+      :fsize 9887
+      :lastmodtime '(23265 59557 135773 278000)
+      :unmatched-syntax '((punctuation 725 . 726) (punctuation 724 . 725) (punctuation 723 . 724) (punctuation 722 . 723) (symbol 714 . 722) (punctuation 713 . 714) (punctuation 712 . 713) (symbol 706 . 712) (punctuation 705 . 706) (symbol 699 . 705))))
+  :file "!home!fady!Documents!accacio!git!adcc_data_logger!src!topics_recorder!semantic.cache"
+  :semantic-tag-version "2.0"
+  :semanticdb-version "2.2")
