@@ -1,33 +1,54 @@
 
 ;; ----- smex-history -----
 (
-
+ package-install
+ tabbar-mode
+ try
  comment-region
- uncomment-region
- cmake-ide-compile
- compile
- find-file-at-point
- cmake-ide-run-cmake
- dired
-
+ desktop-read
+ desktop-save
+ enlarge-window-horizontally
 )
 
 ;; ----- smex-data -----
 (
- (irony-install-server . 3)
+ (irony-install-server . 5)
  (irony-cdb-menu . 10)
  (irony-cdb-autosetup-compile-options . 1)
  (rename-file . 1)
  (irony-cdb-json-select . 1)
- (dired . 5)
- (package-list-packages . 11)
+ (dired . 6)
+ (package-list-packages . 12)
  (company-mode . 2)
  (yas-expand . 4)
  (customize-group . 1)
- (package-install . 2)
+ (package-install . 4)
  (company-yasnippet . 7)
  (global-company-mode . 2)
- (eval-region . 7)
+ (eval-region . 13)
  (mc/mark-next-lines . 5)
- (undo-tree-visualize . 1)
+ (undo-tree-visualize . 5)
+ (package-autoremove . 1)
+ (try . 3)
+ (swiper . 1)
+ (hydra-ivy/body . 1)
+ (company-clang . 2)
+ (revert-buffer . 1)
+ (Info-menu . 1)
+ (imenu . 2)
+ (gfm-mode . 1)
+ (markdown-mode . 1)
+ (undo-tree-visualizer-toggle-diff . 2)
+ (column-number-mode . 1)
+ (markdown-preview . 1)
+ (eshell . 3)
+ (google-make-newline-indent . 2)
+ (enlarge-window . 1)
+ (enlarge-window-horizontally . 4)
+ (repeat . 7)
+ (repeat-complex-command . 1)
+ (desktop-save . 1)
+ (desktop-read . 1)
+ (comment-region . 1)
+ (tabbar-mode . 1)
 )
