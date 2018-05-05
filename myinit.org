@@ -1,0 +1,537 @@
+
+* interface and tweaks
+** tweaks
+#+BEGIN_SRC emacs-lisp 
+  (tool-bar-mode -1)
+  (setq inhibit-startup-message t)
+  (global-set-key (kbd "<f5>") 'revert-buffer)
+  (setq frame-title-format "%b")
+  (desktop-save-mode)
+  (delete-selection-mode 1)
+  (load-theme 'deeper-blue)
+  (set-face-background 'region "azure4")
+  (set-face-background 'cursor "sea green")
+  (setq column-number-mode t) 
+
+  (server-start)
+  (put 'upcase-region 'disabled nil)
+  (put 'downcase-region 'disabled nil)
+  (add-to-list 'initial-frame-alist '(fullscreen . maximized))
+  (autoload 'zap-up-to-char "misc"
+    "Kill up to, but not including ARGth occurrence of CHAR.
+    \(fn arg char)"
+    'interactive)
+  (global-set-key "\M-z" 'zap-up-to-char)
+  (global-set-key (kbd "\e\e c") (lambda () (interactive) (find-file "~/.emacs.d/myinit.org")))
+
+#+END_SRC
+
+** smex
+  #+BEGIN_SRC emacs-lisp
+(use-package smex
+    :ensure t 
+    :config
+    (progn (smex-initialize)
+           ))
+  #+END_SRC
+
+** flx-ido
+  #+BEGIN_SRC emacs-lisp
+    (use-package flx
+      :ensure t )
+
+    (use-package flx-ido
+        :ensure t 
+        :config
+        (progn (flx-ido-mode +1)
+               
+               ))
+  #+END_SRC
+** beacon
+  #+BEGIN_SRC emacs-lisp
+    (use-package beacon
+        :ensure t 
+        :config
+        (progn (beacon-mode 1)
+               (setq beacon-push-mark 35)
+;               (setq beacon-color "#666600")
+               ))
+  #+END_SRC
+** atomic-chrome
+   [[https://chrome.google.com/webstore/detail/atomic-chrome/lhaoghhllmiaaagaffababmkdllgfcmc/related?hl%3Den][atomic-chrome installation]]
+  #+BEGIN_SRC emacs-lisp
+(use-package atomic-chrome
+    :ensure t 
+    :config
+    (progn (atomic-chrome-start-server)
+           ))
+  #+END_SRC
+
+** hl-line-mode
+#+BEGIN_SRC emacs-lisp
+  (global-hl-line-mode)
+  (set-face-background 'hl-line "#282a36")
+#+END_SRC
+
+** tabbar
+#+BEGIN_SRC emacs-lisp
+(use-package tabbar
+  :ensure t
+  :config
+  (tabbar-mode 1))
+#+END_SRC
+
+** ace-window
+#+BEGIN_SRC emacs-lisp
+  (use-package ace-window
+    :ensure t
+    :init
+    (progn
+      (with-eval-after-load 'org
+    (define-key org-mode-map [(control tab)] 'ace-window))
+      (global-set-key (kbd "<C-tab>") 'ace-window)
+      (custom-set-faces
+       '(aw-leading-char-face
+         ((t (:inherit ace-jump-face-foreground :height 2.0 ))))
+       )))
+#+END_SRC
+
+** undo-tree
+#+BEGIN_SRC emacs-lisp
+ (use-package undo-tree
+    :ensure t
+    :config (global-undo-tree-mode))
+#+END_SRC
+
+** flx
+   #+BEGIN_SRC emacs-lisp
+     (use-package flx
+         :ensure t 
+         )
+   #+END_SRC
+
+
+** nyan-mode
+#+BEGIN_SRC emacs-lisp
+  (use-package nyan-mode
+    :ensure t
+    :config
+    (progn
+      (nyan-mode t)
+      (nyan-start-animation)
+      (nyan-toggle-wavy-trail)
+      (setq nyan-bar-length 10)
+      (setq nyan-minimum-window-width 50)
+      ))
+#+END_SRC
+** neotree
+  #+BEGIN_SRC emacs-lisp
+(use-package neotree
+    :ensure t 
+    :config
+    (progn (global-set-key [f8] 'neotree-toggle)
+           ))
+  #+END_SRC
+
+** Shell
+#+BEGIN_SRC emacs-lisp
+  (global-set-key
+   (kbd "C-x t")
+   (lambda()(interactive)
+     (if ( or (get-buffer "*terminal*") (get-buffer "*eshell*") )
+         (rename-uniquely))
+     (if (string=  window-system "w32")
+         (eshell)
+       (term "/bin/bash")
+       )))
+#+END_SRC
+
+** smartparens
+#+BEGIN_SRC emacs-lisp
+  (use-package smartparens
+    :ensure t
+    :config
+    (progn
+      (smartparens-global-mode 1)
+      (show-smartparens-global-mode 1)))
+#+END_SRC
+
+** volatile-highlights
+#+BEGIN_SRC emacs-lisp
+  (use-package volatile-highlights
+    :ensure t
+    :config
+    (volatile-highlights-mode t))
+#+END_SRC
+
+
+* Navigation
+** Ibuffer
+#+BEGIN_SRC emacs-lisp
+  (global-set-key (kbd "C-x C-b") 'ibuffer)
+  (setq ibuffer-saved-filter-groups
+        (quote (("default"
+                 ("dired" (mode . dired-mode))
+                 ("org" (mode . org-mode))
+                 ("programming" (or (or (mode . c-mode) (mode . c++-mode) ) (mode . python-mode) ) )
+                 ("emacs" (or (name . "^\\*scratch\\*$") (name . "^\\*Messages\\*$") (name . "^\\*Warnings\\*$")))
+                 ("resto" (name . "^\\*.*\\*$"))
+                 ))))
+  (add-hook 'ibuffer-mode-hook
+            (lambda ()
+              (ibuffer-auto-mode 1)
+              (ibuffer-switch-to-saved-filter-groups "default")))
+#+END_SRC
+** Dired
+#+BEGIN_SRC emacs-lisp
+  (put 'dired-find-alternate-file 'disabled nil)
+  (eval-after-load "dired" '(progn (define-key dired-mode-map (kbd "RET") 'dired-find-alternate-file)))
+  (setq dired-dwim-target t)
+
+#+END_SRC
+
+** Try 
+#+BEGIN_SRC emacs-lisp
+(use-package try
+  :ensure t)
+#+END_SRC
+
+** which-key
+#+BEGIN_SRC emacs-lisp
+(use-package which-key
+  :ensure t
+  :config (which-key-mode))
+#+END_SRC
+
+** counsel
+#+BEGIN_SRC emacs-lisp
+  (use-package counsel
+    :ensure t
+    :bind
+    ("M-y" . counsel-yank-pop))
+
+#+END_SRC
+
+** swiper
+#+BEGIN_SRC emacs-lisp
+(use-package swiper
+  :ensure t
+  :config
+  (progn
+    (ivy-mode 1)
+    (setq ivy-use-virtual-buffers t)
+    (setq enable-recursive-minibuffers nil)
+    (global-set-key "\C-s" 'swiper)
+    (global-set-key (kbd "C-c C-r") 'ivy-resume)
+    (global-set-key (kbd "<f6>") 'ivy-resume)
+    (global-set-key (kbd "M-x") 'counsel-M-x)
+    (global-set-key (kbd "C-x C-f") 'counsel-find-file)
+    (global-set-key (kbd "<f1> f") 'counsel-describe-function)
+    (global-set-key (kbd "<f1> v") 'counsel-describe-variable)
+    (global-set-key (kbd "<f1> l") 'counsel-find-library)
+    (global-set-key (kbd "<f2> i") 'counsel-info-lookup-symbol)
+    (global-set-key (kbd "<f2> u") 'counsel-unicode-char)
+    (global-set-key (kbd "C-c g") 'counsel-git)
+    (global-set-key (kbd "C-c j") 'counsel-git-grep)
+    (global-set-key (kbd "C-c k") 'counsel-ag)
+    (global-set-key (kbd "C-x l") 'counsel-locate)
+    (global-set-key (kbd "C-S-o") 'counsel-rhythmbox)
+    (define-key minibuffer-local-map (kbd "C-r") 'counsel-minibuffer-history)
+    ))
+#+END_SRC
+
+** avy
+#+BEGIN_SRC emacs-lisp
+  (use-package avy
+    :ensure t
+    :bind ("C-:" . avy-goto-char)
+    :bind ("M-g g" . avy-goto-line )
+    )
+#+END_SRC
+
+** iedit-mode
+#+BEGIN_SRC emacs-lisp
+  (use-package iedit
+    :ensure t
+    :config (define-key global-map (kbd "C-c ;") 'iedit-mode))
+#+END_SRC
+  
+** Yasnippets
+#+BEGIN_SRC emacs-lisp
+ (use-package yasnippet
+    :ensure t
+    :config (yas-global-mode 1))
+ (use-package yasnippet-snippets
+    :ensure t)
+#+END_SRC
+
+
+* Planning
+** org-bullets
+#+BEGIN_SRC emacs-lisp
+  (use-package org-bullets
+    :ensure t
+    :config
+    (add-hook 'org-mode-hook (lambda () (org-bullets-mode 1))))
+
+  (custom-set-variables '(org-hide-leading-stars t))
+#+END_SRC
+
+
+
+* Programming
+** Org-babel c++
+#+BEGIN_SRC emacs-lisp
+  (org-babel-do-load-languages
+   'org-babel-load-languages '((C . t)))
+#+END_SRC
+
+** magit
+#+BEGIN_SRC emacs-lisp
+  (use-package magit
+    :ensure t
+    :config
+    (progn
+      (set-default 'magit-stage-all-confirm nil)
+      (add-hook 'magit-mode-hook 'magit-load-config-extensions)
+      (global-unset-key (kbd "C-x g"))
+      (global-set-key (kbd "C-x g h") 'magit-log)
+      (global-set-key (kbd "C-x g f") 'magit-file-log)
+      (global-set-key (kbd "C-x g b") 'magit-blame-mode)
+      (global-set-key (kbd "C-x g m") 'magit-branch-manager)
+      (global-set-key (kbd "C-x g c") 'magit-branch)
+      (global-set-key (kbd "C-x g s") 'magit-status)
+      (global-set-key (kbd "C-x g r") 'magit-reflog)
+      (global-set-key (kbd "C-x g t") 'magit-tag)
+      (setq user-full-name "Rafael Accácio Nogueira")
+      (setq user-mail-address "raccacio@poli.ufrj.br")
+      ))
+
+#+END_SRC
+
+** google-c-style flymake
+#+BEGIN_SRC emacs-lisp
+  (use-package flymake-cursor
+    :ensure t)
+
+  (defun my:flymake-google-init ()
+    (require 'flymake-google-cpplint)
+    (custom-set-variables
+     '(flymake-google-cpplint-command
+       (if (string=  window-system "w32")
+           '"d:/Users/Accacio/AppData/Local/Programs/Python/Python36-32/Scripts/cpplint.exe"
+         '"/usr/local/bin/cpplint"
+         )
+       )
+     )
+    (flymake-google-cpplint-load)
+    (flymake-cursor-mode 1)
+    )
+
+  (use-package flymake-google-cpplint
+    :ensure t
+    :config
+    (progn
+      (add-hook 'c-mode-hook 'my:flymake-google-init)
+      (add-hook 'c++-mode-hook 'my:flymake-google-init)
+      ))
+
+  (use-package google-c-style
+    :ensure t
+    :config 
+    (progn
+      (add-hook 'c-mode-common-hook 'google-set-c-style)
+      (add-hook 'c-mode-common-hook 'google-make-newline-indent)
+      ))
+
+#+END_SRC
+
+** flycheck
+#+BEGIN_SRC emacs-lisp
+  (use-package flycheck
+    :ensure t
+    :config
+    (progn
+      (add-hook 'after-init-hook #'global-flycheck-mode)
+      ))
+#+END_SRC
+
+** company
+#+BEGIN_SRC emacs-lisp
+  (use-package company
+  :ensure t
+  :config
+  (add-hook 'after-init-hook 'global-company-mode))
+
+  (use-package company-quickhelp
+  :ensure t
+  :config
+  (progn
+    (setq company-minimum-prefix-length 1)
+                                          ;    (setq company-tooltip-maximum-width 20)
+    (company-quickhelp-mode)
+    ))
+
+#+END_SRC
+ workaround fci incompability
+
+#+BEGIN_SRC emacs-lisp
+
+
+(defvar-local company-fci-mode-on-p nil)
+
+(defun company-turn-off-fci (&rest ignore)
+  (when (boundp 'fci-mode)
+    (setq company-fci-mode-on-p fci-mode)
+    (when fci-mode (fci-mode -1))))
+
+(defun company-maybe-turn-on-fci (&rest ignore)
+  (when company-fci-mode-on-p (fci-mode 1)))
+
+(add-hook 'company-completion-started-hook 'company-turn-off-fci)
+(add-hook 'company-completion-finished-hook 'company-maybe-turn-on-fci)
+(add-hook 'company-completion-cancelled-hook 'company-maybe-turn-on-fci)
+
+#+END_SRC
+
+** irony-mode
+#+BEGIN_SRC emacs-lisp
+      (use-package irony
+        :ensure t
+        :config 
+        (progn
+          (add-hook 'c++-mode-hook 'irony-mode)
+          (add-hook 'c-mode-hook 'irony-mode)
+          (add-hook 'objc-mode-hook 'irony-mode)
+          
+          (add-hook 'c++-mode-hook 'company-mode)
+          (add-hook 'c-mode-hook 'company-mode)
+          (add-hook 'objc-mode-hook 'company-mode)
+          
+          (add-hook 'after-init-hook 'global-company-mode)
+          
+          
+          (add-hook 'irony-mode-hook 'irony-cdb-autosetup-compile-options)
+          
+          
+          
+          ))
+
+      (use-package company-irony
+        :ensure t
+        :config
+      (eval-after-load 'company
+            '(add-to-list 'company-backends '(company-irony))))
+
+      (use-package flycheck-irony
+        :ensure t
+        :config
+        (eval-after-load 'flycheck
+          '(add-hook 'flycheck-mode-hook #'flycheck-irony-setup)))
+
+
+      ;; Windows performance tweaks
+      ;;
+      (when (boundp 'w32-pipe-read-delay)
+        (setq w32-pipe-read-delay 0))
+      ;; Set the buffer (setq )ize to 64K on Windows (from the original 4K)
+      (when (boundp 'w32-pipe-buffer-size)
+        (setq irony-server-w32-pipe-buffer-size (* 64 1024)))
+
+
+  (use-package company-irony-c-headers
+    :ensure t
+    :config (eval-after-load 'company
+              '(add-to-list
+                'company-backends 
+                '(company-irony-c-headers
+                  company-irony
+                                          ;company-yasnippet
+                  ))))
+
+  (use-package irony-eldoc
+    :ensure t
+    :config
+    (add-hook 'irony-mode-hook 'irony-eldoc))
+#+END_SRC
+
+** idle-highlights
+#+BEGIN_SRC emacs-lisp
+  (use-package idle-highlight-mode
+    :ensure t
+    :config
+    (progn  (add-hook 'prog-mode-hook (lambda () (idle-highlight-mode t)))
+            (set-face-background 'idle-highlight "#484a56")
+            ))
+#+END_SRC
+
+** fill-column-indicator
+#+BEGIN_SRC emacs-lisp
+  (use-package fill-column-indicator
+    :ensure t 
+    :config
+    (progn (setq-default fill-column 80)
+           (add-hook 'prog-mode-hook (lambda () (fci-mode t)))
+           ))
+
+
+#+END_SRC
+
+** cmake-mode
+  #+BEGIN_SRC emacs-lisp
+(use-package cmake-mode
+    :ensure t 
+    :config
+    (progn (setq auto-mode-alist
+      (append
+       '(("CMakeLists\\.txt\\'" . cmake-mode))
+       '(("\\.cmake\\'" . cmake-mode))
+       auto-mode-alist))
+
+(autoload 'cmake-mode "~/.emacs.d/elpa/cmake-mode-20180104.1137/cmake-mode-autoloads.el" t)
+           ))
+  #+END_SRC
+
+** helm-gtags
+  #+BEGIN_SRC emacs-lisp
+    (use-package helm-gtags
+      :ensure t 
+      :config
+      (progn (add-hook 'c++-mode-hook 'helm-gtags-mode)
+             (add-hook 'c-mode-hook 'helm-gtags-mode)
+             (global-set-key (kbd "C-.") 'helm-gtags-dwim)
+             ))
+  #+END_SRC
+
+** multiple-cursors
+  #+BEGIN_SRC emacs-lisp
+    (use-package multiple-cursors
+        :ensure t 
+        :init
+        (progn (global-set-key (kbd "C-x <down>") 'mc/mark-next-like-this)
+               (global-set-key (kbd "C-x <up>") 'mc/mark-previous-like-this)
+               ))
+  #+END_SRC
+
+** expand-region
+  #+BEGIN_SRC emacs-lisp
+    (use-package expand-region
+        :ensure t 
+        :init
+        (progn (global-set-key (kbd "C-=") 'er/expand-region)
+               ))
+  #+END_SRC
+
+
+* HTML
+** rainbow-mode
+  #+BEGIN_SRC emacs-lisp
+    (use-package rainbow-mode
+        :ensure t 
+        :config
+        (progn (add-hook 'html-mode-hook 'rainbow-mode)
+               (add-hook 'css-mode-hook 'rainbow-mode)
+               ))
+  #+END_SRC
+
+

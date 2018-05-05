@@ -1,0 +1,12 @@
+# -*- mode: snippet -*-
+# name: org-mode-install-package
+# key: instpck
+# --
+** $1
+#+BEGIN_SRC emacs-lisp
+(use-package $1
+    :ensure t 
+    :config
+    (progn $2
+           ))
+#+END_SRC
