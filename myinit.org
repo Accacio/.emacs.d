@@ -175,6 +175,7 @@
                  ("org" (mode . org-mode))
                  ("programming" (or (or (mode . c-mode) (mode . c++-mode) ) (mode . python-mode) ) )
                  ("emacs" (or (name . "^\\*scratch\\*$") (name . "^\\*Messages\\*$") (name . "^\\*Warnings\\*$")))
+                 ("pdf" (name . "^.*pdf$"))
                  ("resto" (name . "^\\*.*\\*$"))
                  ))))
   (add-hook 'ibuffer-mode-hook
@@ -265,7 +266,19 @@
     :ensure t)
 #+END_SRC
 
+** projectile
+   #+BEGIN_SRC emacs-lisp
+     (use-package projectile
+         :ensure t 
+         :config
+         (progn (projectile-mode)
+                ))
 
+     (use-package counsel-projectile
+       :ensure t
+       :config
+       (counsel-projectile-mode))
+   #+END_SRC
 * Planning
 ** org-bullets
 #+BEGIN_SRC emacs-lisp
@@ -278,7 +291,15 @@
 #+END_SRC
 
 
-
+* Reading
+** pdf-tools
+   #+BEGIN_SRC emacs-lisp
+     (use-package pdf-tools
+         :ensure t 
+         :config
+         (progn (pdf-tools-install)
+                ))
+   #+END_SRC
 * Programming
 ** Org-babel c++
 #+BEGIN_SRC emacs-lisp
