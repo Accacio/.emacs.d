@@ -3,3 +3,9 @@
 *~
 *#
 elpa/
+session.*
+smex-items
+irony/*
+myinit.el
+projectile*
+recentf*
