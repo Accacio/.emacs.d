@@ -1,5 +1,22 @@
 
 * interface and tweaks
+** transparency
+#+BEGIN_SRC emacs-lisp
+;(set-frame-parameter (selected-frame) 'alpha '(85 . 50))
+;(add-to-list 'default-frame-alist '(alpha . (85 . 50)))
+ (defun toggle-transparency ()
+   (interactive)
+   (let ((alpha (frame-parameter nil 'alpha)))
+     (set-frame-parameter
+      nil 'alpha
+      (if (eql (cond ((numberp alpha) alpha)
+                     ((numberp (cdr alpha)) (cdr alpha))
+                     ;; Also handle undocumented (<active> <inactive>) form.
+                     ((numberp (cadr alpha)) (cadr alpha)))
+               100)
+          '(85 . 50) '(100 . 100)))))
+
+#+END_SRC
 ** tweaks
 #+BEGIN_SRC emacs-lisp 
   (tool-bar-mode -1)
@@ -12,6 +29,8 @@
   (set-face-background 'region "azure4")
   (set-face-background 'cursor "sea green")
   (setq column-number-mode t) 
+  (setq ring-bell-function 'ignore)
+  (global-prettify-symbols-mode t)
 
   (server-start)
   (put 'upcase-region 'disabled nil)
@@ -22,7 +41,7 @@
     \(fn arg char)"
     'interactive)
   (global-set-key "\M-z" 'zap-up-to-char)
-  (global-set-key (kbd "\e\e c") (lambda () (interactive) (find-file "~/.emacs.d/Readme.org")))
+
 
 #+END_SRC
 
@@ -90,9 +109,10 @@
       (with-eval-after-load 'org
     (define-key org-mode-map [(control tab)] 'ace-window))
       (global-set-key (kbd "<C-tab>") 'ace-window)
+      (setq aw-keys '(?j ?k ?l ))
       (custom-set-faces
        '(aw-leading-char-face
-         ((t (:inherit ace-jump-face-foreground :height 2.0 ))))
+         ((t (:inherit ace-jump-face-foreground :height 2.0 :background "sea green" :foreground "#000" ))))
        )))
 #+END_SRC
 
@@ -109,7 +129,6 @@
          :ensure t 
          )
    #+END_SRC
-
 
 ** nyan-mode
 #+BEGIN_SRC emacs-lisp
@@ -137,7 +156,7 @@
 #+BEGIN_SRC emacs-lisp
   (global-set-key
    (kbd "C-x t")
-   (lambda()(interactive)
+   (lambda()(interactive)   
      (if ( or (get-buffer "*terminal*") (get-buffer "*eshell*") )
          (rename-uniquely))
      (if (string=  window-system "w32")
@@ -164,6 +183,15 @@
     (volatile-highlights-mode t))
 #+END_SRC
 
+** prefix commands
+#+BEGIN_SRC emacs-lisp
+    (define-prefix-command 'accacio-map)
+    (global-set-key (kbd "<escape><escape>") 'accacio-map)
+    (define-key accacio-map (kbd "c") (defun myinit-customize () (interactive) (find-file "~/.emacs.d/Readme.org")))
+    (define-key accacio-map (kbd "t") 'toggle-transparency)
+
+
+#+END_SRC
 
 * Navigation
 ** Ibuffer
@@ -279,6 +307,9 @@
        :config
        (counsel-projectile-mode))
    #+END_SRC
+
+
+
 * Planning
 ** org-bullets
 #+BEGIN_SRC emacs-lisp
@@ -300,6 +331,8 @@
          (progn (pdf-tools-install)
                 ))
    #+END_SRC
+   
+
 * Programming
 ** Org-babel c++
 #+BEGIN_SRC emacs-lisp
@@ -556,3 +589,11 @@
   #+END_SRC
 
 
+
+* Games
+** 2048
+   #+BEGIN_SRC emacs-lisp
+     (use-package 2048-game
+       :ensure t 
+         )
+   #+END_SRC
