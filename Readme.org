@@ -22,7 +22,7 @@
     \(fn arg char)"
     'interactive)
   (global-set-key "\M-z" 'zap-up-to-char)
-  (global-set-key (kbd "\e\e c") (lambda () (interactive) (find-file "~/.emacs.d/myinit.org")))
+  (global-set-key (kbd "\e\e c") (lambda () (interactive) (find-file "~/.emacs.d/Readme.org")))
 
 #+END_SRC
 
