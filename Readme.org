@@ -1,5 +1,14 @@
 
+
 * interface and tweaks
+** zerodark-theme
+   #+BEGIN_SRC emacs-lisp
+(use-package zerodark-theme
+    :ensure t 
+    :config
+    (progn (zerodark-setup-modeline-format)
+           ))
+   #+END_SRC
 ** transparency
 #+BEGIN_SRC emacs-lisp
 ;(set-frame-parameter (selected-frame) 'alpha '(85 . 50))
@@ -25,7 +34,7 @@
   (setq frame-title-format "%b")
   (desktop-save-mode)
   (delete-selection-mode 1)
-  (load-theme 'deeper-blue)
+;  (load-theme 'deeper-blue)
   (set-face-background 'region "azure4")
   (set-face-background 'cursor "sea green")
   (setq column-number-mode t) 
@@ -113,7 +122,8 @@
       (custom-set-faces
        '(aw-leading-char-face
          ((t (:inherit ace-jump-face-foreground :height 2.0 :background "sea green" :foreground "#000" ))))
-       )))
+       ))) 
+
 #+END_SRC
 
 ** undo-tree
@@ -185,13 +195,49 @@
 
 ** prefix commands
 #+BEGIN_SRC emacs-lisp
-    (define-prefix-command 'accacio-map)
-    (global-set-key (kbd "<escape><escape>") 'accacio-map)
-    (define-key accacio-map (kbd "c") (defun myinit-customize () (interactive) (find-file "~/.emacs.d/Readme.org")))
-    (define-key accacio-map (kbd "t") 'toggle-transparency)
-
+  (define-prefix-command 'accacio-map)
+  (global-set-key (kbd "<escape><escape>") 'accacio-map)
+  (define-key accacio-map (kbd "c") (defun myinit-customize () (interactive) (find-file "~/.emacs.d/Readme.org")))
+  (define-key accacio-map (kbd "t") 'toggle-transparency)
+  (define-key accacio-map (kbd "g") 'guru-global-mode)
 
 #+END_SRC
+
+** guru-mode
+   #+BEGIN_SRC emacs-lisp
+     (use-package guru-mode
+         :ensure t 
+         :config
+         (progn ;(guru-global-mode)
+                ))
+   #+END_SRC
+
+** all-the-icons
+   #+BEGIN_SRC emacs-lisp
+     (use-package all-the-icons
+       :ensure t 
+       :config
+         (progn
+           (unless (package-installed-p 'all-the-icons)
+             (all-the-icons-install-fonts))
+           ))
+   #+END_SRC
+** rich-minority
+   #+BEGIN_SRC emacs-lisp
+     (use-package rich-minority
+         :ensure t 
+         :config
+         (progn
+           (rich-minority-mode 1)
+
+     (setq rm-blacklist
+           (format "^ \\(%s\\)$"
+                   (mapconcat #'identity
+                              '("\\$" "company"  "SP"  "Fly.*"  "yas.*" "Projectile.*" "Undo-Tree" "PgLn" "WK" "ivy" "VHL" ".*\(\*\).*" )
+                              "\\|")))
+                ))
+   #+END_SRC
+
 
 * Navigation
 ** Ibuffer
