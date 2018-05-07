@@ -28,28 +28,30 @@
 #+END_SRC
 ** tweaks
 #+BEGIN_SRC emacs-lisp 
-  (tool-bar-mode -1)
-  (setq inhibit-startup-message t)
-  (global-set-key (kbd "<f5>") 'revert-buffer)
-  (setq frame-title-format "%b")
-  (desktop-save-mode)
-  (delete-selection-mode 1)
-;  (load-theme 'deeper-blue)
-  (set-face-background 'region "azure4")
-  (set-face-background 'cursor "sea green")
-  (setq column-number-mode t) 
-  (setq ring-bell-function 'ignore)
-  (global-prettify-symbols-mode t)
+    (tool-bar-mode -1)
+    (setq inhibit-startup-message t)
+    (global-set-key (kbd "<f5>") 'revert-buffer)
+    (setq frame-title-format "%b")
+    (desktop-save-mode)
+    (delete-selection-mode 1)
+  ;  (load-theme 'deeper-blue)
+    (set-face-background 'region "azure4")
+    (set-face-background 'cursor "sea green")
+    (setq column-number-mode t) 
+    (setq ring-bell-function 'ignore)
+    (global-prettify-symbols-mode t)
+  (add-hook 'prog-mode-hook (lambda () (linum-mode t)))
 
-  (server-start)
-  (put 'upcase-region 'disabled nil)
-  (put 'downcase-region 'disabled nil)
-  (add-to-list 'initial-frame-alist '(fullscreen . maximized))
-  (autoload 'zap-up-to-char "misc"
-    "Kill up to, but not including ARGth occurrence of CHAR.
-    \(fn arg char)"
-    'interactive)
-  (global-set-key "\M-z" 'zap-up-to-char)
+
+    (server-start)
+    (put 'upcase-region 'disabled nil)
+    (put 'downcase-region 'disabled nil)
+    (add-to-list 'initial-frame-alist '(fullscreen . maximized))
+    (autoload 'zap-up-to-char "misc"
+      "Kill up to, but not including ARGth occurrence of CHAR.
+      \(fn arg char)"
+      'interactive)
+    (global-set-key "\M-z" 'zap-up-to-char)
 
 
 #+END_SRC
@@ -233,7 +235,7 @@
      (setq rm-blacklist
            (format "^ \\(%s\\)$"
                    (mapconcat #'identity
-                              '("\\$" "company"  "SP"  "Fly.*"  "yas.*" "Projectile.*" "Undo-Tree" "PgLn" "WK" "ivy" "VHL" ".*\(\*\).*" )
+                              '( "Irony" "company" "HelmGtags" "ARev" "Hi"  "ElDoc"  "Abbrev" "SP"  "Fly.*"  "yas.*" "Projectile.*" "Undo-Tree" "PgLn" "WK" "ivy" "VHL" ".*\(\*\).*" )
                               "\\|")))
                 ))
    #+END_SRC
