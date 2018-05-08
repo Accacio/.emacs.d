@@ -1,6 +1,16 @@
 
 
 * interface and tweaks
+** exwm
+   #+BEGIN_SRC emacs-lisp
+;     (use-package exwm
+;         :ensure t 
+;         :config
+;         (require 'exwm-config)
+;         (exwm-config-default)
+;         )
+   #+END_SRC
+
 ** zerodark-theme
    #+BEGIN_SRC emacs-lisp
 (use-package zerodark-theme
@@ -9,6 +19,7 @@
     (progn (zerodark-setup-modeline-format)
            ))
    #+END_SRC
+
 ** transparency
 #+BEGIN_SRC emacs-lisp
 ;(set-frame-parameter (selected-frame) 'alpha '(85 . 50))
@@ -26,34 +37,34 @@
           '(85 . 50) '(100 . 100)))))
 
 #+END_SRC
+
 ** tweaks
 #+BEGIN_SRC emacs-lisp 
-    (tool-bar-mode -1)
-    (setq inhibit-startup-message t)
-    (global-set-key (kbd "<f5>") 'revert-buffer)
-    (setq frame-title-format "%b")
-    (desktop-save-mode)
-    (delete-selection-mode 1)
-  ;  (load-theme 'deeper-blue)
-    (set-face-background 'region "azure4")
-    (set-face-background 'cursor "sea green")
-    (setq column-number-mode t) 
-    (setq ring-bell-function 'ignore)
-    (global-prettify-symbols-mode t)
+  (tool-bar-mode -1)
+  (setq inhibit-startup-message t)
+  (global-set-key (kbd "<f5>") 'revert-buffer)
+  (setq frame-title-format "%b")
+  (desktop-save-mode)
+  (delete-selection-mode 1)
+                                          ;  (load-theme 'deeper-blue)
+  (set-face-background 'region "azure4")
+  (set-face-background 'cursor "sea green")
+  (setq column-number-mode t) 
+  (setq ring-bell-function 'ignore)
+  (global-prettify-symbols-mode t)
   (add-hook 'prog-mode-hook (lambda () (linum-mode t)))
 
 
-    (server-start)
-    (put 'upcase-region 'disabled nil)
-    (put 'downcase-region 'disabled nil)
-    (add-to-list 'initial-frame-alist '(fullscreen . maximized))
-    (autoload 'zap-up-to-char "misc"
-      "Kill up to, but not including ARGth occurrence of CHAR.
+  (server-start)
+  (put 'upcase-region 'disabled nil)
+  (put 'downcase-region 'disabled nil)
+  (add-to-list 'initial-frame-alist '(fullscreen . maximized))
+  (autoload 'zap-up-to-char "misc"
+    "Kill up to, but not including ARGth occurrence of CHAR.
       \(fn arg char)"
-      'interactive)
-    (global-set-key "\M-z" 'zap-up-to-char)
-
-
+    'interactive)
+  (global-set-key "\M-z" 'zap-up-to-char)
+  (scroll-bar-mode -1)
 #+END_SRC
 
 ** smex
@@ -77,6 +88,7 @@
                
                ))
   #+END_SRC
+
 ** beacon
   #+BEGIN_SRC emacs-lisp
     (use-package beacon
@@ -87,6 +99,7 @@
 ;               (setq beacon-color "#666600")
                ))
   #+END_SRC
+
 ** atomic-chrome
    [[https://chrome.google.com/webstore/detail/atomic-chrome/lhaoghhllmiaaagaffababmkdllgfcmc/related?hl%3Den][atomic-chrome installation]]
   #+BEGIN_SRC emacs-lisp
@@ -152,16 +165,19 @@
       (nyan-start-animation)
       (nyan-toggle-wavy-trail)
       (setq nyan-bar-length 10)
-      (setq nyan-minimum-window-width 50)
+      (setq nyan-minimum-window-width 5)
       ))
 #+END_SRC
+
 ** neotree
   #+BEGIN_SRC emacs-lisp
-(use-package neotree
-    :ensure t 
-    :config
-    (progn (global-set-key [f8] 'neotree-toggle)
-           ))
+    (use-package neotree
+        :ensure t 
+        :config
+        (progn (global-set-key [f8] 'neotree-toggle)
+               (setq neo-theme (if (display-graphic-p) 'icons 'arrow))
+               (setq split-window-preferred-function 'neotree-split-window-sensibly)
+               ))
   #+END_SRC
 
 ** Shell
@@ -169,11 +185,11 @@
   (global-set-key
    (kbd "C-x t")
    (lambda()(interactive)   
-     (if ( or (get-buffer "*terminal*") (get-buffer "*eshell*") )
+     (if ( or (get-buffer "*ansi-term*") (get-buffer "*eshell*") )
          (rename-uniquely))
      (if (string=  window-system "w32")
          (eshell)
-       (term "/bin/bash")
+       (ansi-term "/bin/bash")
        )))
 #+END_SRC
 
@@ -195,13 +211,32 @@
     (volatile-highlights-mode t))
 #+END_SRC
 
-** prefix commands
+** My commands
 #+BEGIN_SRC emacs-lisp
   (define-prefix-command 'accacio-map)
   (global-set-key (kbd "<escape><escape>") 'accacio-map)
-  (define-key accacio-map (kbd "c") (defun myinit-customize () (interactive) (find-file "~/.emacs.d/Readme.org")))
+  (define-key accacio-map (kbd "c")
+   (defun myinit-customize ()
+    (interactive)
+    (setq ReadmeBuffer (or
+                        (get-buffer "Readme.org")
+                        (get-buffer "Readme.org<.emacs.d>")
+                        ))
+    (setq VisitedFile  (buffer-file-name ReadmeBuffer))
+    (setq myReadme "~/.emacs.d/Readme.org")
+    
+    (if (string= VisitedFile (expand-file-name myReadme))
+        (if (eq (get-buffer (current-buffer)) ReadmeBuffer)
+            (kill-buffer ReadmeBuffer)
+          (switch-to-buffer ReadmeBuffer)
+          )
+      (find-file "~/.emacs.d/Readme.org")
+      )
+    )
+   )
   (define-key accacio-map (kbd "t") 'toggle-transparency)
   (define-key accacio-map (kbd "g") 'guru-global-mode)
+  (define-key accacio-map (kbd "x") 'counsel-M-x)
 
 #+END_SRC
 
@@ -224,6 +259,7 @@
              (all-the-icons-install-fonts))
            ))
    #+END_SRC
+
 ** rich-minority
    #+BEGIN_SRC emacs-lisp
      (use-package rich-minority
@@ -240,7 +276,18 @@
                 ))
    #+END_SRC
 
-
+** sublimity
+#+BEGIN_SRC emacs-lisp
+  (use-package sublimity
+      :ensure t 
+      :config
+      (progn
+        (require 'sublimity-map)
+        (require 'sublimity-scroll)
+        (sublimity-map-set-delay 1)
+        (sublimity-mode)
+        ))
+#+END_SRC
 * Navigation
 ** Ibuffer
 #+BEGIN_SRC emacs-lisp
@@ -291,30 +338,30 @@
 
 ** swiper
 #+BEGIN_SRC emacs-lisp
-(use-package swiper
-  :ensure t
-  :config
-  (progn
-    (ivy-mode 1)
-    (setq ivy-use-virtual-buffers t)
-    (setq enable-recursive-minibuffers nil)
-    (global-set-key "\C-s" 'swiper)
-    (global-set-key (kbd "C-c C-r") 'ivy-resume)
-    (global-set-key (kbd "<f6>") 'ivy-resume)
-    (global-set-key (kbd "M-x") 'counsel-M-x)
-    (global-set-key (kbd "C-x C-f") 'counsel-find-file)
-    (global-set-key (kbd "<f1> f") 'counsel-describe-function)
-    (global-set-key (kbd "<f1> v") 'counsel-describe-variable)
-    (global-set-key (kbd "<f1> l") 'counsel-find-library)
-    (global-set-key (kbd "<f2> i") 'counsel-info-lookup-symbol)
-    (global-set-key (kbd "<f2> u") 'counsel-unicode-char)
-    (global-set-key (kbd "C-c g") 'counsel-git)
-    (global-set-key (kbd "C-c j") 'counsel-git-grep)
-    (global-set-key (kbd "C-c k") 'counsel-ag)
-    (global-set-key (kbd "C-x l") 'counsel-locate)
-    (global-set-key (kbd "C-S-o") 'counsel-rhythmbox)
-    (define-key minibuffer-local-map (kbd "C-r") 'counsel-minibuffer-history)
-    ))
+  (use-package swiper
+    :ensure t
+    :config
+    (progn
+      (ivy-mode 1)
+      (setq ivy-use-virtual-buffers t)
+      (setq enable-recursive-minibuffers nil)
+      (global-set-key "\C-s" 'swiper)
+      (global-set-key (kbd "C-c C-r") 'ivy-resume)
+      (global-set-key (kbd "<f6>") 'ivy-resume)
+      (global-set-key (kbd "M-x") 'counsel-M-x)
+      (global-set-key (kbd "C-x C-f") 'counsel-find-file)
+      (global-set-key (kbd "<f1> f") 'counsel-describe-function)
+      (global-set-key (kbd "<f1> v") 'counsel-describe-variable)
+      (global-set-key (kbd "<f1> l") 'counsel-find-library)
+      (global-set-key (kbd "<f2> i") 'counsel-info-lookup-symbol)
+      (global-set-key (kbd "<f2> u") 'counsel-unicode-char)
+      (global-set-key (kbd "C-c g") 'counsel-git)
+      (global-set-key (kbd "C-c j") 'counsel-git-grep)
+      (global-set-key (kbd "C-c k") 'counsel-ag)
+      (global-set-key (kbd "C-x l") 'counsel-locate)
+      (global-set-key (kbd "C-S-o") 'counsel-rhythmbox)
+      (define-key minibuffer-local-map (kbd "C-r") 'counsel-minibuffer-history)
+      ))
 #+END_SRC
 
 ** avy
@@ -356,9 +403,9 @@
        (counsel-projectile-mode))
    #+END_SRC
 
+   
 
-
-* Planning
+* Planning / Org-Mode
 ** org-bullets
 #+BEGIN_SRC emacs-lisp
   (use-package org-bullets
@@ -368,7 +415,12 @@
 
   (custom-set-variables '(org-hide-leading-stars t))
 #+END_SRC
+#+BEGIN_SRC emacs-lisp 
+  (setq org-ellipsis "⤵") ;⤵ ⭍ ↲ ⮯
+  (setq org-src-fontify-natively t)
 
+
+#+END_SRC
 
 * Reading
 ** pdf-tools
@@ -380,7 +432,7 @@
                 ))
    #+END_SRC
    
-
+   
 * Programming
 ** Org-babel c++
 #+BEGIN_SRC emacs-lisp
@@ -454,16 +506,21 @@
     :ensure t
     :config
     (progn
-      (add-hook 'after-init-hook #'global-flycheck-mode)
+                                          ;    (add-hook 'after-init-hook #'global-flycheck-mode)
+      (add-hook 'prog-mode-hook 'flycheck-mode)
       ))
 #+END_SRC
 
 ** company
 #+BEGIN_SRC emacs-lisp
   (use-package company
-  :ensure t
-  :config
-  (add-hook 'after-init-hook 'global-company-mode))
+    :ensure t
+    :config
+    (progn 
+      (add-hook 'after-init-hook 'global-company-mode)
+      (setq company-idle-delay 0)
+      )
+    )
 
   (use-package company-quickhelp
   :ensure t
@@ -615,6 +672,14 @@
                ))
   #+END_SRC
 
+** ace-mc
+   #+BEGIN_SRC emacs-lisp
+     (use-package ace-mc
+         :ensure t 
+         :config
+         (progn (global-set-key (kbd "C-0") 'ace-mc-add-multiple-cursors)
+                ))
+   #+END_SRC
 ** expand-region
   #+BEGIN_SRC emacs-lisp
     (use-package expand-region
@@ -645,3 +710,20 @@
        :ensure t 
          )
    #+END_SRC
+
+
+* Done blabla
+* Finances 
+** ledger-mode
+   #+BEGIN_SRC emacs-lisp
+     (use-package ledger-mode
+         :ensure t 
+         :init
+         (setq ledger-clear-whole-transactions 1)
+         :config
+         (progn (add-to-list 'auto-mode-alist '("\\.ledger$" . ledger-mode))
+                )
+         )
+   #+END_SRC
+
+

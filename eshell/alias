@@ -1,0 +1,4 @@
+alias clc clear $*
+alias ll ls -l $*
+alias ll=ls -l
+alias nil no $*
