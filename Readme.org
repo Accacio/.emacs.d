@@ -65,6 +65,7 @@
     'interactive)
   (global-set-key "\M-z" 'zap-up-to-char)
   (scroll-bar-mode -1)
+  (setq-default truncate-lines 0)
 #+END_SRC
 
 ** smex
@@ -404,7 +405,15 @@
    #+END_SRC
 
    
-
+** ag
+   #+BEGIN_SRC emacs-lisp
+     (use-package ag
+         :ensure t 
+         :config
+         (progn 
+           )
+         )
+   #+END_SRC
 * Planning / Org-Mode
 ** org-bullets
 #+BEGIN_SRC emacs-lisp
