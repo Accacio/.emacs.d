@@ -427,10 +427,12 @@
 #+BEGIN_SRC emacs-lisp 
   (setq org-ellipsis "⤵") ;⤵ ⭍ ↲ ⮯
   (setq org-src-fontify-natively t)
+  (setq org-src-tab-acts-natively t)
+  (setq org-src-window-setup 'current-window)
 
 
 #+END_SRC
-
+   
 * Reading
 ** pdf-tools
    #+BEGIN_SRC emacs-lisp
@@ -440,8 +442,31 @@
          (progn (pdf-tools-install)
                 ))
    #+END_SRC
-   
-   
+** engine-mode
+   #+BEGIN_SRC emacs-lisp
+     (use-package engine-mode
+         :ensure t 
+         :config
+         (progn
+           (defengine duckduckgo
+             "https://duckduckgo.com/?q=%s"
+             :keybinding "d")
+           (defengine wikipedia
+       "http://www.wikipedia.org/search-redirect.php?language=en&go=Go&search=%s"
+       :keybinding "w")
+           (defengine stack-overflow
+             "https://stackoverflow.com/search?q=%s"
+             :keybinding "s")
+           (defengine github
+             "https://github.com/search?ref=simplesearch&q=%s"
+             :keybinding "g")
+          
+           (defengine youtube
+       "https://www.youtube.com/results?search_query=%s")
+           (engine-mode t) 
+           )
+         )
+   #+END_SRC   
 * Programming
 ** Org-babel c++
 #+BEGIN_SRC emacs-lisp
@@ -697,8 +722,6 @@
         (progn (global-set-key (kbd "C-=") 'er/expand-region)
                ))
   #+END_SRC
-
-
 * HTML
 ** rainbow-mode
   #+BEGIN_SRC emacs-lisp
@@ -710,8 +733,6 @@
                ))
   #+END_SRC
 
-
-
 * Games
 ** 2048
    #+BEGIN_SRC emacs-lisp
@@ -720,8 +741,6 @@
          )
    #+END_SRC
 
-
-* Done blabla
 * Finances 
 ** ledger-mode
    #+BEGIN_SRC emacs-lisp
