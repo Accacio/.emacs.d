@@ -212,32 +212,54 @@
     (volatile-highlights-mode t))
 #+END_SRC
 
-** My commands
+** COMMENT My commands
 #+BEGIN_SRC emacs-lisp
-  (define-prefix-command 'accacio-map)
-  (global-set-key (kbd "<escape><escape>") 'accacio-map)
-  (define-key accacio-map (kbd "c")
-   (defun myinit-customize ()
-    (interactive)
-    (setq ReadmeBuffer (or
-                        (get-buffer "Readme.org")
-                        (get-buffer "Readme.org<.emacs.d>")
-                        ))
-    (setq VisitedFile  (buffer-file-name ReadmeBuffer))
-    (setq myReadme "~/.emacs.d/Readme.org")
-    
-    (if (string= VisitedFile (expand-file-name myReadme))
-        (if (eq (get-buffer (current-buffer)) ReadmeBuffer)
-            (kill-buffer ReadmeBuffer)
-          (switch-to-buffer ReadmeBuffer)
+        (define-prefix-command 'accacio-map)
+        (global-set-key (kbd "<escape><escape>") 'accacio-map)
+
+    ;;; Code:
+    (defun open-file-switch-buffer-or-close (filename)
+      "Opens FILENAME if it\'s closed."
+          (setq ReadmeBuffer (or
+                              (get-buffer (file-name-nondirectory filename))
+                              (get-buffer
+                               (concat (file-name-nondirectory filename)
+                                       "<"
+                                       (file-name-nondirectory
+                                        (substring
+                                         (file-name-directory
+                                          (expand-file-name
+                                           filename)) 0 -1 ))
+                                       ">")
+                               )
+                              ))
+          (setq VisitedFile  (buffer-file-name ReadmeBuffer))
+          ;; (setq myReadme "~/.emacs.d/Readme.org")
+          
+          (if (string= VisitedFile (expand-file-name filename))
+              (if (eq (get-buffer (current-buffer)) ReadmeBuffer)
+                  (kill-buffer ReadmeBuffer)
+                (switch-to-buffer ReadmeBuffer)
+                )
+            (find-file filename)
+            )
           )
-      (find-file "~/.emacs.d/Readme.org")
+
+  (define-key accacio-map (kbd "c")
+    (defun go-to-my-config () (interactive)
+      (open-file-switch-buffer-or-close "~/.emacs.d/Readme.org")
       )
     )
-   )
+
   (define-key accacio-map (kbd "t") 'toggle-transparency)
   (define-key accacio-map (kbd "g") 'guru-global-mode)
   (define-key accacio-map (kbd "x") 'counsel-M-x)
+  (define-key accacio-map (kbd "o")
+    (defun go-to-my-todo () (interactive)
+      (open-file-switch-buffer-or-close "~/Dropbox/AccDoc/Org/Todo.org")
+      )
+    )
+
 
 #+END_SRC
 
@@ -425,10 +447,13 @@
   (custom-set-variables '(org-hide-leading-stars t))
 #+END_SRC
 #+BEGIN_SRC emacs-lisp 
-  (setq org-ellipsis "⤵") ;⤵ ⭍ ↲ ⮯
-  (setq org-src-fontify-natively t)
-  (setq org-src-tab-acts-natively t)
-  (setq org-src-window-setup 'current-window)
+    (setq org-ellipsis "⤵") ;⤵ ⭍ ↲ ⮯
+    (setq org-src-fontify-natively t)
+    (setq org-src-tab-acts-natively t)
+    (setq org-src-window-setup 'current-window)
+
+  (setq my-org-folder '~/Dropbox/AccDoc/Org)
+
 
 
 #+END_SRC
