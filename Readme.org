@@ -426,6 +426,14 @@
        (counsel-projectile-mode))
    #+END_SRC
 
+** helm-ag
+   #+BEGIN_SRC emacs-lisp
+(use-package helm-ag
+    :ensure t
+    :config
+    (progn
+           ))
+   #+END_SRC
    
 ** ag
    #+BEGIN_SRC emacs-lisp
@@ -857,3 +865,16 @@
 ))
 
 #+END_SRC
+
+* writing
+** markdown-mode
+#+BEGIN_SRC emacs-lisp
+  (use-package markdown-mode
+    :ensure t
+    :commands (markdown-mode gfm-mode)
+    :mode (("README\\.md\\'" . gfm-mode)
+           ("\\.md\\'" . markdown-mode)
+           ("\\.markdown\\'" . markdown-mode))
+    :init (setq markdown-command "multimarkdown"))
+#+END_SRC
+
