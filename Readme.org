@@ -355,7 +355,11 @@
   (use-package counsel
     :ensure t
     :bind
-    ("M-y" . counsel-yank-pop))
+    ("M-y" . counsel-yank-pop)
+    :config
+    (progn (setq counsel-find-file-ignore-regexp "\\.elc\\'")
+           )
+    )
 
 #+END_SRC
 

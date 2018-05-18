@@ -21,6 +21,20 @@
  ;; If you edit it by hand, you could mess it up, so be careful.
  ;; Your init file should contain only one such instance.
  ;; If there is more than one, they won't work right.
+ '(TeX-source-correlate-method (quote synctex))
+ '(TeX-source-correlate-mode t)
+ '(TeX-source-correlate-start-server t)
+ '(TeX-view-program-list (quote (("okular" ("okular --unique %o#src:%n%b") ""))))
+ '(TeX-view-program-selection
+   (quote
+    ((output-pdf "Okular")
+     ((output-dvi has-no-display-manager)
+      "dvi2tty")
+     ((output-dvi style-pstricks)
+      "dvips and gv")
+     (output-dvi "xdvi")
+     (output-pdf "Evince")
+     (output-html "xdg-open"))))
  '(flymake-google-cpplint-command
    (if
        (string= window-system "w32")
