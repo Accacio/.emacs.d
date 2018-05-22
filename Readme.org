@@ -791,7 +791,16 @@
          )
    #+END_SRC
 
-
+* Ahk
+** xahk-mode
+   #+BEGIN_SRC emacs-lisp
+(use-package xahk-mode
+  :ensure t
+  :config
+  (progn
+	 )
+  )
+   #+END_SRC
 * Latex
 ** auctex
 #+BEGIN_SRC emacs-lisp
