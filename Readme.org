@@ -52,7 +52,7 @@
   (setq column-number-mode t) 
   (setq ring-bell-function 'ignore)
   (global-prettify-symbols-mode t)
-  (add-hook 'prog-mode-hook (lambda () (linum-mode t)))
+
 
 
   (server-start)
@@ -67,7 +67,17 @@
   (scroll-bar-mode -1)
   (setq-default truncate-lines 0)
 #+END_SRC
-
+** linum-relative
+   #+BEGIN_SRC emacs-lisp
+     (use-package linum-relative
+       :ensure t
+       :config
+       (progn
+         (setq linum-relative-current-symbol "")
+         (add-hook 'prog-mode-hook (lambda () (linum-relative-mode t)))
+         )
+       )
+   #+END_SRC
 ** smex
   #+BEGIN_SRC emacs-lisp
 (use-package smex
@@ -286,17 +296,34 @@
 ** rich-minority
    #+BEGIN_SRC emacs-lisp
      (use-package rich-minority
-         :ensure t 
-         :config
-         (progn
-           (rich-minority-mode 1)
+       :ensure t 
+       :config
+       (progn
+         (rich-minority-mode 1)
 
-     (setq rm-blacklist
-           (format "^ \\(%s\\)$"
-                   (mapconcat #'identity
-                              '( "Irony" "company" "HelmGtags" "ARev" "Hi"  "ElDoc"  "Abbrev" "SP"  "Fly.*"  "yas.*" "Projectile.*" "Undo-Tree" "PgLn" "WK" "ivy" "VHL" ".*\(\*\).*" )
-                              "\\|")))
-                ))
+         (setq rm-blacklist
+               (format "^ \\(%s\\)$"
+                       (mapconcat #'identity
+                                  '("LR"
+                                    "Irony"
+                                    "company"
+                                    "HelmGtags"
+                                    "ARev"
+                                    "Hi"
+                                    "ElDoc"
+                                    "Abbrev"
+                                    "SP"
+                                    "Fly.*"
+                                    "yas.*"
+                                    "Projectile.*"
+                                    "Undo-Tree"
+                                    "PgLn"
+                                    "WK"
+                                    "ivy"
+                                    "VHL"
+                                    ".*\(\*\).*" )
+                                  "\\|")))
+         ))
    #+END_SRC
 
 ** sublimity
