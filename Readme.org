@@ -123,8 +123,8 @@
 
 ** hl-line-mode
 #+BEGIN_SRC emacs-lisp
-  (global-hl-line-mode)
-  (set-face-background 'hl-line "#282a36")
+  ;; (global-hl-line-mode)
+  ;; (set-face-background 'hl-line "#282a36")
 #+END_SRC
 
 ** tabbar
@@ -953,3 +953,4 @@
 
   (global-set-key [f6] 'cycle-ispell-languages)
 #+END_SRC
+teste
