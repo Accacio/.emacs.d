@@ -1,3 +1,4 @@
+  (server-start)
 
 (require 'package)
 (setq package-enable-at-startup nil)
@@ -35,6 +36,9 @@
      (output-dvi "xdvi")
      (output-pdf "Evince")
      (output-html "xdg-open"))))
+ '(custom-safe-themes
+   (quote
+    ("6332c9756bde31cf9e34154395868413e45714488507527969f95a61b5f24518" default)))
  '(flymake-google-cpplint-command
    (if
        (string= window-system "w32")
@@ -52,6 +56,7 @@
      (#("account" 0 1
 	(idx 3))
       "%(binary) -f %(ledger-file) reg %(account)"))))
+ '(magit-submodule-arguments nil)
  '(minimap-dedicated-window t)
  '(minimap-hide-scroll-bar nil)
  '(minimap-mode nil)
@@ -65,7 +70,10 @@
  '(org-hide-leading-stars nil)
  '(package-selected-packages
    (quote
-    (ag ledger-mode ace-mc sublimity counsel-projectile projectile pdf-tools helm-company atomic-chrome beacon flx-ido smex helm-gtags rainbow-mode irony-eldoc expand-region multiple-cursors neotree cmake-mode fill-column-indicator idle-highlight-mode idle-highligh-mode ox-reveal smartparens company-irony-c-headers company-irony irony irony-mode nyan-mode company flymake-cursor google-c-style flymake-google-cpplint flycheck undo-tree yasnippet yasnippet-snippet yasnippets iedit magit which-key use-package try tabbar org-bullets counsel ace-window))))
+    (linum-relative xahk-mode ag ledger-mode ace-mc sublimity counsel-projectile projectile pdf-tools helm-company atomic-chrome beacon flx-ido smex helm-gtags rainbow-mode irony-eldoc expand-region multiple-cursors neotree cmake-mode fill-column-indicator idle-highlight-mode idle-highligh-mode ox-reveal smartparens company-irony-c-headers company-irony irony irony-mode nyan-mode company flymake-cursor google-c-style flymake-google-cpplint flycheck undo-tree yasnippet yasnippet-snippet yasnippets iedit magit which-key use-package try tabbar org-bullets counsel ace-window)))
+ '(safe-local-variable-values
+   (quote
+    ((company-clang-arguments "-I/home/accacio/git/matcg/include")))))
 (custom-set-faces
  ;; custom-set-faces was added by Custom.
  ;; If you edit it by hand, you could mess it up, so be careful.

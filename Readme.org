@@ -222,7 +222,7 @@
     (volatile-highlights-mode t))
 #+END_SRC
 
-** COMMENT My commands
+** My commands
 #+BEGIN_SRC emacs-lisp
         (define-prefix-command 'accacio-map)
         (global-set-key (kbd "<escape><escape>") 'accacio-map)
