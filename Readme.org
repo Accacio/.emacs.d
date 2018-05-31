@@ -55,7 +55,6 @@
 
 
 
-  (server-start)
   (put 'upcase-region 'disabled nil)
   (put 'downcase-region 'disabled nil)
   (add-to-list 'initial-frame-alist '(fullscreen . maximized))
@@ -73,9 +72,10 @@
        :ensure t
        :config
        (progn
-         (setq linum-relative-current-symbol "")
-         (add-hook 'prog-mode-hook (lambda () (linum-relative-mode t)))
-         )
+	 (setq linum-relative-current-symbol "")
+	 (add-hook 'prog-mode-hook (lambda () (linum-relative-mode t)))
+	 ;; (global-linum-mode 1)
+	 )
        )
    #+END_SRC
 ** smex
@@ -106,7 +106,7 @@
         :ensure t 
         :config
         (progn (beacon-mode 1)
-               (setq beacon-push-mark 35)
+               (setq beacon-push-mark 1)
 ;               (setq beacon-color "#666600")
                ))
   #+END_SRC
@@ -123,8 +123,8 @@
 
 ** hl-line-mode
 #+BEGIN_SRC emacs-lisp
-  (global-hl-line-mode)
-  (set-face-background 'hl-line "#282a36")
+  ;; (global-hl-line-mode)
+  ;; (set-face-background 'hl-line "#282a36")
 #+END_SRC
 
 ** tabbar
@@ -805,7 +805,7 @@
         (progn (global-set-key (kbd "C-=") 'er/expand-region)
                ))
   #+END_SRC
-* HTML
+* HTML 
 ** rainbow-mode
   #+BEGIN_SRC emacs-lisp
     (use-package rainbow-mode
@@ -823,7 +823,7 @@
        :ensure t 
          )
    #+END_SRC
-
+   
 * Finances 
 ** ledger-mode
    #+BEGIN_SRC emacs-lisp
