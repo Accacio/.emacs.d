@@ -75,6 +75,16 @@
      kept-new-versions 6
      kept-old-versions 2
      version-control t)  
+
+  ;; scroll one line at a time (less "jumpy" than defaults)
+
+  (setq mouse-wheel-scroll-amount '(1 ((shift) . 1))) ;; one line at a time
+
+  (setq mouse-wheel-progressive-speed nil) ;; don't accelerate scrolling
+
+  (setq mouse-wheel-follow-mouse 't) ;; scroll window under mouse
+
+  (setq scroll-step 1) ;; keyboard scroll one line at a time
 #+END_SRC
 ** linum-relative
    #+BEGIN_SRC emacs-lisp
@@ -893,12 +903,14 @@
 #+END_SRC
 
 #+BEGIN_SRC emacs-lisp
-(use-package company-reftex
-    :ensure t 
-    :config
-    (progn 
-           ))
-
+  (use-package company-reftex
+      :ensure t 
+      :config
+      (progn 
+             ))
+  '(reftex-use-external-file-finders t)
+  (add-hook 'LaTeX-mode-hook 'turn-on-reftex)   ; with AUCTeX LaTeX mode
+  (add-hook 'latex-mode-hook 'turn-on-reftex)   ; with Emacs latex mode
 #+END_SRC
 
 * Blog
