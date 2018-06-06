@@ -911,6 +911,8 @@
   '(reftex-use-external-file-finders t)
   (add-hook 'LaTeX-mode-hook 'turn-on-reftex)   ; with AUCTeX LaTeX mode
   (add-hook 'latex-mode-hook 'turn-on-reftex)   ; with Emacs latex mode
+  (add-hook 'LaTeX-mode-hook 'auto-fill-mode)
+  (add-hook 'latex-mode-hook 'auto-fill-mode)
 #+END_SRC
 
 * Blog
