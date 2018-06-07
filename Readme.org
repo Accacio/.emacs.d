@@ -122,12 +122,12 @@
 ** beacon
   #+BEGIN_SRC emacs-lisp
     (use-package beacon
-        :ensure t 
-        :config
-        (progn (beacon-mode 1)
-               (setq beacon-push-mark 35)
-;               (setq beacon-color "#666600")
-               ))
+      :ensure t 
+      :config
+      (progn (beacon-mode 1)
+             (setq beacon-push-mark 35)
+             (setq beacon-color "#00b4ff")
+             ))
   #+END_SRC
 
 ** atomic-chrome
@@ -352,8 +352,10 @@
       :config
       (progn
         (require 'sublimity-map)
-        (require 'sublimity-scroll)
+        ;; (require 'sublimity-scroll)
         (sublimity-map-set-delay 1)
+        ;; (setq sublimity-scroll-weight 1
+        ;; sublimity-scroll-drift-length 5)
         (sublimity-mode)
         ))
 #+END_SRC
