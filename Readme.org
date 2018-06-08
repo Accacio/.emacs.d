@@ -243,40 +243,45 @@
 
 ** My commands
 #+BEGIN_SRC emacs-lisp
-        (define-prefix-command 'accacio-map)
-        (global-set-key (kbd "<escape><escape>") 'accacio-map)
+	(define-prefix-command 'accacio-map)
+	(global-set-key (kbd "<escape><escape>") 'accacio-map)
 
     ;;; Code:
     (defun open-file-switch-buffer-or-close (filename)
       "Opens FILENAME if it\'s closed."
-          (setq ReadmeBuffer (or
-                              (get-buffer (file-name-nondirectory filename))
-                              (get-buffer
-                               (concat (file-name-nondirectory filename)
-                                       "<"
-                                       (file-name-nondirectory
-                                        (substring
-                                         (file-name-directory
-                                          (expand-file-name
-                                           filename)) 0 -1 ))
-                                       ">")
-                               )
-                              ))
-          (setq VisitedFile  (buffer-file-name ReadmeBuffer))
-          ;; (setq myReadme "~/.emacs.d/Readme.org")
-          
-          (if (string= VisitedFile (expand-file-name filename))
-              (if (eq (get-buffer (current-buffer)) ReadmeBuffer)
-                  (kill-buffer ReadmeBuffer)
-                (switch-to-buffer ReadmeBuffer)
-                )
-            (find-file filename)
-            )
-          )
+	  (setq ReadmeBuffer (or
+			      (get-buffer (file-name-nondirectory filename))
+			      (get-buffer
+			       (concat (file-name-nondirectory filename)
+				       "<"
+				       (file-name-nondirectory
+					(substring
+					 (file-name-directory
+					  (expand-file-name
+					   filename)) 0 -1 ))
+				       ">")
+			       )
+			      ))
+	  (setq VisitedFile  (buffer-file-name ReadmeBuffer))
+	  ;; (setq myReadme "~/.emacs.d/Readme.org")
+
+	  (if (string= VisitedFile (expand-file-name filename))
+	      (if (eq (get-buffer (current-buffer)) ReadmeBuffer)
+		  (kill-buffer ReadmeBuffer)
+		(switch-to-buffer ReadmeBuffer)
+		)
+	    (find-file filename)
+	    )
+	  )
 
   (define-key accacio-map (kbd "c")
     (defun go-to-my-config () (interactive)
       (open-file-switch-buffer-or-close "~/.emacs.d/Readme.org")
+      )
+    )
+  (define-key accacio-map (kbd "b")
+    (defun go-to-my-bashrc () (interactive)
+      (open-file-switch-buffer-or-close "~/.bashrc")
       )
     )
 
@@ -919,34 +924,35 @@
 
 * Blog
 #+BEGIN_SRC emacs-lisp
-(setq org-publish-project-alist
-      '(
+  (setq org-publish-project-alist
+	'(
 
-  ("org-accacio"
-          ;; Path to your org files.
-          :base-directory "~/site/org/"
-          :base-extension "org"
+    ("org-accacio"
+	    ;; Path to your org files.
+	    :base-directory "~/site/org/"
+	    :base-extension "org"
 
-          ;; Path to your Jekyll project.
-          :publishing-directory "~/site/meublog/"
-          :recursive t
-          :publishing-function org-html-publish-to-html
-          :headline-levels 4
-          :html-extension "html"
-          :body-only t ;; Only export section between <body> </body>
-    )
+	    ;; Path to your Jekyll project.
+	    :publishing-directory "~/site/meublog/"
+	    :recursive t
+	    :publishing-function org-html-publish-to-html
+	    :headline-levels 4
+	    :html-extension "html"
+	    :body-only t ;; Only export section between <body> </body>
+      )
 
 
-    ("org-static-acc"
-          :base-directory "~/site/org/"
-          :base-extension "css\\|js\\|png\\|jpg\\|gif\\|pdf\\|mp3\\|ogg\\|swf\\|php"
-          :publishing-directory "~/site/"
-          :recursive t
-          :publishing-function org-publish-attachment)
+      ("org-static-acc"
+	    :base-directory "~/site/org/"
+	    :base-extension "css\\|js\\|png\\|jpg\\|gif\\|pdf\\|mp3\\|ogg\\|swf\\|php"
+	    :publishing-directory "~/site/"
+	    :recursive t
+	    :publishing-function org-publish-attachment)
 
-    ("acc" :components ("org-accacio" "org-static-acc"))
+      ("acc" :components ("org-accacio" "org-static-acc"))
 
-))
+  ))
+
 
 #+END_SRC
 
