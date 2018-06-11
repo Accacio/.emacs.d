@@ -244,7 +244,7 @@
 ** My commands
 #+BEGIN_SRC emacs-lisp
 	(define-prefix-command 'accacio-map)
-	(global-set-key (kbd "<escape><escape>") 'accacio-map)
+	(global-set-key (kbd "<f12><f12>") 'accacio-map)
 
     ;;; Code:
     (defun open-file-switch-buffer-or-close (filename)
