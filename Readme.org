@@ -805,13 +805,13 @@
              ))
   #+END_SRC
 
-** multiple-cursors
+** multipcursors
   #+BEGIN_SRC emacs-lisp
     (use-package multiple-cursors
         :ensure t 
         :init
         (progn (global-set-key (kbd "C-x <down>") 'mc/mark-next-like-this)
-               (global-set-key (kbd "C-x M-<enter>"))
+               (global-set-key (kbd "C-x M-RET") 'mc/mark-all-dwim)
                (global-set-key (kbd "C-x <up>") 'mc/mark-previous-like-this)
                ))
   #+END_SRC
