@@ -970,7 +970,7 @@ teste
 
   (require 'mu4e)
 
-  ;; (setq mu4e-maildir (expand-file-name "~/email"))
+  (setq mu4e-maildir (expand-file-name "~/.mail"))
 
   (setq mu4e-drafts-folder "/Drafts")
   (setq mu4e-sent-folder   "/Sent Items")
@@ -978,7 +978,7 @@ teste
   (setq message-signature-file "~/.emacs.d/.signature") ; put your signature in this file
 
   ; get mail
-  (setq mu4e-get-mail-command "mbsync -a"
+  (setq mu4e-get-mail-command "offlineimap"
 	mu4e-html2text-command "w3m -T text/html"
 	mu4e-update-interval 120
 	mu4e-headers-auto-update t
@@ -1007,7 +1007,7 @@ teste
 	     :vars '( ( user-mail-address      . "raccacio2@gmail.com"  )
 		      ( user-full-name         . "Rafael Accácio Nogueira" )
 		      ( smtpmail-smtp-server   . "smtp.gmail.com" )
-		      (mu4e-maildir . "~/email/Gmail")
+		      (mu4e-maildir . "~/.mail/Gmail")
 		      ))
 
 	   ,(make-mu4e-context
@@ -1022,7 +1022,7 @@ teste
 	     :vars '( ( user-mail-address       . "raccacio@poli.ufrj.br" )
 		      ( user-full-name          . "Rafael Accácio Nogueira" )
 		      ( smtpmail-smtp-server    . "smtp.gmail.com" )
-		      (mu4e-maildir . "~/email/Poli")
+		      (mu4e-maildir . "~/.mail/Poli")
 		      ))
 	   ,(make-mu4e-context
 	     :name "Hotmail"
@@ -1036,7 +1036,7 @@ teste
 	     :vars '( ( user-mail-address       . "raccacio@hotmail.com" )
 		      ( user-full-name          . "Rafael Accácio Nogueira" )
 		      ( smtpmail-smtp-server    . "smtp-mail.outlook.com" )
-		      (mu4e-maildir . "~/email/Hotmail")
+		      (mu4e-maildir . "~/.mail/Hotmail")
 		      ))
 
 	   ))
