@@ -582,6 +582,7 @@
     :ensure t
     :config
     (progn
+      (global-magit-file-mode 0)
       (set-default 'magit-stage-all-confirm nil)
       (add-hook 'magit-mode-hook 'magit-load-config-extensions)
       (global-unset-key (kbd "C-x g"))
