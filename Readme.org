@@ -484,10 +484,11 @@
 ** projectile
    #+BEGIN_SRC emacs-lisp
      (use-package projectile
-         :ensure t 
-         :config
-         (progn (projectile-mode)
-                ))
+	 :ensure t 
+	 :config
+	 (progn (projectile-mode)
+		(setq projectile-indexing-method 'native)
+		))
 
      (use-package counsel-projectile
        :ensure t
@@ -602,11 +603,11 @@
 
 ** google-c-style flymake
 #+BEGIN_SRC emacs-lisp
-  ;; (use-package flymake-cursor
-  ;;   :ensure t)
+    ;; (use-package flymake-cursor
+    ;;   :ensure t)
 
-  ;; (d
-   efun my:flymake-google-init ()
+
+  (defun my:flymake-google-init ()
     (require 'flymake-google-cpplint)
     (custom-set-variables
      '(flymake-google-cpplint-command
@@ -620,21 +621,21 @@
     ;; (flymake-cursor-mode 1)
     )
 
-  (use-package flymake-google-cpplint
-    :ensure t
-    :config
-    (progn
-      (add-hook 'c-mode-hook 'my:flymake-google-init)
-      (add-hook 'c++-mode-hook 'my:flymake-google-init)
-      ))
+    (use-package flymake-google-cpplint
+      :ensure t
+      :config
+      (progn
+	(add-hook 'c-mode-hook 'my:flymake-google-init)
+	(add-hook 'c++-mode-hook 'my:flymake-google-init)
+	))
 
-  (use-package google-c-style
-    :ensure t
-    :config 
-    (progn
-      (add-hook 'c-mode-common-hook 'google-set-c-style)
-      (add-hook 'c-mode-common-hook 'google-make-newline-indent)
-      ))
+    (use-package google-c-style
+      :ensure t
+      :config 
+      (progn
+	(add-hook 'c-mode-common-hook 'google-set-c-style)
+	(add-hook 'c-mode-common-hook 'google-make-newline-indent)
+	))
 
 #+END_SRC
 
