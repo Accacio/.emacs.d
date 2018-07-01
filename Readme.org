@@ -602,21 +602,22 @@
 
 ** google-c-style flymake
 #+BEGIN_SRC emacs-lisp
-  (use-package flymake-cursor
-    :ensure t)
+  ;; (use-package flymake-cursor
+  ;;   :ensure t)
 
-  (defun my:flymake-google-init ()
+  ;; (d
+   efun my:flymake-google-init ()
     (require 'flymake-google-cpplint)
     (custom-set-variables
      '(flymake-google-cpplint-command
        (if (string=  window-system "w32")
-           '"d:/Users/Accacio/AppData/Local/Programs/Python/Python36-32/Scripts/cpplint.exe"
-         '"/usr/local/bin/cpplint"
-         )
+	   '"d:/Users/Accacio/AppData/Local/Programs/Python/Python36-32/Scripts/cpplint.exe"
+	 '"/usr/local/bin/cpplint"
+	 )
        )
      )
     (flymake-google-cpplint-load)
-    (flymake-cursor-mode 1)
+    ;; (flymake-cursor-mode 1)
     )
 
   (use-package flymake-google-cpplint
