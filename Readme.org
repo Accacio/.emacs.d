@@ -4,7 +4,7 @@
 ** exwm
    #+BEGIN_SRC emacs-lisp
 ;     (use-package exwm
-;         :ensure t 
+;         :ensure t
 ;         :config
 ;         (require 'exwm-config)
 ;         (exwm-config-default)
@@ -14,7 +14,7 @@
 ** zerodark-theme
    #+BEGIN_SRC emacs-lisp
 (use-package zerodark-theme
-    :ensure t 
+    :ensure t
     :config
     (progn (zerodark-setup-modeline-format)
            ))
@@ -39,7 +39,7 @@
 #+END_SRC
 
 ** tweaks
-#+BEGIN_SRC emacs-lisp 
+#+BEGIN_SRC emacs-lisp
     (tool-bar-mode -1)
     (setq inhibit-startup-message t)
     (global-set-key (kbd "<f5>") 'revert-buffer)
@@ -49,7 +49,7 @@
 					    ;  (load-theme 'deeper-blue)
     (set-face-background 'region "azure4")
     (set-face-background 'cursor "sea green")
-    (setq column-number-mode t) 
+    (setq column-number-mode t)
     (setq ring-bell-function 'ignore)
     (global-prettify-symbols-mode t)
 
@@ -78,6 +78,13 @@
        kept-old-versions 2
        version-control t)
 
+;; store all backup and autosave files in the tmp dir
+  (setq backup-directory-alist
+        `((".*" . ,temporary-file-directory)))
+  (setq auto-save-file-name-transforms
+        `((".*" ,temporary-file-directory t)))
+
+
     ;; scroll one line at a time (less "jumpy" than defaults)
 
     (setq mouse-wheel-scroll-amount '(1 ((shift) . 1))) ;; one line at a time
@@ -102,7 +109,7 @@
 ** smex
   #+BEGIN_SRC emacs-lisp
 (use-package smex
-    :ensure t 
+    :ensure t
     :config
     (progn (smex-initialize)
            ))
@@ -114,17 +121,17 @@
       :ensure t )
 
     (use-package flx-ido
-        :ensure t 
+        :ensure t
         :config
         (progn (flx-ido-mode +1)
-               
+
                ))
   #+END_SRC
 
 ** beacon
   #+BEGIN_SRC emacs-lisp
     (use-package beacon
-      :ensure t 
+      :ensure t
       :config
       (progn (beacon-mode 1)
              (setq beacon-push-mark 35)
@@ -136,7 +143,7 @@
    [[https://chrome.google.com/webstore/detail/atomic-chrome/lhaoghhllmiaaagaffababmkdllgfcmc/related?hl%3Den][atomic-chrome installation]]
   #+BEGIN_SRC emacs-lisp
 (use-package atomic-chrome
-    :ensure t 
+    :ensure t
     :config
     (progn (atomic-chrome-start-server)
            ))
@@ -169,7 +176,7 @@
       (custom-set-faces
        '(aw-leading-char-face
          ((t (:inherit ace-jump-face-foreground :height 2.0 :background "sea green" :foreground "#000" ))))
-       ))) 
+       )))
 
 #+END_SRC
 
@@ -183,7 +190,7 @@
 ** flx
    #+BEGIN_SRC emacs-lisp
      (use-package flx
-         :ensure t 
+         :ensure t
          )
    #+END_SRC
 
@@ -204,7 +211,7 @@
 ** neotree
   #+BEGIN_SRC emacs-lisp
     (use-package neotree
-        :ensure t 
+        :ensure t
         :config
         (progn (global-set-key [f8] 'neotree-toggle)
                (setq neo-theme (if (display-graphic-p) 'icons 'arrow))
@@ -216,7 +223,7 @@
 #+BEGIN_SRC emacs-lisp
   (global-set-key
    (kbd "C-x t")
-   (lambda()(interactive)   
+   (lambda()(interactive)
      (if ( or (get-buffer "*ansi-term*") (get-buffer "*eshell*") )
          (rename-uniquely))
      (if (string=  window-system "w32")
@@ -305,7 +312,7 @@
 ** guru-mode
    #+BEGIN_SRC emacs-lisp
      (use-package guru-mode
-         :ensure t 
+         :ensure t
          :config
          (progn ;(guru-global-mode)
                 ))
@@ -314,7 +321,7 @@
 ** all-the-icons
    #+BEGIN_SRC emacs-lisp
      (use-package all-the-icons
-       :ensure t 
+       :ensure t
        :config
          (progn
            (unless (package-installed-p 'all-the-icons)
@@ -325,7 +332,7 @@
 ** rich-minority
    #+BEGIN_SRC emacs-lisp
      (use-package rich-minority
-       :ensure t 
+       :ensure t
        :config
        (progn
          (rich-minority-mode 1)
@@ -360,7 +367,7 @@
      (use-package rainbow-delimiters
        :ensure t
        :config
-       (progn 
+       (progn
          (require 'cl-lib)
          (require 'color)
          (cl-loop
@@ -371,7 +378,17 @@
          (add-hook 'prog-mode-hook #'rainbow-delimiters-mode)
 
          )
-       
+
+       )
+   #+END_SRC
+** origami
+   #+BEGIN_SRC emacs-lisp
+     (use-package origami
+       :ensure t
+       :config
+       (progn
+         (global-origami-mode)
+         )
        )
    #+END_SRC
 * Navigation
@@ -400,7 +417,7 @@
 
 #+END_SRC
 
-** Try 
+** Try
 #+BEGIN_SRC emacs-lisp
 (use-package try
   :ensure t)
@@ -471,7 +488,7 @@
     :ensure t
     :config (define-key global-map (kbd "C-c ;") 'iedit-mode))
 #+END_SRC
-  
+
 ** Yasnippets
 #+BEGIN_SRC emacs-lisp
  (use-package yasnippet
@@ -484,7 +501,7 @@
 ** projectile
    #+BEGIN_SRC emacs-lisp
      (use-package projectile
-	 :ensure t 
+	 :ensure t
 	 :config
 	 (progn (projectile-mode)
 		(setq projectile-indexing-method 'native)
@@ -504,13 +521,13 @@
     (progn
            ))
    #+END_SRC
-   
+
 ** ag
    #+BEGIN_SRC emacs-lisp
      (use-package ag
-         :ensure t 
+         :ensure t
          :config
-         (progn 
+         (progn
            )
          )
    #+END_SRC
@@ -524,7 +541,7 @@
 
   (custom-set-variables '(org-hide-leading-stars t))
 #+END_SRC
-#+BEGIN_SRC emacs-lisp 
+#+BEGIN_SRC emacs-lisp
     (setq org-ellipsis "⤵") ;⤵ ⭍ ↲ ⮯
     (setq org-src-fontify-natively t)
     (setq org-src-tab-acts-natively t)
@@ -535,12 +552,12 @@
 
 
 #+END_SRC
-   
+
 * Reading
 ** pdf-tools
    #+BEGIN_SRC emacs-lisp
      (use-package pdf-tools
-         :ensure t 
+         :ensure t
          :config
          (progn (pdf-tools-install)
                 ))
@@ -548,7 +565,7 @@
 ** engine-mode
    #+BEGIN_SRC emacs-lisp
      (use-package engine-mode
-         :ensure t 
+         :ensure t
          :config
          (progn
            (defengine duckduckgo
@@ -563,13 +580,13 @@
            (defengine github
              "https://github.com/search?ref=simplesearch&q=%s"
              :keybinding "g")
-          
+
            (defengine youtube
        "https://www.youtube.com/results?search_query=%s")
-           (engine-mode t) 
+           (engine-mode t)
            )
          )
-   #+END_SRC   
+   #+END_SRC
 * Programming
 ** Org-babel c++
 #+BEGIN_SRC emacs-lisp
@@ -631,7 +648,7 @@
 
     (use-package google-c-style
       :ensure t
-      :config 
+      :config
       (progn
 	(add-hook 'c-mode-common-hook 'google-set-c-style)
 	(add-hook 'c-mode-common-hook 'google-make-newline-indent)
@@ -655,7 +672,7 @@
   (use-package company
     :ensure t
     :config
-    (progn 
+    (progn
       (add-hook 'after-init-hook 'global-company-mode)
       (setq company-idle-delay 0)
       )
@@ -696,23 +713,23 @@
 #+BEGIN_SRC emacs-lisp
       (use-package irony
         :ensure t
-        :config 
+        :config
         (progn
           (add-hook 'c++-mode-hook 'irony-mode)
           (add-hook 'c-mode-hook 'irony-mode)
           (add-hook 'objc-mode-hook 'irony-mode)
-          
+
           (add-hook 'c++-mode-hook 'company-mode)
           (add-hook 'c-mode-hook 'company-mode)
           (add-hook 'objc-mode-hook 'company-mode)
-          
+
           (add-hook 'after-init-hook 'global-company-mode)
-          
-          
+
+
           (add-hook 'irony-mode-hook 'irony-cdb-autosetup-compile-options)
-          
-          
-          
+
+
+
           ))
 
       (use-package company-irony
@@ -741,7 +758,7 @@
     :ensure t
     :config (eval-after-load 'company
               '(add-to-list
-                'company-backends 
+                'company-backends
                 '(company-irony-c-headers
                   company-irony
                                           ;company-yasnippet
@@ -766,7 +783,7 @@
 ** fill-column-indicator
 #+BEGIN_SRC emacs-lisp
   (use-package fill-column-indicator
-    :ensure t 
+    :ensure t
     :config
     (progn (setq-default fill-column 80)
            (add-hook 'prog-mode-hook (lambda () (fci-mode t)))
@@ -778,7 +795,7 @@
 ** cmake-mode
   #+BEGIN_SRC emacs-lisp
 (use-package cmake-mode
-    :ensure t 
+    :ensure t
     :config
     (progn (setq auto-mode-alist
       (append
@@ -793,7 +810,7 @@
 ** helm-gtags
   #+BEGIN_SRC emacs-lisp
     (use-package helm-gtags
-      :ensure t 
+      :ensure t
       :config
       (progn (add-hook 'c++-mode-hook 'helm-gtags-mode)
              (add-hook 'c-mode-hook 'helm-gtags-mode)
@@ -804,7 +821,7 @@
 ** multipcursors
   #+BEGIN_SRC emacs-lisp
     (use-package multiple-cursors
-        :ensure t 
+        :ensure t
         :init
         (progn (global-set-key (kbd "C-x <down>") 'mc/mark-next-like-this)
                (global-set-key (kbd "C-x M-RET") 'mc/mark-all-dwim)
@@ -815,7 +832,7 @@
 ** ace-mc
    #+BEGIN_SRC emacs-lisp
      (use-package ace-mc
-         :ensure t 
+         :ensure t
          :config
          (progn (global-set-key (kbd "C-0") 'ace-mc-add-multiple-cursors)
                 ))
@@ -823,7 +840,7 @@
 ** expand-region
   #+BEGIN_SRC emacs-lisp
     (use-package expand-region
-        :ensure t 
+        :ensure t
         :init
         (progn (global-set-key (kbd "C-=") 'er/expand-region)
                ))
@@ -832,7 +849,7 @@
 ** rainbow-mode
   #+BEGIN_SRC emacs-lisp
     (use-package rainbow-mode
-        :ensure t 
+        :ensure t
         :config
         (progn (add-hook 'html-mode-hook 'rainbow-mode)
                (add-hook 'css-mode-hook 'rainbow-mode)
@@ -843,15 +860,15 @@
 ** 2048
    #+BEGIN_SRC emacs-lisp
      (use-package 2048-game
-       :ensure t 
+       :ensure t
          )
    #+END_SRC
 
-* Finances 
+* Finances
 ** ledger-mode
    #+BEGIN_SRC emacs-lisp
      (use-package ledger-mode
-         :ensure t 
+         :ensure t
          :init
          (setq ledger-clear-whole-transactions 1)
          :config
@@ -889,28 +906,28 @@
 ;(setq TeX-PDF-mode t)
 
 (use-package company-auctex
-    :ensure t 
+    :ensure t
     :config
-    (progn 
+    (progn
            ))
 (company-auctex-init)
 
-#+END_SRC 
+#+END_SRC
 ** company-bibtex
 #+BEGIN_SRC emacs-lisp
 (use-package company-bibtex
-    :ensure t 
+    :ensure t
     :config
-    (progn 
+    (progn
            ))
 
 #+END_SRC
 
 #+BEGIN_SRC emacs-lisp
   (use-package company-reftex
-      :ensure t 
+      :ensure t
       :config
-      (progn 
+      (progn
              ))
   '(reftex-use-external-file-finders t)
   (add-hook 'LaTeX-mode-hook 'turn-on-reftex)   ; with AUCTeX LaTeX mode

@@ -2,10 +2,10 @@
 (require 'package)
 (setq package-enable-at-startup nil)
 (add-to-list 'package-archives
-	     '("melpa" . "https://melpa.org/packages/")
-	     '("elpa" . "https://elpa.org/packages/"))
-(add-to-list 'package-archives
-	     '("melpa-stable" . "https://stable.melpa.org/packages/"))
+	     '("melpa" . "http://melpa.org/packages/")
+	     '("elpa" . "http://elpa.org/packages/"))
+;; (add-to-list 'package-archives
+;; 	     '("melpa-stable" . "http://stable.melpa.org/packages/"))
 
 
 (package-initialize)
