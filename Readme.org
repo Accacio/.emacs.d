@@ -40,60 +40,79 @@
 
 ** tweaks
 #+BEGIN_SRC emacs-lisp
-    (tool-bar-mode -1)
-    (setq inhibit-startup-message t)
-    (global-set-key (kbd "<f5>") 'revert-buffer)
-    (setq frame-title-format "%b")
-    (desktop-save-mode)
-    (delete-selection-mode 1)
-					    ;  (load-theme 'deeper-blue)
-    (set-face-background 'region "azure4")
-    (set-face-background 'cursor "sea green")
-    (setq column-number-mode t)
-    (setq ring-bell-function 'ignore)
-    (global-prettify-symbols-mode t)
+  (tool-bar-mode -1)
+  (setq inhibit-startup-message t)
+  (global-set-key (kbd "<f5>") 'revert-buffer)
+  (setq frame-title-format "%b")
+  (desktop-save-mode)
+  (delete-selection-mode 1)
+                                          ;  (load-theme 'deeper-blue)
+  (set-face-background 'region "azure4")
+  (set-face-background 'cursor "sea green")
+  (setq column-number-mode t)
+  (setq ring-bell-function 'ignore)
+  (global-prettify-symbols-mode t)
+  (global-linum-mode)
+
+  ;; from emacswiki
+  (define-globalized-minor-mode global-fci-mode fci-mode (lambda () (fci-mode 1)))
+  (global-fci-mode 1)
+  ;; from emacswiki
 
 
 
-    (server-start)
-    (put 'upcase-region 'disabled nil)
-    (put 'downcase-region 'disabled nil)
-    (add-to-list 'initial-frame-alist '(fullscreen . maximized))
-    (autoload 'zap-up-to-char "misc"
-      "Kill up to, but not including ARGth occurrence of CHAR.
-	\(fn arg char)"
-      'interactive)
-    (global-set-key "\M-z" 'zap-up-to-char)
-    (scroll-bar-mode -1)
-    (setq-default truncate-lines 0)
-    ;; Backup files in specific folder
-    (setq
-       backup-by-copying t      ; don't clobber symlinks
-       backup-directory-alist
-       `((".*" . ,temporary-file-directory))
-       auto-save-file-name-transforms
-	`((".*" ,temporary-file-directory t))
-       delete-old-versions t
-       kept-new-versions 6
-       kept-old-versions 2
-       version-control t)
+  (server-start)
+  (put 'upcase-region 'disabled nil)
+  (put 'downcase-region 'disabled nil)
+  (add-to-list 'initial-frame-alist '(fullscreen . maximized))
+  (autoload 'zap-up-to-char "misc"
+    "Kill up to, but not including ARGth occurrence of CHAR.
+          \(fn arg char)"
+    'interactive)
+  (global-set-key "\M-z" 'zap-up-to-char)
+  (scroll-bar-mode -1)
+  (setq-default truncate-lines 0)
+  ;; Backup files in specific folder
+  (setq
+   backup-by-copying t      ; don't clobber symlinks
+   backup-directory-alist
+   `((".*" . ,temporary-file-directory))
+   auto-save-file-name-transforms
+   `((".*" ,temporary-file-directory t))
+   delete-old-versions t
+   kept-new-versions 6
+   kept-old-versions 2
+   version-control t)
 
-;; store all backup and autosave files in the tmp dir
+  ;; store all backup and autosave files in the tmp dir
   (setq backup-directory-alist
         `((".*" . ,temporary-file-directory)))
   (setq auto-save-file-name-transforms
         `((".*" ,temporary-file-directory t)))
 
 
-    ;; scroll one line at a time (less "jumpy" than defaults)
+  ;; scroll one line at a time (less "jumpy" than defaults)
 
-    (setq mouse-wheel-scroll-amount '(1 ((shift) . 1))) ;; one line at a time
+  (setq mouse-wheel-scroll-amount '(1 ((shift) . 1))) ;; one line at a time
 
-    (setq mouse-wheel-progressive-speed nil) ;; don't accelerate scrolling
+  (setq mouse-wheel-progressive-speed nil) ;; don't accelerate scrolling
 
-    (setq mouse-wheel-follow-mouse 't) ;; scroll window under mouse
+  (setq mouse-wheel-follow-mouse 't) ;; scroll window under mouse
 
-    (setq scroll-step 1) ;; keyboard scroll one line at a time
+  (setq scroll-step 1) ;; keyboard scroll one line at a time
+
+  (mouse-avoidance-mode 'banish)
+
+
+  ;; Kill terminal buffer on exti
+  (add-hook 'term-exec-hook (lambda ()
+                              (let* ((buff (current-buffer))
+                                     (proc (get-buffer-process buff)))
+                                (lexical-let ((buff buff))
+                                  (set-process-sentinel proc (lambda (process event)
+                                                               (if (string= event "finished\n")
+                                                                   (kill-buffer buff))))))))
+
 #+END_SRC
 ** linum-relative
    #+BEGIN_SRC emacs-lisp
