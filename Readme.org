@@ -53,7 +53,8 @@
   (setq ring-bell-function 'ignore)
   (global-prettify-symbols-mode t)
   ;; (global-linum-mode)
-
+(setq truncate-lines t)
+(setq auto-hscroll-mode 'current-line)
   ;; from emacswiki
   ;; (define-globalized-minor-mode global-fci-mode fci-mode (lambda () (fci-mode 1)))
   ;; (global-fci-mode 1)
@@ -851,7 +852,7 @@
   (use-package fill-column-indicator
     :ensure t
     :config
-    (progn (setq-default fill-column 80)
+    (progn (setq-default fill-column 70)
            (add-hook 'prog-mode-hook (lambda () (fci-mode t)))
            ))
 
