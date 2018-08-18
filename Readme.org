@@ -46,17 +46,17 @@
   (setq frame-title-format "%b")
   (desktop-save-mode)
   (delete-selection-mode 1)
-                                          ;  (load-theme 'deeper-blue)
+  ;; (load-theme 'deeper-blue)
   (set-face-background 'region "azure4")
   (set-face-background 'cursor "sea green")
   (setq column-number-mode t)
   (setq ring-bell-function 'ignore)
   (global-prettify-symbols-mode t)
-  (global-linum-mode)
+  ;; (global-linum-mode)
 
   ;; from emacswiki
-  (define-globalized-minor-mode global-fci-mode fci-mode (lambda () (fci-mode 1)))
-  (global-fci-mode 1)
+  ;; (define-globalized-minor-mode global-fci-mode fci-mode (lambda () (fci-mode 1)))
+  ;; (global-fci-mode 1)
   ;; from emacswiki
 
 
@@ -176,10 +176,39 @@
 
 ** tabbar
 #+BEGIN_SRC emacs-lisp
-(use-package tabbar
-  :ensure t
-  :config
-  (tabbar-mode 1))
+    (use-package tabbar
+      :ensure t
+      :config
+      (progn
+        (tabbar-mode 1)
+        (defun tabbar-buffer-groups ()
+          "Returns the list of group names the current buffer belongs to."
+          (list
+           (cond
+
+            ;; ADD RULES TO SPLIT BUFFERS IN GROUPS HERE!
+            ((string-equal "*" (substring (buffer-name) 0 1))
+             "Common"
+             )
+            ((or (string-match "^.*tex$" (buffer-name)) (string-match "^.*bib$" (buffer-name))  )
+             "Latex"
+             )
+            ((string-match "^.*org$" (buffer-name))
+             "Org"
+             )
+            ((memq major-mode
+                   '(c++-mode c-mode))
+             "C++"
+             )
+            ;; if buffer is not grouped by the rules you would add above
+            ;; put it in the "General" group:
+            (t
+             "General"
+             ))))
+  )
+
+
+    )
 #+END_SRC
 
 ** ace-window
@@ -431,12 +460,13 @@
   (global-set-key (kbd "C-x C-b") 'ibuffer)
   (setq ibuffer-saved-filter-groups
         (quote (("default"
-                 ("dired" (mode . dired-mode))
-                 ("org" (mode . org-mode))
-                 ("programming" (or (or (mode . c-mode) (mode . c++-mode) ) (mode . python-mode) ) )
-                 ("emacs" (or (name . "^\\*scratch\\*$") (name . "^\\*Messages\\*$") (name . "^\\*Warnings\\*$")))
-                 ("pdf" (name . "^.*pdf$"))
-                 ("resto" (name . "^\\*.*\\*$"))
+                 ("Latex" (or (name . "^.*tex$") (name . "^.*bib$")  ))
+                 ("Programming" (or (or (mode . c-mode) (mode . c++-mode) ) (mode . python-mode) ) )
+                 ("Org" (mode . org-mode))
+                 (".pdf" (name . "^.*pdf$"))
+                 ("Dired" (mode . dired-mode))
+                 ("Emacs" (or (name . "^\\*scratch\\*$") (name . "^\\*Messages\\*$") (name . "^\\*Warnings\\*$")))
+                 ("Common" (name . "^\\*.*\\*$"))
                  ))))
   (add-hook 'ibuffer-mode-hook
             (lambda ()
@@ -1047,7 +1077,9 @@
        :ensure t
        :config
        (progn (setq elfeed-feeds
-           '("https://www.youtube.com/feeds/videos.xml?channel_id=UCtiPaN6Zj0-4CeC7p1qUOcg"
+           '(
+             "https://www.youtube.com/feeds/videos.xml?channel_id=UCtiPaN6Zj0-4CeC7p1qUOcg"
+             "https://www.youtube.com/feeds/videos.xml?channel_id=UC0JB7TSe49lg56u6qH8y_MQ"
              )
            )
               )
