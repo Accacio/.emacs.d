@@ -1056,7 +1056,7 @@
 
 ** ispell
 #+BEGIN_SRC emacs-lisp
-  (let ((langs '("american" "fr-80" "pt_BR")))
+  (let ((langs '("american" "fr_FR" "pt_BR")))
         (setq lang-ring (make-ring (length langs)))
         (dolist (elem langs) (ring-insert lang-ring elem)))
 
