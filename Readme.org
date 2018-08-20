@@ -1006,6 +1006,12 @@
   (add-hook 'latex-mode-hook 'turn-on-reftex)   ; with Emacs latex mode
   (add-hook 'LaTeX-mode-hook 'auto-fill-mode)
   (add-hook 'latex-mode-hook 'auto-fill-mode)
+  (add-hook 'LaTeX-mode-hook 'linum-mode)
+  (add-hook 'latex-mode-hook 'linum-mode)
+  (add-hook 'LaTeX-mode-hook 'fci-mode)
+  (add-hook 'latex-mode-hook 'fci-mode)
+  (add-hook 'LaTeX-mode-hook 'flyspell-mode)
+  (add-hook 'latex-mode-hook 'flyspell-mode)
 #+END_SRC
 
 * Blog
@@ -1056,7 +1062,7 @@
 
 ** ispell
 #+BEGIN_SRC emacs-lisp
-  (let ((langs '("american" "fr-80" "pt_BR")))
+  (let ((langs '("american" "fr_FR" "pt_BR")))
         (setq lang-ring (make-ring (length langs)))
         (dolist (elem langs) (ring-insert lang-ring elem)))
 
