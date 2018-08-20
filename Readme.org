@@ -53,14 +53,14 @@
   (setq ring-bell-function 'ignore)
   (global-prettify-symbols-mode t)
   ;; (global-linum-mode)
-(setq truncate-lines t)
-(setq auto-hscroll-mode 'current-line)
+  (setq truncate-lines t)
+  (setq auto-hscroll-mode 'current-line)
   ;; from emacswiki
   ;; (define-globalized-minor-mode global-fci-mode fci-mode (lambda () (fci-mode 1)))
   ;; (global-fci-mode 1)
   ;; from emacswiki
 
-
+  (global-set-key (kbd "M-<Scroll_Lock>") 'scroll-lock-mode)
 
   (server-start)
   (put 'upcase-region 'disabled nil)
@@ -68,7 +68,7 @@
   (add-to-list 'initial-frame-alist '(fullscreen . maximized))
   (autoload 'zap-up-to-char "misc"
     "Kill up to, but not including ARGth occurrence of CHAR.
-          \(fn arg char)"
+            \(fn arg char)"
     'interactive)
   (global-set-key "\M-z" 'zap-up-to-char)
   (scroll-bar-mode -1)
@@ -206,6 +206,12 @@
             (t
              "General"
              ))))
+        ;; (global-set-key (kbd "C-c C-f") 'tabbar-forward)
+        ;; (global-set-key (kbd "C-c C-b") 'tabbar-forward)
+        ;; (global-set-key (kbd "C-c C-z") 'tabbar-forward-group)
+        ;; (global-set-key (kbd "C-c C-s") 'tabbar-forward-group)
+        (global-set-key (kbd "<C-tab>") 'ace-window)
+
   )
 
 
@@ -1006,6 +1012,13 @@
   (add-hook 'latex-mode-hook 'turn-on-reftex)   ; with Emacs latex mode
   (add-hook 'LaTeX-mode-hook 'auto-fill-mode)
   (add-hook 'latex-mode-hook 'auto-fill-mode)
+  (add-hook 'LaTeX-mode-hook 'flyspell-mode)
+  (add-hook 'latex-mode-hook 'flyspell-mode)
+  (add-hook 'LaTeX-mode-hook 'fci-mode)
+  (add-hook 'latex-mode-hook 'fci-mode)
+  (add-hook 'LaTeX-mode-hook 'linum-mode)
+  (add-hook 'latex-mode-hook 'linum-mode)
+
 #+END_SRC
 
 * Blog
