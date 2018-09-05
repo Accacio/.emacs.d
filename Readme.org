@@ -61,7 +61,7 @@
   ;; from emacswiki
 
   (global-set-key (kbd "M-<Scroll_Lock>") 'scroll-lock-mode)
-
+  (add-to-list 'auto-mode-alist '("mutt" . mail-mode))
   (server-start)
   (put 'upcase-region 'disabled nil)
   (put 'downcase-region 'disabled nil)
