@@ -113,7 +113,10 @@
                                   (set-process-sentinel proc (lambda (process event)
                                                                (if (string= event "finished\n")
                                                                    (kill-buffer buff))))))))
-
+  ;; Make File executable if it begins with #!
+  (add-hook
+   'after-save-hook
+   'executable-make-buffer-file-executable-if-script-p)
 #+END_SRC
 ** linum-relative
    #+BEGIN_SRC emacs-lisp
@@ -748,6 +751,13 @@
     (progn
       (add-hook 'after-init-hook 'global-company-mode)
       (setq company-idle-delay 0)
+      
+        (company-quickhelp-mode)
+    (setq company-show-numbers t)
+    (let ((map company-active-map))
+    (mapc (lambda (x) (define-key map (format "%d" x)
+                   `(lambda () (interactive) (company-complete-number ,x))))
+          (number-sequence 0 9)))
       )
     )
 
