@@ -978,27 +978,27 @@
 * Latex
 ** auctex
 #+BEGIN_SRC emacs-lisp
-;; (require 'auctex)
-     (use-package auctex
-     :defer t
-     :ensure t)
-(setq TeX-auto-save t)
-(setq TeX-parse-self t)
-(setq TeX-save-query nil)
-(defun turn-on-outline-minor-mode ()
-(outline-minor-mode 1))
+  ;; (require 'auctex)
+       (use-package auctex
+       :defer t
+       :ensure t)
+  (setq TeX-auto-save t)
+  (setq TeX-parse-self t)
+  (setq TeX-save-query nil)
+  (defun turn-on-outline-minor-mode ()
+  (outline-minor-mode 1))
 
-(add-hook 'LaTeX-mode-hook 'turn-on-outline-minor-mode)
-(add-hook 'latex-mode-hook 'turn-on-outline-minor-mode)
-(setq outline-minor-mode-prefix "\C-c \C-o") ; Or something else
-;(setq TeX-PDF-mode t)
+  (add-hook 'LaTeX-mode-hook 'turn-on-outline-minor-mode)
+  (add-hook 'latex-mode-hook 'turn-on-outline-minor-mode)
+  (setq outline-minor-mode-prefix "\C-c \C-o") ; Or something else
+  ;(setq TeX-PDF-mode t)
 
-(use-package company-auctex
-    :ensure t
-    :config
-    (progn
-           ))
-(company-auctex-init)
+  (use-package company-auctex
+      :ensure t
+      :config
+      (progn
+             ))
+  (company-auctex-init)
 
 #+END_SRC
 ** company-bibtex
@@ -1029,6 +1029,27 @@
   (add-hook 'LaTeX-mode-hook 'linum-mode)
   (add-hook 'latex-mode-hook 'linum-mode)
 
+#+END_SRC
+** Zathura as Viewer
+#+BEGIN_SRC emacs-lisp
+          (defcustom tex-my-viewer "zathura --fork -s -x \"emacsclient --eval '(progn (switch-to-buffer  (file-name-nondirectory \"'\"'\"%{input}\"'\"'\")) (goto-line %{line}))'\"" 
+    "PDF Viewer for TeX documents. You may want to fork the viewer
+  so that it detects when the same document is launched twice, and
+  persists when Emacs gets closed.
+
+  Simple command:
+
+    zathura --fork
+
+  We can use
+
+    emacsclient --eval '(progn (switch-to-buffer  (file-name-nondirectory \"%{input}\")) (goto-line %{line}))'
+
+  to reverse-search a pdf using SyncTeX. Note that the quotes and double-quotes matter and must be escaped appropriately."
+    :safe 'stringp)
+
+  (add-to-list 'TeX-view-program-selection
+               '(output-pdf "Zathura"))
 #+END_SRC
 
 * Blog

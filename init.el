@@ -25,16 +25,16 @@
  '(TeX-source-correlate-mode t)
  '(TeX-source-correlate-start-server t)
  '(TeX-view-program-list (quote (("okular" ("okular --unique %o#src:%n%b") ""))))
- '(TeX-view-program-selection
-   (quote
-    ((output-pdf "Okular")
-     ((output-dvi has-no-display-manager)
-      "dvi2tty")
-     ((output-dvi style-pstricks)
-      "dvips and gv")
-     (output-dvi "xdvi")
-     (output-pdf "Evince")
-     (output-html "xdg-open"))))
+ ;; '(TeX-view-program-selection
+   ;; (quote
+    ;; ((output-pdf "Okular")
+     ;; ((output-dvi has-no-display-manager)
+      ;; "dvi2tty")
+     ;; ((output-dvi style-pstricks)
+      ;; "dvips and gv")
+     ;; (output-dvi "xdvi")
+     ;; (output-pdf "Evince")
+     ;; (output-html "xdg-open"))))
  '(flymake-google-cpplint-command
    (if
        (string= window-system "w32")
@@ -44,13 +44,13 @@
    (quote
     (("reg" "ledger [[ledger-mode-flags]] -f /home/accacio/.emacs.d/ledger.ledger reg")
      (#("bal" 0 1
-	(idx 0))
+        (idx 0))
       "%(binary) -f %(ledger-file) bal")
      (#("payee" 0 1
-	(idx 2))
+        (idx 2))
       "%(binary) -f %(ledger-file) reg @%(payee)")
      (#("account" 0 1
-	(idx 3))
+        (idx 3))
       "%(binary) -f %(ledger-file) reg %(account)"))))
  '(minimap-dedicated-window t)
  '(minimap-hide-scroll-bar nil)
