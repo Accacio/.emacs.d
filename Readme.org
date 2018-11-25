@@ -40,6 +40,7 @@
 
 ** tweaks
 #+BEGIN_SRC emacs-lisp
+  (set-default-font "ubuntu 13" nil t)
   (tool-bar-mode -1)
   (setq inhibit-startup-message t)
   (global-set-key (kbd "<f5>") 'revert-buffer)
@@ -68,7 +69,7 @@
   (add-to-list 'initial-frame-alist '(fullscreen . maximized))
   (autoload 'zap-up-to-char "misc"
     "Kill up to, but not including ARGth occurrence of CHAR.
-            \(fn arg char)"
+              \(fn arg char)"
     'interactive)
   (global-set-key "\M-z" 'zap-up-to-char)
   (scroll-bar-mode -1)
@@ -118,6 +119,7 @@
    'after-save-hook
    'executable-make-buffer-file-executable-if-script-p)
 #+END_SRC
+
 ** linum-relative
    #+BEGIN_SRC emacs-lisp
      (use-package linum-relative
@@ -129,6 +131,7 @@
          )
        )
    #+END_SRC
+
 ** smex
   #+BEGIN_SRC emacs-lisp
 (use-package smex
@@ -194,7 +197,7 @@
             ((string-equal "*" (substring (buffer-name) 0 1))
              "Common"
              )
-            ((or (string-match "^.*tex$" (buffer-name)) (string-match "^.*bib$" (buffer-name))  )
+            ((or (string-match "^.*\.tex.^" (buffer-name)) (string-match "^.*\.bib.*$" (buffer-name))  )
              "Latex"
              )
             ((string-match "^.*org$" (buffer-name))
@@ -310,70 +313,88 @@
 
 ** My commands
 #+BEGIN_SRC emacs-lisp
-	(define-prefix-command 'accacio-map)
-	(global-set-key (kbd "<f12><f12>") 'accacio-map)
+  (define-prefix-command 'accacio-map)
+  (define-prefix-command 'ProjetoFinal)
+  (global-set-key (kbd "<f12><f12>") 'accacio-map)
 
-    ;;; Code:
-    (defun open-file-switch-buffer-or-close (filename)
-      "Opens FILENAME if it\'s closed."
-	  (setq ReadmeBuffer (or
-			      (get-buffer (file-name-nondirectory filename))
-			      (get-buffer
-			       (concat (file-name-nondirectory filename)
-				       "<"
-				       (file-name-nondirectory
-					(substring
-					 (file-name-directory
-					  (expand-file-name
-					   filename)) 0 -1 ))
-				       ">")
-			       )
-			      ))
-	  (setq VisitedFile  (buffer-file-name ReadmeBuffer))
-	  ;; (setq myReadme "~/.emacs.d/Readme.org")
+      ;;; Code:
+  (defun open-file-switch-buffer-or-close (filename)
+    "Opens FILENAME if it\'s closed."
+    (setq ReadmeBuffer (or
+                        (get-buffer (file-name-nondirectory filename))
+                        (get-buffer
+                         (concat (file-name-nondirectory filename)
+                                 "<"
+                                 (file-name-nondirectory
+                                  (substring
+                                   (file-name-directory
+                                    (expand-file-name
+                                     filename)) 0 -1 ))
+                                 ">")
+                         )
+                        ))
+    (setq VisitedFile  (buffer-file-name ReadmeBuffer))
+    ;; (setq myReadme "~/.emacs.d/Readme.org")
 
-	  (if (string= VisitedFile (expand-file-name filename))
-	      (if (eq (get-buffer (current-buffer)) ReadmeBuffer)
-		  (kill-buffer ReadmeBuffer)
-		(switch-to-buffer ReadmeBuffer)
-		)
-	    (find-file filename)
-	    )
-	  )
+    (if (string= VisitedFile (expand-file-name filename))
+        (if (eq (get-buffer (current-buffer)) ReadmeBuffer)
+            (kill-buffer ReadmeBuffer)
+          (switch-to-buffer ReadmeBuffer)
+          )
+      (find-file filename)
+      )
+    )
 
   (define-key accacio-map (kbd "c")
     (defun emacs-config () (interactive)
-      (open-file-switch-buffer-or-close "~/.emacs.d/Readme.org")
-      )
+           (open-file-switch-buffer-or-close "~/.emacs.d/Readme.org")
+           )
     )
   (define-key accacio-map (kbd "b")
     (defun bashrc () (interactive)
-      (open-file-switch-buffer-or-close "~/dots/bash/.bashrc")
-      )
+           (open-file-switch-buffer-or-close "~/dots/bash/.bashrc")
+           )
     )
   (define-key accacio-map (kbd "i")
-      (defun i3config () (interactive)
-	(open-file-switch-buffer-or-close "~/dots/i3/.i3/config")
-	)
-      )
+    (defun i3config () (interactive)
+           (open-file-switch-buffer-or-close "~/dots/i3/.i3/config")
+           )
+    )
   (define-key accacio-map (kbd "t") 'toggle-transparency)
   (define-key accacio-map (kbd "g") 'guru-global-mode)
   (define-key accacio-map (kbd "o")
     (defun todos () (interactive)
-      (open-file-switch-buffer-or-close "~/Dropbox/AccDoc/Org/Todo.org")
-      )
+           (open-file-switch-buffer-or-close "~/Dropbox/AccDoc/Org/")
+           )
     )
 
+  (define-key accacio-map (kbd "p") 'ProjetoFinal)
+  (define-key ProjetoFinal (kbd "t")
+      (defun todo () (interactive)
+           (open-file-switch-buffer-or-close "~/Dropbox/TCC/org/todo.org")
+           )
+      )
 
+  (define-key ProjetoFinal (kbd "m")
+        (defun main () (interactive)
+             (open-file-switch-buffer-or-close "~/Dropbox/TCC/documentos/tex/main.tex")
+             )
+        )
+
+  (define-key ProjetoFinal (kbd "a")
+        (defun apresentacao () (interactive)
+             (open-file-switch-buffer-or-close "~/Dropbox/TCC/documentos/tex/main.tex")
+             )
+        )
 #+END_SRC
 
 ** guru-mode
    #+BEGIN_SRC emacs-lisp
      (use-package guru-mode
-         :ensure t
-         :config
-         (progn ;(guru-global-mode)
-                ))
+	 :ensure t
+	 :config
+	 (progn (guru-global-mode)
+	       	))
    #+END_SRC
 
 ** all-the-icons
@@ -415,6 +436,7 @@
                                     "WK"
                                     "ivy"
                                     "VHL"
+                                    "guru"
                                     ".*\(\*\).*" )
                                   "\\|")))
          ))
@@ -454,6 +476,7 @@
 
        )
    #+END_SRC
+
 ** origami
    #+BEGIN_SRC emacs-lisp
      (use-package origami
@@ -464,13 +487,24 @@
          )
        )
    #+END_SRC
+
+** fontawesome
+   #+BEGIN_SRC emacs-lisp
+(use-package fontawesome
+  :ensure t
+  :config
+  (progn 
+	 )
+  )
+   #+END_SRC
+
 * Navigation
 ** Ibuffer
 #+BEGIN_SRC emacs-lisp
   (global-set-key (kbd "C-x C-b") 'ibuffer)
   (setq ibuffer-saved-filter-groups
         (quote (("default"
-                 ("Latex" (or (name . "^.*tex$") (name . "^.*bib$")  ))
+                 ("Latex" (or (name . "^.*\\.tex.*$") (name . "^.*\\.bib.*$")  ))
                  ("Programming" (or (or (mode . c-mode) (mode . c++-mode) ) (mode . python-mode) ) )
                  ("Org" (mode . org-mode))
                  (".pdf" (name . "^.*pdf$"))
@@ -483,6 +517,7 @@
               (ibuffer-auto-mode 1)
               (ibuffer-switch-to-saved-filter-groups "default")))
 #+END_SRC
+
 ** Dired
 #+BEGIN_SRC emacs-lisp
   (put 'dired-find-alternate-file 'disabled nil)
@@ -607,6 +642,7 @@
            )
          )
    #+END_SRC
+
 * Planning / Org-Mode
 ** org-bullets
 #+BEGIN_SRC emacs-lisp
@@ -631,6 +667,7 @@
 
 * Reading
 ** pdf-tools
+
    #+BEGIN_SRC emacs-lisp
      (use-package pdf-tools
          :ensure t
@@ -638,6 +675,7 @@
          (progn (pdf-tools-install)
                 ))
    #+END_SRC
+
 ** engine-mode
    #+BEGIN_SRC emacs-lisp
      (use-package engine-mode
@@ -663,6 +701,7 @@
            )
          )
    #+END_SRC
+
 * Programming
 ** Org-babel c++
 #+BEGIN_SRC emacs-lisp
@@ -767,7 +806,7 @@
   (progn
     (setq company-minimum-prefix-length 1)
                                           ;    (setq company-tooltip-maximum-width 20)
-    (company-quickhelp-mode)
+    (company-quickhelpmode)
     ))
 
 #+END_SRC
@@ -859,7 +898,7 @@
     :ensure t
     :config
     (progn  (add-hook 'prog-mode-hook (lambda () (idle-highlight-mode t)))
-            (set-face-background 'idle-highlight "#484a56")
+            (set-face-background 'idle-highlight "#2d2")
             ))
 #+END_SRC
 
@@ -901,7 +940,7 @@
              ))
   #+END_SRC
 
-** multipcursors
+** multiple-cursors
   #+BEGIN_SRC emacs-lisp
     (use-package multiple-cursors
         :ensure t
@@ -913,6 +952,7 @@
   #+END_SRC
 
 ** ace-mc
+
    #+BEGIN_SRC emacs-lisp
      (use-package ace-mc
          :ensure t
@@ -920,6 +960,7 @@
          (progn (global-set-key (kbd "C-0") 'ace-mc-add-multiple-cursors)
                 ))
    #+END_SRC
+
 ** expand-region
   #+BEGIN_SRC emacs-lisp
     (use-package expand-region
@@ -928,6 +969,19 @@
         (progn (global-set-key (kbd "C-=") 'er/expand-region)
                ))
   #+END_SRC
+
+** scala
+   #+BEGIN_SRC emacs-lisp
+     (use-package ensime
+       :ensure t)
+
+     (use-package sbt-mode
+       :ensure t)
+
+     (use-package scala-mode
+       :ensure t)
+   #+END_SRC
+
 * HTML
 ** rainbow-mode
   #+BEGIN_SRC emacs-lisp
@@ -944,6 +998,7 @@
     (setq browse-url-browser-function 'browse-url-generic
           browse-url-generic-program "vivaldi")
   #+END_SRC
+
 * Games
 ** 2048
    #+BEGIN_SRC emacs-lisp
@@ -975,6 +1030,7 @@
 	 )
   )
    #+END_SRC
+
 * Latex
 ** auctex
 #+BEGIN_SRC emacs-lisp
@@ -1001,6 +1057,7 @@
   (company-auctex-init)
 
 #+END_SRC
+
 ** company-bibtex
 #+BEGIN_SRC emacs-lisp
 (use-package company-bibtex
@@ -1011,6 +1068,7 @@
 
 #+END_SRC
 
+** company-reftex
 #+BEGIN_SRC emacs-lisp
   (use-package company-reftex
       :ensure t
@@ -1030,6 +1088,7 @@
   (add-hook 'latex-mode-hook 'linum-mode)
 
 #+END_SRC
+
 ** Zathura as Viewer
 #+BEGIN_SRC emacs-lisp
           (defcustom tex-my-viewer "zathura --fork -s -x \"emacsclient --eval '(progn (switch-to-buffer  (file-name-nondirectory \"'\"'\"%{input}\"'\"'\")) (goto-line %{line}))'\"" 
@@ -1053,17 +1112,19 @@
 #+END_SRC
 
 * Blog
+
+** org-publish
 #+BEGIN_SRC emacs-lisp
   (setq org-publish-project-alist
 	'(
 
     ("org-accacio"
 	    ;; Path to your org files.
-	    :base-directory "~/site/org/"
+	    :base-directory "~/git/Blog/org/"
 	    :base-extension "org"
 
 	    ;; Path to your Jekyll project.
-	    :publishing-directory "~/site/meublog/"
+	    :publishing-directory "~/git/Blog/meublog/"
 	    :recursive t
 	    :publishing-function org-html-publish-to-html
 	    :headline-levels 4
@@ -1075,7 +1136,7 @@
       ("org-static-acc"
 	    :base-directory "~/site/org/"
 	    :base-extension "css\\|js\\|png\\|jpg\\|gif\\|pdf\\|mp3\\|ogg\\|swf\\|php"
-	    :publishing-directory "~/site/"
+	    :publishing-directory "~/git/Blog/meublog/"
 	    :recursive t
 	    :publishing-function org-publish-attachment)
 
@@ -1085,6 +1146,16 @@
 
 
 #+END_SRC
+
+** yaml-mode
+   #+BEGIN_SRC emacs-lisp
+(use-package yaml-mode
+  :ensure t
+  :config
+  (progn 
+	 )
+  )
+   #+END_SRC
 
 * writing
 ** markdown-mode
@@ -1130,3 +1201,4 @@
               )
        )
    #+END_SRC
+
