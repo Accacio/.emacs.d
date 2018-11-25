@@ -352,12 +352,12 @@
     )
   (define-key accacio-map (kbd "b")
     (defun bashrc () (interactive)
-           (open-file-switch-buffer-or-close "~/dots/bash/.bashrc")
+           (open-file-switch-buffer-or-close "~/dots/configs/bash/.bashrc")
            )
     )
   (define-key accacio-map (kbd "i")
     (defun i3config () (interactive)
-           (open-file-switch-buffer-or-close "~/dots/i3/.i3/config")
+           (open-file-switch-buffer-or-close "~/dots/configs/i3/.i3/config")
            )
     )
   (define-key accacio-map (kbd "t") 'toggle-transparency)
@@ -898,7 +898,7 @@
     :ensure t
     :config
     (progn  (add-hook 'prog-mode-hook (lambda () (idle-highlight-mode t)))
-            (set-face-background 'idle-highlight "#2d2")
+            (set-face-background 'idle-highlight "#555")
             ))
 #+END_SRC
 
