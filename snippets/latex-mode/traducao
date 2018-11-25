@@ -1,0 +1,11 @@
+# -*- mode: snippet -*-
+# name: traducao
+# key: traducao
+# --
+\subsection*{$1}
+\fbox{\qquad\parbox{\textwidth}
+  {
+    \vspace{2em}	
+    $0
+    \vspace{2em}
+  }\qquad\vspace{2em}}

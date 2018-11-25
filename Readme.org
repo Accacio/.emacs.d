@@ -3,21 +3,21 @@
 * interface and tweaks
 ** exwm
    #+BEGIN_SRC emacs-lisp
-;     (use-package exwm
-;         :ensure t 
-;         :config
-;         (require 'exwm-config)
-;         (exwm-config-default)
-;         )
+     ;     (use-package exwm
+     ;         :ensure t
+     ;         :config
+     ;         (require 'exwm-config)
+     ;         (exwm-config-default)
+     ;         )
    #+END_SRC
 
 ** zerodark-theme
    #+BEGIN_SRC emacs-lisp
-(use-package zerodark-theme
-    :ensure t 
-    :config
-    (progn (zerodark-setup-modeline-format)
-           ))
+     (use-package zerodark-theme
+         :ensure t
+         :config
+         (progn (zerodark-setup-modeline-format)
+                ))
    #+END_SRC
 
 ** transparency
@@ -39,39 +39,103 @@
 #+END_SRC
 
 ** tweaks
-#+BEGIN_SRC emacs-lisp 
+#+BEGIN_SRC emacs-lisp
+  (set-default-font "ubuntu 13" nil t)
   (tool-bar-mode -1)
   (setq inhibit-startup-message t)
   (global-set-key (kbd "<f5>") 'revert-buffer)
   (setq frame-title-format "%b")
   (desktop-save-mode)
   (delete-selection-mode 1)
-                                          ;  (load-theme 'deeper-blue)
+  ;; (load-theme 'deeper-blue)
   (set-face-background 'region "azure4")
   (set-face-background 'cursor "sea green")
-  (setq column-number-mode t) 
+  (setq column-number-mode t)
   (setq ring-bell-function 'ignore)
   (global-prettify-symbols-mode t)
-  (add-hook 'prog-mode-hook (lambda () (linum-mode t)))
+  ;; (global-linum-mode)
+  (setq truncate-lines t)
+  (setq auto-hscroll-mode 'current-line)
+  ;; from emacswiki
+  ;; (define-globalized-minor-mode global-fci-mode fci-mode (lambda () (fci-mode 1)))
+  ;; (global-fci-mode 1)
+  ;; from emacswiki
 
-
+  (global-set-key (kbd "M-<Scroll_Lock>") 'scroll-lock-mode)
+  (add-to-list 'auto-mode-alist '("mutt" . mail-mode))
   (server-start)
   (put 'upcase-region 'disabled nil)
   (put 'downcase-region 'disabled nil)
   (add-to-list 'initial-frame-alist '(fullscreen . maximized))
   (autoload 'zap-up-to-char "misc"
     "Kill up to, but not including ARGth occurrence of CHAR.
-      \(fn arg char)"
+              \(fn arg char)"
     'interactive)
   (global-set-key "\M-z" 'zap-up-to-char)
   (scroll-bar-mode -1)
   (setq-default truncate-lines 0)
+  ;; Backup files in specific folder
+  (setq
+   backup-by-copying t      ; don't clobber symlinks
+   backup-directory-alist
+   `((".*" . ,temporary-file-directory))
+   auto-save-file-name-transforms
+   `((".*" ,temporary-file-directory t))
+   delete-old-versions t
+   kept-new-versions 6
+   kept-old-versions 2
+   version-control t)
+
+  ;; store all backup and autosave files in the tmp dir
+  (setq backup-directory-alist
+        `((".*" . ,temporary-file-directory)))
+  (setq auto-save-file-name-transforms
+        `((".*" ,temporary-file-directory t)))
+
+
+  ;; scroll one line at a time (less "jumpy" than defaults)
+
+  (setq mouse-wheel-scroll-amount '(1 ((shift) . 1))) ;; one line at a time
+
+  (setq mouse-wheel-progressive-speed nil) ;; don't accelerate scrolling
+
+  (setq mouse-wheel-follow-mouse 't) ;; scroll window under mouse
+
+  (setq scroll-step 1) ;; keyboard scroll one line at a time
+
+  (mouse-avoidance-mode 'banish)
+
+
+  ;; Kill terminal buffer on exti
+  (add-hook 'term-exec-hook (lambda ()
+                              (let* ((buff (current-buffer))
+                                     (proc (get-buffer-process buff)))
+                                (lexical-let ((buff buff))
+                                  (set-process-sentinel proc (lambda (process event)
+                                                               (if (string= event "finished\n")
+                                                                   (kill-buffer buff))))))))
+  ;; Make File executable if it begins with #!
+  (add-hook
+   'after-save-hook
+   'executable-make-buffer-file-executable-if-script-p)
 #+END_SRC
+
+** linum-relative
+   #+BEGIN_SRC emacs-lisp
+     (use-package linum-relative
+       :ensure t
+       :config
+       (progn
+         (setq linum-relative-current-symbol "")
+         (add-hook 'prog-mode-hook (lambda () (linum-relative-mode t)))
+         )
+       )
+   #+END_SRC
 
 ** smex
   #+BEGIN_SRC emacs-lisp
 (use-package smex
-    :ensure t 
+    :ensure t
     :config
     (progn (smex-initialize)
            ))
@@ -83,29 +147,29 @@
       :ensure t )
 
     (use-package flx-ido
-        :ensure t 
+        :ensure t
         :config
         (progn (flx-ido-mode +1)
-               
+
                ))
   #+END_SRC
 
 ** beacon
   #+BEGIN_SRC emacs-lisp
     (use-package beacon
-        :ensure t 
-        :config
-        (progn (beacon-mode 1)
-               (setq beacon-push-mark 35)
-;               (setq beacon-color "#666600")
-               ))
+      :ensure t
+      :config
+      (progn (beacon-mode 1)
+             (setq beacon-push-mark 35)
+             (setq beacon-color "#00b4ff")
+             ))
   #+END_SRC
 
 ** atomic-chrome
    [[https://chrome.google.com/webstore/detail/atomic-chrome/lhaoghhllmiaaagaffababmkdllgfcmc/related?hl%3Den][atomic-chrome installation]]
   #+BEGIN_SRC emacs-lisp
 (use-package atomic-chrome
-    :ensure t 
+    :ensure t
     :config
     (progn (atomic-chrome-start-server)
            ))
@@ -113,16 +177,51 @@
 
 ** hl-line-mode
 #+BEGIN_SRC emacs-lisp
-  (global-hl-line-mode)
-  (set-face-background 'hl-line "#282a36")
+  ;; (global-hl-line-mode)
+  ;; (set-face-background 'hl-line "#282a36")
 #+END_SRC
 
 ** tabbar
 #+BEGIN_SRC emacs-lisp
-(use-package tabbar
-  :ensure t
-  :config
-  (tabbar-mode 1))
+    (use-package tabbar
+      :ensure t
+      :config
+      (progn
+        (tabbar-mode 1)
+        (defun tabbar-buffer-groups ()
+          "Returns the list of group names the current buffer belongs to."
+          (list
+           (cond
+
+            ;; ADD RULES TO SPLIT BUFFERS IN GROUPS HERE!
+            ((string-equal "*" (substring (buffer-name) 0 1))
+             "Common"
+             )
+            ((or (string-match "^.*\.tex.^" (buffer-name)) (string-match "^.*\.bib.*$" (buffer-name))  )
+             "Latex"
+             )
+            ((string-match "^.*org$" (buffer-name))
+             "Org"
+             )
+            ((memq major-mode
+                   '(c++-mode c-mode))
+             "C++"
+             )
+            ;; if buffer is not grouped by the rules you would add above
+            ;; put it in the "General" group:
+            (t
+             "General"
+             ))))
+        ;; (global-set-key (kbd "C-c C-f") 'tabbar-forward)
+        ;; (global-set-key (kbd "C-c C-b") 'tabbar-forward)
+        ;; (global-set-key (kbd "C-c C-z") 'tabbar-forward-group)
+        ;; (global-set-key (kbd "C-c C-s") 'tabbar-forward-group)
+        (global-set-key (kbd "<C-tab>") 'ace-window)
+
+  )
+
+
+    )
 #+END_SRC
 
 ** ace-window
@@ -138,7 +237,7 @@
       (custom-set-faces
        '(aw-leading-char-face
          ((t (:inherit ace-jump-face-foreground :height 2.0 :background "sea green" :foreground "#000" ))))
-       ))) 
+       )))
 
 #+END_SRC
 
@@ -152,7 +251,7 @@
 ** flx
    #+BEGIN_SRC emacs-lisp
      (use-package flx
-         :ensure t 
+         :ensure t
          )
    #+END_SRC
 
@@ -173,7 +272,7 @@
 ** neotree
   #+BEGIN_SRC emacs-lisp
     (use-package neotree
-        :ensure t 
+        :ensure t
         :config
         (progn (global-set-key [f8] 'neotree-toggle)
                (setq neo-theme (if (display-graphic-p) 'icons 'arrow))
@@ -185,7 +284,7 @@
 #+BEGIN_SRC emacs-lisp
   (global-set-key
    (kbd "C-x t")
-   (lambda()(interactive)   
+   (lambda()(interactive)
      (if ( or (get-buffer "*ansi-term*") (get-buffer "*eshell*") )
          (rename-uniquely))
      (if (string=  window-system "w32")
@@ -215,45 +314,93 @@
 ** My commands
 #+BEGIN_SRC emacs-lisp
   (define-prefix-command 'accacio-map)
-  (global-set-key (kbd "<escape><escape>") 'accacio-map)
-  (define-key accacio-map (kbd "c")
-   (defun myinit-customize ()
-    (interactive)
+  (define-prefix-command 'ProjetoFinal)
+  (global-set-key (kbd "<f12><f12>") 'accacio-map)
+
+      ;;; Code:
+  (defun open-file-switch-buffer-or-close (filename)
+    "Opens FILENAME if it\'s closed."
     (setq ReadmeBuffer (or
-                        (get-buffer "Readme.org")
-                        (get-buffer "Readme.org<.emacs.d>")
+                        (get-buffer (file-name-nondirectory filename))
+                        (get-buffer
+                         (concat (file-name-nondirectory filename)
+                                 "<"
+                                 (file-name-nondirectory
+                                  (substring
+                                   (file-name-directory
+                                    (expand-file-name
+                                     filename)) 0 -1 ))
+                                 ">")
+                         )
                         ))
     (setq VisitedFile  (buffer-file-name ReadmeBuffer))
-    (setq myReadme "~/.emacs.d/Readme.org")
-    
-    (if (string= VisitedFile (expand-file-name myReadme))
+    ;; (setq myReadme "~/.emacs.d/Readme.org")
+
+    (if (string= VisitedFile (expand-file-name filename))
         (if (eq (get-buffer (current-buffer)) ReadmeBuffer)
             (kill-buffer ReadmeBuffer)
           (switch-to-buffer ReadmeBuffer)
           )
-      (find-file "~/.emacs.d/Readme.org")
+      (find-file filename)
       )
     )
-   )
+
+  (define-key accacio-map (kbd "c")
+    (defun emacs-config () (interactive)
+           (open-file-switch-buffer-or-close "~/.emacs.d/Readme.org")
+           )
+    )
+  (define-key accacio-map (kbd "b")
+    (defun bashrc () (interactive)
+           (open-file-switch-buffer-or-close "~/dots/bash/.bashrc")
+           )
+    )
+  (define-key accacio-map (kbd "i")
+    (defun i3config () (interactive)
+           (open-file-switch-buffer-or-close "~/dots/i3/.i3/config")
+           )
+    )
   (define-key accacio-map (kbd "t") 'toggle-transparency)
   (define-key accacio-map (kbd "g") 'guru-global-mode)
-  (define-key accacio-map (kbd "x") 'counsel-M-x)
+  (define-key accacio-map (kbd "o")
+    (defun todos () (interactive)
+           (open-file-switch-buffer-or-close "~/Dropbox/AccDoc/Org/")
+           )
+    )
 
+  (define-key accacio-map (kbd "p") 'ProjetoFinal)
+  (define-key ProjetoFinal (kbd "t")
+      (defun todo () (interactive)
+           (open-file-switch-buffer-or-close "~/Dropbox/TCC/org/todo.org")
+           )
+      )
+
+  (define-key ProjetoFinal (kbd "m")
+        (defun main () (interactive)
+             (open-file-switch-buffer-or-close "~/Dropbox/TCC/documentos/tex/main.tex")
+             )
+        )
+
+  (define-key ProjetoFinal (kbd "a")
+        (defun apresentacao () (interactive)
+             (open-file-switch-buffer-or-close "~/Dropbox/TCC/documentos/tex/main.tex")
+             )
+        )
 #+END_SRC
 
 ** guru-mode
    #+BEGIN_SRC emacs-lisp
      (use-package guru-mode
-         :ensure t 
-         :config
-         (progn ;(guru-global-mode)
-                ))
+	 :ensure t
+	 :config
+	 (progn (guru-global-mode)
+	       	))
    #+END_SRC
 
 ** all-the-icons
    #+BEGIN_SRC emacs-lisp
      (use-package all-the-icons
-       :ensure t 
+       :ensure t
        :config
          (progn
            (unless (package-installed-p 'all-the-icons)
@@ -264,49 +411,113 @@
 ** rich-minority
    #+BEGIN_SRC emacs-lisp
      (use-package rich-minority
-         :ensure t 
-         :config
-         (progn
-           (rich-minority-mode 1)
+       :ensure t
+       :config
+       (progn
+         (rich-minority-mode 1)
 
-     (setq rm-blacklist
-           (format "^ \\(%s\\)$"
-                   (mapconcat #'identity
-                              '( "Irony" "company" "HelmGtags" "ARev" "Hi"  "ElDoc"  "Abbrev" "SP"  "Fly.*"  "yas.*" "Projectile.*" "Undo-Tree" "PgLn" "WK" "ivy" "VHL" ".*\(\*\).*" )
-                              "\\|")))
-                ))
+         (setq rm-blacklist
+               (format "^ \\(%s\\)$"
+                       (mapconcat #'identity
+                                  '("LR"
+                                    "Irony"
+                                    "company"
+                                    "HelmGtags"
+                                    "ARev"
+                                    "Hi"
+                                    "ElDoc"
+                                    "Abbrev"
+                                    "SP"
+                                    "Fly.*"
+                                    "yas.*"
+                                    "Projectile.*"
+                                    "Undo-Tree"
+                                    "PgLn"
+                                    "WK"
+                                    "ivy"
+                                    "VHL"
+                                    "guru"
+                                    ".*\(\*\).*" )
+                                  "\\|")))
+         ))
    #+END_SRC
 
-** sublimity
-#+BEGIN_SRC emacs-lisp
-  (use-package sublimity
-      :ensure t 
-      :config
-      (progn
-        (require 'sublimity-map)
-        (require 'sublimity-scroll)
-        (sublimity-map-set-delay 1)
-        (sublimity-mode)
-        ))
-#+END_SRC
+** rainbow-delimiters
+   #+BEGIN_SRC emacs-lisp
+     (use-package rainbow-delimiters
+       :ensure t
+       :config
+       (progn
+         (require 'cl-lib)
+         (require 'color)
+         ;; (cl-loop
+         ;;  for index from 1 to rainbow-delimiters-max-face-count
+         ;;  do
+         ;;  (let ((face (intern (format "rainbow-delimiters-depth-%d-face" index))))
+         ;;    (cl-callf color-saturate-name (face-foreground face) 30)))
+         (custom-set-faces
+          ;; custom-set-faces was added by Custom.
+          ;; If you edit it by hand, you could mess it up, so be careful.
+          ;; Your init file should contain only one such instance.
+          ;; If there is more than one, they won't work right.
+          '(rainbow-delimiters-depth-1-face ((t (:foreground "dark orange"))))
+          '(rainbow-delimiters-depth-2-face ((t (:foreground "deep pink"))))
+          '(rainbow-delimiters-depth-3-face ((t (:foreground "chartreuse"))))
+          '(rainbow-delimiters-depth-4-face ((t (:foreground "deep sky blue"))))
+          '(rainbow-delimiters-depth-5-face ((t (:foreground "yellow"))))
+          '(rainbow-delimiters-depth-6-face ((t (:foreground "orchid"))))
+          '(rainbow-delimiters-depth-7-face ((t (:foreground "spring green"))))
+          '(rainbow-delimiters-depth-8-face ((t (:foreground "sienna1"))))
+          '(rainbow-delimiters-depth-9-face ((t (:foreground "aquamarine"))))
+          )
+         (add-hook 'prog-mode-hook #'rainbow-delimiters-mode)
+
+         )
+
+       )
+   #+END_SRC
+
+** origami
+   #+BEGIN_SRC emacs-lisp
+     (use-package origami
+       :ensure t
+       :config
+       (progn
+         (global-origami-mode)
+         )
+       )
+   #+END_SRC
+
+** fontawesome
+   #+BEGIN_SRC emacs-lisp
+(use-package fontawesome
+  :ensure t
+  :config
+  (progn 
+	 )
+  )
+   #+END_SRC
+
 * Navigation
 ** Ibuffer
 #+BEGIN_SRC emacs-lisp
   (global-set-key (kbd "C-x C-b") 'ibuffer)
   (setq ibuffer-saved-filter-groups
         (quote (("default"
-                 ("dired" (mode . dired-mode))
-                 ("org" (mode . org-mode))
-                 ("programming" (or (or (mode . c-mode) (mode . c++-mode) ) (mode . python-mode) ) )
-                 ("emacs" (or (name . "^\\*scratch\\*$") (name . "^\\*Messages\\*$") (name . "^\\*Warnings\\*$")))
-                 ("pdf" (name . "^.*pdf$"))
-                 ("resto" (name . "^\\*.*\\*$"))
+                 ("Latex" (or (name . "^.*\\.tex.*$") (name . "^.*\\.bib.*$")  ))
+                 ("Programming" (or (or (mode . c-mode) (mode . c++-mode) ) (mode . python-mode) ) )
+                 ("Org" (mode . org-mode))
+                 (".pdf" (name . "^.*pdf$"))
+                 ("Dired" (mode . dired-mode))
+                 ("Emacs" (or (name . "^\\*scratch\\*$") (name . "^\\*Messages\\*$") (name . "^\\*Warnings\\*$")))
+                 ("Common" (name . "^\\*.*\\*$"))
                  ))))
   (add-hook 'ibuffer-mode-hook
             (lambda ()
               (ibuffer-auto-mode 1)
               (ibuffer-switch-to-saved-filter-groups "default")))
 #+END_SRC
+
 ** Dired
 #+BEGIN_SRC emacs-lisp
   (put 'dired-find-alternate-file 'disabled nil)
@@ -315,7 +526,7 @@
 
 #+END_SRC
 
-** Try 
+** Try
 #+BEGIN_SRC emacs-lisp
 (use-package try
   :ensure t)
@@ -333,7 +544,13 @@
   (use-package counsel
     :ensure t
     :bind
-    ("M-y" . counsel-yank-pop))
+    ("M-y" . counsel-yank-pop)
+    :config
+    (progn
+      (setq counsel-find-file-ignore-regexp "\\.elc\\'")
+      (setq counsel-find-file-at-point t)
+	   )
+    )
 
 #+END_SRC
 
@@ -380,7 +597,7 @@
     :ensure t
     :config (define-key global-map (kbd "C-c ;") 'iedit-mode))
 #+END_SRC
-  
+
 ** Yasnippets
 #+BEGIN_SRC emacs-lisp
  (use-package yasnippet
@@ -392,28 +609,40 @@
 
 ** projectile
    #+BEGIN_SRC emacs-lisp
-     (use-package projectile
-         :ensure t 
-         :config
-         (progn (projectile-mode)
-                ))
+          (use-package projectile
+              :ensure t
+              :config
+              (progn (projectile-mode)
+                     (setq projectile-indexing-method 'native)
+                     ))
 
-     (use-package counsel-projectile
-       :ensure t
-       :config
-       (counsel-projectile-mode))
+          (use-package counsel-projectile
+            :ensure t
+            :config
+            (counsel-projectile-mode)
+            (define-key projectile-mode-map (kbd "C-c p") 'projectile-command-map)
+     )
    #+END_SRC
 
-   
+** helm-ag
+   #+BEGIN_SRC emacs-lisp
+(use-package helm-ag
+    :ensure t
+    :config
+    (progn
+           ))
+   #+END_SRC
+
 ** ag
    #+BEGIN_SRC emacs-lisp
      (use-package ag
-         :ensure t 
+         :ensure t
          :config
-         (progn 
+         (progn
            )
          )
    #+END_SRC
+
 * Planning / Org-Mode
 ** org-bullets
 #+BEGIN_SRC emacs-lisp
@@ -424,28 +653,33 @@
 
   (custom-set-variables '(org-hide-leading-stars t))
 #+END_SRC
-#+BEGIN_SRC emacs-lisp 
-  (setq org-ellipsis "⤵") ;⤵ ⭍ ↲ ⮯
-  (setq org-src-fontify-natively t)
-  (setq org-src-tab-acts-natively t)
-  (setq org-src-window-setup 'current-window)
+#+BEGIN_SRC emacs-lisp
+    (setq org-ellipsis "⤵") ;⤵ ⭍ ↲ ⮯
+    (setq org-src-fontify-natively t)
+    (setq org-src-tab-acts-natively t)
+    (setq org-src-window-setup 'current-window)
+
+  (setq my-org-folder '~/Dropbox/AccDoc/Org)
+
 
 
 #+END_SRC
-   
+
 * Reading
 ** pdf-tools
+
    #+BEGIN_SRC emacs-lisp
      (use-package pdf-tools
-         :ensure t 
+         :ensure t
          :config
          (progn (pdf-tools-install)
                 ))
    #+END_SRC
+
 ** engine-mode
    #+BEGIN_SRC emacs-lisp
      (use-package engine-mode
-         :ensure t 
+         :ensure t
          :config
          (progn
            (defengine duckduckgo
@@ -460,13 +694,14 @@
            (defengine github
              "https://github.com/search?ref=simplesearch&q=%s"
              :keybinding "g")
-          
+
            (defengine youtube
        "https://www.youtube.com/results?search_query=%s")
-           (engine-mode t) 
+           (engine-mode t)
            )
          )
-   #+END_SRC   
+   #+END_SRC
+
 * Programming
 ** Org-babel c++
 #+BEGIN_SRC emacs-lisp
@@ -480,6 +715,7 @@
     :ensure t
     :config
     (progn
+      (global-magit-file-mode 0)
       (set-default 'magit-stage-all-confirm nil)
       (add-hook 'magit-mode-hook 'magit-load-config-extensions)
       (global-unset-key (kbd "C-x g"))
@@ -499,38 +735,39 @@
 
 ** google-c-style flymake
 #+BEGIN_SRC emacs-lisp
-  (use-package flymake-cursor
-    :ensure t)
+    ;; (use-package flymake-cursor
+    ;;   :ensure t)
+
 
   (defun my:flymake-google-init ()
     (require 'flymake-google-cpplint)
     (custom-set-variables
      '(flymake-google-cpplint-command
        (if (string=  window-system "w32")
-           '"d:/Users/Accacio/AppData/Local/Programs/Python/Python36-32/Scripts/cpplint.exe"
-         '"/usr/local/bin/cpplint"
-         )
+	   '"d:/Users/Accacio/AppData/Local/Programs/Python/Python36-32/Scripts/cpplint.exe"
+	 '"/usr/local/bin/cpplint"
+	 )
        )
      )
     (flymake-google-cpplint-load)
-    (flymake-cursor-mode 1)
+    ;; (flymake-cursor-mode 1)
     )
 
-  (use-package flymake-google-cpplint
-    :ensure t
-    :config
-    (progn
-      (add-hook 'c-mode-hook 'my:flymake-google-init)
-      (add-hook 'c++-mode-hook 'my:flymake-google-init)
-      ))
+    (use-package flymake-google-cpplint
+      :ensure t
+      :config
+      (progn
+	(add-hook 'c-mode-hook 'my:flymake-google-init)
+	(add-hook 'c++-mode-hook 'my:flymake-google-init)
+	))
 
-  (use-package google-c-style
-    :ensure t
-    :config 
-    (progn
-      (add-hook 'c-mode-common-hook 'google-set-c-style)
-      (add-hook 'c-mode-common-hook 'google-make-newline-indent)
-      ))
+    (use-package google-c-style
+      :ensure t
+      :config
+      (progn
+	(add-hook 'c-mode-common-hook 'google-set-c-style)
+	(add-hook 'c-mode-common-hook 'google-make-newline-indent)
+	))
 
 #+END_SRC
 
@@ -550,9 +787,16 @@
   (use-package company
     :ensure t
     :config
-    (progn 
+    (progn
       (add-hook 'after-init-hook 'global-company-mode)
       (setq company-idle-delay 0)
+      
+        (company-quickhelp-mode)
+    (setq company-show-numbers t)
+    (let ((map company-active-map))
+    (mapc (lambda (x) (define-key map (format "%d" x)
+                   `(lambda () (interactive) (company-complete-number ,x))))
+          (number-sequence 0 9)))
       )
     )
 
@@ -562,7 +806,7 @@
   (progn
     (setq company-minimum-prefix-length 1)
                                           ;    (setq company-tooltip-maximum-width 20)
-    (company-quickhelp-mode)
+    (company-quickhelpmode)
     ))
 
 #+END_SRC
@@ -591,23 +835,23 @@
 #+BEGIN_SRC emacs-lisp
       (use-package irony
         :ensure t
-        :config 
+        :config
         (progn
           (add-hook 'c++-mode-hook 'irony-mode)
           (add-hook 'c-mode-hook 'irony-mode)
           (add-hook 'objc-mode-hook 'irony-mode)
-          
+
           (add-hook 'c++-mode-hook 'company-mode)
           (add-hook 'c-mode-hook 'company-mode)
           (add-hook 'objc-mode-hook 'company-mode)
-          
+
           (add-hook 'after-init-hook 'global-company-mode)
-          
-          
+
+
           (add-hook 'irony-mode-hook 'irony-cdb-autosetup-compile-options)
-          
-          
-          
+
+
+
           ))
 
       (use-package company-irony
@@ -636,7 +880,7 @@
     :ensure t
     :config (eval-after-load 'company
               '(add-to-list
-                'company-backends 
+                'company-backends
                 '(company-irony-c-headers
                   company-irony
                                           ;company-yasnippet
@@ -654,16 +898,16 @@
     :ensure t
     :config
     (progn  (add-hook 'prog-mode-hook (lambda () (idle-highlight-mode t)))
-            (set-face-background 'idle-highlight "#484a56")
+            (set-face-background 'idle-highlight "#2d2")
             ))
 #+END_SRC
 
 ** fill-column-indicator
 #+BEGIN_SRC emacs-lisp
   (use-package fill-column-indicator
-    :ensure t 
+    :ensure t
     :config
-    (progn (setq-default fill-column 80)
+    (progn (setq-default fill-column 70)
            (add-hook 'prog-mode-hook (lambda () (fci-mode t)))
            ))
 
@@ -673,7 +917,7 @@
 ** cmake-mode
   #+BEGIN_SRC emacs-lisp
 (use-package cmake-mode
-    :ensure t 
+    :ensure t
     :config
     (progn (setq auto-mode-alist
       (append
@@ -688,7 +932,7 @@
 ** helm-gtags
   #+BEGIN_SRC emacs-lisp
     (use-package helm-gtags
-      :ensure t 
+      :ensure t
       :config
       (progn (add-hook 'c++-mode-hook 'helm-gtags-mode)
              (add-hook 'c-mode-hook 'helm-gtags-mode)
@@ -699,53 +943,75 @@
 ** multiple-cursors
   #+BEGIN_SRC emacs-lisp
     (use-package multiple-cursors
-        :ensure t 
+        :ensure t
         :init
         (progn (global-set-key (kbd "C-x <down>") 'mc/mark-next-like-this)
+               (global-set-key (kbd "C-x M-RET") 'mc/mark-all-dwim)
                (global-set-key (kbd "C-x <up>") 'mc/mark-previous-like-this)
                ))
   #+END_SRC
 
 ** ace-mc
+
    #+BEGIN_SRC emacs-lisp
      (use-package ace-mc
-         :ensure t 
+         :ensure t
          :config
          (progn (global-set-key (kbd "C-0") 'ace-mc-add-multiple-cursors)
                 ))
    #+END_SRC
+
 ** expand-region
   #+BEGIN_SRC emacs-lisp
     (use-package expand-region
-        :ensure t 
+        :ensure t
         :init
         (progn (global-set-key (kbd "C-=") 'er/expand-region)
                ))
   #+END_SRC
+
+** scala
+   #+BEGIN_SRC emacs-lisp
+     (use-package ensime
+       :ensure t)
+
+     (use-package sbt-mode
+       :ensure t)
+
+     (use-package scala-mode
+       :ensure t)
+   #+END_SRC
+
 * HTML
 ** rainbow-mode
   #+BEGIN_SRC emacs-lisp
     (use-package rainbow-mode
-        :ensure t 
+        :ensure t
         :config
         (progn (add-hook 'html-mode-hook 'rainbow-mode)
                (add-hook 'css-mode-hook 'rainbow-mode)
                ))
   #+END_SRC
 
+** browser
+  #+BEGIN_SRC emacs-lisp
+    (setq browse-url-browser-function 'browse-url-generic
+          browse-url-generic-program "vivaldi")
+  #+END_SRC
+
 * Games
 ** 2048
    #+BEGIN_SRC emacs-lisp
      (use-package 2048-game
-       :ensure t 
+       :ensure t
          )
    #+END_SRC
 
-* Finances 
+* Finances
 ** ledger-mode
    #+BEGIN_SRC emacs-lisp
      (use-package ledger-mode
-         :ensure t 
+         :ensure t
          :init
          (setq ledger-clear-whole-transactions 1)
          :config
@@ -754,4 +1020,185 @@
          )
    #+END_SRC
 
+* Ahk
+** xahk-mode
+   #+BEGIN_SRC emacs-lisp
+(use-package xahk-mode
+  :ensure t
+  :config
+  (progn
+	 )
+  )
+   #+END_SRC
+
+* Latex
+** auctex
+#+BEGIN_SRC emacs-lisp
+  ;; (require 'auctex)
+       (use-package auctex
+       :defer t
+       :ensure t)
+  (setq TeX-auto-save t)
+  (setq TeX-parse-self t)
+  (setq TeX-save-query nil)
+  (defun turn-on-outline-minor-mode ()
+  (outline-minor-mode 1))
+
+  (add-hook 'LaTeX-mode-hook 'turn-on-outline-minor-mode)
+  (add-hook 'latex-mode-hook 'turn-on-outline-minor-mode)
+  (setq outline-minor-mode-prefix "\C-c \C-o") ; Or something else
+  ;(setq TeX-PDF-mode t)
+
+  (use-package company-auctex
+      :ensure t
+      :config
+      (progn
+             ))
+  (company-auctex-init)
+
+#+END_SRC
+
+** company-bibtex
+#+BEGIN_SRC emacs-lisp
+(use-package company-bibtex
+    :ensure t
+    :config
+    (progn
+           ))
+
+#+END_SRC
+
+** company-reftex
+#+BEGIN_SRC emacs-lisp
+  (use-package company-reftex
+      :ensure t
+      :config
+      (progn
+             ))
+  '(reftex-use-external-file-finders t)
+  (add-hook 'LaTeX-mode-hook 'turn-on-reftex)   ; with AUCTeX LaTeX mode
+  (add-hook 'latex-mode-hook 'turn-on-reftex)   ; with Emacs latex mode
+  (add-hook 'LaTeX-mode-hook 'auto-fill-mode)
+  (add-hook 'latex-mode-hook 'auto-fill-mode)
+  (add-hook 'LaTeX-mode-hook 'flyspell-mode)
+  (add-hook 'latex-mode-hook 'flyspell-mode)
+  (add-hook 'LaTeX-mode-hook 'fci-mode)
+  (add-hook 'latex-mode-hook 'fci-mode)
+  (add-hook 'LaTeX-mode-hook 'linum-mode)
+  (add-hook 'latex-mode-hook 'linum-mode)
+
+#+END_SRC
+
+** Zathura as Viewer
+#+BEGIN_SRC emacs-lisp
+          (defcustom tex-my-viewer "zathura --fork -s -x \"emacsclient --eval '(progn (switch-to-buffer  (file-name-nondirectory \"'\"'\"%{input}\"'\"'\")) (goto-line %{line}))'\"" 
+    "PDF Viewer for TeX documents. You may want to fork the viewer
+  so that it detects when the same document is launched twice, and
+  persists when Emacs gets closed.
+
+  Simple command:
+
+    zathura --fork
+
+  We can use
+
+    emacsclient --eval '(progn (switch-to-buffer  (file-name-nondirectory \"%{input}\")) (goto-line %{line}))'
+
+  to reverse-search a pdf using SyncTeX. Note that the quotes and double-quotes matter and must be escaped appropriately."
+    :safe 'stringp)
+
+  (add-to-list 'TeX-view-program-selection
+               '(output-pdf "Zathura"))
+#+END_SRC
+
+* Blog
+
+** org-publish
+#+BEGIN_SRC emacs-lisp
+  (setq org-publish-project-alist
+	'(
+
+    ("org-accacio"
+	    ;; Path to your org files.
+	    :base-directory "~/git/Blog/org/"
+	    :base-extension "org"
+
+	    ;; Path to your Jekyll project.
+	    :publishing-directory "~/git/Blog/meublog/"
+	    :recursive t
+	    :publishing-function org-html-publish-to-html
+	    :headline-levels 4
+	    :html-extension "html"
+	    :body-only t ;; Only export section between <body> </body>
+      )
+
+
+      ("org-static-acc"
+	    :base-directory "~/site/org/"
+	    :base-extension "css\\|js\\|png\\|jpg\\|gif\\|pdf\\|mp3\\|ogg\\|swf\\|php"
+	    :publishing-directory "~/git/Blog/meublog/"
+	    :recursive t
+	    :publishing-function org-publish-attachment)
+
+      ("acc" :components ("org-accacio" "org-static-acc"))
+
+  ))
+
+
+#+END_SRC
+
+** yaml-mode
+   #+BEGIN_SRC emacs-lisp
+(use-package yaml-mode
+  :ensure t
+  :config
+  (progn 
+	 )
+  )
+   #+END_SRC
+
+* writing
+** markdown-mode
+#+BEGIN_SRC emacs-lisp
+  (use-package markdown-mode
+    :ensure t
+    :commands (markdown-mode gfm-mode)
+    :mode (("README\\.md\\'" . gfm-mode)
+           ("\\.md\\'" . markdown-mode)
+           ("\\.markdown\\'" . markdown-mode))
+    :init (setq markdown-command "multimarkdown"))
+#+END_SRC
+
+** ispell
+#+BEGIN_SRC emacs-lisp
+  (let ((langs '("american" "fr_FR" "pt_BR")))
+        (setq lang-ring (make-ring (length langs)))
+        (dolist (elem langs) (ring-insert lang-ring elem)))
+
+    (defun cycle-ispell-languages ()
+        (interactive)
+        (let ((lang (ring-ref lang-ring -1)))
+          (ring-insert lang-ring lang)
+          (ispell-change-dictionary lang)))
+
+
+
+  (global-set-key [f6] 'cycle-ispell-languages)
+#+END_SRC
+
+* Feeds
+** Elfeed
+   #+BEGIN_SRC emacs-lisp
+     (use-package elfeed
+       :ensure t
+       :config
+       (progn (setq elfeed-feeds
+           '(
+             "https://www.youtube.com/feeds/videos.xml?channel_id=UCtiPaN6Zj0-4CeC7p1qUOcg"
+             "https://www.youtube.com/feeds/videos.xml?channel_id=UC0JB7TSe49lg56u6qH8y_MQ"
+             )
+           )
+              )
+       )
+   #+END_SRC
 

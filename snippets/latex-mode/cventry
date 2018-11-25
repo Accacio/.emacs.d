@@ -1,0 +1,18 @@
+# -*- mode: snippet -*-
+# name: cventry
+# key: cventry
+# --
+\cventry{
+  \ml
+  {${1:month year begin} \newline $2\newline}
+  {$3 \newline $4\newline}
+  {$5 \newline $6\newline}
+}
+{
+  \ml
+  {${7:job}}
+  {$8}
+  {$9}}
+{\newline ${10:employer}}
+{${11:city} - \ml{${12:Country}}{$13}{$14}}{}{}
+$0
