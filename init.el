@@ -1,5 +1,6 @@
 
 
+
 (require 'package)
 (setq package-enable-at-startup nil)
 (add-to-list 'package-archives
@@ -73,6 +74,7 @@
  '(TeX-source-correlate-mode t)
  '(TeX-source-correlate-start-server t)
  '(TeX-view-program-list (quote (("okular" ("okular --unique %o#src:%n%b") ""))))
+
  '(flymake-google-cpplint-command
    (if
        (string= window-system "w32")
@@ -90,6 +92,7 @@
      (#("account" 0 1
 	(idx 3))
       "%(binary) -f %(ledger-file) reg %(account)"))))
+ '(magit-submodule-arguments nil)
  '(minimap-dedicated-window t)
  '(minimap-hide-scroll-bar nil)
  '(minimap-mode nil)

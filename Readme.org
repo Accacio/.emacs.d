@@ -62,9 +62,8 @@
   ;; (global-fci-mode 1)
   ;; from emacswiki
 
-  (global-set-key (kbd "M-<Scroll_Lock>") 'scroll-lock-mode)
+
   (add-to-list 'auto-mode-alist '("mutt" . mail-mode))
-  (server-start)
 
   (put 'upcase-region 'disabled nil)
   (put 'downcase-region 'disabled nil)
@@ -160,12 +159,14 @@
 ** beacon
   #+BEGIN_SRC emacs-lisp
     (use-package beacon
+
       :ensure t
       :config
       (progn (beacon-mode 1)
              (setq beacon-push-mark 35)
              (setq beacon-color "#00b4ff")
              ))
+
   #+END_SRC
 
 ** atomic-chrome
@@ -316,6 +317,7 @@
 
 ** My commands
 #+BEGIN_SRC emacs-lisp
+
   (define-prefix-command 'accacio-map)
   (define-prefix-command 'ProjetoFinal)
   (global-set-key (kbd "<f12><f12>") 'accacio-map)
@@ -973,6 +975,7 @@
                ))
   #+END_SRC
 
+
 ** scala
    #+BEGIN_SRC emacs-lisp
      (use-package ensime
@@ -1011,8 +1014,8 @@
          )
    #+END_SRC
 
-
-* Finances
+   
+* Finances 
 
 ** ledger-mode
    #+BEGIN_SRC emacs-lisp
@@ -1193,6 +1196,7 @@
 #+END_SRC
 
 
+
 * Feeds
 ** Elfeed
    #+BEGIN_SRC emacs-lisp
@@ -1208,8 +1212,6 @@
               )
        )
    #+END_SRC
-
-
 
 * Email
 #+BEGIN_SRC emacs-lisp
