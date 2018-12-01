@@ -507,7 +507,7 @@
 (use-package fontawesome
   :ensure t
   :config
-  (progn 
+  (progn
 	 )
   )
    #+END_SRC
@@ -804,7 +804,7 @@
     (progn
       (add-hook 'after-init-hook 'global-company-mode)
       (setq company-idle-delay 0)
-      
+
         (company-quickhelp-mode)
     (setq company-show-numbers t)
     (let ((map company-active-map))
@@ -997,6 +997,7 @@
    #+END_SRC
 
 * HTML
+
 ** rainbow-mode
   #+BEGIN_SRC emacs-lisp
     (use-package rainbow-mode
@@ -1021,7 +1022,9 @@
          )
    #+END_SRC
 
+
 * Finances
+
 ** ledger-mode
    #+BEGIN_SRC emacs-lisp
      (use-package ledger-mode
@@ -1105,7 +1108,7 @@
 
 ** Zathura as Viewer
 #+BEGIN_SRC emacs-lisp
-          (defcustom tex-my-viewer "zathura --fork -s -x \"emacsclient --eval '(progn (switch-to-buffer  (file-name-nondirectory \"'\"'\"%{input}\"'\"'\")) (goto-line %{line}))'\"" 
+          (defcustom tex-my-viewer "zathura --fork -s -x \"emacsclient --eval '(progn (switch-to-buffer  (file-name-nondirectory \"'\"'\"%{input}\"'\"'\")) (goto-line %{line}))'\""
     "PDF Viewer for TeX documents. You may want to fork the viewer
   so that it detects when the same document is launched twice, and
   persists when Emacs gets closed.
@@ -1166,7 +1169,7 @@
 (use-package yaml-mode
   :ensure t
   :config
-  (progn 
+  (progn
 	 )
   )
    #+END_SRC
