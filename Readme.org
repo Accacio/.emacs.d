@@ -139,9 +139,10 @@
        :ensure t
        :config
        (progn
-         (setq linum-relative-current-symbol "")
-         (add-hook 'prog-mode-hook (lambda () (linum-relative-mode t)))
-         )
+	 (setq linum-relative-current-symbol "")
+	 (add-hook 'prog-mode-hook (lambda () (linum-relative-mode t)))
+	 ;; (global-linum-mode 1)
+	 )
        )
    #+END_SRC
 
