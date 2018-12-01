@@ -73,19 +73,6 @@
  '(TeX-source-correlate-mode t)
  '(TeX-source-correlate-start-server t)
  '(TeX-view-program-list (quote (("okular" ("okular --unique %o#src:%n%b") ""))))
- '(TeX-view-program-selection
-   (quote
-    ((output-pdf "Okular")
-     ((output-dvi has-no-display-manager)
-      "dvi2tty")
-     ((output-dvi style-pstricks)
-      "dvips and gv")
-     (output-dvi "xdvi")
-     (output-pdf "Evince")
-     (output-html "xdg-open"))))
- '(custom-safe-themes
-   (quote
-    ("6332c9756bde31cf9e34154395868413e45714488507527969f95a61b5f24518" default)))
  '(flymake-google-cpplint-command
    (if
        (string= window-system "w32")

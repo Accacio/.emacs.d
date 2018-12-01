@@ -171,12 +171,14 @@
 ** beacon
   #+BEGIN_SRC emacs-lisp
     (use-package beacon
+
       :ensure t
       :config
       (progn (beacon-mode 1)
              (setq beacon-push-mark 35)
              (setq beacon-color "#00b4ff")
              ))
+
   #+END_SRC
 
 ** atomic-chrome
@@ -327,6 +329,7 @@
 
 ** My commands
 #+BEGIN_SRC emacs-lisp
+
   (define-prefix-command 'accacio-map)
   (define-prefix-command 'ProjetoFinal)
   (global-set-key (kbd "<f12><f12>") 'accacio-map)
@@ -983,6 +986,7 @@
         (progn (global-set-key (kbd "C-=") 'er/expand-region)
                ))
   #+END_SRC
+
 
 ** scala
    #+BEGIN_SRC emacs-lisp
