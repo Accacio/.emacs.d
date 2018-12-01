@@ -506,7 +506,7 @@
 (use-package fontawesome
   :ensure t
   :config
-  (progn 
+  (progn
 	 )
   )
    #+END_SRC
@@ -803,7 +803,7 @@
     (progn
       (add-hook 'after-init-hook 'global-company-mode)
       (setq company-idle-delay 0)
-      
+
         (company-quickhelp-mode)
     (setq company-show-numbers t)
     (let ((map company-active-map))
@@ -995,6 +995,22 @@
        :ensure t)
    #+END_SRC
 
+** rust
+   #+BEGIN_SRC emacs-lisp
+
+     (use-package rust-mode
+       :ensure t)
+
+     (use-package racer
+       :ensure t
+       :init
+       (progn
+         (add-hook 'rust-mode-hook #'racer-mode)
+         (add-hook 'racer-mode-hook #'eldoc-mode)
+         ))
+
+
+   #+END_SRC
 * HTML
 ** rainbow-mode
   #+BEGIN_SRC emacs-lisp
@@ -1104,7 +1120,7 @@
 
 ** Zathura as Viewer
 #+BEGIN_SRC emacs-lisp
-          (defcustom tex-my-viewer "zathura --fork -s -x \"emacsclient --eval '(progn (switch-to-buffer  (file-name-nondirectory \"'\"'\"%{input}\"'\"'\")) (goto-line %{line}))'\"" 
+          (defcustom tex-my-viewer "zathura --fork -s -x \"emacsclient --eval '(progn (switch-to-buffer  (file-name-nondirectory \"'\"'\"%{input}\"'\"'\")) (goto-line %{line}))'\""
     "PDF Viewer for TeX documents. You may want to fork the viewer
   so that it detects when the same document is launched twice, and
   persists when Emacs gets closed.
@@ -1165,7 +1181,7 @@
 (use-package yaml-mode
   :ensure t
   :config
-  (progn 
+  (progn
 	 )
   )
    #+END_SRC

@@ -102,7 +102,7 @@
  '(org-hide-leading-stars nil)
  '(package-selected-packages
    (quote
-    (yaml-mode fontawesome ensime ag ledger-mode ace-mc sublimity counsel-projectile projectile pdf-tools helm-company atomic-chrome beacon flx-ido smex helm-gtags rainbow-mode irony-eldoc expand-region multiple-cursors neotree cmake-mode fill-column-indicator idle-highlight-mode idle-highligh-mode ox-reveal smartparens company-irony-c-headers company-irony irony irony-mode nyan-mode company flymake-cursor google-c-style flymake-google-cpplint flycheck undo-tree yasnippet yasnippet-snippet yasnippets iedit magit which-key use-package try tabbar org-bullets counsel ace-window))))
+    (racer yaml-mode fontawesome ensime ag ledger-mode ace-mc sublimity counsel-projectile projectile pdf-tools helm-company atomic-chrome beacon flx-ido smex helm-gtags rainbow-mode irony-eldoc expand-region multiple-cursors neotree cmake-mode fill-column-indicator idle-highlight-mode idle-highligh-mode ox-reveal smartparens company-irony-c-headers company-irony irony irony-mode nyan-mode company flymake-cursor google-c-style flymake-google-cpplint flycheck undo-tree yasnippet yasnippet-snippet yasnippets iedit magit which-key use-package try tabbar org-bullets counsel ace-window))))
 (custom-set-faces
  ;; custom-set-faces was added by Custom.
  ;; If you edit it by hand, you could mess it up, so be careful.
