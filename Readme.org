@@ -154,14 +154,23 @@
 
 ** linum-relative
    #+BEGIN_SRC emacs-lisp
-     (use-package linum-relative
+     ;; (use-package linum-relative
+     ;;   :ensure t
+     ;;   :config
+     ;;   (progn
+     ;;     (setq linum-relative-current-symbol "")
+     ;;     (add-hook 'prog-mode-hook (lambda () (linum-relative-mode t)))
+     ;;     )
+     ;;   )
+
+     (use-package nlinum-relative
        :ensure t
        :config
        (progn
-         (setq linum-relative-current-symbol "")
-         (add-hook 'prog-mode-hook (lambda () (linum-relative-mode t)))
-         )
-       )
+         (nlinum-relative-setup-evil)
+         (add-hook 'prog-mode-hook 'nlinum-relative-mode)
+         ))
+
    #+END_SRC
 
 ** smex
@@ -743,7 +752,7 @@
    'org-babel-load-languages '((C . t)))
 #+END_SRC
 
-** magit
+** git
 #+BEGIN_SRC emacs-lisp
   (use-package magit
     :ensure t
@@ -763,6 +772,12 @@
       (global-set-key (kbd "C-x g t") 'magit-tag)
       (setq user-full-name "Rafael Accácio Nogueira")
       (setq user-mail-address "raccacio@poli.ufrj.br")
+      ))
+  (use-package git-gutter+
+    :ensure t
+    :config
+    (progn
+      (global-git-gutter+-mode)
       ))
 
 #+END_SRC
@@ -938,13 +953,19 @@
 
 ** fill-column-indicator
 #+BEGIN_SRC emacs-lisp
-  (use-package fill-column-indicator
+  ;; (use-package fill-column-indicator
+  ;;   :ensure t
+  ;;   :config
+  ;;   (progn (setq-default fill-column 70)
+  ;;          (add-hook 'prog-mode-hook (lambda () (fci-mode t)))
+  ;;          ))
+
+  (use-package column-enforce-mode
     :ensure t
     :config
-    (progn (setq-default fill-column 70)
-           (add-hook 'prog-mode-hook (lambda () (fci-mode t)))
+    (progn (setq column-enforce-column 70)
+           (add-hook 'prog-mode-hook 'column-enforce-mode)
            ))
-
 
 #+END_SRC
 
@@ -1118,8 +1139,10 @@
   (add-hook 'latex-mode-hook 'flyspell-mode)
   (add-hook 'LaTeX-mode-hook 'fci-mode)
   (add-hook 'latex-mode-hook 'fci-mode)
-  (add-hook 'LaTeX-mode-hook 'linum-mode)
-  (add-hook 'latex-mode-hook 'linum-mode)
+  (add-hook 'LaTeX-mode-hook 'nlinum-mode)
+  (add-hook 'latex-mode-hook 'nlinum-mode)
+  (add-hook 'LaTeX-mode-hook 'nlinum-relative-on)
+  (add-hook 'latex-mode-hook 'nlinum-relative-on)
 
 #+END_SRC
 
