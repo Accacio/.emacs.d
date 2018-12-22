@@ -709,15 +709,6 @@
 #+END_SRC
 
 * Reading
-** pdf-tools
-
-   #+BEGIN_SRC emacs-lisp
-     (use-package pdf-tools
-         :ensure t
-         :config
-         (progn (pdf-tools-install)
-                ))
-   #+END_SRC
 
 ** engine-mode
    #+BEGIN_SRC emacs-lisp
