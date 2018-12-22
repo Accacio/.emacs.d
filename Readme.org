@@ -399,7 +399,7 @@
     )
   (define-key accacio-map (kbd "i")
     (defun i3config () (interactive)
-           (open-file-switch-buffer-or-close "~/dots/configs/i3/.i3/config")
+           (open-file-switch-buffer-or-close "~/dots/configs/i3/.i3/config.raw")
            )
     )
   (define-key accacio-map (kbd "t") 'toggle-transparency)
@@ -1244,6 +1244,7 @@
 
 * Feeds
 ** Elfeed
+
    #+BEGIN_SRC emacs-lisp
      (use-package elfeed
        :ensure t
