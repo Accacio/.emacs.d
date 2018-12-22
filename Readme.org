@@ -356,6 +356,7 @@
 #+BEGIN_SRC emacs-lisp
   (define-prefix-command 'accacio-map)
   (define-prefix-command 'ProjetoFinal)
+  (define-prefix-command 'imagens)
   (global-set-key (kbd "<f12><f12>") 'accacio-map)
 
       ;;; Code:
@@ -410,6 +411,7 @@
     )
 
   (define-key accacio-map (kbd "p") 'ProjetoFinal)
+  (define-key ProjetoFinal (kbd "i") 'imagens)
   (define-key ProjetoFinal (kbd "t")
       (defun todo () (interactive)
            (open-file-switch-buffer-or-close "~/Dropbox/TCC/org/todo.org")
@@ -418,15 +420,21 @@
 
   (define-key ProjetoFinal (kbd "m")
         (defun main () (interactive)
-             (open-file-switch-buffer-or-close "~/Dropbox/TCC/documentos/tex/main.tex")
+             (open-file-switch-buffer-or-close "~/git/docsTCC/tex/main.tex")
              )
         )
 
   (define-key ProjetoFinal (kbd "a")
         (defun apresentacao () (interactive)
-             (open-file-switch-buffer-or-close "~/Dropbox/TCC/documentos/tex/main.tex")
+             (open-file-switch-buffer-or-close "~/git/docsTCC/presentation/main.tex")
              )
         )
+
+  (define-key ProjetoFinal (kbd "p")
+    (defun logica-petriNet () (interactive)
+           (open-file-switch-buffer-or-close "~/Dropbox/TCC/org/logica.org")
+           )
+    )
 #+END_SRC
 
 ** guru-mode
