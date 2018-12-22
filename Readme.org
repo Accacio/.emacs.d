@@ -954,7 +954,7 @@
   (use-package column-enforce-mode
     :ensure t
     :config
-    (progn (setq column-enforce-column 70)
+    (progn (setq column-enforce-column 80)
            (add-hook 'prog-mode-hook 'column-enforce-mode)
            ))
 
