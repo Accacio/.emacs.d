@@ -1,0 +1,6 @@
+# -*- mode: snippet -*-
+# name: place
+# key: addplace
+# --
+p${1:1} [style="place,label=above:,label=below:$p_{$1}$",label=""]
+$0

@@ -1,0 +1,6 @@
+# -*- mode: snippet -*-
+# name: arcpost
+# key: addarcpost
+# --
+t${1:1} -> p${2:2} [label="$3"]
+$0

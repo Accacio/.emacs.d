@@ -1,0 +1,6 @@
+# -*- mode: snippet -*-
+# name: transition
+# key: addtransition
+# --
+t${1:1}  [style="transition, label=above:, label=left:$t_{$1}$,rotate=90",label=""]
+$0

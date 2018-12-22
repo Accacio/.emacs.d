@@ -1,0 +1,6 @@
+# -*- mode: snippet -*-
+# name: markedplace
+# key: addmarkedplace
+# --
+p${1:1} [style="place, tokens=$2,label=above:, label=below:$p_{$1}$",label=""]
+$0

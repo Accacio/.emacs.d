@@ -1,0 +1,5 @@
+# -*- mode: snippet -*-
+# name: coil
+# key: coil
+# --
+to [coil ${1:S}={info={[label={[blue]$${2:K_1}$}]\%${3:Q0.1}}}] +(1,0)

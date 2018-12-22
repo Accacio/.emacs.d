@@ -1,0 +1,6 @@
+# -*- mode: snippet -*-
+# name: contact
+# key: contact
+# --
+to [contact ${1:NO}={info={[label={[blue]$${2:b_1}$}]\%${3:I0.1}}}] ++(1,0)
+$0

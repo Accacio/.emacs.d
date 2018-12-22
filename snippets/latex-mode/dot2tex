@@ -1,0 +1,35 @@
+# -*- mode: snippet -*-
+# name: dot2tex
+# key: addpetrinet
+# --
+\renewcommand{\netTitle}{netTeste}
+\tikzsetnextfilename{\netTitle}
+\begin{dot2tex}[mathmode,autosize,outputdir="aux/",file="\netTitle"]
+  digraph A {
+    rankdir=LR;
+
+    subgraph place {
+      node [style="place, tokens=0",label=""];
+      p1 [style="place,label=below:$p_1$"]
+      p2 [style="label=below:$p_2$,place, tokens=0",label=6]
+
+    }
+    
+    subgraph transitions {
+      node [style="transition, label=left:$t_1$,rotate=90",label=""];
+      t1 
+
+    }
+
+    subgraph timedTransitions {
+      node [style="timedtransition, rotate=90, label=left:$t_2$",height=0.5,label="",xlabel="\N",fillcolor="white",width=0.2];
+      t2 
+
+    }
+
+    p1 -> t1 [label=2,weight=0.2]
+    t1 -> p2 
+    p2 -> t1
+    t2 -> p1 [topath="bend left"]
+  }  
+\end{dot2tex}
