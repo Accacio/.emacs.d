@@ -2,6 +2,7 @@
 
 * interface and tweaks
 ** exwm
+
    #+BEGIN_SRC emacs-lisp
      ;     (use-package exwm
      ;         :ensure t
@@ -57,6 +58,7 @@
 
   (setq mouse-drag-copy-region t)
   (tool-bar-mode -1)
+  (menu-bar-mode -1)
   (setq inhibit-startup-message t)
   (global-set-key (kbd "<f5>") 'revert-buffer)
   (setq frame-title-format "%b")
@@ -82,7 +84,7 @@
   (add-to-list 'initial-frame-alist '(fullscreen . maximized))
   (autoload 'zap-up-to-char "misc"
     "Kill up to, but not including ARGth occurrence of CHAR.
-                  \(fn arg char)"
+                    \(fn arg char)"
     'interactive)
   (global-set-key "\M-z" 'zap-up-to-char)
   (scroll-bar-mode -1)
@@ -131,7 +133,17 @@
   (add-hook
    'after-save-hook
    'executable-make-buffer-file-executable-if-script-p)
-#+END_SRC
+  (defun insert-date (prefix)
+    "Insert the current date. With prefix-argument, use ISO format. With
+     two prefix arguments, write out the day and month name."
+    (interactive "P")
+    (let ((format (cond
+                   ((not prefix) "%d.%m.%Y")
+                   ((equal prefix '(4)) "%Y-%m-%d")
+                   ((equal prefix '(16)) "%A, %d. %B %Y")))
+          (system-time-locale "de_DE"))
+      (insert (format-time-string format))))
+   #+END_SRC
 
 ** evil-mode
    #+BEGIN_SRC emacs-lisp
@@ -238,7 +250,7 @@
             ((string-equal "*" (substring (buffer-name) 0 1))
              "Common"
              )
-            ((or (string-match "^.*\.tex.^" (buffer-name)) (string-match "^.*\.bib.*$" (buffer-name))  )
+            ((or (string-match "^.*\\.tex.^" (buffer-name)) (string-match "^.*\\.bib.*$" (buffer-name))  )
              "Latex"
              )
             ((string-match "^.*org$" (buffer-name))
@@ -253,6 +265,8 @@
             (t
              "General"
              ))))
+        (global-set-key (kbd "C-c C-n") 'tabbar-forward)
+        (global-set-key (kbd "C-c C-p") 'tabbar-backward)
         ;; (global-set-key (kbd "C-c C-f") 'tabbar-forward)
         ;; (global-set-key (kbd "C-c C-b") 'tabbar-forward)
         ;; (global-set-key (kbd "C-c C-z") 'tabbar-forward-group)
@@ -316,7 +330,7 @@
         :ensure t
         :config
         (progn (global-set-key [f8] 'neotree-toggle)
-               (setq neo-theme (if (display-graphic-p) 'icons 'arrow))
+               (setq neo-theme 'icons)
                (setq split-window-preferred-function 'neotree-split-window-sensibly)
                ))
   #+END_SRC
@@ -410,31 +424,50 @@
            )
     )
 
-  (define-key accacio-map (kbd "p") 'ProjetoFinal)
+  (define-key accacio-map (kbd "<f12>") 'ProjetoFinal)
   (define-key ProjetoFinal (kbd "i") 'imagens)
   (define-key ProjetoFinal (kbd "t")
       (defun todo () (interactive)
-           (open-file-switch-buffer-or-close "~/Dropbox/TCC/org/todo.org")
+           (open-file-switch-buffer-or-close "~/TCC/org/todo.org")
            )
       )
 
   (define-key ProjetoFinal (kbd "m")
         (defun main () (interactive)
-             (open-file-switch-buffer-or-close "~/git/docsTCC/tex/main.tex")
+             (open-file-switch-buffer-or-close "~/TCC/tex/main.tex")
              )
         )
 
   (define-key ProjetoFinal (kbd "a")
         (defun apresentacao () (interactive)
-             (open-file-switch-buffer-or-close "~/git/docsTCC/presentation/main.tex")
+             (open-file-switch-buffer-or-close "~/TCC/presentation/main.tex")
              )
         )
 
   (define-key ProjetoFinal (kbd "p")
     (defun logica-petriNet () (interactive)
-           (open-file-switch-buffer-or-close "~/Dropbox/TCC/org/logica.org")
+           (open-file-switch-buffer-or-close "~/TCC/org/logica.org")
            )
     )
+
+  (define-key ProjetoFinal (kbd "b")
+    (defun bibliografia () (interactive)
+           (open-file-switch-buffer-or-close "~/TCC/tex/bibliography.bib")
+           )
+    )
+
+  (define-key imagens (kbd "p")
+    (defun petriNet () (interactive)
+           (open-file-switch-buffer-or-close "~/TCC/figures/petriNets/petriNets.tex")
+           )
+    )
+
+  (define-key imagens (kbd "l")
+    (defun ladder () (interactive)
+           (open-file-switch-buffer-or-close "~/TCC/figures/ladder/ladder.tex")
+           )
+    )
+
 #+END_SRC
 
 ** guru-mode
@@ -772,12 +805,25 @@
       (setq user-full-name "Rafael Accácio Nogueira")
       (setq user-mail-address "raccacio@poli.ufrj.br")
       ))
-  (use-package git-gutter+
+
+
+
+  (use-package git-gutter-fringe
     :ensure t
     :config
     (progn
-      (global-git-gutter+-mode)
+      (require 'git-gutter-fringe)
+      (setq git-gutter-fr:side 'right-fringe)
+      (add-hook 'prog-mode-hook 'git-gutter-mode)
       ))
+
+  ;; (use-package git-gutter+
+  ;;   :ensure t
+  ;;   :config
+  ;;   (progn
+  ;;     (global-git-gutter+-mode)
+  ;;     ))
+
 
 #+END_SRC
 
@@ -792,9 +838,9 @@
     (custom-set-variables
      '(flymake-google-cpplint-command
        (if (string=  window-system "w32")
-	   '"d:/Users/Accacio/AppData/Local/Programs/Python/Python36-32/Scripts/cpplint.exe"
-	 '"/usr/local/bin/cpplint"
-	 )
+           '"d:/Users/Accacio/AppData/Local/Programs/Python/Python36-32/Scripts/cpplint.exe"
+         '"/usr/local/bin/cpplint"
+         )
        )
      )
     (flymake-google-cpplint-load)
@@ -805,17 +851,17 @@
       :ensure t
       :config
       (progn
-	(add-hook 'c-mode-hook 'my:flymake-google-init)
-	(add-hook 'c++-mode-hook 'my:flymake-google-init)
-	))
+        ;; (add-hook 'c-mode-hook 'my:flymake-google-init)
+        ;; (add-hook 'c++-mode-hook 'my:flymake-google-init)
+        ))
 
     (use-package google-c-style
       :ensure t
       :config
       (progn
-	(add-hook 'c-mode-common-hook 'google-set-c-style)
-	(add-hook 'c-mode-common-hook 'google-make-newline-indent)
-	))
+        (add-hook 'c-mode-common-hook 'google-set-c-style)
+        (add-hook 'c-mode-common-hook 'google-make-newline-indent)
+        ))
 
 #+END_SRC
 
@@ -1172,31 +1218,39 @@
 ** org-publish
 #+BEGIN_SRC emacs-lisp
   (setq org-publish-project-alist
-	'(
+        '(
 
     ("org-accacio"
-	    ;; Path to your org files.
-	    :base-directory "~/git/Blog/org/"
-	    :base-extension "org"
+            ;; Path to your org files.
+            :base-directory "~/git/blog/org/"
+            :base-extension "org"
 
-	    ;; Path to your Jekyll project.
-	    :publishing-directory "~/git/Blog/meublog/"
-	    :recursive t
-	    :publishing-function org-html-publish-to-html
-	    :headline-levels 4
-	    :html-extension "html"
-	    :body-only t ;; Only export section between <body> </body>
+            ;; Path to your Jekyll project.
+            :publishing-directory "~/git/blog/meublog/"
+            :recursive t
+            :publishing-function org-html-publish-to-html
+            :headline-levels 4
+            :html-extension "html"
+            :body-only t ;; Only export section between <body> </body>
       )
 
 
       ("org-static-acc"
-	    :base-directory "~/site/org/"
-	    :base-extension "css\\|js\\|png\\|jpg\\|gif\\|pdf\\|mp3\\|ogg\\|swf\\|php"
-	    :publishing-directory "~/git/Blog/meublog/"
-	    :recursive t
-	    :publishing-function org-publish-attachment)
+            :base-directory "~/git/blog/org/"
+            :base-extension "css\\|js\\|pdf\\|mp3\\|ogg\\|swf\\|php"
+            :publishing-directory "~/git/blog/meublog/"
+            :recursive t
+            :publishing-function org-publish-attachment)
 
-      ("acc" :components ("org-accacio" "org-static-acc"))
+      ("org-acc-images"
+            :base-directory "~/git/blog/org/_images/"
+            :base-extension "png\\|jpg\\|gif\\|"
+            :publishing-directory "~/git/blog/meublog/Imagens/"
+            :recursive t
+            :publishing-function org-publish-attachment)
+
+
+      ("acc" :components ("org-accacio" "org-static-acc" "org-acc-images"))
 
   ))
 

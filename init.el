@@ -66,7 +66,7 @@
      ("Spell" "(TeX-ispell-document \"\")" TeX-run-function nil t :help "Spell-check the document")
      ("Clean" "TeX-clean" TeX-run-function nil t :help "Delete generated intermediate files")
      ("Clean All" "(TeX-clean t)" TeX-run-function nil t :help "Delete generated intermediate and output files")
-     ("Other" "" TeX-run-command t t :help "Run an arbitrary command")
+     ("Other" "pdflatex --shell-escape %t" TeX-run-command t t :help "Run an arbitrary command")
      ("Index-Coppe" "makeindex -s coppe.ist -o %s.lab %s.abx;  makeindex -s coppe.ist -o %s.los %s.syx" TeX-run-command nil t))))
  '(TeX-source-correlate-method (quote synctex))
  '(TeX-source-correlate-mode t)
