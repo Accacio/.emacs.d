@@ -15,10 +15,23 @@
 ** zerodark-theme
    #+BEGIN_SRC emacs-lisp
      (use-package zerodark-theme
-         :ensure t
-         :config
-         (progn (zerodark-setup-modeline-format)
-                ))
+       :ensure t
+       :config
+       (progn (zerodark-setup-modeline-format)
+              ))
+
+     ;; (use-package spaceline
+     ;;   :ensure t
+     ;;   :config
+     ;;   (require 'spaceline-config)
+     ;;   ;; (setq powerline-default-separator (quote arrow))
+     ;;   (setq-default mode-line-format '("%e" (:eval (spaceline-ml-main)))
+     ;;                 powerline-default-separator 'wave)
+
+     ;;   (spaceline-spacemacs-theme)
+
+     ;;   )
+
    #+END_SRC
 
 ** transparency
@@ -40,109 +53,128 @@
 #+END_SRC
 
 ** tweaks
-#+BEGIN_SRC emacs-lisp
+   #+BEGIN_SRC emacs-lisp
+     (defun reload-init-file ()
+       (interactive)
+       (load-file user-init-file))
 
-  (if (daemonp)
-      (add-hook 'after-make-frame-functions
-                (lambda (frame)
-                  (select-frame frame)
-                  (set-default-font "ubuntu mono 13" nil t)
-                  ;; (load-theme 'deeper-blue)
-                  (set-face-background 'region "azure4")
-                  (set-face-background 'cursor "sea green")
-                  ))
-    (nil
-     ;; load-theme 'deeper-blue
-     )
-    )
+     (if (daemonp)
+         (add-hook 'after-make-frame-functions
+                   (lambda (frame)
+                     (select-frame frame)
+                     (set-default-font "ubuntu mono 13" nil t)
+                     ;; (load-theme 'deeper-blue)
+                     (set-face-background 'region "azure4")
+                     (set-face-background 'cursor "sea green")
+                     ))
+       (tool-bar-mode -1
+        ;; load-theme 'deeper-blue
+        )
+       )
 
-  (setq mouse-drag-copy-region t)
-  (tool-bar-mode -1)
-  (menu-bar-mode -1)
-  (setq inhibit-startup-message t)
-  (global-set-key (kbd "<f5>") 'revert-buffer)
-  (setq frame-title-format "%b")
-  (desktop-save-mode)
-  (delete-selection-mode 1)
+     (setq mouse-drag-copy-region t)
+     (tool-bar-mode -1)
+     (menu-bar-mode -1)
+     (setq inhibit-startup-message t)
+     (global-set-key (kbd "<f5>") 'revert-buffer)
+     (setq frame-title-format "%b")
+     (desktop-save-mode)
+     (delete-selection-mode 1)
 
-  (setq column-number-mode t)
-  (setq ring-bell-function 'ignore)
-  (global-prettify-symbols-mode t)
-  ;; (global-linum-mode)
-  (setq truncate-lines t)
-  (setq auto-hscroll-mode 'current-line)
-  ;; from emacswiki
-  ;; (define-globalized-minor-mode global-fci-mode fci-mode (lambda () (fci-mode 1)))
-  ;; (global-fci-mode 1)
-  ;; from emacswiki
+     (setq column-number-mode t)
+     (setq ring-bell-function 'ignore)
+     (global-prettify-symbols-mode t)
+     ;; (global-linum-mode)
+     (setq truncate-lines t)
+     (setq auto-hscroll-mode 'current-line)
+     ;; from emacswiki
+     ;; (define-globalized-minor-mode global-fci-mode fci-mode (lambda () (fci-mode 1)))
+     ;; (global-fci-mode 1)
+     ;; from emacswiki
 
-  (global-set-key (kbd "M-<Scroll_Lock>") 'scroll-lock-mode)
-  (add-to-list 'auto-mode-alist '("mutt" . mail-mode))
-  ;; (server-start)
-  (put 'upcase-region 'disabled nil)
-  (put 'downcase-region 'disabled nil)
-  (add-to-list 'initial-frame-alist '(fullscreen . maximized))
-  (autoload 'zap-up-to-char "misc"
-    "Kill up to, but not including ARGth occurrence of CHAR.
-                    \(fn arg char)"
-    'interactive)
-  (global-set-key "\M-z" 'zap-up-to-char)
-  (scroll-bar-mode -1)
-  (setq-default truncate-lines 0)
-  ;; Backup files in specific folder
-  (setq
-   backup-by-copying t      ; don't clobber symlinks
-   backup-directory-alist
-   `((".*" . ,temporary-file-directory))
-   auto-save-file-name-transforms
-   `((".*" ,temporary-file-directory t))
-   delete-old-versions t
-   kept-new-versions 6
-   kept-old-versions 2
-   version-control t)
+     (global-set-key (kbd "M-<Scroll_Lock>") 'scroll-lock-mode)
+     (add-to-list 'auto-mode-alist '("mutt" . mail-mode))
+     ;; (server-start)
+     (put 'upcase-region 'disabled nil)
+     (put 'downcase-region 'disabled nil)
+     (add-to-list 'initial-frame-alist '(fullscreen . maximized))
+     (autoload 'zap-up-to-char "misc"
+       "Kill up to, but not including ARGth occurrence of CHAR.
+                       \(fn arg char)"
+       'interactive)
+     (global-set-key "\M-z" 'zap-up-to-char)
+     (scroll-bar-mode -1)
+     (setq-default truncate-lines 0)
+     ;; Backup files in specific folder
+     (setq
+      backup-by-copying t      ; don't clobber symlinks
+      backup-directory-alist
+      `((".*" . ,temporary-file-directory))
+      auto-save-file-name-transforms
+      `((".*" ,temporary-file-directory t))
+      delete-old-versions t
+      kept-new-versions 6
+      kept-old-versions 2
+      version-control t)
 
-  ;; store all backup and autosave files in the tmp dir
-  (setq backup-directory-alist
-        `((".*" . ,temporary-file-directory)))
-  (setq auto-save-file-name-transforms
-        `((".*" ,temporary-file-directory t)))
-
-
-  ;; scroll one line at a time (less "jumpy" than defaults)
-
-  (setq mouse-wheel-scroll-amount '(1 ((shift) . 1))) ;; one line at a time
-
-  (setq mouse-wheel-progressive-speed nil) ;; don't accelerate scrolling
-
-  (setq mouse-wheel-follow-mouse 't) ;; scroll window under mouse
-
-  (setq scroll-step 1) ;; keyboard scroll one line at a time
-
-  (mouse-avoidance-mode 'banish)
+     ;; store all backup and autosave files in the tmp dir
+     (setq backup-directory-alist
+           `((".*" . ,temporary-file-directory)))
+     (setq auto-save-file-name-transforms
+           `((".*" ,temporary-file-directory t)))
 
 
-  ;; Kill terminal buffer on exti
-  (add-hook 'term-exec-hook (lambda ()
-                              (let* ((buff (current-buffer))
-                                     (proc (get-buffer-process buff)))
-                                (lexical-let ((buff buff))
-                                  (set-process-sentinel proc (lambda (process event)
-                                                               (if (string= event "finished\n")
-                                                                   (kill-buffer buff))))))))
-  ;; Make File executable if it begins with #!
-  (add-hook
-   'after-save-hook
-   'executable-make-buffer-file-executable-if-script-p)
-  (defun insert-date (prefix)
-    "Insert the current date. With prefix-argument, use ISO format. With
-     two prefix arguments, write out the day and month name."
-    (interactive "P")
-    (let ((format (cond
-                   ((not prefix) "%d.%m.%Y")
-                   ((equal prefix '(4)) "%Y-%m-%d")
-                   ((equal prefix '(16)) "%A, %d. %B %Y")))
-          (system-time-locale "de_DE"))
-      (insert (format-time-string format))))
+     ;; scroll one line at a time (less "jumpy" than defaults)
+
+     (setq mouse-wheel-scroll-amount '(1 ((shift) . 1))) ;; one line at a time
+
+     (setq mouse-wheel-progressive-speed nil) ;; don't accelerate scrolling
+
+     (setq mouse-wheel-follow-mouse 't) ;; scroll window under mouse
+
+     (setq scroll-step 1) ;; keyboard scroll one line at a time
+
+     (mouse-avoidance-mode 'banish)
+
+
+     ;; Kill terminal buffer on exti
+     (add-hook 'term-exec-hook (lambda ()
+                                 (let* ((buff (current-buffer))
+                                        (proc (get-buffer-process buff)))
+                                   (lexical-let ((buff buff))
+                                     (set-process-sentinel proc (lambda (process event)
+                                                                  (if (string= event "finished\n")
+                                                                      (kill-buffer buff))))))))
+     ;; Make File executable if it begins with #!
+     (add-hook
+      'after-save-hook
+      'executable-make-buffer-file-executable-if-script-p)
+
+     (defun processI3 ()
+       "ProcessI3config."
+       (when (string-match "^.*config.*raw" (buffer-name))
+         (shell-command-to-string (format "$HOME/dots/scripts/processI3Config"))
+          ;; (shell-command-to-string (format "$HOME/dots/scripts/processI3Config;i3-msg reload"))
+         )
+       )
+
+     (add-hook
+      'after-save-hook
+      #'processI3)
+
+
+
+     (defun insert-date (prefix)
+       "Insert the current date.  With PREFIX -argument, use ISO format.
+     With two prefix arguments, write out the day and month name."
+       (interactive "P")
+       (let ((format (cond
+                      ((not prefix) "%d.%m.%Y")
+                      ((equal prefix '(4)) "%Y-%m-%d")
+                      ((equal prefix '(16)) "%A, %d. %B %Y")))
+             (system-time-locale "de_DE"))
+         (insert (format-time-string format))))
+
    #+END_SRC
 
 ** evil-mode
@@ -406,7 +438,7 @@
            (open-file-switch-buffer-or-close "~/.emacs.d/Readme.org")
            )
     )
-  (define-key accacio-map (kbd "b")
+  (define-key accacio-map (kbd "z")
     (defun bashrc () (interactive)
            (open-file-switch-buffer-or-close "~/dots/configs/bash/.bashrc")
            )
@@ -416,8 +448,21 @@
            (open-file-switch-buffer-or-close "~/dots/configs/i3/.i3/config.raw")
            )
     )
+
+  (define-key accacio-map (kbd "b")
+    (defun bspwm-config () (interactive)
+           (open-file-switch-buffer-or-close "~/dots/configs/bspwm/bspwm/bspwmrc")
+           )
+    )
+
+  (define-key accacio-map (kbd "e")
+    (defun estagio () (interactive)
+           (open-file-switch-buffer-or-close "~/ESTAGIO/docs/report_internship/rapport_stage.tex")
+           )
+    )
   (define-key accacio-map (kbd "t") 'toggle-transparency)
   (define-key accacio-map (kbd "g") 'guru-global-mode)
+  (define-key accacio-map (kbd "v") 'evil-mode)
   (define-key accacio-map (kbd "o")
     (defun todos () (interactive)
            (open-file-switch-buffer-or-close "~/Dropbox/AccDoc/Org/")
@@ -449,6 +494,13 @@
            (open-file-switch-buffer-or-close "~/TCC/org/logica.org")
            )
     )
+
+  (define-key ProjetoFinal (kbd "t")
+    (defun tabelas-petriNet () (interactive)
+           (open-file-switch-buffer-or-close "~/TCC/org/tabelas.org")
+           )
+    )
+
 
   (define-key ProjetoFinal (kbd "b")
     (defun bibliografia () (interactive)
@@ -602,9 +654,15 @@
 
 ** Dired
 #+BEGIN_SRC emacs-lisp
-  (put 'dired-find-alternate-file 'disabled nil)
-  (eval-after-load "dired" '(progn (define-key dired-mode-map (kbd "RET") 'dired-find-alternate-file)))
-  (setq dired-dwim-target t)
+    (put 'dired-find-alternate-file 'disabled nil)
+    (eval-after-load "dired" '(progn (define-key dired-mode-map (kbd "RET") 'dired-find-alternate-file)))
+    (setq dired-dwim-target t)
+  ;; (use-package all-the-icons-dired
+  ;; :ensure t
+  ;; :config
+  ;; (progn
+  ;; (add-hook 'dired-mode-hook 'all-the-icons-dired-mode)
+  ;; ))
 
 #+END_SRC
 
@@ -885,7 +943,6 @@
       (add-hook 'after-init-hook 'global-company-mode)
       (setq company-idle-delay 0)
 
-        (company-quickhelp-mode)
     (setq company-show-numbers t)
     (let ((map company-active-map))
     (mapc (lambda (x) (define-key map (format "%d" x)
@@ -900,7 +957,7 @@
   (progn
     (setq company-minimum-prefix-length 1)
                                           ;    (setq company-tooltip-maximum-width 20)
-    (company-quickhelpmode)
+    (company-quickhelp-mode)
     ))
 
 #+END_SRC

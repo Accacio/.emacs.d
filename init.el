@@ -14,7 +14,16 @@
   (package-refresh-contents)
   (package-install 'use-package))
 
+
+
+(use-package benchmark-init
+  :ensure t
+  :config
+  ;; To disable collection of benchmark data after init is done.
+  (add-hook 'after-init-hook 'benchmark-init/deactivate))
+
 (org-babel-load-file (expand-file-name "~/.emacs.d/Readme.org"))
+
 
 (custom-set-variables
  ;; custom-set-variables was added by Custom.
@@ -26,7 +35,7 @@
     (("TeX" "%(PDF)%(tex) %(file-line-error) %(extraopts) %`%S%(PDFout)%(mode)%' %t" TeX-run-TeX nil
       (plain-tex-mode texinfo-mode ams-tex-mode)
       :help "Run plain TeX")
-     ("LaTeX" "%`%l%(mode)%' %t" TeX-run-TeX nil
+     ("LaTeX" "%`%l%(mode)%'  %t" TeX-run-TeX nil
       (latex-mode doctex-mode)
       :help "Run LaTeX")
      ("Makeinfo" "makeinfo %(extraopts) %t" TeX-run-compile nil
