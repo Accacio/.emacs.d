@@ -22,7 +22,8 @@
   ;; To disable collection of benchmark data after init is done.
   (add-hook 'after-init-hook 'benchmark-init/deactivate))
 
-(org-babel-load-file (expand-file-name "~/.emacs.d/Readme.org"))
+(load "~/.emacs.d/Readme.el")
+;; (org-babel-load-file (expand-file-name "~/.emacs.d/Readme.org"))
 
 
 (custom-set-variables

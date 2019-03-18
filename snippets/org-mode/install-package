@@ -3,7 +3,7 @@
 # key: instpck
 # --
 ** ${1:package-name}
-#+BEGIN_SRC emacs-lisp
+#+BEGIN_SRC emacs-lisp :tangle yes
 (use-package $1
   :ensure t
   :config

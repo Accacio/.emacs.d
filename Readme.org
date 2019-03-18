@@ -1,9 +1,8 @@
 
-
 * interface and tweaks
 ** exwm
 
-   #+BEGIN_SRC emacs-lisp
+   #+BEGIN_SRC emacs-lisp :tangle yes
      ;     (use-package exwm
      ;         :ensure t
      ;         :config
@@ -13,7 +12,7 @@
    #+END_SRC
 
 ** zerodark-theme
-   #+BEGIN_SRC emacs-lisp
+   #+BEGIN_SRC emacs-lisp :tangle yes
      (use-package zerodark-theme
        :ensure t
        :config
@@ -35,7 +34,7 @@
    #+END_SRC
 
 ** transparency
-#+BEGIN_SRC emacs-lisp
+#+BEGIN_SRC emacs-lisp :tangle yes
 ;(set-frame-parameter (selected-frame) 'alpha '(85 . 50))
 ;(add-to-list 'default-frame-alist '(alpha . (85 . 50)))
  (defun toggle-transparency ()
@@ -53,23 +52,24 @@
 #+END_SRC
 
 ** tweaks
-   #+BEGIN_SRC emacs-lisp
+   #+BEGIN_SRC emacs-lisp :tangle yes
+
      (defun reload-init-file ()
        (interactive)
        (load-file user-init-file))
 
      (if (daemonp)
-         (add-hook 'after-make-frame-functions
-                   (lambda (frame)
-                     (select-frame frame)
-                     (set-default-font "ubuntu mono 13" nil t)
-                     ;; (load-theme 'deeper-blue)
-                     (set-face-background 'region "azure4")
-                     (set-face-background 'cursor "sea green")
-                     ))
+	 (add-hook 'after-make-frame-functions
+		   (lambda (frame)
+		     (select-frame frame)
+		     (set-default-font "ubuntu mono 13" nil t)
+		     ;; (load-theme 'deeper-blue)
+		     (set-face-background 'region "azure4")
+		     (set-face-background 'cursor "sea green")
+		     ))
        (tool-bar-mode -1
-        ;; load-theme 'deeper-blue
-        )
+	;; load-theme 'deeper-blue
+	)
        )
 
      (setq mouse-drag-copy-region t)
@@ -78,7 +78,7 @@
      (setq inhibit-startup-message t)
      (global-set-key (kbd "<f5>") 'revert-buffer)
      (setq frame-title-format "%b")
-     (desktop-save-mode)
+
      (delete-selection-mode 1)
 
      (setq column-number-mode t)
@@ -100,7 +100,7 @@
      (add-to-list 'initial-frame-alist '(fullscreen . maximized))
      (autoload 'zap-up-to-char "misc"
        "Kill up to, but not including ARGth occurrence of CHAR.
-                       \(fn arg char)"
+		       \(fn arg char)"
        'interactive)
      (global-set-key "\M-z" 'zap-up-to-char)
      (scroll-bar-mode -1)
@@ -119,9 +119,9 @@
 
      ;; store all backup and autosave files in the tmp dir
      (setq backup-directory-alist
-           `((".*" . ,temporary-file-directory)))
+	   `((".*" . ,temporary-file-directory)))
      (setq auto-save-file-name-transforms
-           `((".*" ,temporary-file-directory t)))
+	   `((".*" ,temporary-file-directory t)))
 
 
      ;; scroll one line at a time (less "jumpy" than defaults)
@@ -139,12 +139,12 @@
 
      ;; Kill terminal buffer on exti
      (add-hook 'term-exec-hook (lambda ()
-                                 (let* ((buff (current-buffer))
-                                        (proc (get-buffer-process buff)))
-                                   (lexical-let ((buff buff))
-                                     (set-process-sentinel proc (lambda (process event)
-                                                                  (if (string= event "finished\n")
-                                                                      (kill-buffer buff))))))))
+				 (let* ((buff (current-buffer))
+					(proc (get-buffer-process buff)))
+				   (lexical-let ((buff buff))
+				     (set-process-sentinel proc (lambda (process event)
+								  (if (string= event "finished\n")
+								      (kill-buffer buff))))))))
      ;; Make File executable if it begins with #!
      (add-hook
       'after-save-hook
@@ -153,9 +153,9 @@
      (defun processI3 ()
        "ProcessI3config."
        (when (string-match "^.*config.*raw" (buffer-name))
-         (shell-command-to-string (format "$HOME/dots/scripts/processI3Config"))
-          ;; (shell-command-to-string (format "$HOME/dots/scripts/processI3Config;i3-msg reload"))
-         )
+	 (shell-command-to-string (format "$HOME/dots/scripts/processI3Config"))
+	  ;; (shell-command-to-string (format "$HOME/dots/scripts/processI3Config;i3-msg reload"))
+	 )
        )
 
      (add-hook
@@ -169,16 +169,16 @@
      With two prefix arguments, write out the day and month name."
        (interactive "P")
        (let ((format (cond
-                      ((not prefix) "%d.%m.%Y")
-                      ((equal prefix '(4)) "%Y-%m-%d")
-                      ((equal prefix '(16)) "%A, %d. %B %Y")))
-             (system-time-locale "de_DE"))
-         (insert (format-time-string format))))
+		      ((not prefix) "%d.%m.%Y")
+		      ((equal prefix '(4)) "%Y-%m-%d")
+		      ((equal prefix '(16)) "%A, %d. %B %Y")))
+	     (system-time-locale "de_DE"))
+	 (insert (format-time-string format))))
 
    #+END_SRC
 
 ** evil-mode
-   #+BEGIN_SRC emacs-lisp
+   #+BEGIN_SRC emacs-lisp :tangle yes
      (use-package evil
        :ensure t
        :config
@@ -197,7 +197,7 @@
    #+END_SRC
 
 ** linum-relative
-   #+BEGIN_SRC emacs-lisp
+   #+BEGIN_SRC emacs-lisp :tangle yes
      ;; (use-package linum-relative
      ;;   :ensure t
      ;;   :config
@@ -218,7 +218,7 @@
    #+END_SRC
 
 ** smex
-  #+BEGIN_SRC emacs-lisp
+  #+BEGIN_SRC emacs-lisp :tangle yes
 (use-package smex
     :ensure t
     :config
@@ -227,7 +227,7 @@
   #+END_SRC
 
 ** flx-ido
-  #+BEGIN_SRC emacs-lisp
+  #+BEGIN_SRC emacs-lisp :tangle yes
     (use-package flx
       :ensure t )
 
@@ -240,7 +240,7 @@
   #+END_SRC
 
 ** beacon
-  #+BEGIN_SRC emacs-lisp
+  #+BEGIN_SRC emacs-lisp :tangle yes
     (use-package beacon
       :ensure t
       :config
@@ -252,7 +252,7 @@
 
 ** atomic-chrome
    [[https://chrome.google.com/webstore/detail/atomic-chrome/lhaoghhllmiaaagaffababmkdllgfcmc/related?hl%3Den][atomic-chrome installation]]
-  #+BEGIN_SRC emacs-lisp
+  #+BEGIN_SRC emacs-lisp :tangle yes
 (use-package atomic-chrome
     :ensure t
     :config
@@ -261,13 +261,13 @@
   #+END_SRC
 
 ** hl-line-mode
-#+BEGIN_SRC emacs-lisp
+#+BEGIN_SRC emacs-lisp :tangle yes
   ;; (global-hl-line-mode)
   ;; (set-face-background 'hl-line "#282a36")
 #+END_SRC
 
 ** tabbar
-#+BEGIN_SRC emacs-lisp
+#+BEGIN_SRC emacs-lisp :tangle yes
     (use-package tabbar
       :ensure t
       :config
@@ -312,7 +312,7 @@
 #+END_SRC
 
 ** ace-window
-#+BEGIN_SRC emacs-lisp
+#+BEGIN_SRC emacs-lisp :tangle yes
   (use-package ace-window
     :ensure t
     :init
@@ -329,21 +329,21 @@
 #+END_SRC
 
 ** undo-tree
-#+BEGIN_SRC emacs-lisp
+#+BEGIN_SRC emacs-lisp :tangle yes
  (use-package undo-tree
     :ensure t
     :config (global-undo-tree-mode))
 #+END_SRC
 
 ** flx
-   #+BEGIN_SRC emacs-lisp
+   #+BEGIN_SRC emacs-lisp :tangle yes
      (use-package flx
          :ensure t
          )
    #+END_SRC
 
 ** nyan-mode
-#+BEGIN_SRC emacs-lisp
+#+BEGIN_SRC emacs-lisp :tangle yes
   (use-package nyan-mode
     :ensure t
     :config
@@ -357,7 +357,7 @@
 #+END_SRC
 
 ** neotree
-  #+BEGIN_SRC emacs-lisp
+  #+BEGIN_SRC emacs-lisp :tangle yes
     (use-package neotree
         :ensure t
         :config
@@ -368,7 +368,7 @@
   #+END_SRC
 
 ** Shell
-#+BEGIN_SRC emacs-lisp
+#+BEGIN_SRC emacs-lisp :tangle yes
   (global-set-key
    (kbd "C-x t")
    (lambda()(interactive)
@@ -376,12 +376,12 @@
          (rename-uniquely))
      (if (string=  window-system "w32")
          (eshell)
-       (ansi-term "/bin/bash")
+       (ansi-term "/bin/zsh")
        )))
 #+END_SRC
 
 ** smartparens
-#+BEGIN_SRC emacs-lisp
+#+BEGIN_SRC emacs-lisp :tangle yes
   (use-package smartparens
     :ensure t
     :config
@@ -391,7 +391,7 @@
 #+END_SRC
 
 ** volatile-highlights
-#+BEGIN_SRC emacs-lisp
+#+BEGIN_SRC emacs-lisp :tangle yes
   (use-package volatile-highlights
     :ensure t
     :config
@@ -399,7 +399,7 @@
 #+END_SRC
 
 ** My commands
-#+BEGIN_SRC emacs-lisp
+#+BEGIN_SRC emacs-lisp :tangle yes
   (define-prefix-command 'accacio-map)
   (define-prefix-command 'ProjetoFinal)
   (define-prefix-command 'imagens)
@@ -523,7 +523,7 @@
 #+END_SRC
 
 ** guru-mode
-   #+BEGIN_SRC emacs-lisp
+   #+BEGIN_SRC emacs-lisp :tangle yes
      (use-package guru-mode
 	 :ensure t
 	 :config
@@ -532,7 +532,7 @@
    #+END_SRC
 
 ** all-the-icons
-   #+BEGIN_SRC emacs-lisp
+   #+BEGIN_SRC emacs-lisp :tangle yes
      (use-package all-the-icons
        :ensure t
        :config
@@ -543,7 +543,7 @@
    #+END_SRC
 
 ** rich-minority
-   #+BEGIN_SRC emacs-lisp
+   #+BEGIN_SRC emacs-lisp :tangle yes
      (use-package rich-minority
        :ensure t
        :config
@@ -577,7 +577,7 @@
    #+END_SRC
 
 ** rainbow-delimiters
-   #+BEGIN_SRC emacs-lisp
+   #+BEGIN_SRC emacs-lisp :tangle yes
      (use-package rainbow-delimiters
        :ensure t
        :config
@@ -612,7 +612,7 @@
    #+END_SRC
 
 ** origami
-   #+BEGIN_SRC emacs-lisp
+   #+BEGIN_SRC emacs-lisp :tangle yes
      (use-package origami
        :ensure t
        :config
@@ -623,7 +623,7 @@
    #+END_SRC
 
 ** fontawesome
-   #+BEGIN_SRC emacs-lisp
+   #+BEGIN_SRC emacs-lisp :tangle yes
 (use-package fontawesome
   :ensure t
   :config
@@ -634,7 +634,7 @@
 
 * Navigation
 ** Ibuffer
-#+BEGIN_SRC emacs-lisp
+#+BEGIN_SRC emacs-lisp :tangle yes
   (global-set-key (kbd "C-x C-b") 'ibuffer)
   (setq ibuffer-saved-filter-groups
         (quote (("default"
@@ -653,7 +653,7 @@
 #+END_SRC
 
 ** Dired
-#+BEGIN_SRC emacs-lisp
+#+BEGIN_SRC emacs-lisp :tangle yes
     (put 'dired-find-alternate-file 'disabled nil)
     (eval-after-load "dired" '(progn (define-key dired-mode-map (kbd "RET") 'dired-find-alternate-file)))
     (setq dired-dwim-target t)
@@ -667,20 +667,20 @@
 #+END_SRC
 
 ** Try
-#+BEGIN_SRC emacs-lisp
+#+BEGIN_SRC emacs-lisp :tangle yes
 (use-package try
   :ensure t)
 #+END_SRC
 
 ** which-key
-#+BEGIN_SRC emacs-lisp
+#+BEGIN_SRC emacs-lisp :tangle yes
 (use-package which-key
   :ensure t
   :config (which-key-mode))
 #+END_SRC
 
 ** counsel
-#+BEGIN_SRC emacs-lisp
+#+BEGIN_SRC emacs-lisp :tangle yes
   (use-package counsel
     :ensure t
     :bind
@@ -695,7 +695,7 @@
 #+END_SRC
 
 ** swiper
-#+BEGIN_SRC emacs-lisp
+#+BEGIN_SRC emacs-lisp :tangle yes
   (use-package swiper
     :ensure t
     :config
@@ -725,7 +725,7 @@
 #+END_SRC
 
 ** avy
-#+BEGIN_SRC emacs-lisp
+#+BEGIN_SRC emacs-lisp :tangle yes
   (use-package avy
     :ensure t
     :bind ("C-:" . avy-goto-char)
@@ -734,14 +734,14 @@
 #+END_SRC
 
 ** iedit-mode
-#+BEGIN_SRC emacs-lisp
+#+BEGIN_SRC emacs-lisp :tangle yes
   (use-package iedit
     :ensure t
     :config (define-key global-map (kbd "C-c ;") 'iedit-mode))
 #+END_SRC
 
 ** Yasnippets
-#+BEGIN_SRC emacs-lisp
+#+BEGIN_SRC emacs-lisp :tangle yes
  (use-package yasnippet
     :ensure t
     :config (yas-global-mode 1))
@@ -750,7 +750,7 @@
 #+END_SRC
 
 ** projectile
-   #+BEGIN_SRC emacs-lisp
+   #+BEGIN_SRC emacs-lisp :tangle yes
           (use-package projectile
               :ensure t
               :config
@@ -767,7 +767,7 @@
    #+END_SRC
 
 ** helm-ag
-   #+BEGIN_SRC emacs-lisp
+   #+BEGIN_SRC emacs-lisp :tangle yes
 (use-package helm-ag
     :ensure t
     :config
@@ -776,7 +776,7 @@
    #+END_SRC
 
 ** ag
-   #+BEGIN_SRC emacs-lisp
+   #+BEGIN_SRC emacs-lisp :tangle yes
      (use-package ag
          :ensure t
          :config
@@ -787,7 +787,7 @@
 
 * Planning / Org-Mode
 ** org-bullets
-#+BEGIN_SRC emacs-lisp
+#+BEGIN_SRC emacs-lisp :tangle yes
   (use-package org-bullets
     :ensure t
     :config
@@ -795,7 +795,7 @@
 
   (custom-set-variables '(org-hide-leading-stars t))
 #+END_SRC
-#+BEGIN_SRC emacs-lisp
+#+BEGIN_SRC emacs-lisp :tangle yes
     (setq org-ellipsis "⤵") ;⤵ ⭍ ↲ ⮯
     (setq org-src-fontify-natively t)
     (setq org-src-tab-acts-natively t)
@@ -810,7 +810,7 @@
 * Reading
 
 ** engine-mode
-   #+BEGIN_SRC emacs-lisp
+   #+BEGIN_SRC emacs-lisp :tangle yes
      (use-package engine-mode
          :ensure t
          :config
@@ -837,13 +837,13 @@
 
 * Programming
 ** Org-babel c++
-#+BEGIN_SRC emacs-lisp
+#+BEGIN_SRC emacs-lisp :tangle yes
   (org-babel-do-load-languages
    'org-babel-load-languages '((C . t)))
 #+END_SRC
 
 ** git
-#+BEGIN_SRC emacs-lisp
+#+BEGIN_SRC emacs-lisp :tangle yes
   (use-package magit
     :ensure t
     :config
@@ -886,7 +886,7 @@
 #+END_SRC
 
 ** google-c-style flymake
-#+BEGIN_SRC emacs-lisp
+#+BEGIN_SRC emacs-lisp :tangle yes
     ;; (use-package flymake-cursor
     ;;   :ensure t)
 
@@ -924,7 +924,7 @@
 #+END_SRC
 
 ** flycheck
-#+BEGIN_SRC emacs-lisp
+#+BEGIN_SRC emacs-lisp :tangle yes
   (use-package flycheck
     :ensure t
     :config
@@ -935,7 +935,7 @@
 #+END_SRC
 
 ** company
-#+BEGIN_SRC emacs-lisp
+#+BEGIN_SRC emacs-lisp :tangle yes
   (use-package company
     :ensure t
     :config
@@ -963,7 +963,7 @@
 #+END_SRC
  workaround fci incompability
 
-#+BEGIN_SRC emacs-lisp
+#+BEGIN_SRC emacs-lisp :tangle yes
 
 
 (defvar-local company-fci-mode-on-p nil)
@@ -983,7 +983,7 @@
 #+END_SRC
 
 ** irony-mode
-#+BEGIN_SRC emacs-lisp
+#+BEGIN_SRC emacs-lisp :tangle yes
       (use-package irony
         :ensure t
         :config
@@ -1044,7 +1044,7 @@
 #+END_SRC
 
 ** idle-highlights
-#+BEGIN_SRC emacs-lisp
+#+BEGIN_SRC emacs-lisp :tangle yes
   (use-package idle-highlight-mode
     :ensure t
     :config
@@ -1054,7 +1054,7 @@
 #+END_SRC
 
 ** fill-column-indicator
-#+BEGIN_SRC emacs-lisp
+#+BEGIN_SRC emacs-lisp :tangle yes
   ;; (use-package fill-column-indicator
   ;;   :ensure t
   ;;   :config
@@ -1072,7 +1072,7 @@
 #+END_SRC
 
 ** cmake-mode
-  #+BEGIN_SRC emacs-lisp
+  #+BEGIN_SRC emacs-lisp :tangle yes
 (use-package cmake-mode
     :ensure t
     :config
@@ -1087,7 +1087,7 @@
   #+END_SRC
 
 ** helm-gtags
-  #+BEGIN_SRC emacs-lisp
+  #+BEGIN_SRC emacs-lisp :tangle yes
     (use-package helm-gtags
       :ensure t
       :config
@@ -1098,7 +1098,7 @@
   #+END_SRC
 
 ** multiple-cursors
-  #+BEGIN_SRC emacs-lisp
+  #+BEGIN_SRC emacs-lisp :tangle yes
     (use-package multiple-cursors
         :ensure t
         :init
@@ -1110,7 +1110,7 @@
 
 ** ace-mc
 
-   #+BEGIN_SRC emacs-lisp
+   #+BEGIN_SRC emacs-lisp :tangle yes
      (use-package ace-mc
          :ensure t
          :config
@@ -1119,7 +1119,7 @@
    #+END_SRC
 
 ** expand-region
-  #+BEGIN_SRC emacs-lisp
+  #+BEGIN_SRC emacs-lisp :tangle yes
     (use-package expand-region
         :ensure t
         :init
@@ -1128,7 +1128,7 @@
   #+END_SRC
 
 ** scala
-   #+BEGIN_SRC emacs-lisp
+   #+BEGIN_SRC emacs-lisp :tangle yes
      (use-package ensime
        :ensure t)
 
@@ -1141,7 +1141,7 @@
 
 * HTML
 ** rainbow-mode
-  #+BEGIN_SRC emacs-lisp
+  #+BEGIN_SRC emacs-lisp :tangle yes
     (use-package rainbow-mode
         :ensure t
         :config
@@ -1151,14 +1151,14 @@
   #+END_SRC
 
 ** browser
-  #+BEGIN_SRC emacs-lisp
+  #+BEGIN_SRC emacs-lisp :tangle yes
     (setq browse-url-browser-function 'browse-url-generic
           browse-url-generic-program "vivaldi")
   #+END_SRC
 
 * Games
 ** 2048
-   #+BEGIN_SRC emacs-lisp
+   #+BEGIN_SRC emacs-lisp :tangle yes
      (use-package 2048-game
        :ensure t
          )
@@ -1166,7 +1166,7 @@
 
 * Finances
 ** ledger-mode
-   #+BEGIN_SRC emacs-lisp
+   #+BEGIN_SRC emacs-lisp :tangle yes
      (use-package ledger-mode
          :ensure t
          :init
@@ -1179,7 +1179,7 @@
 
 * Ahk
 ** xahk-mode
-   #+BEGIN_SRC emacs-lisp
+   #+BEGIN_SRC emacs-lisp :tangle yes
 (use-package xahk-mode
   :ensure t
   :config
@@ -1190,7 +1190,7 @@
 
 * Latex
 ** auctex
-#+BEGIN_SRC emacs-lisp
+#+BEGIN_SRC emacs-lisp :tangle yes
   ;; (require 'auctex)
        (use-package auctex
        :defer t
@@ -1216,7 +1216,7 @@
 #+END_SRC
 
 ** company-bibtex
-#+BEGIN_SRC emacs-lisp
+#+BEGIN_SRC emacs-lisp :tangle yes
 (use-package company-bibtex
     :ensure t
     :config
@@ -1226,7 +1226,7 @@
 #+END_SRC
 
 ** company-reftex
-#+BEGIN_SRC emacs-lisp
+#+BEGIN_SRC emacs-lisp :tangle yes
   (use-package company-reftex
       :ensure t
       :config
@@ -1249,7 +1249,7 @@
 #+END_SRC
 
 ** Zathura as Viewer
-#+BEGIN_SRC emacs-lisp
+#+BEGIN_SRC emacs-lisp :tangle yes
           (defcustom tex-my-viewer "zathura --fork -s -x \"emacsclient --eval '(progn (switch-to-buffer  (file-name-nondirectory \"'\"'\"%{input}\"'\"'\")) (goto-line %{line}))'\""
     "PDF Viewer for TeX documents. You may want to fork the viewer
   so that it detects when the same document is launched twice, and
@@ -1273,7 +1273,7 @@
 * Blog
 
 ** org-publish
-#+BEGIN_SRC emacs-lisp
+#+BEGIN_SRC emacs-lisp :tangle yes
   (setq org-publish-project-alist
         '(
 
@@ -1315,7 +1315,7 @@
 #+END_SRC
 
 ** yaml-mode
-   #+BEGIN_SRC emacs-lisp
+   #+BEGIN_SRC emacs-lisp :tangle yes
 (use-package yaml-mode
   :ensure t
   :config
@@ -1326,7 +1326,7 @@
 
 * writing
 ** markdown-mode
-#+BEGIN_SRC emacs-lisp
+#+BEGIN_SRC emacs-lisp :tangle yes
   (use-package markdown-mode
     :ensure t
     :commands (markdown-mode gfm-mode)
@@ -1337,7 +1337,7 @@
 #+END_SRC
 
 ** ispell
-#+BEGIN_SRC emacs-lisp
+#+BEGIN_SRC emacs-lisp :tangle yes
   (let ((langs '("american" "fr_FR" "pt_BR")))
         (setq lang-ring (make-ring (length langs)))
         (dolist (elem langs) (ring-insert lang-ring elem)))
@@ -1356,7 +1356,7 @@
 * Feeds
 ** Elfeed
 
-   #+BEGIN_SRC emacs-lisp
+   #+BEGIN_SRC emacs-lisp :tangle yes
      (use-package elfeed
        :ensure t
        :config
